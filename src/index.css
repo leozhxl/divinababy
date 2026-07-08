@@ -4,7 +4,7 @@
 
 @layer base {
   ::selection {
-    background-color: #f5d5c8;
+    background-color: #e8ddc7;
     color: #634b3d;
   }
 
@@ -13,17 +13,17 @@
   }
 
   body {
-    @apply bg-cream-50 text-nude-800 antialiased;
+    @apply bg-oat-200 text-nude-800 antialiased;
   }
 }
 
 @layer components {
   .btn-primary {
-    @apply px-8 py-3 bg-rose-gold-400 text-white font-sans-elegant font-medium tracking-widest uppercase text-sm rounded-none transition-all duration-500 hover:bg-rose-gold-500 hover:shadow-elegant;
+    @apply px-8 py-3 bg-oat-400 text-white font-sans-elegant font-medium tracking-widest uppercase text-sm rounded-none transition-all duration-500 hover:bg-oat-500 hover:shadow-elegant;
   }
 
   .btn-outline {
-    @apply px-8 py-3 border border-rose-gold-400 text-rose-gold-600 font-sans-elegant font-light tracking-widest uppercase text-sm rounded-none transition-all duration-500 hover:bg-rose-gold-400 hover:text-white;
+    @apply px-8 py-3 border border-oat-400 text-oat-600 font-sans-elegant font-light tracking-widest uppercase text-sm rounded-none transition-all duration-500 hover:bg-oat-400 hover:text-white;
   }
 
   .section-title {
@@ -87,27 +87,27 @@
 }
 
 @layer utilities {
-  .text-rose-gold-gradient {
-    background: linear-gradient(135deg, #d7c1b0 0%, #d4a270 50%, #b58d78 100%);
+  .text-oat-gradient {
+    background: linear-gradient(135deg, #dcc9a8 0%, #cbae84 50%, #967954 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
 
   .bg-gradient-luxury {
-    background: linear-gradient(135deg, #fff0f5 0%, #fdfaf5 50%, #f5e6d3 100%);
+    background: linear-gradient(135deg, #f9f6ef 0%, #f2ece0 50%, #e8ddc7 100%);
   }
 
-  .bg-gradient-rose-soft {
-    background: linear-gradient(180deg, #ffd9e8 0%, #fbb8d4 50%, #f5d5c8 100%);
+  .bg-gradient-oat-soft {
+    background: linear-gradient(180deg, #f2ece0 0%, #e8ddc7 50%, #dcc9a8 100%);
   }
 
   .bg-gradient-gold-soft {
-    background: linear-gradient(135deg, rgba(212, 162, 112, 0.05) 0%, rgba(224, 147, 115, 0.03) 100%);
+    background: linear-gradient(135deg, rgba(203, 174, 132, 0.05) 0%, rgba(220, 201, 168, 0.03) 100%);
   }
 
-  .border-rose-gold {
-    border-color: #d4a270;
+  .border-oat {
+    border-color: #cbae84;
   }
 
   .shadow-luxury {
