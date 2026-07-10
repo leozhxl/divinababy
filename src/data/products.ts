@@ -80,22 +80,9 @@ const THEMES = [
 
 export const products: Product[] = [
   {
-    id: '1',
-    slug: 'prendedor-chupeta-classico',
-    name: 'Prendedor de Chupeta Clássico',
-    category: 'Prendedores de Chupetas',
-    price: 49.9,
-    images: ['/prendedores-chupetas.jpeg'],
-    colors: BEAD_COLORS,
-    themes: THEMES,
-    description:
-      'Prendedor de chupeta personalizado, feito à mão com contas de silicone atóxico e clipe de madeira. Uma peça delicada para acompanhar o bebê em cada saída.',
-    badges: ['Feito à mão', 'Personalizável'],
-  },
-  {
     id: '2',
     slug: 'prendedor-chupeta-nome',
-    name: 'Prendedor de Chupeta com Nome',
+    name: 'Prendedor de Chupeta Personalizado com Nome em Silicone',
     category: 'Prendedores de Chupetas',
     price: 59.9,
     compareAtPrice: 69.9,
@@ -107,16 +94,54 @@ export const products: Product[] = [
     badges: ['Frete grátis', 'Personalizável'],
   },
   {
-    id: '3',
-    slug: 'chaveiro-personalizado',
-    name: 'Chaveiro Personalizado',
-    category: 'Chaveiros',
-    price: 39.9,
-    images: ['/chaveiros.jpeg'],
+    id: '1',
+    slug: 'prendedor-chupeta-classico',
+    name: 'Prendedor de Chupeta sem Personalização em Silicone',
+    category: 'Prendedores de Chupetas',
+    price: 49.9,
+    images: ['/prendedores-chupetas.jpeg'],
     colors: BEAD_COLORS,
     themes: THEMES,
     description:
-      'Chaveiro artesanal com contas de silicone e detalhes em madeira, perfeito para presentear com carinho e sofisticação.',
+      'Prendedor de chupeta personalizado, feito à mão com contas de silicone atóxico e clipe de madeira. Uma peça delicada para acompanhar o bebê em cada saída.',
+    badges: ['Feito à mão', 'Personalizável'],
+  },
+  {
+    id: '10',
+    slug: 'mordedor-nome',
+    name: 'Mordedor Personalizado com Nome em Silicone',
+    category: 'Mordedores',
+    price: 49.9,
+    images: ['/galeria-14.jpeg'],
+    colors: BEAD_COLORS,
+    themes: THEMES,
+    description:
+      'Mordedor com o nome do bebê em contas de silicone, uma peça sensorial e decorativa que também estimula a curiosidade.',
+    badges: ['Feito à mão', 'Personalizável'],
+  },
+  {
+    id: '5',
+    slug: 'chupeta-premium',
+    name: 'Chupeta de Borracha Natural',
+    category: 'Chupetas',
+    price: 34.9,
+    images: ['/chupetas.jpeg'],
+    colors: BEAD_COLORS,
+    sizes: ['0-6 meses', '6-18 meses'],
+    description:
+      'Chupeta em silicone de alta qualidade, formato anatômico que respeita o desenvolvimento bucal do bebê.',
+    badges: ['Frete grátis'],
+  },
+  {
+    id: '7',
+    slug: 'kit-pente-escova',
+    name: 'Kit Pente e Escova de Madeira com Cerdas Naturais',
+    category: 'Pente e Escovas',
+    price: 45.9,
+    images: ['/pente-escovas.jpeg'],
+    colors: BEAD_COLORS,
+    description:
+      'Kit de cuidado delicado para os fios do bebê, com pente e escova em madeira natural e cerdas macias.',
     badges: ['Feito à mão'],
   },
   {
@@ -133,19 +158,6 @@ export const products: Product[] = [
     badges: ['Personalizável'],
   },
   {
-    id: '5',
-    slug: 'chupeta-premium',
-    name: 'Chupeta Premium',
-    category: 'Chupetas',
-    price: 34.9,
-    images: ['/chupetas.jpeg'],
-    colors: BEAD_COLORS,
-    sizes: ['0-6 meses', '6-18 meses'],
-    description:
-      'Chupeta em silicone de alta qualidade, formato anatômico que respeita o desenvolvimento bucal do bebê.',
-    badges: ['Frete grátis'],
-  },
-  {
     id: '6',
     slug: 'kit-chupetas',
     name: 'Kit com 2 Chupetas',
@@ -158,18 +170,6 @@ export const products: Product[] = [
     description:
       'Kit com duas chupetas em tons neutros, ideal para revezar durante o dia e a noite com o mesmo padrão de qualidade.',
     badges: ['Frete grátis'],
-  },
-  {
-    id: '7',
-    slug: 'kit-pente-escova',
-    name: 'Kit Pente e Escova de Madeira',
-    category: 'Pente e Escovas',
-    price: 45.9,
-    images: ['/pente-escovas.jpeg'],
-    colors: BEAD_COLORS,
-    description:
-      'Kit de cuidado delicado para os fios do bebê, com pente e escova em madeira natural e cerdas macias.',
-    badges: ['Feito à mão'],
   },
   {
     id: '8',
@@ -195,19 +195,6 @@ export const products: Product[] = [
     description:
       'Mordedor sensorial em silicone e madeira, indicado para a fase da dentição, aliviando o desconforto na gengiva do bebê.',
     badges: ['Personalizável'],
-  },
-  {
-    id: '10',
-    slug: 'mordedor-nome',
-    name: 'Mordedor Personalizado com Nome',
-    category: 'Mordedores',
-    price: 49.9,
-    images: ['/galeria-14.jpeg'],
-    colors: BEAD_COLORS,
-    themes: THEMES,
-    description:
-      'Mordedor com o nome do bebê em contas de silicone, uma peça sensorial e decorativa que também estimula a curiosidade.',
-    badges: ['Feito à mão', 'Personalizável'],
   },
   {
     id: '11',

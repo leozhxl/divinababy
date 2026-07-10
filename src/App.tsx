@@ -130,8 +130,8 @@ function App() {
                   {/* Window Content - Interior Display */}
                   <div className="absolute inset-4 rounded-sm overflow-hidden">
                     <img
-                      src="/hero-baby.jpeg"
-                      alt="Bebê com mordedor personalizado Divina Baby"
+                      src="/WhatsApp Image 2026-07-10 at 14.10.32.jpeg"
+                      alt="Quarto de bebê decorado Divina Baby"
                       className="absolute inset-0 w-full h-full object-cover"
                     />
                   </div>
