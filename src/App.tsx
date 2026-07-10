@@ -37,11 +37,17 @@ function InstagramIcon({
 }
 
 const categoryImages: Record<string, string> = {
-  'Prendedores de Chupetas': '/prendedores-chupetas.jpeg',
+  'Prendedores de Chupetas Personalizados': '/prendedores-chupetas.jpeg',
+  'Prendedor de Chupeta Personalizado com Nome em Silicone': '/prendedores-chupetas.jpeg',
+  'Kit Prendedor de Chupeta Personalizado com Nome + Kit Pente e Escova de Madeira com Cerdas Naturais': '/pente-escovas.jpeg',
   'Kits Personalizados': '/WhatsApp Image 2026-07-10 at 13.21.09.jpeg',
   Chaveiros: '/chaveiros.jpeg',
   Chupetas: '/chupetas.jpeg',
-  'Pente e Escovas': '/pente-escovas.jpeg',
+  'Chupetas de Borracha Natural para Bebês de 0 a 6 Meses': '/chupetas.jpeg',
+  'Chupeta de Borracha Natural com Argolinha que Brilha no Escuro (Acima de 6 Meses)': '/chupetas.jpeg',
+  'Kit Pente e Escova de Madeira com Cerdas Naturais': '/pente-escovas.jpeg',
+  'Mordedor Personalizado com Nome em Silicone': '/mordedores.jpeg',
+  'Kit Prendedor de Chupeta Personalizado com Nome + Chupeta de Borracha Natural': '/kit-presente-personalizado.jpeg',
   Mordedores: '/mordedores.jpeg',
 };
 
@@ -130,8 +136,8 @@ function App() {
                   {/* Window Content - Interior Display */}
                   <div className="absolute inset-4 rounded-sm overflow-hidden">
                     <img
-                      src="/WhatsApp Image 2026-07-10 at 14.10.32.jpeg"
-                      alt="Quarto de bebê decorado Divina Baby"
+                      src="/WhatsApp Image 2026-07-10 at 15.20.38 (1).jpeg"
+                      alt="Bebês com prendedores de chupeta personalizados Divina Baby"
                       className="absolute inset-0 w-full h-full object-cover"
                     />
                   </div>
@@ -208,7 +214,7 @@ function App() {
       <section className="py-16 lg:py-20 bg-gradient-luxury">
         <Reveal className="max-w-3xl mx-auto px-6 lg:px-12 text-center">
           <p className="font-serif-elegant text-2xl md:text-3xl text-nude-800 mb-2" style={{ fontWeight: 500 }}>
-            Prendedores de Chupetas
+            Prendedores de Chupetas Personalizados
           </p>
           <a
             href="https://www.instagram.com/_divinababy_/"

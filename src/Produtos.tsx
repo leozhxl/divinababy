@@ -206,7 +206,7 @@ function FilterSection({
       >
         {title}
       </h4>
-      <div className="space-y-2.5">{visible}</div>
+      <div className="space-y-4">{visible}</div>
       {hasMore && (
         <button
           onClick={() => setExpanded((v) => !v)}
