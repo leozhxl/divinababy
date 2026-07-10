@@ -7,19 +7,76 @@ import { Product } from '../types/product';
  * Category names below must stay in sync with the `categories` list exported at the bottom of this file.
  */
 
-const palette = {
-  areia: { name: 'Areia', hex: '#dcc9a8' },
-  terracota: { name: 'Terracota', hex: '#b5734a' },
-  offwhite: { name: 'Off-white', hex: '#f7f3ea' },
-  nude: { name: 'Nude', hex: '#cbae84' },
-  azul: { name: 'Azul Bebê', hex: '#a9c9d9' },
-  verde: { name: 'Verde Sálvia', hex: '#a9c2a0' },
-  lilas: { name: 'Lilás', hex: '#c9b8d9' },
-  mostarda: { name: 'Mostarda', hex: '#d9a94a' },
-  rosa: { name: 'Rosa', hex: '#e8b4c0' },
-  coral: { name: 'Coral', hex: '#e08a7d' },
-  vermelho: { name: 'Vermelho', hex: '#c94f4f' },
-};
+const BEAD_COLORS = [
+  { name: 'Mostarda', hex: '#d4a13a', image: '/WhatsApp Image 2026-07-10 at 12.31.45 (1).jpeg' },
+  { name: 'Yellow', hex: '#f5d33e', image: '/WhatsApp Image 2026-07-10 at 12.31.45.jpeg' },
+  { name: 'Rust Brown', hex: '#c9754a', image: '/WhatsApp Image 2026-07-10 at 12.31.46.jpeg' },
+  { name: 'Madeira', hex: '#c9a876', image: '/WhatsApp Image 2026-07-10 at 12.31.46 (1).jpeg' },
+  { name: 'Marrom Escuro', hex: '#5a2f42', image: '/WhatsApp Image 2026-07-10 at 12.31.46 (2).jpeg' },
+  { name: 'Camel', hex: '#c9986a', image: '/WhatsApp Image 2026-07-10 at 12.31.46 (3).jpeg' },
+  { name: 'Marrom Claro', hex: '#9c6b6e', image: '/marrom claro.jpeg' },
+  { name: 'Blush', hex: '#e8a89a', image: '/WhatsApp Image 2026-07-10 at 12.31.46 (5).jpeg' },
+  { name: 'Branco', hex: '#ffffff', image: '/WhatsApp Image 2026-07-10 at 12.31.47.jpeg' },
+  { name: 'Marble', hex: '#dedad2', image: '/WhatsApp Image 2026-07-10 at 12.31.47 (1).jpeg' },
+  { name: 'Gritty', hex: '#ecebe4', image: '/WhatsApp Image 2026-07-10 at 12.31.47 (2).jpeg' },
+  { name: 'Wine Red', hex: '#7a1f42', image: '/WhatsApp Image 2026-07-10 at 12.31.47 (3).jpeg' },
+  { name: 'Navajo White', hex: '#ddc4a0', image: '/WhatsApp Image 2026-07-10 at 12.31.47 (4).jpeg' },
+  { name: 'Oatmeal', hex: '#e8ddc6', image: '/WhatsApp Image 2026-07-10 at 12.31.48.jpeg' },
+  { name: 'Rosa', hex: '#f0b8c4', image: '/WhatsApp Image 2026-07-10 at 12.31.48 (2).jpeg' },
+  { name: 'Quartz Pink', hex: '#e8b4bc', image: '/WhatsApp Image 2026-07-10 at 12.31.48 (3).jpeg' },
+  { name: 'Rose Brown', hex: '#a8687a', image: '/WhatsApp Image 2026-07-10 at 12.31.46 (4).jpeg' },
+  { name: 'Dark Pink', hex: '#d13d82', image: '/WhatsApp Image 2026-07-10 at 12.31.48 (4).jpeg' },
+  { name: 'Vermelho', hex: '#e02f3e', image: '/WhatsApp Image 2026-07-10 at 12.31.49.jpeg' },
+  { name: 'Violet Red', hex: '#c81f6e', image: '/WhatsApp Image 2026-07-10 at 12.31.49 (1).jpeg' },
+  { name: 'Pink', hex: '#f478a8', image: '/WhatsApp Image 2026-07-10 at 12.31.48 (1).jpeg' },
+  { name: 'Peach', hex: '#f0a888', image: '/WhatsApp Image 2026-07-10 at 12.31.49 (3).jpeg' },
+  { name: 'Lilás', hex: '#c9a0d8', image: '/WhatsApp Image 2026-07-10 at 12.31.49 (5).jpeg' },
+  { name: 'Light Purple', hex: '#b060d0', image: '/WhatsApp Image 2026-07-10 at 12.31.49 (4).jpeg' },
+  { name: 'Candy Pink', hex: '#f568a0', image: '/WhatsApp Image 2026-07-10 at 12.31.49 (2).jpeg' },
+  { name: 'Rosa Candy', hex: '#f588b0', image: '/WhatsApp Image 2026-07-10 at 12.31.50.jpeg' },
+  { name: 'Blue', hex: '#2f7fd0', image: '/WhatsApp Image 2026-07-10 at 12.31.50 (4).jpeg' },
+  { name: 'Power Blue', hex: '#a8c8d8', image: '/WhatsApp Image 2026-07-10 at 12.31.50 (2).jpeg' },
+  { name: 'Pastel Blue', hex: '#7fb0d0', image: '/WhatsApp Image 2026-07-10 at 12.31.50 (3).jpeg' },
+  { name: 'Aqua Blue', hex: '#4fa8c8', image: '/WhatsApp Image 2026-07-10 at 12.31.51 (4).jpeg' },
+  { name: 'Azul Jeans', hex: '#3f7a9a', image: '/WhatsApp Image 2026-07-10 at 12.31.51 (1).jpeg' },
+  { name: 'Cinza Claro', hex: '#a9b7c0', image: '/WhatsApp Image 2026-07-10 at 12.31.51 (2).jpeg' },
+  { name: 'Dim Gray', hex: '#6f89a0', image: '/WhatsApp Image 2026-07-10 at 12.31.51 (3).jpeg' },
+  { name: 'Cyan', hex: '#4fc3c0', image: '/WhatsApp Image 2026-07-10 at 12.31.51.jpeg' },
+  { name: 'Bean Green', hex: '#7a9a4a', image: '/WhatsApp Image 2026-07-10 at 12.31.52.jpeg' },
+  { name: 'Deep Green', hex: '#1f8f5a', image: '/WhatsApp Image 2026-07-10 at 12.31.52 (1).jpeg' },
+  { name: 'Verde Bandeira', hex: '#1fa84a', image: '/WhatsApp Image 2026-07-10 at 12.31.52 (2).jpeg' },
+  { name: 'Matcha Green', hex: '#a8c090', image: '/WhatsApp Image 2026-07-10 at 12.31.52 (3).jpeg' },
+  { name: 'Turquoise', hex: '#2ec4c0', image: '/WhatsApp Image 2026-07-10 at 12.31.52 (4).jpeg' },
+  { name: 'Black', hex: '#1c2230', image: '/black.jpeg' },
+  { name: 'Azul Escuro', hex: '#2f6fd0', image: '/azul escuro.jpeg' },
+];
+
+const THEMES = [
+  'Ursinho',
+  'Cachorrinho',
+  'Cavalinho',
+  'Borboleta',
+  'Raposinha',
+  'Girafinha',
+  'Coala',
+  'Gatinho',
+  'Ovelhinha',
+  'Estrela',
+  'Panda',
+  'Vaquinha',
+  'Leãozinho',
+  'Abelhinha',
+  'Laço',
+  'Arco-Íris',
+  'Coroa',
+  'Carrinho',
+  'Barquinho',
+  'Margarida',
+  'Coração',
+  'Balão',
+  'Cereja',
+  'Astronauta',
+];
 
 export const products: Product[] = [
   {
@@ -29,9 +86,10 @@ export const products: Product[] = [
     category: 'Prendedores de Chupetas',
     price: 49.9,
     images: ['/prendedores-chupetas.jpeg'],
-    colors: [palette.areia, palette.terracota, palette.offwhite],
+    colors: BEAD_COLORS,
+    themes: THEMES,
     description:
-      'Prendedor de chupeta personalizado, feito à mão com miçangas de silicone atóxico e clipe de madeira. Uma peça delicada para acompanhar o bebê em cada saída.',
+      'Prendedor de chupeta personalizado, feito à mão com contas de silicone atóxico e clipe de madeira. Uma peça delicada para acompanhar o bebê em cada saída.',
     badges: ['Feito à mão', 'Personalizável'],
   },
   {
@@ -41,10 +99,11 @@ export const products: Product[] = [
     category: 'Prendedores de Chupetas',
     price: 59.9,
     compareAtPrice: 69.9,
-    images: ['/prendedores-chupetas.jpeg'],
-    colors: [palette.nude, palette.terracota],
+    images: ['/galeria-13.jpeg'],
+    colors: BEAD_COLORS,
+    themes: THEMES,
     description:
-      'Prendedor personalizado com o nome do bebê em miçangas, ideal para presentear ou compor o enxoval com um toque único e exclusivo.',
+      'Prendedor personalizado com o nome do bebê em contas de silicone, ideal para presentear ou compor o enxoval com um toque único e exclusivo.',
     badges: ['Frete grátis', 'Personalizável'],
   },
   {
@@ -54,9 +113,10 @@ export const products: Product[] = [
     category: 'Chaveiros',
     price: 39.9,
     images: ['/chaveiros.jpeg'],
-    colors: [palette.areia, palette.offwhite],
+    colors: BEAD_COLORS,
+    themes: THEMES,
     description:
-      'Chaveiro artesanal com miçangas de silicone e detalhes em madeira, perfeito para presentear com carinho e sofisticação.',
+      'Chaveiro artesanal com contas de silicone e detalhes em madeira, perfeito para presentear com carinho e sofisticação.',
     badges: ['Feito à mão'],
   },
   {
@@ -65,8 +125,9 @@ export const products: Product[] = [
     name: 'Chaveiro com Nome e Borla',
     category: 'Chaveiros',
     price: 44.9,
-    images: ['/chaveiros.jpeg'],
-    colors: [palette.terracota, palette.nude, palette.offwhite],
+    images: ['/galeria-11.jpeg'],
+    colors: BEAD_COLORS,
+    themes: THEMES,
     description:
       'Chaveiro personalizado com o nome escolhido e acabamento em borla de camurça, um mimo elegante para o dia a dia.',
     badges: ['Personalizável'],
@@ -78,6 +139,7 @@ export const products: Product[] = [
     category: 'Chupetas',
     price: 34.9,
     images: ['/chupetas.jpeg'],
+    colors: BEAD_COLORS,
     sizes: ['0-6 meses', '6-18 meses'],
     description:
       'Chupeta em silicone de alta qualidade, formato anatômico que respeita o desenvolvimento bucal do bebê.',
@@ -90,7 +152,8 @@ export const products: Product[] = [
     category: 'Chupetas',
     price: 64.9,
     compareAtPrice: 74.9,
-    images: ['/chupetas.jpeg'],
+    images: ['/galeria-6.jpeg'],
+    colors: BEAD_COLORS,
     sizes: ['0-6 meses', '6-18 meses'],
     description:
       'Kit com duas chupetas em tons neutros, ideal para revezar durante o dia e a noite com o mesmo padrão de qualidade.',
@@ -103,6 +166,7 @@ export const products: Product[] = [
     category: 'Pente e Escovas',
     price: 45.9,
     images: ['/pente-escovas.jpeg'],
+    colors: BEAD_COLORS,
     description:
       'Kit de cuidado delicado para os fios do bebê, com pente e escova em madeira natural e cerdas macias.',
     badges: ['Feito à mão'],
@@ -113,7 +177,8 @@ export const products: Product[] = [
     name: 'Kit Pente e Escova com Estojo',
     category: 'Pente e Escovas',
     price: 55.9,
-    images: ['/pente-escovas.jpeg'],
+    images: ['/galeria-10.jpeg'],
+    colors: BEAD_COLORS,
     description:
       'O mesmo kit clássico de pente e escova, acompanhado de um estojo de tecido para guardar e transportar com praticidade.',
     badges: ['Frete grátis'],
@@ -125,7 +190,8 @@ export const products: Product[] = [
     category: 'Mordedores',
     price: 39.9,
     images: ['/mordedores.jpeg'],
-    colors: [palette.areia, palette.nude],
+    colors: BEAD_COLORS,
+    themes: THEMES,
     description:
       'Mordedor sensorial em silicone e madeira, indicado para a fase da dentição, aliviando o desconforto na gengiva do bebê.',
     badges: ['Personalizável'],
@@ -136,10 +202,11 @@ export const products: Product[] = [
     name: 'Mordedor Personalizado com Nome',
     category: 'Mordedores',
     price: 49.9,
-    images: ['/mordedores.jpeg'],
-    colors: [palette.terracota, palette.offwhite],
+    images: ['/galeria-14.jpeg'],
+    colors: BEAD_COLORS,
+    themes: THEMES,
     description:
-      'Mordedor com o nome do bebê em miçangas, uma peça sensorial e decorativa que também estimula a curiosidade.',
+      'Mordedor com o nome do bebê em contas de silicone, uma peça sensorial e decorativa que também estimula a curiosidade.',
     badges: ['Feito à mão', 'Personalizável'],
   },
   {
@@ -149,9 +216,10 @@ export const products: Product[] = [
     category: 'Prendedores de Chupetas',
     price: 54.9,
     images: ['/prendedor-personalizado-pronto.jpeg'],
-    colors: [palette.areia, palette.nude, palette.terracota],
+    colors: BEAD_COLORS,
+    themes: THEMES,
     description:
-      'Prendedor de chupeta personalizado com o nome do bebê, miçangas de silicone atóxico e clipe de madeira. Vem embalado em saquinho de algodão, pronto para presentear.',
+      'Prendedor de chupeta personalizado com o nome do bebê, contas de silicone atóxico e clipe de madeira. Vem embalado em saquinho de algodão, pronto para presentear.',
     badges: ['Feito à mão', 'Personalizável', 'Frete grátis'],
   },
   {
@@ -162,7 +230,8 @@ export const products: Product[] = [
     price: 99.9,
     compareAtPrice: 119.9,
     images: ['/kit-presente-personalizado.jpeg'],
-    colors: [palette.areia, palette.nude, palette.terracota],
+    colors: BEAD_COLORS,
+    themes: THEMES,
     description:
       'Kit completo para presentear: prendedor de chupeta personalizado com o nome do bebê + kit pente e escova de madeira, tudo embalado em caixa especial com cartão de agradecimento.',
     badges: ['Feito à mão', 'Personalizável', 'Frete grátis'],
@@ -174,9 +243,10 @@ export const products: Product[] = [
     category: 'Prendedores de Chupetas',
     price: 54.9,
     images: ['/WhatsApp Image 2026-07-08 at 19.05.42.jpeg'],
-    colors: [palette.azul, palette.areia],
+    colors: BEAD_COLORS,
+    themes: THEMES,
     description:
-      'Prendedor de chupeta personalizado com clipe em formato de ursinho e miçangas nos tons azul e areia. Vem com o nome do bebê em miçangas de silicone atóxico.',
+      'Prendedor de chupeta personalizado com clipe em formato de ursinho e contas de silicone nos tons azul e areia. Vem com o nome do bebê em contas de silicone atóxico.',
     badges: ['Feito à mão', 'Personalizável'],
   },
   {
@@ -187,7 +257,8 @@ export const products: Product[] = [
     price: 109.9,
     compareAtPrice: 129.9,
     images: ['/WhatsApp Image 2026-07-08 at 19.05.43.jpeg'],
-    colors: [palette.rosa, palette.nude],
+    colors: BEAD_COLORS,
+    themes: THEMES,
     description:
       'Kit presente com prendedor de chupeta personalizado com detalhe de borboleta, pente e escova de madeira, tudo embalado em caixa especial pronta para presentear.',
     badges: ['Feito à mão', 'Personalizável', 'Frete grátis'],
@@ -200,9 +271,10 @@ export const products: Product[] = [
     price: 109.9,
     compareAtPrice: 129.9,
     images: ['/WhatsApp Image 2026-07-08 at 19.05.44.jpeg'],
-    colors: [palette.verde, palette.areia],
+    colors: BEAD_COLORS,
+    themes: THEMES,
     description:
-      'Kit presente com prendedor de chupeta personalizado com miçanga de ursinho, pente e escova de madeira, embalado em caixa especial com cartão de agradecimento.',
+      'Kit presente com prendedor de chupeta personalizado com conta de silicone de ursinho, pente e escova de madeira, embalado em caixa especial com cartão de agradecimento.',
     badges: ['Feito à mão', 'Personalizável', 'Frete grátis'],
   },
   {
@@ -212,9 +284,10 @@ export const products: Product[] = [
     category: 'Prendedores de Chupetas',
     price: 54.9,
     images: ['/WhatsApp Image 2026-07-08 at 19.05.45 (1).jpeg'],
-    colors: [palette.azul, palette.mostarda],
+    colors: BEAD_COLORS,
+    themes: THEMES,
     description:
-      'Prendedor de chupeta personalizado com miçanga de coroa e tons de azul, entregue já com a chupeta acoplada e o nome do bebê em miçangas.',
+      'Prendedor de chupeta personalizado com conta de silicone de coroa e tons de azul, entregue já com a chupeta acoplada e o nome do bebê em contas de silicone.',
     badges: ['Feito à mão', 'Personalizável'],
   },
   {
@@ -224,9 +297,10 @@ export const products: Product[] = [
     category: 'Prendedores de Chupetas',
     price: 54.9,
     images: ['/WhatsApp Image 2026-07-08 at 19.05.45.jpeg'],
-    colors: [palette.lilas, palette.rosa],
+    colors: BEAD_COLORS,
+    themes: THEMES,
     description:
-      'Prendedor de chupeta personalizado com miçanga de borboleta e mix de tons lilás e rosa, feito à mão com o nome do bebê.',
+      'Prendedor de chupeta personalizado com conta de silicone de borboleta e mix de tons lilás e rosa, feito à mão com o nome do bebê.',
     badges: ['Feito à mão', 'Personalizável'],
   },
   {
@@ -236,9 +310,10 @@ export const products: Product[] = [
     category: 'Prendedores de Chupetas',
     price: 54.9,
     images: ['/WhatsApp Image 2026-07-08 at 19.05.46.jpeg'],
-    colors: [palette.rosa, palette.areia],
+    colors: BEAD_COLORS,
+    themes: THEMES,
     description:
-      'Prendedor de chupeta personalizado com miçangas de laço e tons rosa e areia, acompanha saquinho de algodão para presentear.',
+      'Prendedor de chupeta personalizado com contas de silicone de laço e tons rosa e areia, acompanha saquinho de algodão para presentear.',
     badges: ['Feito à mão', 'Personalizável'],
   },
   {
@@ -249,9 +324,10 @@ export const products: Product[] = [
     price: 109.9,
     compareAtPrice: 129.9,
     images: ['/WhatsApp Image 2026-07-08 at 19.05.47 (1).jpeg'],
-    colors: [palette.areia, palette.terracota],
+    colors: BEAD_COLORS,
+    themes: THEMES,
     description:
-      'Kit presente com prendedor de chupeta personalizado com miçanga de ursinho, pente e escova de madeira, tudo em caixa especial pronta para presentear.',
+      'Kit presente com prendedor de chupeta personalizado com conta de silicone de ursinho, pente e escova de madeira, tudo em caixa especial pronta para presentear.',
     badges: ['Feito à mão', 'Personalizável', 'Frete grátis'],
   },
   {
@@ -262,9 +338,10 @@ export const products: Product[] = [
     price: 109.9,
     compareAtPrice: 129.9,
     images: ['/WhatsApp Image 2026-07-08 at 19.05.47 (2).jpeg'],
-    colors: [palette.azul, palette.offwhite],
+    colors: BEAD_COLORS,
+    themes: THEMES,
     description:
-      'Kit presente com prendedor de chupeta personalizado com miçanga de bola de futebol, pente e escova de madeira, embalado em caixa especial.',
+      'Kit presente com prendedor de chupeta personalizado com conta de silicone de bola de futebol, pente e escova de madeira, embalado em caixa especial.',
     badges: ['Feito à mão', 'Personalizável', 'Frete grátis'],
   },
   {
@@ -274,9 +351,10 @@ export const products: Product[] = [
     category: 'Prendedores de Chupetas',
     price: 54.9,
     images: ['/WhatsApp Image 2026-07-08 at 19.05.47.jpeg'],
-    colors: [palette.vermelho, palette.offwhite],
+    colors: BEAD_COLORS,
+    themes: THEMES,
     description:
-      'Prendedor de chupeta personalizado com miçangas de cerejinha e tons vermelho e branco, feito à mão com o nome do bebê.',
+      'Prendedor de chupeta personalizado com contas de silicone de cerejinha e tons vermelho e branco, feito à mão com o nome do bebê.',
     badges: ['Feito à mão', 'Personalizável'],
   },
   {
@@ -286,9 +364,10 @@ export const products: Product[] = [
     category: 'Prendedores de Chupetas',
     price: 54.9,
     images: ['/WhatsApp Image 2026-07-08 at 19.05.51 (1).jpeg'],
-    colors: [palette.rosa, palette.areia],
+    colors: BEAD_COLORS,
+    themes: THEMES,
     description:
-      'Prendedor de chupeta personalizado com clipe em formato de coração e miçanga de borboleta, em tons suaves de rosa.',
+      'Prendedor de chupeta personalizado com clipe em formato de coração e conta de silicone de borboleta, em tons suaves de rosa.',
     badges: ['Feito à mão', 'Personalizável'],
   },
   {
@@ -298,9 +377,10 @@ export const products: Product[] = [
     category: 'Prendedores de Chupetas',
     price: 54.9,
     images: ['/WhatsApp Image 2026-07-08 at 19.05.51.jpeg'],
-    colors: [palette.verde, palette.areia],
+    colors: BEAD_COLORS,
+    themes: THEMES,
     description:
-      'Prendedor de chupeta personalizado com miçanga de ursinho, já acompanhado da chupeta e o nome do bebê em miçangas.',
+      'Prendedor de chupeta personalizado com conta de silicone de ursinho, já acompanhado da chupeta e o nome do bebê em contas de silicone.',
     badges: ['Feito à mão', 'Personalizável'],
   },
   {
@@ -311,9 +391,10 @@ export const products: Product[] = [
     price: 109.9,
     compareAtPrice: 129.9,
     images: ['/WhatsApp Image 2026-07-08 at 19.05.53.jpeg'],
-    colors: [palette.rosa, palette.areia],
+    colors: BEAD_COLORS,
+    themes: THEMES,
     description:
-      'Kit presente com mordedor personalizado em formato de coração com miçanga de flor, pente e escova de madeira, tudo em caixa especial.',
+      'Kit presente com mordedor personalizado em formato de coração com conta de silicone de flor, pente e escova de madeira, tudo em caixa especial.',
     badges: ['Feito à mão', 'Personalizável', 'Frete grátis'],
   },
   {
@@ -323,9 +404,10 @@ export const products: Product[] = [
     category: 'Mordedores',
     price: 49.9,
     images: ['/WhatsApp Image 2026-07-08 at 19.05.54 (1).jpeg'],
-    colors: [palette.rosa, palette.areia],
+    colors: BEAD_COLORS,
+    themes: THEMES,
     description:
-      'Mordedor sensorial em madeira no formato de cavalinho, com miçangas personalizadas com o nome do bebê. Indicado para a fase da dentição.',
+      'Mordedor sensorial em madeira no formato de cavalinho, com contas de silicone personalizadas com o nome do bebê. Indicado para a fase da dentição.',
     badges: ['Feito à mão', 'Personalizável'],
   },
   {
@@ -335,9 +417,10 @@ export const products: Product[] = [
     category: 'Prendedores de Chupetas',
     price: 54.9,
     images: ['/WhatsApp Image 2026-07-08 at 19.05.54.jpeg'],
-    colors: [palette.vermelho, palette.rosa, palette.areia],
+    colors: BEAD_COLORS,
+    themes: THEMES,
     description:
-      'Prendedor de chupeta personalizado com miçangas de balão e cereja, disponível em diferentes combinações de cor para compor o enxoval.',
+      'Prendedor de chupeta personalizado com contas de silicone de balão e cereja, disponível em diferentes combinações de cor para compor o enxoval.',
     badges: ['Feito à mão', 'Personalizável'],
   },
   {
@@ -348,7 +431,8 @@ export const products: Product[] = [
     price: 109.9,
     compareAtPrice: 129.9,
     images: ['/WhatsApp Image 2026-07-08 at 19.05.55 (1).jpeg'],
-    colors: [palette.rosa, palette.areia],
+    colors: BEAD_COLORS,
+    themes: THEMES,
     description:
       'Kit presente com prendedor de chupeta personalizado em tons rosa, pente e escova de madeira, embalado em caixa especial com cartão de agradecimento.',
     badges: ['Feito à mão', 'Personalizável', 'Frete grátis'],
@@ -361,9 +445,10 @@ export const products: Product[] = [
     price: 109.9,
     compareAtPrice: 129.9,
     images: ['/WhatsApp Image 2026-07-08 at 19.05.55 (2).jpeg'],
-    colors: [palette.coral, palette.mostarda],
+    colors: BEAD_COLORS,
+    themes: THEMES,
     description:
-      'Kit presente com prendedor de chupeta personalizado com miçanga de borboleta coral, acompanhado de chupeta, pente e escova de madeira.',
+      'Kit presente com prendedor de chupeta personalizado com conta de silicone de borboleta coral, acompanhado de chupeta, pente e escova de madeira.',
     badges: ['Feito à mão', 'Personalizável', 'Frete grátis'],
   },
   {
@@ -373,9 +458,10 @@ export const products: Product[] = [
     category: 'Prendedores de Chupetas',
     price: 54.9,
     images: ['/WhatsApp Image 2026-07-08 at 19.05.55.jpeg'],
-    colors: [palette.rosa, palette.offwhite],
+    colors: BEAD_COLORS,
+    themes: THEMES,
     description:
-      'Prendedor de chupeta personalizado com miçanga de arco-íris e tons rosa e branco, feito à mão com o nome do bebê.',
+      'Prendedor de chupeta personalizado com conta de silicone de arco-íris e tons rosa e branco, feito à mão com o nome do bebê.',
     badges: ['Feito à mão', 'Personalizável'],
   },
   {
@@ -386,9 +472,10 @@ export const products: Product[] = [
     price: 109.9,
     compareAtPrice: 129.9,
     images: ['/WhatsApp Image 2026-07-08 at 19.05.59 (1).jpeg'],
-    colors: [palette.verde, palette.areia],
+    colors: BEAD_COLORS,
+    themes: THEMES,
     description:
-      'Kit presente com prendedor de chupeta em formato de leão e miçanga de arco-íris, pente e escova de madeira, tudo em caixa especial.',
+      'Kit presente com prendedor de chupeta em formato de leão e conta de silicone de arco-íris, pente e escova de madeira, tudo em caixa especial.',
     badges: ['Feito à mão', 'Personalizável', 'Frete grátis'],
   },
   {
@@ -398,9 +485,10 @@ export const products: Product[] = [
     category: 'Prendedores de Chupetas',
     price: 54.9,
     images: ['/WhatsApp Image 2026-07-08 at 19.05.59.jpeg'],
-    colors: [palette.verde, palette.offwhite],
+    colors: BEAD_COLORS,
+    themes: THEMES,
     description:
-      'Prendedor de chupeta personalizado com clipe em formato de ursinho e miçangas em tom verde sálvia, feito à mão com o nome do bebê.',
+      'Prendedor de chupeta personalizado com clipe em formato de ursinho e contas de silicone em tom verde sálvia, feito à mão com o nome do bebê.',
     badges: ['Feito à mão', 'Personalizável'],
   },
   {
@@ -410,9 +498,10 @@ export const products: Product[] = [
     category: 'Prendedores de Chupetas',
     price: 54.9,
     images: ['/WhatsApp Image 2026-07-08 at 19.06.00 (1).jpeg'],
-    colors: [palette.verde, palette.offwhite],
+    colors: BEAD_COLORS,
+    themes: THEMES,
     description:
-      'Prendedor de chupeta personalizado com clipe em formato de passarinho e miçangas em tom verde sálvia e branco.',
+      'Prendedor de chupeta personalizado com clipe em formato de passarinho e contas de silicone em tom verde sálvia e branco.',
     badges: ['Feito à mão', 'Personalizável'],
   },
   {
@@ -423,9 +512,10 @@ export const products: Product[] = [
     price: 109.9,
     compareAtPrice: 129.9,
     images: ['/WhatsApp Image 2026-07-08 at 19.06.00.jpeg'],
-    colors: [palette.rosa, palette.terracota],
+    colors: BEAD_COLORS,
+    themes: THEMES,
     description:
-      'Kit presente com prendedor de chupeta personalizado com miçanga de ursinho, já com chupeta, pente e escova de madeira, tudo em caixa especial.',
+      'Kit presente com prendedor de chupeta personalizado com conta de silicone de ursinho, já com chupeta, pente e escova de madeira, tudo em caixa especial.',
     badges: ['Feito à mão', 'Personalizável', 'Frete grátis'],
   },
   {
@@ -435,9 +525,10 @@ export const products: Product[] = [
     category: 'Mordedores',
     price: 49.9,
     images: ['/WhatsApp Image 2026-07-08 at 19.06.01 (1).jpeg'],
-    colors: [palette.verde, palette.terracota],
+    colors: BEAD_COLORS,
+    themes: THEMES,
     description:
-      'Mordedor sensorial em madeira no formato de elefante, com miçangas personalizadas com o nome do bebê. Indicado para a fase da dentição.',
+      'Mordedor sensorial em madeira no formato de elefante, com contas de silicone personalizadas com o nome do bebê. Indicado para a fase da dentição.',
     badges: ['Feito à mão', 'Personalizável'],
   },
   {
@@ -448,9 +539,10 @@ export const products: Product[] = [
     price: 109.9,
     compareAtPrice: 129.9,
     images: ['/WhatsApp Image 2026-07-08 at 19.06.01 (2).jpeg'],
-    colors: [palette.areia, palette.terracota],
+    colors: BEAD_COLORS,
+    themes: THEMES,
     description:
-      'Kit presente com prendedor de chupeta personalizado com miçanga de leãozinho, pente e escova de madeira, embalado em caixa especial.',
+      'Kit presente com prendedor de chupeta personalizado com conta de silicone de leãozinho, pente e escova de madeira, embalado em caixa especial.',
     badges: ['Feito à mão', 'Personalizável', 'Frete grátis'],
   },
   {
@@ -460,9 +552,10 @@ export const products: Product[] = [
     category: 'Prendedores de Chupetas',
     price: 54.9,
     images: ['/WhatsApp Image 2026-07-08 at 19.06.01.jpeg'],
-    colors: [palette.rosa, palette.terracota],
+    colors: BEAD_COLORS,
+    themes: THEMES,
     description:
-      'Prendedor de chupeta personalizado com miçangas de laço em tom rosé e detalhes em terracota, feito à mão com o nome do bebê.',
+      'Prendedor de chupeta personalizado com contas de silicone de laço em tom rosé e detalhes em terracota, feito à mão com o nome do bebê.',
     badges: ['Feito à mão', 'Personalizável'],
   },
   {
@@ -473,9 +566,10 @@ export const products: Product[] = [
     price: 109.9,
     compareAtPrice: 129.9,
     images: ['/WhatsApp Image 2026-07-08 at 19.06.02 (1).jpeg'],
-    colors: [palette.lilas, palette.areia],
+    colors: BEAD_COLORS,
+    themes: THEMES,
     description:
-      'Kit presente com prendedor de chupeta personalizado com miçanga de ursinho lilás, já com chupeta, pente e escova de madeira.',
+      'Kit presente com prendedor de chupeta personalizado com conta de silicone de ursinho lilás, já com chupeta, pente e escova de madeira.',
     badges: ['Feito à mão', 'Personalizável', 'Frete grátis'],
   },
   {
@@ -485,9 +579,10 @@ export const products: Product[] = [
     category: 'Prendedores de Chupetas',
     price: 54.9,
     images: ['/WhatsApp Image 2026-07-08 at 19.06.02.jpeg'],
-    colors: [palette.lilas, palette.offwhite],
+    colors: BEAD_COLORS,
+    themes: THEMES,
     description:
-      'Prendedor de chupeta personalizado com miçanga de ovelhinha e laços brancos, em tom lilás. Feito à mão com o nome do bebê.',
+      'Prendedor de chupeta personalizado com conta de silicone de ovelhinha e laços brancos, em tom lilás. Feito à mão com o nome do bebê.',
     badges: ['Feito à mão', 'Personalizável'],
   },
   {
@@ -498,7 +593,8 @@ export const products: Product[] = [
     price: 109.9,
     compareAtPrice: 129.9,
     images: ['/WhatsApp Image 2026-07-08 at 19.06.03 (1).jpeg'],
-    colors: [palette.rosa, palette.terracota],
+    colors: BEAD_COLORS,
+    themes: THEMES,
     description:
       'Kit presente com mordedor em formato de flor, prendedor de chupeta personalizado, pente e escova de madeira, tudo em caixa especial.',
     badges: ['Feito à mão', 'Personalizável', 'Frete grátis'],
@@ -510,9 +606,10 @@ export const products: Product[] = [
     category: 'Prendedores de Chupetas',
     price: 54.9,
     images: ['/WhatsApp Image 2026-07-08 at 19.06.03.jpeg'],
-    colors: [palette.rosa, palette.offwhite],
+    colors: BEAD_COLORS,
+    themes: THEMES,
     description:
-      'Prendedor de chupeta personalizado com miçanga de arco-íris colorida, feito à mão com o nome do bebê.',
+      'Prendedor de chupeta personalizado com conta de silicone de arco-íris colorida, feito à mão com o nome do bebê.',
     badges: ['Feito à mão', 'Personalizável'],
   },
   {
@@ -522,9 +619,10 @@ export const products: Product[] = [
     category: 'Prendedores de Chupetas',
     price: 54.9,
     images: ['/WhatsApp Image 2026-07-08 at 19.10.16.jpeg'],
-    colors: [palette.mostarda, palette.offwhite],
+    colors: BEAD_COLORS,
+    themes: THEMES,
     description:
-      'Prendedor de chupeta personalizado com miçangas floridas e detalhe em mostarda, feito à mão com o nome do bebê.',
+      'Prendedor de chupeta personalizado com contas de silicone floridas e detalhe em mostarda, feito à mão com o nome do bebê.',
     badges: ['Feito à mão', 'Personalizável'],
   },
 ];

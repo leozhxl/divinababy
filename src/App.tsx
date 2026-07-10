@@ -38,6 +38,7 @@ function InstagramIcon({
 
 const categoryImages: Record<string, string> = {
   'Prendedores de Chupetas': '/prendedores-chupetas.jpeg',
+  'Kits Personalizados': '/WhatsApp Image 2026-07-10 at 13.21.09.jpeg',
   Chaveiros: '/chaveiros.jpeg',
   Chupetas: '/chupetas.jpeg',
   'Pente e Escovas': '/pente-escovas.jpeg',
@@ -343,72 +344,80 @@ function App() {
       </section>
 
       {/* About Section */}
-      <section id="sobre" className="py-24 lg:py-32 bg-gradient-luxury">
-        <Reveal className="max-w-7xl mx-auto px-6 lg:px-12">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-            {/* Left - Image/Visual */}
-            <div className="relative">
-              <div className="relative aspect-square max-w-lg mx-auto">
-                {/* Background decorative frame */}
-                <div className="absolute inset-0 border border-oat-300/50 rounded-full" />
-                <div className="absolute inset-4 border border-oat-200/30 rounded-full" />
+      <section id="sobre" className="relative py-16 lg:py-20 overflow-hidden">
+        {/* Background image */}
+        <div className="absolute inset-0">
+          <img
+            src="/WhatsApp Image 2026-07-10 at 11.12.04.jpeg"
+            alt="Tamires, fundadora da Divina Baby, criando peças à mão"
+            className="absolute inset-0 w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-nude-900/70" />
+        </div>
 
-                {/* Inner content */}
-                <div className="absolute inset-12 bg-white rounded-full shadow-luxury overflow-hidden">
-                  <img
-                    src="/logo.jpeg"
-                    alt="Divina Baby"
-                    className="absolute inset-0 w-full h-full object-cover"
-                  />
-                </div>
-
-                {/* Floating decorative elements */}
-                <div className="absolute top-0 right-0 w-16 h-16 bg-oat-400/10 rounded-full float-animation" style={{ animationDelay: '0s' }} />
-                <div className="absolute bottom-8 left-0 w-12 h-12 bg-oat-200/50 rounded-full float-animation" style={{ animationDelay: '1s' }} />
-                <div className="absolute top-1/2 -right-4 w-8 h-8 bg-oat-300/50 rounded-full float-animation" style={{ animationDelay: '2s' }} />
-              </div>
-            </div>
-
-            {/* Right - Content */}
-            <div>
-              <p className="section-subtitle mb-4">Nossa História</p>
-              <h2 className="section-title mb-8">Paixão em Cada Detalhe</h2>
+        <Reveal className="relative max-w-3xl mx-auto px-6 lg:px-12">
+          <div>
+            <p className="section-subtitle mb-4 text-oat-300">Nossa História</p>
+            <h2 className="font-serif-elegant text-3xl md:text-4xl lg:text-5xl text-cream-50 tracking-tight mb-8" style={{ fontWeight: 400 }}>
+              Onde Tudo Começou...
+            </h2>
 
               <div className="w-16 h-px bg-oat-400 mb-8" />
 
-              <div className="space-y-6 text-nude-600 font-sans-elegant leading-relaxed" style={{ fontWeight: 300 }}>
+              <div className="space-y-6 text-cream-100 font-sans-elegant leading-relaxed" style={{ fontWeight: 300 }}>
                 <p>
-                  A Divina Baby nasceu do sonho de criar uma boutique onde cada peça fosse pensada com carinho, elegância e dedicação. Acreditamos que os primeiros momentos de um bebê merecem ser cercados de beleza e conforto.
+                  Se você chegou até aqui, quero dividir um pedacinho da nossa história com você. 🤍
                 </p>
                 <p>
-                  Prendedores de chupeta personalizados e acessórios para bebês feitos com amor. 🤍 Criamos peças que unem beleza, segurança e exclusividade para tornar cada momento com o seu bebê ainda mais especial.
+                  Antes de existir a Divina Baby, existia um sonho: o sonho de ser mãe.
                 </p>
                 <p>
-                  Na Divina Baby, você encontra prendedores de chupeta personalizados, mordedores, chupetas, kits presente, kit pente e escova e outros acessórios, todos produzidos com muito carinho e atenção aos detalhes.
+                  A minha filha, Elisa, foi muito desejada e esperada. Quando ela chegou, entendi que Deus havia me confiado a maior bênção da minha vida. O significado do seu nome é "Promessa Divina", e foi dela que nasceu o nome Divina Baby.
                 </p>
                 <p>
-                  ✨ Personalizados para bebês que encantam nos detalhes e transformam cada presente em uma lembrança inesquecível.
+                  Depois que me tornei mãe, tudo mudou. Meu maior desejo passou a ser estar presente, acompanhar cada descoberta, cada sorriso e viver de perto cada fase da infância da Elisa.
                 </p>
-                <p className="font-script text-lg italic text-nude-700" style={{ fontWeight: 400 }}>
-                  "Cada peça conta uma história de amor, dedicação e sofisticação."
+                <p>
+                  Foi então que tomei uma das decisões mais importantes da minha vida: deixar o meu trabalho para empreender.
+                </p>
+                <p>
+                  Confesso que senti medo, insegurança e aquele frio na barriga de quem está começando algo novo. Mas, em todos os momentos, Deus segurou a minha mão, fortaleceu o meu coração e mostrou que eu estava no caminho certo.
+                </p>
+                <p>
+                  A Divina Baby nasceu da união entre a fé, a maternidade e o amor.
+                </p>
+                <p>
+                  Cada peça é criada pelas minhas mãos com o mesmo carinho que sempre dediquei à minha filha. Mais do que produtos personalizados, meu propósito é entregar lembranças que façam parte dos momentos mais especiais da infância de cada bebê.
+                </p>
+                <p>
+                  Meu maior desejo é que, quando a Elisa crescer, ela saiba que a Divina Baby nasceu junto com ela. Que ela foi a inspiração, o propósito e o maior presente que Deus poderia me dar.
+                </p>
+                <p>
+                  Hoje, esse amor já alcançou inúmeras famílias, e sou profundamente grata por saber que um pedacinho da nossa história também faz parte da história de tantas outras.
+                </p>
+                <p>
+                  Obrigada por estar aqui. Espero que, ao escolher a Divina Baby, você sinta todo o amor, o carinho e a dedicação que colocamos em cada detalhe. Será uma alegria fazer parte da história da sua família.
+                </p>
+                <p className="font-script text-lg italic text-cream-50" style={{ fontWeight: 400 }}>
+                  Com carinho,<br />
+                  Tamires — Mamãe da Elisa e fundadora da Divina Baby. 🤍
                 </p>
               </div>
 
               <div className="mt-10 grid grid-cols-3 gap-6 text-center">
                 <div>
-                  <p className="font-serif-elegant text-3xl text-oat-500" style={{ fontWeight: 500 }}>500+</p>
-                  <p className="font-sans-elegant text-xs tracking-widest uppercase text-nude-500 mt-1" style={{ fontWeight: 300 }}>Famílias Atendidas</p>
+                  <p className="font-serif-elegant text-3xl text-oat-300" style={{ fontWeight: 500 }}>500+</p>
+                  <p className="font-sans-elegant text-xs tracking-widest uppercase text-cream-200 mt-1" style={{ fontWeight: 300 }}>Famílias Atendidas</p>
                 </div>
                 <div>
-                  <p className="font-serif-elegant text-3xl text-oat-500" style={{ fontWeight: 500 }}>100%</p>
-                  <p className="font-sans-elegant text-xs tracking-widest uppercase text-nude-500 mt-1" style={{ fontWeight: 300 }}>Qualidade Premium</p>
+                  <p className="font-serif-elegant text-3xl text-oat-300" style={{ fontWeight: 500 }}>100%</p>
+                  <p className="font-sans-elegant text-xs tracking-widest uppercase text-cream-200 mt-1" style={{ fontWeight: 300 }}>Qualidade Premium</p>
                 </div>
                 <div>
-                  <p className="font-serif-elegant text-3xl text-oat-500" style={{ fontWeight: 500 }}>5 Anos</p>
-                  <p className="font-sans-elegant text-xs tracking-widest uppercase text-nude-500 mt-1" style={{ fontWeight: 300 }}>De Cuidado</p>
+                  <p className="font-serif-elegant text-3xl text-oat-300" style={{ fontWeight: 500 }}>5 Anos</p>
+                  <p className="font-sans-elegant text-xs tracking-widest uppercase text-cream-200 mt-1" style={{ fontWeight: 300 }}>De Cuidado</p>
                 </div>
               </div>
-            </div>
           </div>
         </Reveal>
       </section>

@@ -8,6 +8,7 @@ export interface CartLine {
   name: string;
   color?: string;
   size?: string;
+  theme?: string;
   quantity: number;
   price: number;
 }
@@ -18,7 +19,7 @@ function formatBRL(value: number): string {
 
 export function buildOrderMessage(lines: CartLine[]): string {
   const itemLines = lines.map((line) => {
-    const variant = [line.color, line.size].filter(Boolean).join(' / ');
+    const variant = [line.color, line.theme, line.size].filter(Boolean).join(' / ');
     const variantText = variant ? ` (${variant})` : '';
     return `• ${line.name}${variantText} — Qtd: ${line.quantity} — ${formatBRL(line.price * line.quantity)}`;
   });

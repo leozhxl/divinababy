@@ -1,6 +1,7 @@
 export interface ProductVariantOption {
   name: string;
   hex?: string;
+  image?: string;
 }
 
 export interface Product {
@@ -13,6 +14,7 @@ export interface Product {
   images: string[];
   colors?: ProductVariantOption[];
   sizes?: string[];
+  themes?: string[];
   description: string;
   badges?: string[];
 }

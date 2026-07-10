@@ -3,7 +3,6 @@ import { Link, useNavigate } from 'react-router-dom';
 import { Search, User, ShoppingBag, LogOut } from 'lucide-react';
 import { useCart } from './CartContext';
 import { useAuth } from './AuthContext';
-import { categories } from './data/products';
 
 function formatBRL(value: number): string {
   return value.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
@@ -22,7 +21,6 @@ export default function Header() {
   const { itemCount, subtotal, openCart } = useCart();
   const { user, profile, signOut } = useAuth();
   const [query, setQuery] = useState('');
-  const [showCategories, setShowCategories] = useState(false);
   const [showAccountMenu, setShowAccountMenu] = useState(false);
   const navigate = useNavigate();
 
@@ -41,20 +39,6 @@ export default function Header() {
 
   return (
     <div className="sticky top-0 z-50">
-      {/* Free shipping bar */}
-      <div className="bg-white text-center py-2 px-3 sm:px-4">
-        <p className="font-sans-elegant text-[10px] sm:text-xs text-nude-800 tracking-wide" style={{ fontWeight: 600 }}>
-          FRETE GRÁTIS ACIMA DE R$599,00 — SUL, SUDESTE E CENTRO-OESTE. 🚚
-        </p>
-      </div>
-
-      {/* Coupon bar */}
-      <div className="bg-oat-600 text-center py-2 px-3 sm:px-4">
-        <p className="font-sans-elegant text-[10px] sm:text-xs text-white tracking-wide" style={{ fontWeight: 700 }}>
-          CUPOM 10%OFF <strong>DIVINA10</strong> · 6X SEM JUROS · 5% DE DESCONTO NO PIX APLICADO AUTOMATICAMENTE NO CARRINHO
-        </p>
-      </div>
-
       {/* Main row: logo, search, login/cart */}
       <div className="bg-white shadow-soft">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-3 sm:py-4 flex flex-wrap sm:flex-nowrap items-center gap-3 sm:gap-6">
@@ -153,38 +137,6 @@ export default function Header() {
       {/* Category nav bar */}
       <nav className="bg-oat-600">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 flex flex-wrap items-center gap-x-4 sm:gap-x-8 gap-y-2 py-3">
-          <div
-            className="relative"
-            onMouseEnter={() => setShowCategories(true)}
-            onMouseLeave={() => setShowCategories(false)}
-          >
-            <button
-              onClick={() => setShowCategories((v) => !v)}
-              aria-expanded={showCategories}
-              className="font-sans-elegant text-xs tracking-widest uppercase text-white underline underline-offset-4 py-1"
-              style={{ fontWeight: 600 }}
-            >
-              Categorias ▾
-            </button>
-            {showCategories && (
-              <div
-                className="absolute top-full left-0 bg-white shadow-luxury rounded-sm py-4 px-6 z-50 min-w-[480px]"
-                style={{ columnCount: 3, columnGap: '2.5rem' }}
-              >
-                {categories.map((category) => (
-                  <Link
-                    key={category}
-                    to={`/produtos?categoria=${encodeURIComponent(category)}`}
-                    className="block py-1 font-sans-elegant text-xs text-nude-700 hover:text-blue-600 hover:underline underline-offset-4 transition-colors duration-300 whitespace-nowrap"
-                    style={{ breakInside: 'avoid' }}
-                  >
-                    {category}
-                  </Link>
-                ))}
-              </div>
-            )}
-          </div>
-
           {navLinks.map((link) => (
             <Link
               key={link.label}

@@ -9,18 +9,22 @@ export interface CartItem {
   image: string;
   color?: string;
   size?: string;
+  theme?: string;
   quantity: number;
 }
 
 type CartAction =
   | { type: 'ADD_ITEM'; item: Omit<CartItem, 'quantity'>; quantity: number }
-  | { type: 'REMOVE_ITEM'; productId: string; color?: string; size?: string }
-  | { type: 'UPDATE_QUANTITY'; productId: string; color?: string; size?: string; quantity: number }
+  | { type: 'REMOVE_ITEM'; productId: string; color?: string; size?: string; theme?: string }
+  | { type: 'UPDATE_QUANTITY'; productId: string; color?: string; size?: string; theme?: string; quantity: number }
   | { type: 'CLEAR_CART' }
   | { type: 'HYDRATE'; items: CartItem[] };
 
-function sameLine(a: { productId: string; color?: string; size?: string }, b: { productId: string; color?: string; size?: string }) {
-  return a.productId === b.productId && a.color === b.color && a.size === b.size;
+function sameLine(
+  a: { productId: string; color?: string; size?: string; theme?: string },
+  b: { productId: string; color?: string; size?: string; theme?: string }
+) {
+  return a.productId === b.productId && a.color === b.color && a.size === b.size && a.theme === b.theme;
 }
 
 function cartReducer(state: CartItem[], action: CartAction): CartItem[] {
@@ -51,9 +55,9 @@ function cartReducer(state: CartItem[], action: CartAction): CartItem[] {
 
 interface CartContextValue {
   items: CartItem[];
-  addItem: (product: Product, options: { color?: string; size?: string; quantity: number }) => void;
-  removeItem: (productId: string, color?: string, size?: string) => void;
-  updateQuantity: (productId: string, quantity: number, color?: string, size?: string) => void;
+  addItem: (product: Product, options: { color?: string; size?: string; theme?: string; quantity: number }) => void;
+  removeItem: (productId: string, color?: string, size?: string, theme?: string) => void;
+  updateQuantity: (productId: string, quantity: number, color?: string, size?: string, theme?: string) => void;
   clearCart: () => void;
   subtotal: number;
   itemCount: number;
@@ -85,7 +89,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(items));
   }, [items]);
 
-  const addItem: CartContextValue['addItem'] = (product, { color, size, quantity }) => {
+  const addItem: CartContextValue['addItem'] = (product, { color, size, theme, quantity }) => {
     dispatch({
       type: 'ADD_ITEM',
       item: {
@@ -96,17 +100,18 @@ export function CartProvider({ children }: { children: ReactNode }) {
         image: product.images[0],
         color,
         size,
+        theme,
       },
       quantity,
     });
   };
 
-  const removeItem: CartContextValue['removeItem'] = (productId, color, size) => {
-    dispatch({ type: 'REMOVE_ITEM', productId, color, size });
+  const removeItem: CartContextValue['removeItem'] = (productId, color, size, theme) => {
+    dispatch({ type: 'REMOVE_ITEM', productId, color, size, theme });
   };
 
-  const updateQuantity: CartContextValue['updateQuantity'] = (productId, quantity, color, size) => {
-    dispatch({ type: 'UPDATE_QUANTITY', productId, color, size, quantity });
+  const updateQuantity: CartContextValue['updateQuantity'] = (productId, quantity, color, size, theme) => {
+    dispatch({ type: 'UPDATE_QUANTITY', productId, color, size, theme, quantity });
   };
 
   const clearCart = () => dispatch({ type: 'CLEAR_CART' });

@@ -18,6 +18,7 @@ function ProductPage() {
 
   const [selectedColor, setSelectedColor] = useState<string | undefined>(product?.colors?.[0]?.name);
   const [selectedSize, setSelectedSize] = useState<string | undefined>(product?.sizes?.[0]);
+  const [selectedTheme, setSelectedTheme] = useState<string | undefined>(product?.themes?.[0]);
   const [quantity, setQuantity] = useState(1);
 
   if (!product) {
@@ -40,7 +41,7 @@ function ProductPage() {
     : null;
 
   const handleAddToCart = () => {
-    addItem(product, { color: selectedColor, size: selectedSize, quantity });
+    addItem(product, { color: selectedColor, size: selectedSize, theme: selectedTheme, quantity });
     openCart();
   };
 
@@ -122,18 +123,53 @@ function ProductPage() {
                 <p className="font-sans-elegant text-xs tracking-widest uppercase text-nude-700 mb-3" style={{ fontWeight: 400 }}>
                   Cor: {selectedColor}
                 </p>
-                <div className="flex gap-3">
+                <div className="grid grid-cols-5 sm:grid-cols-7 gap-2.5">
                   {product.colors.map((color) => (
                     <button
                       key={color.name}
                       onClick={() => setSelectedColor(color.name)}
                       aria-label={color.name}
                       title={color.name}
-                      className={`w-9 h-9 rounded-full border-2 transition-all duration-300 ${
-                        selectedColor === color.name ? 'border-oat-500 scale-110' : 'border-transparent'
+                      className={`aspect-square rounded-md bg-white shadow-md p-1.5 border-2 transition-all duration-200 ${
+                        selectedColor === color.name ? 'border-nude-900' : 'border-transparent hover:border-oat-300'
                       }`}
-                      style={{ backgroundColor: color.hex }}
-                    />
+                    >
+                      {color.image ? (
+                        <img
+                          src={color.image}
+                          alt={color.name}
+                          className="block w-full h-full rounded-sm object-cover"
+                        />
+                      ) : (
+                        <span
+                          className="block w-full h-full rounded-sm"
+                          style={{ backgroundColor: color.hex }}
+                        />
+                      )}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {product.themes && product.themes.length > 0 && (
+              <div className="mb-6">
+                <p className="font-sans-elegant text-xs tracking-widest uppercase text-nude-700 mb-3" style={{ fontWeight: 400 }}>
+                  Tema: {selectedTheme}
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  {product.themes.map((theme) => (
+                    <button
+                      key={theme}
+                      onClick={() => setSelectedTheme(theme)}
+                      className={`px-3 py-1.5 border font-sans-elegant text-xs transition-colors duration-300 ${
+                        selectedTheme === theme
+                          ? 'border-oat-500 bg-oat-400 text-white'
+                          : 'border-oat-300 text-nude-700 hover:border-oat-500'
+                      }`}
+                    >
+                      {theme}
+                    </button>
                   ))}
                 </div>
               </div>

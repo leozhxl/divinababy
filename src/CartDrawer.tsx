@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom';
-import { X, Minus, Plus, Trash2, LogIn } from 'lucide-react';
+import { X, Minus, Plus, Trash2 } from 'lucide-react';
 import { useCart } from './CartContext';
-import { useAuth } from './AuthContext';
 import { waLink, buildOrderMessage } from './whatsapp';
 
 function formatBRL(value: number): string {
@@ -10,7 +9,6 @@ function formatBRL(value: number): string {
 
 export default function CartDrawer() {
   const { items, isCartOpen, closeCart, updateQuantity, removeItem, subtotal } = useCart();
-  const { user } = useAuth();
 
   return (
     <>
@@ -47,7 +45,7 @@ export default function CartDrawer() {
           <>
             <div className="flex-1 overflow-y-auto px-6 py-4 space-y-5">
               {items.map((line) => (
-                <div key={`${line.productId}-${line.color ?? ''}-${line.size ?? ''}`} className="flex gap-4">
+                <div key={`${line.productId}-${line.color ?? ''}-${line.size ?? ''}-${line.theme ?? ''}`} className="flex gap-4">
                   <div className="w-20 h-20 shrink-0 overflow-hidden rounded-sm bg-oat-200">
                     <img src={line.image} alt={line.name} className="w-full h-full object-cover" />
                   </div>
@@ -55,9 +53,9 @@ export default function CartDrawer() {
                     <p className="font-sans-elegant text-sm text-nude-800 truncate" style={{ fontWeight: 400 }}>
                       {line.name}
                     </p>
-                    {(line.color || line.size) && (
+                    {(line.color || line.size || line.theme) && (
                       <p className="font-sans-elegant text-xs text-nude-500" style={{ fontWeight: 300 }}>
-                        {[line.color, line.size].filter(Boolean).join(' / ')}
+                        {[line.color, line.theme, line.size].filter(Boolean).join(' / ')}
                       </p>
                     )}
                     <p className="font-sans-elegant text-sm text-oat-600 mt-1" style={{ fontWeight: 500 }}>
@@ -65,7 +63,7 @@ export default function CartDrawer() {
                     </p>
                     <div className="flex items-center gap-3 mt-2">
                       <button
-                        onClick={() => updateQuantity(line.productId, line.quantity - 1, line.color, line.size)}
+                        onClick={() => updateQuantity(line.productId, line.quantity - 1, line.color, line.size, line.theme)}
                         className="w-8 h-8 flex items-center justify-center border border-oat-300 text-nude-700 hover:bg-oat-200"
                         aria-label="Diminuir quantidade"
                       >
@@ -73,14 +71,14 @@ export default function CartDrawer() {
                       </button>
                       <span className="font-sans-elegant text-sm text-nude-800 w-4 text-center">{line.quantity}</span>
                       <button
-                        onClick={() => updateQuantity(line.productId, line.quantity + 1, line.color, line.size)}
+                        onClick={() => updateQuantity(line.productId, line.quantity + 1, line.color, line.size, line.theme)}
                         className="w-8 h-8 flex items-center justify-center border border-oat-300 text-nude-700 hover:bg-oat-200"
                         aria-label="Aumentar quantidade"
                       >
                         <Plus size={12} />
                       </button>
                       <button
-                        onClick={() => removeItem(line.productId, line.color, line.size)}
+                        onClick={() => removeItem(line.productId, line.color, line.size, line.theme)}
                         className="ml-auto p-2 -m-2 text-nude-500 hover:text-oat-600"
                         aria-label="Remover item"
                       >
@@ -101,37 +99,14 @@ export default function CartDrawer() {
                   {formatBRL(subtotal)}
                 </span>
               </div>
-              {user ? (
-                <a
-                  href={waLink(buildOrderMessage(items.map((line) => ({ ...line }))))}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn-primary block text-center"
-                >
-                  Finalizar pedido no WhatsApp
-                </a>
-              ) : (
-                <div className="space-y-3">
-                  <p className="font-sans-elegant text-xs text-nude-600 text-center" style={{ fontWeight: 300 }}>
-                    Faça login ou cadastre-se para finalizar a compra.
-                  </p>
-                  <Link
-                    to="/login"
-                    onClick={closeCart}
-                    className="btn-primary flex items-center justify-center gap-2"
-                  >
-                    <LogIn size={16} strokeWidth={1.5} />
-                    Entrar para comprar
-                  </Link>
-                  <Link
-                    to="/cadastro"
-                    onClick={closeCart}
-                    className="btn-outline block text-center"
-                  >
-                    Criar conta
-                  </Link>
-                </div>
-              )}
+              <a
+                href={waLink(buildOrderMessage(items.map((line) => ({ ...line }))))}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-primary block text-center"
+              >
+                Finalizar pedido no WhatsApp
+              </a>
             </div>
           </>
         )}
