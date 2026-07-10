@@ -1,9 +1,12 @@
-import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { ShoppingBag, MapPin, Clock, Phone, ChevronDown, Star, Truck } from 'lucide-react';
+import { ShoppingBag, MapPin, Clock, Phone, Star, Truck, ShieldCheck, Gift, Sparkles } from 'lucide-react';
 import { waLink } from './whatsapp';
 import FloatingWhatsApp from './FloatingWhatsApp';
+import Header from './Header';
+import ProductCard from './ProductCard';
+import { products, categories } from './data/products';
 import Reveal from './Reveal';
+import { useScrollToHash } from './useScrollToHash';
 
 function InstagramIcon({
   size = 24,
@@ -33,16 +36,16 @@ function InstagramIcon({
   );
 }
 
-function App() {
-  const [isScrolled, setIsScrolled] = useState(false);
+const categoryImages: Record<string, string> = {
+  'Prendedores de Chupetas': '/prendedores-chupetas.jpeg',
+  Chaveiros: '/chaveiros.jpeg',
+  Chupetas: '/chupetas.jpeg',
+  'Pente e Escovas': '/pente-escovas.jpeg',
+  Mordedores: '/mordedores.jpeg',
+};
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+function App() {
+  useScrollToHash();
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -50,134 +53,11 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-oat-200 overflow-x-hidden">
-      {/* Header */}
-      <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-700 ${
-          isScrolled
-            ? 'bg-oat-200/95 backdrop-blur-md shadow-soft'
-            : 'bg-transparent'
-        }`}
-      >
-        <div className="max-w-7xl mx-auto px-6 lg:px-12">
-          <div className="flex items-center justify-between h-20 lg:h-24">
-            {/* Left Navigation */}
-            <nav className="hidden lg:flex items-center space-x-10 font-sans-elegant text-xs tracking-[0.2em] uppercase">
-              <button
-                onClick={() => scrollToSection('colecoes')}
-                className={`transition-colors duration-300 ${
-                  isScrolled ? 'text-nude-700 hover:text-oat-500' : 'text-nude-700 hover:text-oat-600'
-                }`}
-              >
-                Coleções
-              </button>
-              <button
-                onClick={() => scrollToSection('sobre')}
-                className={`transition-colors duration-300 ${
-                  isScrolled ? 'text-nude-700 hover:text-oat-500' : 'text-nude-700 hover:text-oat-600'
-                }`}
-              >
-                Nossa História
-              </button>
-              <button
-                onClick={() => scrollToSection('galeria')}
-                className={`transition-colors duration-300 ${
-                  isScrolled ? 'text-nude-700 hover:text-oat-500' : 'text-nude-700 hover:text-oat-600'
-                }`}
-              >
-                Galeria
-              </button>
-            </nav>
-
-            {/* Logo */}
-            <div className="absolute left-1/2 -translate-x-1/2 flex flex-col items-center">
-              <button
-                onClick={() => scrollToSection('home')}
-                className="group"
-              >
-                <div className="flex flex-col items-center">
-                  {/* Crown Icon */}
-                  <div className="mb-1">
-                    <svg
-                      width="24"
-                      height="20"
-                      viewBox="0 0 24 20"
-                      fill="none"
-                      className={`transition-colors duration-300 ${
-                        isScrolled ? 'text-oat-400' : 'text-oat-500'
-                      }`}
-                    >
-                      <path
-                        d="M12 2L3 7L5 17H19L21 7L12 2Z"
-                        stroke="currentColor"
-                        strokeWidth="1"
-                        fill="none"
-                      />
-                      <path
-                        d="M12 2L8 10H16L12 2Z"
-                        stroke="currentColor"
-                        strokeWidth="0.5"
-                        fill="none"
-                      />
-                      <circle cx="6" cy="17" r="1" fill="currentColor" />
-                      <circle cx="12" cy="17" r="1" fill="currentColor" />
-                      <circle cx="18" cy="17" r="1" fill="currentColor" />
-                    </svg>
-                  </div>
-                  <h1
-                    className={`font-serif-elegant text-2xl lg:text-3xl tracking-[0.15em] transition-colors duration-300 ${
-                      isScrolled ? 'text-nude-800' : 'text-nude-800'
-                    }`}
-                    style={{ fontWeight: 400 }}
-                  >
-                    Divina Baby
-                  </h1>
-                  <p
-                    className={`font-sans-elegant text-[9px] tracking-[0.4em] uppercase mt-0.5 transition-colors duration-300 ${
-                      isScrolled ? 'text-oat-400' : 'text-oat-500'
-                    }`}
-                    style={{ fontWeight: 200 }}
-                  >
-                    Boutique para Bebês
-                  </p>
-                </div>
-              </button>
-            </div>
-
-            {/* Right Navigation */}
-            <nav className="hidden lg:flex items-center space-x-8">
-              <button
-                onClick={() => scrollToSection('contato')}
-                className={`font-sans-elegant text-xs tracking-[0.2em] uppercase transition-colors duration-300 ${
-                  isScrolled ? 'text-nude-700 hover:text-oat-500' : 'text-nude-700 hover:text-oat-600'
-                }`}
-              >
-                Contato
-              </button>
-              <a
-                href={waLink('Olá! Vim pelo site e gostaria de comprar um produto da Divina Baby 💕')}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 px-4 py-2 bg-oat-400 text-white font-sans-elegant text-xs tracking-widest uppercase hover:bg-oat-500 transition-colors duration-300"
-              >
-                <ShoppingBag size={16} strokeWidth={1.5} />
-                Comprar
-              </a>
-            </nav>
-
-            {/* Mobile Menu */}
-            <button className="lg:hidden p-2 text-nude-700">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                <line x1="3" y1="8" x2="21" y2="8" />
-                <line x1="3" y1="16" x2="21" y2="16" />
-              </svg>
-            </button>
-          </div>
-        </div>
-      </header>
+    <div className="min-h-screen bg-cream-50 overflow-x-hidden">
+      <Header />
 
       {/* Hero Section - Storefront Window */}
-      <section id="home" className="relative min-h-screen flex items-center justify-center bg-gradient-oat-soft overflow-hidden">
+      <section id="home" className="relative pt-16 pb-16 lg:pt-20 lg:pb-20 flex items-center justify-center bg-gradient-oat-soft overflow-hidden">
         {/* Decorative Background Elements */}
         <div className="absolute inset-0 overflow-hidden">
           {/* Marble texture overlay */}
@@ -192,7 +72,7 @@ function App() {
         </div>
 
         {/* Main Storefront Content */}
-        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 py-32 lg:py-40">
+        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12">
           <div className="grid lg:grid-cols-2 gap-16 lg:gap-20 items-center">
             {/* Left Content */}
             <div className="text-center lg:text-left order-2 lg:order-1">
@@ -271,11 +151,56 @@ function App() {
             </div>
           </div>
         </div>
+      </section>
 
-        {/* Scroll Indicator */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center text-nude-500 animate-bounce">
-          <ChevronDown size={20} strokeWidth={1} />
-        </div>
+      {/* Feature strip */}
+      <section className="py-10 bg-white">
+        <Reveal className="max-w-6xl mx-auto px-6 lg:px-12 grid grid-cols-2 md:grid-cols-4 gap-8">
+          {[
+            { icon: Sparkles, label: 'Feito à mão' },
+            { icon: ShieldCheck, label: 'Seguro para o bebê' },
+            { icon: Gift, label: 'Personalizável' },
+            { icon: Truck, label: 'Envio para todo o Brasil' },
+          ].map(({ icon: Icon, label }) => (
+            <div key={label} className="flex flex-col items-center text-center gap-2">
+              <Icon className="w-6 h-6 text-oat-500" style={{ strokeWidth: 1.5 }} />
+              <span className="font-sans-elegant text-xs uppercase tracking-widest text-nude-700" style={{ fontWeight: 500 }}>
+                {label}
+              </span>
+            </div>
+          ))}
+        </Reveal>
+      </section>
+
+      {/* Shop by Category */}
+      <section className="py-16 lg:py-20 bg-cream-50">
+        <Reveal className="max-w-6xl mx-auto px-6 lg:px-12">
+          <div className="text-center mb-12">
+            <p className="section-subtitle mb-4">Encontre o que procura</p>
+            <h2 className="section-title">Compre por Categoria</h2>
+          </div>
+
+          <div className="flex flex-wrap justify-center gap-8 lg:gap-12">
+            {categories.map((category) => (
+              <Link
+                key={category}
+                to={`/produtos?categoria=${encodeURIComponent(category)}`}
+                className="flex flex-col items-center gap-3 group"
+              >
+                <div className="w-24 h-24 lg:w-28 lg:h-28 rounded-full overflow-hidden border border-oat-300 group-hover:border-oat-500 transition-colors duration-300">
+                  <img
+                    src={categoryImages[category]}
+                    alt={category}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
+                </div>
+                <span className="font-sans-elegant text-xs uppercase tracking-widest text-nude-700 group-hover:text-oat-600 transition-colors duration-300" style={{ fontWeight: 500 }}>
+                  {category}
+                </span>
+              </Link>
+            ))}
+          </div>
+        </Reveal>
       </section>
 
       {/* Brand Highlight */}
@@ -314,134 +239,31 @@ function App() {
       </section>
 
       {/* Featured Collections */}
-      <section id="colecoes" className="py-24 lg:py-32 bg-oat-200">
+      <section id="colecoes" className="py-20 lg:py-28 bg-cream-50">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           {/* Section Header */}
-          <div className="text-center mb-16 lg:mb-20">
+          <div className="text-center mb-14 lg:mb-16">
             <p className="section-subtitle mb-4">Curadoria Exclusiva</p>
-            <h2 className="section-title mb-6">Nossas Coleções</h2>
+            <h2 className="section-title mb-6">Lançamentos</h2>
             <div className="w-16 h-px bg-oat-400 mx-auto" />
           </div>
 
-          {/* Collections Grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
-            {/* Collection 1 - Prendedores */}
-            <div className="group cursor-pointer">
-              <div className="relative aspect-[4/5] bg-gradient-to-br from-oat-100 to-cream-100 mb-6 overflow-hidden">
-                <img
-                  src="/prendedores-chupetas.jpeg"
-                  alt="Prendedores de Chupetas"
-                  className="absolute inset-0 w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-nude-900/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-
-                {/* Decorative elements */}
-                <div className="absolute inset-8 border border-oat-200/50 rounded-sm pointer-events-none" />
-
-                {/* Corner accents */}
-                <div className="absolute top-3 left-3 w-4 h-4 border-l border-t border-oat-300" />
-                <div className="absolute top-3 right-3 w-4 h-4 border-r border-t border-oat-300" />
-                <div className="absolute bottom-3 left-3 w-4 h-4 border-l border-b border-oat-300" />
-                <div className="absolute bottom-3 right-3 w-4 h-4 border-r border-b border-oat-300" />
-              </div>
-              <h3 className="font-serif-elegant text-xl text-nude-800 text-center mb-2" style={{ fontWeight: 500 }}>
-                Prendedores de Chupetas
-              </h3>
-              <p className="font-sans-elegant text-sm text-nude-500 text-center mb-4" style={{ fontWeight: 300 }}>
-                Peças exclusivas feitas à mão
-              </p>
-              <div className="text-center">
-                <a
-                  href={waLink('Olá! Quero comprar um Prendedor de Chupeta da Divina Baby 💕')}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="font-sans-elegant text-xs tracking-widest uppercase text-oat-500 hover:text-oat-600 transition-colors duration-300"
-                >
-                  Comprar pelo WhatsApp →
-                </a>
-              </div>
-            </div>
-
-            {/* Collection 2 - Chaveiros */}
-            <div className="group cursor-pointer">
-              <div className="relative aspect-[4/5] bg-gradient-to-br from-cream-100 to-oat-50 mb-6 overflow-hidden">
-                <img
-                  src="/chaveiros.jpeg"
-                  alt="Chaveiros"
-                  className="absolute inset-0 w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-nude-900/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-
-                <div className="absolute inset-8 border border-oat-200/50 rounded-sm pointer-events-none" />
-
-                <div className="absolute top-3 left-3 w-4 h-4 border-l border-t border-oat-300" />
-                <div className="absolute top-3 right-3 w-4 h-4 border-r border-t border-oat-300" />
-                <div className="absolute bottom-3 left-3 w-4 h-4 border-l border-b border-oat-300" />
-                <div className="absolute bottom-3 right-3 w-4 h-4 border-r border-b border-oat-300" />
-              </div>
-              <h3 className="font-serif-elegant text-xl text-nude-800 text-center mb-2" style={{ fontWeight: 500 }}>
-                Chaveiros
-              </h3>
-              <p className="font-sans-elegant text-sm text-nude-500 text-center mb-4" style={{ fontWeight: 300 }}>
-                Detalhes delicados e sofisticados
-              </p>
-              <div className="text-center">
-                <a
-                  href={waLink('Olá! Quero comprar um Chaveiro da Divina Baby 💕')}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="font-sans-elegant text-xs tracking-widest uppercase text-oat-500 hover:text-oat-600 transition-colors duration-300"
-                >
-                  Comprar pelo WhatsApp →
-                </a>
-              </div>
-            </div>
-
-            {/* Collection 3 - Chupetas */}
-            <div className="group cursor-pointer">
-              <div className="relative aspect-[4/5] bg-gradient-to-br from-nude-50 to-cream-100 mb-6 overflow-hidden">
-                <img
-                  src="/chupetas.jpeg"
-                  alt="Chupetas"
-                  className="absolute inset-0 w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-nude-900/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-
-                <div className="absolute inset-8 border border-oat-200/50 rounded-sm pointer-events-none" />
-
-                <div className="absolute top-3 left-3 w-4 h-4 border-l border-t border-oat-300" />
-                <div className="absolute top-3 right-3 w-4 h-4 border-r border-t border-oat-300" />
-                <div className="absolute bottom-3 left-3 w-4 h-4 border-l border-b border-oat-300" />
-                <div className="absolute bottom-3 right-3 w-4 h-4 border-r border-b border-oat-300" />
-              </div>
-              <h3 className="font-serif-elegant text-xl text-nude-800 text-center mb-2" style={{ fontWeight: 500 }}>
-                Chupetas
-              </h3>
-              <p className="font-sans-elegant text-sm text-nude-500 text-center mb-4" style={{ fontWeight: 300 }}>
-                Modelos únicos para o seu bebê
-              </p>
-              <div className="text-center">
-                <a
-                  href={waLink('Olá! Quero comprar uma Chupeta da Divina Baby 💕')}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="font-sans-elegant text-xs tracking-widest uppercase text-oat-500 hover:text-oat-600 transition-colors duration-300"
-                >
-                  Comprar pelo WhatsApp →
-                </a>
-              </div>
-            </div>
+          {/* Products Grid */}
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-10">
+            {products.slice(0, 8).map((product) => (
+              <ProductCard key={product.id} product={product} />
+            ))}
           </div>
 
           {/* View All Button */}
           <div className="text-center mt-16">
             <Link to="/produtos" className="btn-outline inline-block">
-              Ver Todas as Coleções
+              Ver Todos os Produtos
             </Link>
           </div>
 
           {/* CTA - Modelos Personalizados */}
-          <div className="text-center mt-20 pt-16 border-t border-oat-200/40">
+          <div className="text-center mt-16 pt-14 border-t border-oat-200/40">
             <p className="font-serif-elegant text-2xl md:text-3xl text-nude-800 mb-4" style={{ fontWeight: 500 }}>
               Não encontrou o que procurava?
             </p>
@@ -460,8 +282,44 @@ function App() {
         </div>
       </section>
 
+      {/* Perfect for Every Occasion */}
+      <section className="py-16 lg:py-20 bg-white">
+        <Reveal className="max-w-7xl mx-auto px-6 lg:px-12">
+          <div className="text-center mb-12">
+            <p className="section-subtitle mb-4">Feito com carinho</p>
+            <h2 className="section-title">Perfeito para Cada Ocasião</h2>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+            {[
+              { product: products[1], occasion: 'Uso Diário' },
+              { product: products[8], occasion: 'Passeios em Família' },
+              { product: products[4], occasion: 'Ocasiões Especiais' },
+              { product: products[6], occasion: 'Presente de Chá de Bebê' },
+              { product: products[0], occasion: 'Essenciais do Enxoval' },
+            ].map(({ product, occasion }) => (
+              <Link key={occasion} to={`/produto/${product.slug}`} className="group text-center">
+                <div className="aspect-square rounded-sm overflow-hidden mb-3 bg-cream-100">
+                  <img
+                    src={product.images[0]}
+                    alt={product.name}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
+                <p className="font-sans-elegant text-[10px] tracking-widest uppercase text-oat-500 mb-1" style={{ fontWeight: 600 }}>
+                  {occasion}
+                </p>
+                <p className="font-sans-elegant text-xs text-nude-600" style={{ fontWeight: 300 }}>
+                  {product.name}
+                </p>
+              </Link>
+            ))}
+          </div>
+        </Reveal>
+      </section>
+
       {/* Gallery Section */}
-      <section id="galeria" className="py-24 lg:py-32 bg-oat-200">
+      <section id="galeria" className="py-24 lg:py-32 bg-cream-50">
         <Reveal className="max-w-7xl mx-auto px-6 lg:px-12">
           <div className="text-center mb-16 lg:mb-20">
             <p className="section-subtitle mb-4">Momentos Divina Baby</p>
@@ -585,7 +443,7 @@ function App() {
       </section>
 
       {/* Contact / Visit Section */}
-      <section id="contato" className="py-24 lg:py-32 bg-oat-200">
+      <section id="contato" className="py-24 lg:py-32 bg-cream-50">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <div className="text-center mb-16">
             <p className="section-subtitle mb-4">Venha Nos Visitar</p>
