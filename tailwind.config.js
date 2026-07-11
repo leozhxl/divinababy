@@ -29,7 +29,7 @@ export default {
           900: '#6d3227',
         },
         'cream': {
-          50: '#fefdfb',
+          50: '#f7f0e3',
           100: '#fdfaf5',
           200: '#faf3e8',
           300: '#f5e6d3',
