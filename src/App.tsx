@@ -187,21 +187,24 @@ function App() {
             <h2 className="section-title">Compre por Categoria</h2>
           </div>
 
-          <div className="flex flex-wrap justify-center gap-8 lg:gap-12">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-x-6 gap-y-10 justify-items-center">
             {categories.map((category) => (
               <Link
                 key={category}
                 to={`/produtos?categoria=${encodeURIComponent(category)}`}
-                className="flex flex-col items-center gap-3 group"
+                className="flex flex-col items-center gap-3 group w-28 lg:w-32"
               >
-                <div className="w-24 h-24 lg:w-28 lg:h-28 rounded-full overflow-hidden border border-oat-300 group-hover:border-oat-500 transition-colors duration-300">
+                <div className="w-24 h-24 lg:w-28 lg:h-28 rounded-full overflow-hidden border border-oat-300 group-hover:border-oat-500 transition-colors duration-300 shrink-0">
                   <img
                     src={categoryImages[category]}
                     alt={category}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                   />
                 </div>
-                <span className="font-sans-elegant text-xs uppercase tracking-widest text-nude-700 group-hover:text-oat-600 transition-colors duration-300" style={{ fontWeight: 500 }}>
+                <span
+                  className="font-sans-elegant text-[11px] leading-snug uppercase tracking-widest text-nude-700 group-hover:text-oat-600 transition-colors duration-300 text-center line-clamp-2"
+                  style={{ fontWeight: 500 }}
+                >
                   {category}
                 </span>
               </Link>
