@@ -504,7 +504,7 @@ function App() {
                 rel="noopener noreferrer"
                 className="font-sans-elegant text-xs tracking-widest uppercase text-oat-500 hover:text-oat-600 transition-colors duration-300"
               >
-                (48) 9836-4557 · Chamar no WhatsApp
+                (48) 99836-4557 · Chamar no WhatsApp
               </a>
             </div>
 
@@ -588,7 +588,7 @@ function App() {
                     className="font-sans-elegant text-sm text-cream-300 hover:text-oat-400 transition-colors duration-300"
                     style={{ fontWeight: 300 }}
                   >
-                    (48) 9836-4557
+                    (48) 99836-4557
                   </a>
                 </li>
                 <li className="font-sans-elegant text-sm text-cream-300" style={{ fontWeight: 300 }}>tamyfbecker@gmail.com</li>

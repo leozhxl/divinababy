@@ -44,16 +44,16 @@ function Contato() {
                 style={{ fontWeight: 300 }}
               >
                 <MessageCircle className="w-4 h-4 text-oat-400" strokeWidth={1.5} />
-                (48) 9836-4557
+                (48) 99836-4557
               </a>
 
               <a
-                href="tel:+554898364557"
+                href="tel:+5548998364557"
                 className="flex items-center gap-3 font-sans-elegant text-sm text-nude-700 hover:text-oat-500 transition-colors duration-300"
                 style={{ fontWeight: 300 }}
               >
                 <Phone className="w-4 h-4 text-oat-400" strokeWidth={1.5} />
-                (48) 9836-4557
+                (48) 99836-4557
               </a>
 
               <a

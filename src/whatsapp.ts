@@ -1,4 +1,4 @@
-export const WHATSAPP_NUMBER = '554898364557';
+export const WHATSAPP_NUMBER = '5548998364557';
 
 export function waLink(message: string): string {
   return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
