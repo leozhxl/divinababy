@@ -7,6 +7,7 @@ import ProductPage from './ProductPage.tsx';
 import TrocasDevolucoes from './TrocasDevolucoes.tsx';
 import Privacidade from './Privacidade.tsx';
 import Contato from './Contato.tsx';
+import Depoimentos from './Depoimentos.tsx';
 import Login from './Login.tsx';
 import Cadastro from './Cadastro.tsx';
 import { CartProvider } from './CartContext.tsx';
@@ -26,6 +27,7 @@ createRoot(document.getElementById('root')!).render(
             <Route path="/trocas-devolucoes" element={<TrocasDevolucoes />} />
             <Route path="/privacidade" element={<Privacidade />} />
             <Route path="/contato" element={<Contato />} />
+            <Route path="/depoimentos" element={<Depoimentos />} />
             <Route path="/login" element={<Login />} />
             <Route path="/cadastro" element={<Cadastro />} />
           </Routes>

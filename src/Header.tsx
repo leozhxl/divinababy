@@ -12,6 +12,7 @@ const navLinks = [
   { label: 'Início', to: '/' },
   { label: 'Produtos', to: '/produtos' },
   { label: 'Contato', to: '/contato' },
+  { label: 'Depoimentos', to: '/depoimentos' },
   { label: 'Trocas, Devoluções e Garantia', to: '/trocas-devolucoes' },
   { label: 'Política de Privacidade', to: '/privacidade' },
   { label: 'Quem Somos', to: '/#sobre' },
