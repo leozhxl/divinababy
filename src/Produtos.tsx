@@ -101,17 +101,36 @@ function Produtos() {
                 ) : null}
               </div>
 
-              <FilterSection title="Categorias">
-                {categoryOptions.map((opt) => (
-                  <FilterCheckbox
-                    key={opt.name}
-                    label={opt.name}
-                    count={opt.count}
-                    checked={selectedCategories.includes(opt.name)}
-                    onChange={() => setSelectedCategories((prev) => toggleInSet(prev, opt.name))}
-                  />
-                ))}
-              </FilterSection>
+              <div className="py-4 border-b border-oat-100">
+                <h4
+                  className="font-sans-elegant text-[11px] tracking-widest uppercase text-nude-500 mb-3"
+                  style={{ fontWeight: 600 }}
+                >
+                  Categoria
+                </h4>
+                <div className="relative">
+                  <select
+                    value={selectedCategories[0] ?? ''}
+                    onChange={(e) => setSelectedCategories(e.target.value ? [e.target.value] : [])}
+                    className="w-full appearance-none font-sans-elegant text-sm text-nude-700 bg-white border border-oat-300 rounded-sm pl-3 pr-8 py-2.5 cursor-pointer hover:border-oat-500 focus:border-oat-500 focus:outline-none transition-colors duration-200"
+                    style={{ fontWeight: 400 }}
+                  >
+                    <option value="">Todas as categorias</option>
+                    {categoryOptions.map((opt) => (
+                      <option key={opt.name} value={opt.name}>
+                        {opt.name} ({opt.count})
+                      </option>
+                    ))}
+                  </select>
+                  <svg
+                    viewBox="0 0 12 8"
+                    className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 w-3 h-3 text-nude-500"
+                    fill="none"
+                  >
+                    <path d="M1 1.5l5 5 5-5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </div>
+              </div>
 
               {colorOptions.length > 0 && (
                 <FilterSection title="Cor">

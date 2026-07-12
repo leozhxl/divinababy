@@ -6,7 +6,18 @@ import Header from './Header';
 import ProductCard from './ProductCard';
 import { products, categories } from './data/products';
 import Reveal from './Reveal';
+import HeroCarousel from './HeroCarousel';
 import { useScrollToHash } from './useScrollToHash';
+
+const heroImages = [
+  '/WhatsApp Image 2026-07-10 at 15.20.38 (1).jpeg',
+  '/WhatsApp Image 2026-07-12 at 16.40.55 (2).jpeg',
+  '/WhatsApp Image 2026-07-12 at 16.40.54.jpeg',
+  '/WhatsApp Image 2026-07-12 at 16.40.55.jpeg',
+  '/WhatsApp Image 2026-07-12 at 16.40.55 (1).jpeg',
+  '/WhatsApp Image 2026-07-12 at 16.40.54 (1).jpeg',
+  '/WhatsApp Image 2026-07-12 at 16.40.55 (3).jpeg',
+];
 
 function InstagramIcon({
   size = 24,
@@ -37,18 +48,18 @@ function InstagramIcon({
 }
 
 const categoryImages: Record<string, string> = {
-  'Prendedores de Chupetas Personalizados': '/prendedores-chupetas.jpeg',
+  'Prendedores de Chupetas Personalizados': '/WhatsApp Image 2026-07-12 at 16.10.52.jpeg',
   'Prendedor de Chupeta Personalizado com Nome em Silicone': '/prendedores-chupetas.jpeg',
-  'Kit Prendedor de Chupeta Personalizado com Nome + Kit Pente e Escova de Madeira com Cerdas Naturais': '/pente-escovas.jpeg',
-  'Kits Personalizados': '/WhatsApp Image 2026-07-10 at 13.21.09.jpeg',
   Chaveiros: '/chaveiros.jpeg',
-  Chupetas: '/chupetas.jpeg',
   'Chupetas de Borracha Natural para Bebês de 0 a 6 Meses': '/chupetas.jpeg',
-  'Chupeta de Borracha Natural com Argolinha que Brilha no Escuro (Acima de 6 Meses)': '/chupetas.jpeg',
-  'Kit Pente e Escova de Madeira com Cerdas Naturais': '/pente-escovas.jpeg',
+  'Chupeta de Borracha Natural com Argolinha que Brilha no Escuro': '/WhatsApp Image 2026-07-10 at 16.18.18.jpeg',
   'Mordedor Personalizado com Nome em Silicone': '/mordedores.jpeg',
-  'Kit Prendedor de Chupeta Personalizado com Nome + Chupeta de Borracha Natural': '/kit-presente-personalizado.jpeg',
-  Mordedores: '/mordedores.jpeg',
+  'Chupeta de Borracha Natural Modelo Flor': '/galeria-2.jpeg',
+  Kits: '/pente-escovas.jpeg',
+};
+
+const categoryDisplayNames: Record<string, string> = {
+  'Prendedores de Chupetas Personalizados': 'Prendedor de Chupeta sem Personalização em Silicone',
 };
 
 function App() {
@@ -134,13 +145,10 @@ function App() {
                   <div className="absolute inset-3 border border-oat-300/50 rounded-sm" />
 
                   {/* Window Content - Interior Display */}
-                  <div className="absolute inset-4 rounded-sm overflow-hidden">
-                    <img
-                      src="/WhatsApp Image 2026-07-10 at 15.20.38 (1).jpeg"
-                      alt="Bebês com prendedores de chupeta personalizados Divina Baby"
-                      className="absolute inset-0 w-full h-full object-cover"
-                    />
-                  </div>
+                  <HeroCarousel
+                    images={heroImages}
+                    alt="Bebês com prendedores de chupeta personalizados Divina Baby"
+                  />
 
                   {/* Window Reflection */}
                   <div className="absolute inset-4 bg-gradient-to-br from-white/20 via-transparent to-transparent rounded-sm pointer-events-none" />
@@ -202,10 +210,10 @@ function App() {
                   />
                 </div>
                 <span
-                  className="font-sans-elegant text-[11px] leading-snug uppercase tracking-widest text-nude-700 group-hover:text-oat-600 transition-colors duration-300 text-center line-clamp-2"
+                  className="font-sans-elegant text-[11px] leading-snug uppercase tracking-widest text-nude-700 group-hover:text-oat-600 transition-colors duration-300 text-center"
                   style={{ fontWeight: 500 }}
                 >
-                  {category}
+                  {categoryDisplayNames[category] ?? category}
                 </span>
               </Link>
             ))}
@@ -496,7 +504,7 @@ function App() {
               <Phone className="w-6 h-6 text-oat-400 mx-auto mb-4" style={{ strokeWidth: 1.5 }} />
               <h3 className="font-serif-elegant text-lg text-nude-800 mb-2" style={{ fontWeight: 500 }}>Contato</h3>
               <p className="font-sans-elegant text-sm text-nude-600 mb-3" style={{ fontWeight: 300 }}>
-                tamyfbecker@gmail.com
+                tafibecker@gmail.com
               </p>
               <a
                 href={waLink('Olá! Vim pelo site da Divina Baby e gostaria de mais informações 💕')}
@@ -591,7 +599,7 @@ function App() {
                     (48) 99836-4557
                   </a>
                 </li>
-                <li className="font-sans-elegant text-sm text-cream-300" style={{ fontWeight: 300 }}>tamyfbecker@gmail.com</li>
+                <li className="font-sans-elegant text-sm text-cream-300" style={{ fontWeight: 300 }}>tafibecker@gmail.com</li>
                 <li className="font-sans-elegant text-sm text-cream-300" style={{ fontWeight: 300 }}>Balneário Gaivota, SC</li>
               </ul>
             </div>

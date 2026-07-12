@@ -7,8 +7,9 @@ function formatBRL(value: number): string {
 }
 
 export default function ProductCard({ product }: { product: Product }) {
-  const installment = product.price / 6;
-  const pixPrice = product.price * 0.95;
+  const installmentCount = product.installments ?? 6;
+  const installment = product.price / installmentCount;
+  const pixPrice = product.pixPrice ?? product.price * 0.95;
   const discountPct = product.compareAtPrice
     ? Math.round(100 - (product.price / product.compareAtPrice) * 100)
     : null;
@@ -56,8 +57,13 @@ export default function ProductCard({ product }: { product: Product }) {
             {formatBRL(pixPrice)} no Pix
           </p>
           <p className="font-sans-elegant text-xs text-nude-500" style={{ fontWeight: 300 }}>
-            ou 6x de {formatBRL(installment)} sem juros
+            ou {installmentCount}x de {formatBRL(installment)} sem juros
           </p>
+          {product.altInstallments && product.altInstallmentAmount && (
+            <p className="font-sans-elegant text-xs text-nude-500" style={{ fontWeight: 300 }}>
+              ou {product.altInstallments}x de {formatBRL(product.altInstallmentAmount)} no link de pagamento
+            </p>
+          )}
         </div>
       </Link>
     </Reveal>

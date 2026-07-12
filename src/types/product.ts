@@ -11,6 +11,10 @@ export interface Product {
   category: string;
   price: number;
   compareAtPrice?: number;
+  pixPrice?: number;
+  installments?: number;
+  altInstallments?: number;
+  altInstallmentAmount?: number;
   images: string[];
   colors?: ProductVariantOption[];
   sizes?: string[];

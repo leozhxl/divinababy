@@ -34,8 +34,9 @@ function ProductPage() {
     );
   }
 
-  const installment = product.price / 6;
-  const pixPrice = product.price * 0.95;
+  const installmentCount = product.installments ?? 6;
+  const installment = product.price / installmentCount;
+  const pixPrice = product.pixPrice ?? product.price * 0.95;
   const discountPct = product.compareAtPrice
     ? Math.round(100 - (product.price / product.compareAtPrice) * 100)
     : null;
@@ -50,7 +51,7 @@ function ProductPage() {
       <Header />
 
       <section className="py-16 lg:py-24">
-        <div className="max-w-6xl mx-auto px-6 lg:px-12 -mb-4">
+        <div className="max-w-6xl mx-auto px-6 lg:px-12 mb-6">
           <Link
             to="/produtos"
             className="inline-flex items-center gap-2 font-sans-elegant text-xs tracking-[0.2em] uppercase text-nude-700 hover:text-oat-500 transition-colors duration-300"
@@ -96,8 +97,13 @@ function ProductPage() {
                 {formatBRL(pixPrice)} à vista no Pix
               </p>
               <p className="font-sans-elegant text-sm text-nude-500" style={{ fontWeight: 300 }}>
-                ou 6x de {formatBRL(installment)} sem juros
+                ou {installmentCount}x de {formatBRL(installment)} sem juros
               </p>
+              {product.altInstallments && product.altInstallmentAmount && (
+                <p className="font-sans-elegant text-sm text-nude-500" style={{ fontWeight: 300 }}>
+                  ou {product.altInstallments}x de {formatBRL(product.altInstallmentAmount)} no link de pagamento
+                </p>
+              )}
             </div>
 
             {product.badges && product.badges.length > 0 && (
@@ -118,7 +124,7 @@ function ProductPage() {
               {product.description}
             </p>
 
-            {product.colors && product.colors.length > 0 && (
+            {product.name.includes('Personalizado') && product.colors && product.colors.length > 0 && (
               <div className="mb-6">
                 <p className="font-sans-elegant text-xs tracking-widest uppercase text-nude-700 mb-3" style={{ fontWeight: 400 }}>
                   Cor: {selectedColor}
@@ -152,7 +158,7 @@ function ProductPage() {
               </div>
             )}
 
-            {product.themes && product.themes.length > 0 && (
+            {product.name.includes('Personalizado') && product.themes && product.themes.length > 0 && (
               <div className="mb-6">
                 <p className="font-sans-elegant text-xs tracking-widest uppercase text-nude-700 mb-3" style={{ fontWeight: 400 }}>
                   Tema: {selectedTheme}

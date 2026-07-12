@@ -21,7 +21,7 @@ function Privacidade() {
               Este site não realiza cobrança online: os pagamentos são combinados diretamente com a Divina Baby via WhatsApp.
             </p>
             <p>
-              Em caso de dúvidas sobre o uso dos seus dados, entre em contato pelo e-mail tamyfbecker@gmail.com.
+              Em caso de dúvidas sobre o uso dos seus dados, entre em contato pelo e-mail tafibecker@gmail.com.
             </p>
           </div>
         </div>

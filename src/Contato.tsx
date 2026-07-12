@@ -57,12 +57,12 @@ function Contato() {
               </a>
 
               <a
-                href="mailto:tamyfbecker@gmail.com"
+                href="mailto:tafibecker@gmail.com"
                 className="flex items-center gap-3 font-sans-elegant text-sm text-nude-700 hover:text-oat-500 transition-colors duration-300"
                 style={{ fontWeight: 300 }}
               >
                 <Mail className="w-4 h-4 text-oat-400" strokeWidth={1.5} />
-                tamyfbecker@gmail.com
+                tafibecker@gmail.com
               </a>
 
               <div
