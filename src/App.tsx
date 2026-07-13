@@ -47,8 +47,7 @@ function InstagramIcon({
 }
 
 const categoryImages: Record<string, string> = {
-  'Prendedores de Chupetas Personalizados': '/WhatsApp Image 2026-07-12 at 16.10.52.jpeg',
-  'Prendedor de Chupeta Personalizado com Nome em Silicone': '/prendedores-chupetas.jpeg',
+  'Prendedor de Chupeta Personalizado com Nome em Silicone': '/WhatsApp Image 2026-07-13 at 18.22.44.jpeg',
   Chaveiros: '/chaveiros.jpeg',
   'Chupetas de Borracha Natural para Bebês de 0 a 6 Meses': '/chupetas-0-6-meses-nova.jpeg',
   'Chupeta de Borracha Natural com Argolinha que Brilha no Escuro': '/WhatsApp Image 2026-07-10 at 16.18.18.jpeg',
@@ -58,9 +57,7 @@ const categoryImages: Record<string, string> = {
   'Kit Pente e Escova de Madeira com Cerdas Naturais': '/kit-pente-escova-novo.jpeg',
 };
 
-const categoryDisplayNames: Record<string, string> = {
-  'Prendedores de Chupetas Personalizados': 'Prendedor de Chupeta sem Personalização em Silicone',
-};
+const categoryDisplayNames: Record<string, string> = {};
 
 function App() {
   useScrollToHash();
