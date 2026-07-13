@@ -22,7 +22,7 @@ export default function ProductCard({ product }: { product: Product }) {
           <img
             src={product.images[0]}
             alt={product.name}
-            className="absolute inset-0 w-full h-full object-fill group-hover:scale-105 transition-transform duration-500"
+            className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
           />
           {discountPct !== null && (
             <span className="absolute top-3 left-3 bg-oat-600 text-white font-sans-elegant text-xs px-2 py-1" style={{ fontWeight: 500 }}>

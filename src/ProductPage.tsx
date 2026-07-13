@@ -66,7 +66,7 @@ function ProductPage() {
               <img
                 src={product.images[0]}
                 alt={product.name}
-                className="absolute inset-0 w-full h-full object-fill"
+                className="absolute inset-0 w-full h-full object-cover"
               />
               {discountPct !== null && (
                 <span className="absolute top-4 left-4 bg-oat-600 text-white font-sans-elegant text-xs px-3 py-1" style={{ fontWeight: 500 }}>
@@ -144,7 +144,7 @@ function ProductPage() {
                         <img
                           src={color.image}
                           alt={color.name}
-                          className="block w-full h-full rounded-sm object-fill"
+                          className="block w-full h-full rounded-sm object-cover"
                         />
                       ) : (
                         <span
