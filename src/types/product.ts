@@ -16,6 +16,8 @@ export interface Product {
   altInstallments?: number;
   altInstallmentAmount?: number;
   images: string[];
+  imagePosition?: string;
+  imageFit?: 'cover' | 'contain';
   colors?: ProductVariantOption[];
   sizes?: string[];
   themes?: string[];

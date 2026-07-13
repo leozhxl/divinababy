@@ -66,7 +66,8 @@ function ProductPage() {
               <img
                 src={product.images[0]}
                 alt={product.name}
-                className="absolute inset-0 w-full h-full object-cover"
+                className={`absolute inset-0 w-full h-full ${product.imageFit === 'contain' ? 'object-contain' : 'object-cover'}`}
+                style={product.imagePosition ? { objectPosition: product.imagePosition } : undefined}
               />
               {discountPct !== null && (
                 <span className="absolute top-4 left-4 bg-oat-600 text-white font-sans-elegant text-xs px-3 py-1" style={{ fontWeight: 500 }}>
