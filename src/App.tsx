@@ -10,9 +10,8 @@ import HeroCarousel from './HeroCarousel';
 import { useScrollToHash } from './useScrollToHash';
 
 const heroImages = [
-  '/WhatsApp Image 2026-07-10 at 15.20.38 (1).jpeg',
-  '/WhatsApp Image 2026-07-12 at 16.40.55 (2).jpeg',
   '/WhatsApp Image 2026-07-12 at 16.40.54.jpeg',
+  '/WhatsApp Image 2026-07-12 at 16.40.55 (2).jpeg',
   '/WhatsApp Image 2026-07-12 at 16.40.55.jpeg',
   '/WhatsApp Image 2026-07-12 at 16.40.55 (1).jpeg',
   '/WhatsApp Image 2026-07-12 at 16.40.54 (1).jpeg',
