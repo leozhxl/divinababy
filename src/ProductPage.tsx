@@ -62,11 +62,11 @@ function ProductPage() {
         </div>
         <div className="max-w-6xl mx-auto px-6 lg:px-12 grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
           <Reveal>
-            <div className="relative aspect-square rounded-sm overflow-hidden bg-cream-100">
+            <div className="relative aspect-[4/5] rounded-sm overflow-hidden bg-cream-100">
               <img
                 src={product.images[0]}
                 alt={product.name}
-                className="absolute inset-0 w-full h-full object-cover"
+                className="absolute inset-0 w-full h-full object-fill"
               />
               {discountPct !== null && (
                 <span className="absolute top-4 left-4 bg-oat-600 text-white font-sans-elegant text-xs px-3 py-1" style={{ fontWeight: 500 }}>
@@ -144,7 +144,7 @@ function ProductPage() {
                         <img
                           src={color.image}
                           alt={color.name}
-                          className="block w-full h-full rounded-sm object-cover"
+                          className="block w-full h-full rounded-sm object-fill"
                         />
                       ) : (
                         <span
