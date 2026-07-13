@@ -201,7 +201,7 @@ function App() {
                 to={`/produtos?categoria=${encodeURIComponent(category)}`}
                 className="flex flex-col items-center gap-3 group w-28 lg:w-32"
               >
-                <div className="w-24 h-24 lg:w-28 lg:h-28 rounded-full overflow-hidden border border-oat-300 group-hover:border-oat-500 transition-colors duration-300 shrink-0">
+                <div className="w-24 h-24 lg:w-28 lg:h-28 rounded-full overflow-hidden border border-oat-300 group-hover:border-oat-500 transition-all duration-500 shrink-0 group-hover:-translate-y-1.5 group-hover:shadow-luxury">
                   <img
                     src={categoryImages[category]}
                     alt={category}

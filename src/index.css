@@ -19,11 +19,41 @@
 
 @layer components {
   .btn-primary {
-    @apply px-8 py-3 bg-oat-400 text-white font-sans-elegant font-medium tracking-widest uppercase text-sm rounded-none transition-all duration-500 hover:bg-oat-500 hover:shadow-elegant;
+    @apply px-8 py-3 bg-oat-400 text-white font-sans-elegant font-medium tracking-widest uppercase text-sm rounded-none transition-all duration-500 hover:bg-oat-500 hover:shadow-elegant hover:-translate-y-0.5 active:translate-y-0 active:scale-95;
   }
 
   .btn-outline {
-    @apply px-8 py-3 border border-oat-400 text-oat-600 font-sans-elegant font-light tracking-widest uppercase text-sm rounded-none transition-all duration-500 hover:bg-oat-400 hover:text-white;
+    @apply px-8 py-3 border border-oat-400 text-oat-600 font-sans-elegant font-light tracking-widest uppercase text-sm rounded-none transition-all duration-500 hover:bg-oat-400 hover:text-white hover:-translate-y-0.5 active:translate-y-0 active:scale-95;
+  }
+
+  .nav-link {
+    @apply relative;
+  }
+
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 100%;
+    height: 1px;
+    background: currentColor;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.35s ease-out;
+  }
+
+  .nav-link:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+
+  .card-lift {
+    @apply transition-all duration-500 ease-out;
+  }
+
+  .card-lift:hover {
+    @apply -translate-y-1.5 shadow-luxury;
   }
 
   .section-title {

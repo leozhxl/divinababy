@@ -96,6 +96,7 @@ export default {
         'float': 'float 6s ease-in-out infinite',
         'shimmer': 'shimmer 2s ease-in-out infinite',
         'fade-in': 'fadeIn 1s ease-out',
+        'ping-slow': 'pingSlow 2.5s cubic-bezier(0, 0, 0.2, 1) infinite',
       },
       keyframes: {
         float: {
@@ -109,6 +110,10 @@ export default {
         fadeIn: {
           '0%': { opacity: '0', transform: 'translateY(20px)' },
           '100%': { opacity: '1', transform: 'translateY(0)' },
+        },
+        pingSlow: {
+          '0%': { transform: 'scale(1)', opacity: '0.6' },
+          '75%, 100%': { transform: 'scale(1.8)', opacity: '0' },
         },
       },
     },

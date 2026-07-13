@@ -1,4 +1,4 @@
-import { useState, FormEvent } from 'react';
+import { useState, useEffect, FormEvent } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Search, User, ShoppingBag, LogOut } from 'lucide-react';
 import { useCart } from './CartContext';
@@ -22,7 +22,15 @@ export default function Header() {
   const { user, profile, signOut } = useAuth();
   const [query, setQuery] = useState('');
   const [showAccountMenu, setShowAccountMenu] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 8);
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
 
   const firstName = profile?.name?.split(' ')[0] || user?.email?.split('@')[0];
 
@@ -40,7 +48,11 @@ export default function Header() {
   return (
     <div className="sticky top-0 z-50">
       {/* Main row: logo, search, login/cart */}
-      <div className="bg-white shadow-soft">
+      <div
+        className={`transition-all duration-300 ${
+          scrolled ? 'bg-white/80 backdrop-blur-md shadow-luxury' : 'bg-white shadow-soft'
+        }`}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-3 sm:py-4 flex flex-wrap sm:flex-nowrap items-center gap-3 sm:gap-6">
           <Link to="/" className="flex items-center gap-2 sm:gap-3 shrink-0">
             <img src="/logo.jpeg" alt="Divina Baby" className="w-9 h-9 sm:w-12 sm:h-12 rounded-full object-cover" />
@@ -141,7 +153,7 @@ export default function Header() {
             <Link
               key={link.label}
               to={link.to}
-              className="font-sans-elegant text-xs tracking-widest uppercase text-white/90 hover:text-white transition-colors duration-300"
+              className="nav-link font-sans-elegant text-xs tracking-widest uppercase text-white/90 hover:text-white transition-colors duration-300"
               style={{ fontWeight: 500 }}
             >
               {link.label}

@@ -16,9 +16,9 @@ export default function ProductCard({ product }: { product: Product }) {
   const hasFreeShipping = product.badges?.includes('Frete grátis');
 
   return (
-    <Reveal className="group">
+    <Reveal className="group card-lift">
       <Link to={`/produto/${product.slug}`}>
-        <div className="relative aspect-square rounded-sm overflow-hidden bg-cream-100 mb-4">
+        <div className="relative aspect-square rounded-sm overflow-hidden bg-cream-100 mb-4 shadow-sm">
           <img
             src={product.images[0]}
             alt={product.name}

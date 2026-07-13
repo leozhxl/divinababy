@@ -18,6 +18,7 @@ function FloatingWhatsApp({ message = 'Olá! Vim pelo site e gostaria de comprar
       aria-label="Comprar pelo WhatsApp"
       className="fixed bottom-6 right-6 z-50 flex items-center justify-center w-14 h-14 rounded-full bg-[#25D366] text-white shadow-luxury hover:scale-110 transition-transform duration-300 animate-float"
     >
+      <span className="absolute inset-0 rounded-full bg-[#25D366] animate-ping-slow opacity-60" />
       <WhatsAppIcon />
     </a>
   );
