@@ -2352,7 +2352,7 @@ export const products: Product[] = [
     colors: BEAD_COLORS,
     themes: THEMES,
     description:
-      'Chaveiro personalizado com o nome escolhido e acabamento em borla de camurça, um mimo elegante para o dia a dia.',
+      'Chaveiro personalizado com o nome escolhido e acabamento em borla de camurça, um mimo elegante para o dia a dia.\n\nO Chaveiro Personalizado da Divina Baby é produzido artesanalmente e personalizado com o nome de sua escolha, tornando cada peça única e especial.\n\nPerfeito para presentear ou para identificar chaves, mochilas, bolsas e estojos com muito charme e delicadeza.\n\nComposição\nTodos os materiais utilizados são cuidadosamente selecionados para oferecer qualidade e durabilidade.\n- Bolinhas e letras em silicone atóxico, livres de BPA, PVC, chumbo e ftalatos.\n- Argola metálica para chaveiro.\n- Cordão de nylon resistente.\n\nPor que escolher a Divina Baby?\n🤍 Produção artesanal, feita com carinho.\n🤍 Personalização exclusiva com o nome de sua escolha.\n🤍 Materiais de alta qualidade.\n🤍 Design delicado e atemporal.\n🤍 Embalagem pronta para presentear.\n\nComo personalizar\nApós finalizar a compra, informe o nome desejado no campo de personalização. Caso queira escolher as cores, entre em contato conosco pelo WhatsApp para criarmos seu chaveiro do jeitinho que você imaginou.\n\nCuidados\n- Limpe com um pano macio e úmido ou água e sabão neutro.\n- Evite contato com produtos químicos e objetos pontiagudos.\n- Guarde em local seco para maior durabilidade.\n\nPor se tratar de um produto artesanal, pequenas variações nas cores e na disposição das peças podem ocorrer, tornando cada chaveiro exclusivo.',
     badges: ['Personalizável'],
   },
   {
@@ -2367,7 +2367,7 @@ export const products: Product[] = [
     colors: BEAD_COLORS,
     themes: THEMES,
     description:
-      'Chaveiro artesanal personalizado com o nome do bebê em contas de silicone atóxico, perfeito para presentear com carinho e sofisticação.',
+      'O Chaveiro Personalizado da Divina Baby é produzido artesanalmente e personalizado com o nome de sua escolha, tornando cada peça única e especial.\n\nPerfeito para presentear ou para identificar chaves, mochilas, bolsas e estojos com muito charme e delicadeza.\n\nComposição\nTodos os materiais utilizados são cuidadosamente selecionados para oferecer qualidade e durabilidade.\n- Bolinhas e letras em silicone atóxico, livres de BPA, PVC, chumbo e ftalatos.\n- Argola metálica para chaveiro.\n- Cordão de nylon resistente.\n\nPor que escolher a Divina Baby?\n🤍 Produção artesanal, feita com carinho.\n🤍 Personalização exclusiva com o nome de sua escolha.\n🤍 Materiais de alta qualidade.\n🤍 Design delicado e atemporal.\n🤍 Embalagem pronta para presentear.\n\nComo personalizar\nApós finalizar a compra, informe o nome desejado no campo de personalização. Caso queira escolher as cores, entre em contato conosco pelo WhatsApp para criarmos seu chaveiro do jeitinho que você imaginou.\n\nCuidados\n- Limpe com um pano macio e úmido ou água e sabão neutro.\n- Evite contato com produtos químicos e objetos pontiagudos.\n- Guarde em local seco para maior durabilidade.\n\nPor se tratar de um produto artesanal, pequenas variações nas cores e na disposição das peças podem ocorrer, tornando cada chaveiro exclusivo.',
     badges: ['Feito à mão', 'Personalizável'],
   },
   {
@@ -2382,7 +2382,7 @@ export const products: Product[] = [
     colors: BEAD_COLORS,
     themes: THEMES,
     description:
-      'Chaveiro artesanal personalizado com o nome do bebê em contas de silicone atóxico, perfeito para presentear com carinho e sofisticação.',
+      'O Chaveiro Personalizado da Divina Baby é produzido artesanalmente e personalizado com o nome de sua escolha, tornando cada peça única e especial.\n\nPerfeito para presentear ou para identificar chaves, mochilas, bolsas e estojos com muito charme e delicadeza.\n\nComposição\nTodos os materiais utilizados são cuidadosamente selecionados para oferecer qualidade e durabilidade.\n- Bolinhas e letras em silicone atóxico, livres de BPA, PVC, chumbo e ftalatos.\n- Argola metálica para chaveiro.\n- Cordão de nylon resistente.\n\nPor que escolher a Divina Baby?\n🤍 Produção artesanal, feita com carinho.\n🤍 Personalização exclusiva com o nome de sua escolha.\n🤍 Materiais de alta qualidade.\n🤍 Design delicado e atemporal.\n🤍 Embalagem pronta para presentear.\n\nComo personalizar\nApós finalizar a compra, informe o nome desejado no campo de personalização. Caso queira escolher as cores, entre em contato conosco pelo WhatsApp para criarmos seu chaveiro do jeitinho que você imaginou.\n\nCuidados\n- Limpe com um pano macio e úmido ou água e sabão neutro.\n- Evite contato com produtos químicos e objetos pontiagudos.\n- Guarde em local seco para maior durabilidade.\n\nPor se tratar de um produto artesanal, pequenas variações nas cores e na disposição das peças podem ocorrer, tornando cada chaveiro exclusivo.',
     badges: ['Feito à mão', 'Personalizável'],
   },
   {
@@ -2397,7 +2397,7 @@ export const products: Product[] = [
     colors: BEAD_COLORS,
     themes: THEMES,
     description:
-      'Chaveiro artesanal personalizado com o nome do bebê em contas de silicone atóxico, perfeito para presentear com carinho e sofisticação.',
+      'O Chaveiro Personalizado da Divina Baby é produzido artesanalmente e personalizado com o nome de sua escolha, tornando cada peça única e especial.\n\nPerfeito para presentear ou para identificar chaves, mochilas, bolsas e estojos com muito charme e delicadeza.\n\nComposição\nTodos os materiais utilizados são cuidadosamente selecionados para oferecer qualidade e durabilidade.\n- Bolinhas e letras em silicone atóxico, livres de BPA, PVC, chumbo e ftalatos.\n- Argola metálica para chaveiro.\n- Cordão de nylon resistente.\n\nPor que escolher a Divina Baby?\n🤍 Produção artesanal, feita com carinho.\n🤍 Personalização exclusiva com o nome de sua escolha.\n🤍 Materiais de alta qualidade.\n🤍 Design delicado e atemporal.\n🤍 Embalagem pronta para presentear.\n\nComo personalizar\nApós finalizar a compra, informe o nome desejado no campo de personalização. Caso queira escolher as cores, entre em contato conosco pelo WhatsApp para criarmos seu chaveiro do jeitinho que você imaginou.\n\nCuidados\n- Limpe com um pano macio e úmido ou água e sabão neutro.\n- Evite contato com produtos químicos e objetos pontiagudos.\n- Guarde em local seco para maior durabilidade.\n\nPor se tratar de um produto artesanal, pequenas variações nas cores e na disposição das peças podem ocorrer, tornando cada chaveiro exclusivo.',
     badges: ['Feito à mão', 'Personalizável'],
   },
   {
@@ -2412,7 +2412,7 @@ export const products: Product[] = [
     colors: BEAD_COLORS,
     themes: THEMES,
     description:
-      'Chaveiro artesanal personalizado com o nome do bebê em contas de silicone atóxico, perfeito para presentear com carinho e sofisticação.',
+      'O Chaveiro Personalizado da Divina Baby é produzido artesanalmente e personalizado com o nome de sua escolha, tornando cada peça única e especial.\n\nPerfeito para presentear ou para identificar chaves, mochilas, bolsas e estojos com muito charme e delicadeza.\n\nComposição\nTodos os materiais utilizados são cuidadosamente selecionados para oferecer qualidade e durabilidade.\n- Bolinhas e letras em silicone atóxico, livres de BPA, PVC, chumbo e ftalatos.\n- Argola metálica para chaveiro.\n- Cordão de nylon resistente.\n\nPor que escolher a Divina Baby?\n🤍 Produção artesanal, feita com carinho.\n🤍 Personalização exclusiva com o nome de sua escolha.\n🤍 Materiais de alta qualidade.\n🤍 Design delicado e atemporal.\n🤍 Embalagem pronta para presentear.\n\nComo personalizar\nApós finalizar a compra, informe o nome desejado no campo de personalização. Caso queira escolher as cores, entre em contato conosco pelo WhatsApp para criarmos seu chaveiro do jeitinho que você imaginou.\n\nCuidados\n- Limpe com um pano macio e úmido ou água e sabão neutro.\n- Evite contato com produtos químicos e objetos pontiagudos.\n- Guarde em local seco para maior durabilidade.\n\nPor se tratar de um produto artesanal, pequenas variações nas cores e na disposição das peças podem ocorrer, tornando cada chaveiro exclusivo.',
     badges: ['Feito à mão', 'Personalizável'],
   },
   {
@@ -2427,7 +2427,7 @@ export const products: Product[] = [
     colors: BEAD_COLORS,
     themes: THEMES,
     description:
-      'Chaveiro artesanal personalizado com o nome do bebê em contas de silicone atóxico, perfeito para presentear com carinho e sofisticação.',
+      'O Chaveiro Personalizado da Divina Baby é produzido artesanalmente e personalizado com o nome de sua escolha, tornando cada peça única e especial.\n\nPerfeito para presentear ou para identificar chaves, mochilas, bolsas e estojos com muito charme e delicadeza.\n\nComposição\nTodos os materiais utilizados são cuidadosamente selecionados para oferecer qualidade e durabilidade.\n- Bolinhas e letras em silicone atóxico, livres de BPA, PVC, chumbo e ftalatos.\n- Argola metálica para chaveiro.\n- Cordão de nylon resistente.\n\nPor que escolher a Divina Baby?\n🤍 Produção artesanal, feita com carinho.\n🤍 Personalização exclusiva com o nome de sua escolha.\n🤍 Materiais de alta qualidade.\n🤍 Design delicado e atemporal.\n🤍 Embalagem pronta para presentear.\n\nComo personalizar\nApós finalizar a compra, informe o nome desejado no campo de personalização. Caso queira escolher as cores, entre em contato conosco pelo WhatsApp para criarmos seu chaveiro do jeitinho que você imaginou.\n\nCuidados\n- Limpe com um pano macio e úmido ou água e sabão neutro.\n- Evite contato com produtos químicos e objetos pontiagudos.\n- Guarde em local seco para maior durabilidade.\n\nPor se tratar de um produto artesanal, pequenas variações nas cores e na disposição das peças podem ocorrer, tornando cada chaveiro exclusivo.',
     badges: ['Feito à mão', 'Personalizável'],
   },
   {
@@ -2442,7 +2442,7 @@ export const products: Product[] = [
     colors: BEAD_COLORS,
     themes: THEMES,
     description:
-      'Chaveiro artesanal personalizado com o nome do bebê em contas de silicone atóxico, perfeito para presentear com carinho e sofisticação.',
+      'O Chaveiro Personalizado da Divina Baby é produzido artesanalmente e personalizado com o nome de sua escolha, tornando cada peça única e especial.\n\nPerfeito para presentear ou para identificar chaves, mochilas, bolsas e estojos com muito charme e delicadeza.\n\nComposição\nTodos os materiais utilizados são cuidadosamente selecionados para oferecer qualidade e durabilidade.\n- Bolinhas e letras em silicone atóxico, livres de BPA, PVC, chumbo e ftalatos.\n- Argola metálica para chaveiro.\n- Cordão de nylon resistente.\n\nPor que escolher a Divina Baby?\n🤍 Produção artesanal, feita com carinho.\n🤍 Personalização exclusiva com o nome de sua escolha.\n🤍 Materiais de alta qualidade.\n🤍 Design delicado e atemporal.\n🤍 Embalagem pronta para presentear.\n\nComo personalizar\nApós finalizar a compra, informe o nome desejado no campo de personalização. Caso queira escolher as cores, entre em contato conosco pelo WhatsApp para criarmos seu chaveiro do jeitinho que você imaginou.\n\nCuidados\n- Limpe com um pano macio e úmido ou água e sabão neutro.\n- Evite contato com produtos químicos e objetos pontiagudos.\n- Guarde em local seco para maior durabilidade.\n\nPor se tratar de um produto artesanal, pequenas variações nas cores e na disposição das peças podem ocorrer, tornando cada chaveiro exclusivo.',
     badges: ['Feito à mão', 'Personalizável'],
   },
   {
@@ -2457,7 +2457,7 @@ export const products: Product[] = [
     colors: BEAD_COLORS,
     themes: THEMES,
     description:
-      'Chaveiro artesanal personalizado com o nome do bebê em contas de silicone atóxico, perfeito para presentear com carinho e sofisticação.',
+      'O Chaveiro Personalizado da Divina Baby é produzido artesanalmente e personalizado com o nome de sua escolha, tornando cada peça única e especial.\n\nPerfeito para presentear ou para identificar chaves, mochilas, bolsas e estojos com muito charme e delicadeza.\n\nComposição\nTodos os materiais utilizados são cuidadosamente selecionados para oferecer qualidade e durabilidade.\n- Bolinhas e letras em silicone atóxico, livres de BPA, PVC, chumbo e ftalatos.\n- Argola metálica para chaveiro.\n- Cordão de nylon resistente.\n\nPor que escolher a Divina Baby?\n🤍 Produção artesanal, feita com carinho.\n🤍 Personalização exclusiva com o nome de sua escolha.\n🤍 Materiais de alta qualidade.\n🤍 Design delicado e atemporal.\n🤍 Embalagem pronta para presentear.\n\nComo personalizar\nApós finalizar a compra, informe o nome desejado no campo de personalização. Caso queira escolher as cores, entre em contato conosco pelo WhatsApp para criarmos seu chaveiro do jeitinho que você imaginou.\n\nCuidados\n- Limpe com um pano macio e úmido ou água e sabão neutro.\n- Evite contato com produtos químicos e objetos pontiagudos.\n- Guarde em local seco para maior durabilidade.\n\nPor se tratar de um produto artesanal, pequenas variações nas cores e na disposição das peças podem ocorrer, tornando cada chaveiro exclusivo.',
     badges: ['Feito à mão', 'Personalizável'],
   },
   {
@@ -2474,7 +2474,7 @@ export const products: Product[] = [
     colors: BEAD_COLORS,
     themes: THEMES,
     description:
-      'Chaveiro artesanal personalizado com o nome do bebê em contas de silicone atóxico, perfeito para presentear com carinho e sofisticação.',
+      'O Chaveiro Personalizado da Divina Baby é produzido artesanalmente e personalizado com o nome de sua escolha, tornando cada peça única e especial.\n\nPerfeito para presentear ou para identificar chaves, mochilas, bolsas e estojos com muito charme e delicadeza.\n\nComposição\nTodos os materiais utilizados são cuidadosamente selecionados para oferecer qualidade e durabilidade.\n- Bolinhas e letras em silicone atóxico, livres de BPA, PVC, chumbo e ftalatos.\n- Argola metálica para chaveiro.\n- Cordão de nylon resistente.\n\nPor que escolher a Divina Baby?\n🤍 Produção artesanal, feita com carinho.\n🤍 Personalização exclusiva com o nome de sua escolha.\n🤍 Materiais de alta qualidade.\n🤍 Design delicado e atemporal.\n🤍 Embalagem pronta para presentear.\n\nComo personalizar\nApós finalizar a compra, informe o nome desejado no campo de personalização. Caso queira escolher as cores, entre em contato conosco pelo WhatsApp para criarmos seu chaveiro do jeitinho que você imaginou.\n\nCuidados\n- Limpe com um pano macio e úmido ou água e sabão neutro.\n- Evite contato com produtos químicos e objetos pontiagudos.\n- Guarde em local seco para maior durabilidade.\n\nPor se tratar de um produto artesanal, pequenas variações nas cores e na disposição das peças podem ocorrer, tornando cada chaveiro exclusivo.',
     badges: ['Feito à mão', 'Personalizável'],
   },
   {
@@ -2489,7 +2489,7 @@ export const products: Product[] = [
     colors: BEAD_COLORS,
     themes: THEMES,
     description:
-      'Chaveiro artesanal personalizado com o nome do bebê em contas de silicone atóxico, perfeito para presentear com carinho e sofisticação.',
+      'O Chaveiro Personalizado da Divina Baby é produzido artesanalmente e personalizado com o nome de sua escolha, tornando cada peça única e especial.\n\nPerfeito para presentear ou para identificar chaves, mochilas, bolsas e estojos com muito charme e delicadeza.\n\nComposição\nTodos os materiais utilizados são cuidadosamente selecionados para oferecer qualidade e durabilidade.\n- Bolinhas e letras em silicone atóxico, livres de BPA, PVC, chumbo e ftalatos.\n- Argola metálica para chaveiro.\n- Cordão de nylon resistente.\n\nPor que escolher a Divina Baby?\n🤍 Produção artesanal, feita com carinho.\n🤍 Personalização exclusiva com o nome de sua escolha.\n🤍 Materiais de alta qualidade.\n🤍 Design delicado e atemporal.\n🤍 Embalagem pronta para presentear.\n\nComo personalizar\nApós finalizar a compra, informe o nome desejado no campo de personalização. Caso queira escolher as cores, entre em contato conosco pelo WhatsApp para criarmos seu chaveiro do jeitinho que você imaginou.\n\nCuidados\n- Limpe com um pano macio e úmido ou água e sabão neutro.\n- Evite contato com produtos químicos e objetos pontiagudos.\n- Guarde em local seco para maior durabilidade.\n\nPor se tratar de um produto artesanal, pequenas variações nas cores e na disposição das peças podem ocorrer, tornando cada chaveiro exclusivo.',
     badges: ['Feito à mão', 'Personalizável'],
   },
   {
@@ -2504,7 +2504,7 @@ export const products: Product[] = [
     colors: BEAD_COLORS,
     themes: THEMES,
     description:
-      'Chaveiro artesanal personalizado com o nome do bebê em contas de silicone atóxico, perfeito para presentear com carinho e sofisticação.',
+      'O Chaveiro Personalizado da Divina Baby é produzido artesanalmente e personalizado com o nome de sua escolha, tornando cada peça única e especial.\n\nPerfeito para presentear ou para identificar chaves, mochilas, bolsas e estojos com muito charme e delicadeza.\n\nComposição\nTodos os materiais utilizados são cuidadosamente selecionados para oferecer qualidade e durabilidade.\n- Bolinhas e letras em silicone atóxico, livres de BPA, PVC, chumbo e ftalatos.\n- Argola metálica para chaveiro.\n- Cordão de nylon resistente.\n\nPor que escolher a Divina Baby?\n🤍 Produção artesanal, feita com carinho.\n🤍 Personalização exclusiva com o nome de sua escolha.\n🤍 Materiais de alta qualidade.\n🤍 Design delicado e atemporal.\n🤍 Embalagem pronta para presentear.\n\nComo personalizar\nApós finalizar a compra, informe o nome desejado no campo de personalização. Caso queira escolher as cores, entre em contato conosco pelo WhatsApp para criarmos seu chaveiro do jeitinho que você imaginou.\n\nCuidados\n- Limpe com um pano macio e úmido ou água e sabão neutro.\n- Evite contato com produtos químicos e objetos pontiagudos.\n- Guarde em local seco para maior durabilidade.\n\nPor se tratar de um produto artesanal, pequenas variações nas cores e na disposição das peças podem ocorrer, tornando cada chaveiro exclusivo.',
     badges: ['Feito à mão', 'Personalizável'],
   },
   {
@@ -2519,7 +2519,7 @@ export const products: Product[] = [
     colors: BEAD_COLORS,
     themes: THEMES,
     description:
-      'Chaveiro artesanal personalizado com o nome do bebê em contas de silicone atóxico, perfeito para presentear com carinho e sofisticação.',
+      'O Chaveiro Personalizado da Divina Baby é produzido artesanalmente e personalizado com o nome de sua escolha, tornando cada peça única e especial.\n\nPerfeito para presentear ou para identificar chaves, mochilas, bolsas e estojos com muito charme e delicadeza.\n\nComposição\nTodos os materiais utilizados são cuidadosamente selecionados para oferecer qualidade e durabilidade.\n- Bolinhas e letras em silicone atóxico, livres de BPA, PVC, chumbo e ftalatos.\n- Argola metálica para chaveiro.\n- Cordão de nylon resistente.\n\nPor que escolher a Divina Baby?\n🤍 Produção artesanal, feita com carinho.\n🤍 Personalização exclusiva com o nome de sua escolha.\n🤍 Materiais de alta qualidade.\n🤍 Design delicado e atemporal.\n🤍 Embalagem pronta para presentear.\n\nComo personalizar\nApós finalizar a compra, informe o nome desejado no campo de personalização. Caso queira escolher as cores, entre em contato conosco pelo WhatsApp para criarmos seu chaveiro do jeitinho que você imaginou.\n\nCuidados\n- Limpe com um pano macio e úmido ou água e sabão neutro.\n- Evite contato com produtos químicos e objetos pontiagudos.\n- Guarde em local seco para maior durabilidade.\n\nPor se tratar de um produto artesanal, pequenas variações nas cores e na disposição das peças podem ocorrer, tornando cada chaveiro exclusivo.',
     badges: ['Feito à mão', 'Personalizável'],
   },
   {
@@ -2534,7 +2534,7 @@ export const products: Product[] = [
     colors: BEAD_COLORS,
     themes: THEMES,
     description:
-      'Chaveiro artesanal personalizado com o nome do bebê em contas de silicone atóxico, perfeito para presentear com carinho e sofisticação.',
+      'O Chaveiro Personalizado da Divina Baby é produzido artesanalmente e personalizado com o nome de sua escolha, tornando cada peça única e especial.\n\nPerfeito para presentear ou para identificar chaves, mochilas, bolsas e estojos com muito charme e delicadeza.\n\nComposição\nTodos os materiais utilizados são cuidadosamente selecionados para oferecer qualidade e durabilidade.\n- Bolinhas e letras em silicone atóxico, livres de BPA, PVC, chumbo e ftalatos.\n- Argola metálica para chaveiro.\n- Cordão de nylon resistente.\n\nPor que escolher a Divina Baby?\n🤍 Produção artesanal, feita com carinho.\n🤍 Personalização exclusiva com o nome de sua escolha.\n🤍 Materiais de alta qualidade.\n🤍 Design delicado e atemporal.\n🤍 Embalagem pronta para presentear.\n\nComo personalizar\nApós finalizar a compra, informe o nome desejado no campo de personalização. Caso queira escolher as cores, entre em contato conosco pelo WhatsApp para criarmos seu chaveiro do jeitinho que você imaginou.\n\nCuidados\n- Limpe com um pano macio e úmido ou água e sabão neutro.\n- Evite contato com produtos químicos e objetos pontiagudos.\n- Guarde em local seco para maior durabilidade.\n\nPor se tratar de um produto artesanal, pequenas variações nas cores e na disposição das peças podem ocorrer, tornando cada chaveiro exclusivo.',
     badges: ['Feito à mão', 'Personalizável'],
   },
   {
@@ -2551,7 +2551,7 @@ export const products: Product[] = [
     colors: BEAD_COLORS,
     themes: THEMES,
     description:
-      'Chaveiro artesanal personalizado com o nome do bebê em contas de silicone atóxico, perfeito para presentear com carinho e sofisticação.',
+      'O Chaveiro Personalizado da Divina Baby é produzido artesanalmente e personalizado com o nome de sua escolha, tornando cada peça única e especial.\n\nPerfeito para presentear ou para identificar chaves, mochilas, bolsas e estojos com muito charme e delicadeza.\n\nComposição\nTodos os materiais utilizados são cuidadosamente selecionados para oferecer qualidade e durabilidade.\n- Bolinhas e letras em silicone atóxico, livres de BPA, PVC, chumbo e ftalatos.\n- Argola metálica para chaveiro.\n- Cordão de nylon resistente.\n\nPor que escolher a Divina Baby?\n🤍 Produção artesanal, feita com carinho.\n🤍 Personalização exclusiva com o nome de sua escolha.\n🤍 Materiais de alta qualidade.\n🤍 Design delicado e atemporal.\n🤍 Embalagem pronta para presentear.\n\nComo personalizar\nApós finalizar a compra, informe o nome desejado no campo de personalização. Caso queira escolher as cores, entre em contato conosco pelo WhatsApp para criarmos seu chaveiro do jeitinho que você imaginou.\n\nCuidados\n- Limpe com um pano macio e úmido ou água e sabão neutro.\n- Evite contato com produtos químicos e objetos pontiagudos.\n- Guarde em local seco para maior durabilidade.\n\nPor se tratar de um produto artesanal, pequenas variações nas cores e na disposição das peças podem ocorrer, tornando cada chaveiro exclusivo.',
     badges: ['Feito à mão', 'Personalizável'],
   },
   {
@@ -2566,7 +2566,7 @@ export const products: Product[] = [
     colors: BEAD_COLORS,
     themes: THEMES,
     description:
-      'Chaveiro artesanal personalizado com o nome do bebê em contas de silicone atóxico, perfeito para presentear com carinho e sofisticação.',
+      'O Chaveiro Personalizado da Divina Baby é produzido artesanalmente e personalizado com o nome de sua escolha, tornando cada peça única e especial.\n\nPerfeito para presentear ou para identificar chaves, mochilas, bolsas e estojos com muito charme e delicadeza.\n\nComposição\nTodos os materiais utilizados são cuidadosamente selecionados para oferecer qualidade e durabilidade.\n- Bolinhas e letras em silicone atóxico, livres de BPA, PVC, chumbo e ftalatos.\n- Argola metálica para chaveiro.\n- Cordão de nylon resistente.\n\nPor que escolher a Divina Baby?\n🤍 Produção artesanal, feita com carinho.\n🤍 Personalização exclusiva com o nome de sua escolha.\n🤍 Materiais de alta qualidade.\n🤍 Design delicado e atemporal.\n🤍 Embalagem pronta para presentear.\n\nComo personalizar\nApós finalizar a compra, informe o nome desejado no campo de personalização. Caso queira escolher as cores, entre em contato conosco pelo WhatsApp para criarmos seu chaveiro do jeitinho que você imaginou.\n\nCuidados\n- Limpe com um pano macio e úmido ou água e sabão neutro.\n- Evite contato com produtos químicos e objetos pontiagudos.\n- Guarde em local seco para maior durabilidade.\n\nPor se tratar de um produto artesanal, pequenas variações nas cores e na disposição das peças podem ocorrer, tornando cada chaveiro exclusivo.',
     badges: ['Feito à mão', 'Personalizável'],
   },
   {
@@ -2581,7 +2581,7 @@ export const products: Product[] = [
     colors: BEAD_COLORS,
     themes: THEMES,
     description:
-      'Chaveiro artesanal personalizado com o nome do bebê em contas de silicone atóxico, perfeito para presentear com carinho e sofisticação.',
+      'O Chaveiro Personalizado da Divina Baby é produzido artesanalmente e personalizado com o nome de sua escolha, tornando cada peça única e especial.\n\nPerfeito para presentear ou para identificar chaves, mochilas, bolsas e estojos com muito charme e delicadeza.\n\nComposição\nTodos os materiais utilizados são cuidadosamente selecionados para oferecer qualidade e durabilidade.\n- Bolinhas e letras em silicone atóxico, livres de BPA, PVC, chumbo e ftalatos.\n- Argola metálica para chaveiro.\n- Cordão de nylon resistente.\n\nPor que escolher a Divina Baby?\n🤍 Produção artesanal, feita com carinho.\n🤍 Personalização exclusiva com o nome de sua escolha.\n🤍 Materiais de alta qualidade.\n🤍 Design delicado e atemporal.\n🤍 Embalagem pronta para presentear.\n\nComo personalizar\nApós finalizar a compra, informe o nome desejado no campo de personalização. Caso queira escolher as cores, entre em contato conosco pelo WhatsApp para criarmos seu chaveiro do jeitinho que você imaginou.\n\nCuidados\n- Limpe com um pano macio e úmido ou água e sabão neutro.\n- Evite contato com produtos químicos e objetos pontiagudos.\n- Guarde em local seco para maior durabilidade.\n\nPor se tratar de um produto artesanal, pequenas variações nas cores e na disposição das peças podem ocorrer, tornando cada chaveiro exclusivo.',
     badges: ['Feito à mão', 'Personalizável'],
   },
   {
@@ -2596,7 +2596,7 @@ export const products: Product[] = [
     colors: BEAD_COLORS,
     themes: THEMES,
     description:
-      'Chaveiro artesanal personalizado com o nome do bebê em contas de silicone atóxico, perfeito para presentear com carinho e sofisticação.',
+      'O Chaveiro Personalizado da Divina Baby é produzido artesanalmente e personalizado com o nome de sua escolha, tornando cada peça única e especial.\n\nPerfeito para presentear ou para identificar chaves, mochilas, bolsas e estojos com muito charme e delicadeza.\n\nComposição\nTodos os materiais utilizados são cuidadosamente selecionados para oferecer qualidade e durabilidade.\n- Bolinhas e letras em silicone atóxico, livres de BPA, PVC, chumbo e ftalatos.\n- Argola metálica para chaveiro.\n- Cordão de nylon resistente.\n\nPor que escolher a Divina Baby?\n🤍 Produção artesanal, feita com carinho.\n🤍 Personalização exclusiva com o nome de sua escolha.\n🤍 Materiais de alta qualidade.\n🤍 Design delicado e atemporal.\n🤍 Embalagem pronta para presentear.\n\nComo personalizar\nApós finalizar a compra, informe o nome desejado no campo de personalização. Caso queira escolher as cores, entre em contato conosco pelo WhatsApp para criarmos seu chaveiro do jeitinho que você imaginou.\n\nCuidados\n- Limpe com um pano macio e úmido ou água e sabão neutro.\n- Evite contato com produtos químicos e objetos pontiagudos.\n- Guarde em local seco para maior durabilidade.\n\nPor se tratar de um produto artesanal, pequenas variações nas cores e na disposição das peças podem ocorrer, tornando cada chaveiro exclusivo.',
     badges: ['Feito à mão', 'Personalizável'],
   },
   {
@@ -2611,7 +2611,7 @@ export const products: Product[] = [
     colors: BEAD_COLORS,
     themes: THEMES,
     description:
-      'Chaveiro artesanal personalizado com o nome do bebê em contas de silicone atóxico, perfeito para presentear com carinho e sofisticação.',
+      'O Chaveiro Personalizado da Divina Baby é produzido artesanalmente e personalizado com o nome de sua escolha, tornando cada peça única e especial.\n\nPerfeito para presentear ou para identificar chaves, mochilas, bolsas e estojos com muito charme e delicadeza.\n\nComposição\nTodos os materiais utilizados são cuidadosamente selecionados para oferecer qualidade e durabilidade.\n- Bolinhas e letras em silicone atóxico, livres de BPA, PVC, chumbo e ftalatos.\n- Argola metálica para chaveiro.\n- Cordão de nylon resistente.\n\nPor que escolher a Divina Baby?\n🤍 Produção artesanal, feita com carinho.\n🤍 Personalização exclusiva com o nome de sua escolha.\n🤍 Materiais de alta qualidade.\n🤍 Design delicado e atemporal.\n🤍 Embalagem pronta para presentear.\n\nComo personalizar\nApós finalizar a compra, informe o nome desejado no campo de personalização. Caso queira escolher as cores, entre em contato conosco pelo WhatsApp para criarmos seu chaveiro do jeitinho que você imaginou.\n\nCuidados\n- Limpe com um pano macio e úmido ou água e sabão neutro.\n- Evite contato com produtos químicos e objetos pontiagudos.\n- Guarde em local seco para maior durabilidade.\n\nPor se tratar de um produto artesanal, pequenas variações nas cores e na disposição das peças podem ocorrer, tornando cada chaveiro exclusivo.',
     badges: ['Feito à mão', 'Personalizável'],
   },
   {
@@ -2626,7 +2626,7 @@ export const products: Product[] = [
     colors: BEAD_COLORS,
     themes: THEMES,
     description:
-      'Chaveiro artesanal personalizado com o nome do bebê em contas de silicone atóxico, perfeito para presentear com carinho e sofisticação.',
+      'O Chaveiro Personalizado da Divina Baby é produzido artesanalmente e personalizado com o nome de sua escolha, tornando cada peça única e especial.\n\nPerfeito para presentear ou para identificar chaves, mochilas, bolsas e estojos com muito charme e delicadeza.\n\nComposição\nTodos os materiais utilizados são cuidadosamente selecionados para oferecer qualidade e durabilidade.\n- Bolinhas e letras em silicone atóxico, livres de BPA, PVC, chumbo e ftalatos.\n- Argola metálica para chaveiro.\n- Cordão de nylon resistente.\n\nPor que escolher a Divina Baby?\n🤍 Produção artesanal, feita com carinho.\n🤍 Personalização exclusiva com o nome de sua escolha.\n🤍 Materiais de alta qualidade.\n🤍 Design delicado e atemporal.\n🤍 Embalagem pronta para presentear.\n\nComo personalizar\nApós finalizar a compra, informe o nome desejado no campo de personalização. Caso queira escolher as cores, entre em contato conosco pelo WhatsApp para criarmos seu chaveiro do jeitinho que você imaginou.\n\nCuidados\n- Limpe com um pano macio e úmido ou água e sabão neutro.\n- Evite contato com produtos químicos e objetos pontiagudos.\n- Guarde em local seco para maior durabilidade.\n\nPor se tratar de um produto artesanal, pequenas variações nas cores e na disposição das peças podem ocorrer, tornando cada chaveiro exclusivo.',
     badges: ['Feito à mão', 'Personalizável'],
   },
   {
@@ -2641,7 +2641,7 @@ export const products: Product[] = [
     colors: BEAD_COLORS,
     themes: THEMES,
     description:
-      'Chaveiro artesanal personalizado com o nome do bebê em contas de silicone atóxico, perfeito para presentear com carinho e sofisticação.',
+      'O Chaveiro Personalizado da Divina Baby é produzido artesanalmente e personalizado com o nome de sua escolha, tornando cada peça única e especial.\n\nPerfeito para presentear ou para identificar chaves, mochilas, bolsas e estojos com muito charme e delicadeza.\n\nComposição\nTodos os materiais utilizados são cuidadosamente selecionados para oferecer qualidade e durabilidade.\n- Bolinhas e letras em silicone atóxico, livres de BPA, PVC, chumbo e ftalatos.\n- Argola metálica para chaveiro.\n- Cordão de nylon resistente.\n\nPor que escolher a Divina Baby?\n🤍 Produção artesanal, feita com carinho.\n🤍 Personalização exclusiva com o nome de sua escolha.\n🤍 Materiais de alta qualidade.\n🤍 Design delicado e atemporal.\n🤍 Embalagem pronta para presentear.\n\nComo personalizar\nApós finalizar a compra, informe o nome desejado no campo de personalização. Caso queira escolher as cores, entre em contato conosco pelo WhatsApp para criarmos seu chaveiro do jeitinho que você imaginou.\n\nCuidados\n- Limpe com um pano macio e úmido ou água e sabão neutro.\n- Evite contato com produtos químicos e objetos pontiagudos.\n- Guarde em local seco para maior durabilidade.\n\nPor se tratar de um produto artesanal, pequenas variações nas cores e na disposição das peças podem ocorrer, tornando cada chaveiro exclusivo.',
     badges: ['Feito à mão', 'Personalizável'],
   },
   {
@@ -2656,7 +2656,7 @@ export const products: Product[] = [
     colors: BEAD_COLORS,
     themes: THEMES,
     description:
-      'Chaveiro artesanal personalizado com o nome do bebê em contas de silicone atóxico, perfeito para presentear com carinho e sofisticação.',
+      'O Chaveiro Personalizado da Divina Baby é produzido artesanalmente e personalizado com o nome de sua escolha, tornando cada peça única e especial.\n\nPerfeito para presentear ou para identificar chaves, mochilas, bolsas e estojos com muito charme e delicadeza.\n\nComposição\nTodos os materiais utilizados são cuidadosamente selecionados para oferecer qualidade e durabilidade.\n- Bolinhas e letras em silicone atóxico, livres de BPA, PVC, chumbo e ftalatos.\n- Argola metálica para chaveiro.\n- Cordão de nylon resistente.\n\nPor que escolher a Divina Baby?\n🤍 Produção artesanal, feita com carinho.\n🤍 Personalização exclusiva com o nome de sua escolha.\n🤍 Materiais de alta qualidade.\n🤍 Design delicado e atemporal.\n🤍 Embalagem pronta para presentear.\n\nComo personalizar\nApós finalizar a compra, informe o nome desejado no campo de personalização. Caso queira escolher as cores, entre em contato conosco pelo WhatsApp para criarmos seu chaveiro do jeitinho que você imaginou.\n\nCuidados\n- Limpe com um pano macio e úmido ou água e sabão neutro.\n- Evite contato com produtos químicos e objetos pontiagudos.\n- Guarde em local seco para maior durabilidade.\n\nPor se tratar de um produto artesanal, pequenas variações nas cores e na disposição das peças podem ocorrer, tornando cada chaveiro exclusivo.',
     badges: ['Feito à mão', 'Personalizável'],
   },
   {
@@ -2671,7 +2671,7 @@ export const products: Product[] = [
     colors: BEAD_COLORS,
     themes: THEMES,
     description:
-      'Chaveiro artesanal personalizado com o nome do bebê em contas de silicone atóxico, perfeito para presentear com carinho e sofisticação.',
+      'O Chaveiro Personalizado da Divina Baby é produzido artesanalmente e personalizado com o nome de sua escolha, tornando cada peça única e especial.\n\nPerfeito para presentear ou para identificar chaves, mochilas, bolsas e estojos com muito charme e delicadeza.\n\nComposição\nTodos os materiais utilizados são cuidadosamente selecionados para oferecer qualidade e durabilidade.\n- Bolinhas e letras em silicone atóxico, livres de BPA, PVC, chumbo e ftalatos.\n- Argola metálica para chaveiro.\n- Cordão de nylon resistente.\n\nPor que escolher a Divina Baby?\n🤍 Produção artesanal, feita com carinho.\n🤍 Personalização exclusiva com o nome de sua escolha.\n🤍 Materiais de alta qualidade.\n🤍 Design delicado e atemporal.\n🤍 Embalagem pronta para presentear.\n\nComo personalizar\nApós finalizar a compra, informe o nome desejado no campo de personalização. Caso queira escolher as cores, entre em contato conosco pelo WhatsApp para criarmos seu chaveiro do jeitinho que você imaginou.\n\nCuidados\n- Limpe com um pano macio e úmido ou água e sabão neutro.\n- Evite contato com produtos químicos e objetos pontiagudos.\n- Guarde em local seco para maior durabilidade.\n\nPor se tratar de um produto artesanal, pequenas variações nas cores e na disposição das peças podem ocorrer, tornando cada chaveiro exclusivo.',
     badges: ['Feito à mão', 'Personalizável'],
   },
   {
@@ -2686,7 +2686,7 @@ export const products: Product[] = [
     colors: BEAD_COLORS,
     themes: THEMES,
     description:
-      'Chaveiro artesanal personalizado com o nome do bebê em contas de silicone atóxico, perfeito para presentear com carinho e sofisticação.',
+      'O Chaveiro Personalizado da Divina Baby é produzido artesanalmente e personalizado com o nome de sua escolha, tornando cada peça única e especial.\n\nPerfeito para presentear ou para identificar chaves, mochilas, bolsas e estojos com muito charme e delicadeza.\n\nComposição\nTodos os materiais utilizados são cuidadosamente selecionados para oferecer qualidade e durabilidade.\n- Bolinhas e letras em silicone atóxico, livres de BPA, PVC, chumbo e ftalatos.\n- Argola metálica para chaveiro.\n- Cordão de nylon resistente.\n\nPor que escolher a Divina Baby?\n🤍 Produção artesanal, feita com carinho.\n🤍 Personalização exclusiva com o nome de sua escolha.\n🤍 Materiais de alta qualidade.\n🤍 Design delicado e atemporal.\n🤍 Embalagem pronta para presentear.\n\nComo personalizar\nApós finalizar a compra, informe o nome desejado no campo de personalização. Caso queira escolher as cores, entre em contato conosco pelo WhatsApp para criarmos seu chaveiro do jeitinho que você imaginou.\n\nCuidados\n- Limpe com um pano macio e úmido ou água e sabão neutro.\n- Evite contato com produtos químicos e objetos pontiagudos.\n- Guarde em local seco para maior durabilidade.\n\nPor se tratar de um produto artesanal, pequenas variações nas cores e na disposição das peças podem ocorrer, tornando cada chaveiro exclusivo.',
     badges: ['Feito à mão', 'Personalizável'],
   },
   {
@@ -2701,7 +2701,7 @@ export const products: Product[] = [
     colors: BEAD_COLORS,
     themes: THEMES,
     description:
-      'Chaveiro artesanal personalizado com o nome do bebê em contas de silicone atóxico, perfeito para presentear com carinho e sofisticação.',
+      'O Chaveiro Personalizado da Divina Baby é produzido artesanalmente e personalizado com o nome de sua escolha, tornando cada peça única e especial.\n\nPerfeito para presentear ou para identificar chaves, mochilas, bolsas e estojos com muito charme e delicadeza.\n\nComposição\nTodos os materiais utilizados são cuidadosamente selecionados para oferecer qualidade e durabilidade.\n- Bolinhas e letras em silicone atóxico, livres de BPA, PVC, chumbo e ftalatos.\n- Argola metálica para chaveiro.\n- Cordão de nylon resistente.\n\nPor que escolher a Divina Baby?\n🤍 Produção artesanal, feita com carinho.\n🤍 Personalização exclusiva com o nome de sua escolha.\n🤍 Materiais de alta qualidade.\n🤍 Design delicado e atemporal.\n🤍 Embalagem pronta para presentear.\n\nComo personalizar\nApós finalizar a compra, informe o nome desejado no campo de personalização. Caso queira escolher as cores, entre em contato conosco pelo WhatsApp para criarmos seu chaveiro do jeitinho que você imaginou.\n\nCuidados\n- Limpe com um pano macio e úmido ou água e sabão neutro.\n- Evite contato com produtos químicos e objetos pontiagudos.\n- Guarde em local seco para maior durabilidade.\n\nPor se tratar de um produto artesanal, pequenas variações nas cores e na disposição das peças podem ocorrer, tornando cada chaveiro exclusivo.',
     badges: ['Feito à mão', 'Personalizável'],
   },
   {
@@ -2716,7 +2716,7 @@ export const products: Product[] = [
     colors: BEAD_COLORS,
     themes: THEMES,
     description:
-      'Chaveiro artesanal personalizado com o nome do bebê em contas de silicone atóxico, perfeito para presentear com carinho e sofisticação.',
+      'O Chaveiro Personalizado da Divina Baby é produzido artesanalmente e personalizado com o nome de sua escolha, tornando cada peça única e especial.\n\nPerfeito para presentear ou para identificar chaves, mochilas, bolsas e estojos com muito charme e delicadeza.\n\nComposição\nTodos os materiais utilizados são cuidadosamente selecionados para oferecer qualidade e durabilidade.\n- Bolinhas e letras em silicone atóxico, livres de BPA, PVC, chumbo e ftalatos.\n- Argola metálica para chaveiro.\n- Cordão de nylon resistente.\n\nPor que escolher a Divina Baby?\n🤍 Produção artesanal, feita com carinho.\n🤍 Personalização exclusiva com o nome de sua escolha.\n🤍 Materiais de alta qualidade.\n🤍 Design delicado e atemporal.\n🤍 Embalagem pronta para presentear.\n\nComo personalizar\nApós finalizar a compra, informe o nome desejado no campo de personalização. Caso queira escolher as cores, entre em contato conosco pelo WhatsApp para criarmos seu chaveiro do jeitinho que você imaginou.\n\nCuidados\n- Limpe com um pano macio e úmido ou água e sabão neutro.\n- Evite contato com produtos químicos e objetos pontiagudos.\n- Guarde em local seco para maior durabilidade.\n\nPor se tratar de um produto artesanal, pequenas variações nas cores e na disposição das peças podem ocorrer, tornando cada chaveiro exclusivo.',
     badges: ['Feito à mão', 'Personalizável'],
   },
   {
@@ -2731,7 +2731,7 @@ export const products: Product[] = [
     colors: BEAD_COLORS,
     themes: THEMES,
     description:
-      'Chaveiro artesanal personalizado com o nome do bebê em contas de silicone atóxico, perfeito para presentear com carinho e sofisticação.',
+      'O Chaveiro Personalizado da Divina Baby é produzido artesanalmente e personalizado com o nome de sua escolha, tornando cada peça única e especial.\n\nPerfeito para presentear ou para identificar chaves, mochilas, bolsas e estojos com muito charme e delicadeza.\n\nComposição\nTodos os materiais utilizados são cuidadosamente selecionados para oferecer qualidade e durabilidade.\n- Bolinhas e letras em silicone atóxico, livres de BPA, PVC, chumbo e ftalatos.\n- Argola metálica para chaveiro.\n- Cordão de nylon resistente.\n\nPor que escolher a Divina Baby?\n🤍 Produção artesanal, feita com carinho.\n🤍 Personalização exclusiva com o nome de sua escolha.\n🤍 Materiais de alta qualidade.\n🤍 Design delicado e atemporal.\n🤍 Embalagem pronta para presentear.\n\nComo personalizar\nApós finalizar a compra, informe o nome desejado no campo de personalização. Caso queira escolher as cores, entre em contato conosco pelo WhatsApp para criarmos seu chaveiro do jeitinho que você imaginou.\n\nCuidados\n- Limpe com um pano macio e úmido ou água e sabão neutro.\n- Evite contato com produtos químicos e objetos pontiagudos.\n- Guarde em local seco para maior durabilidade.\n\nPor se tratar de um produto artesanal, pequenas variações nas cores e na disposição das peças podem ocorrer, tornando cada chaveiro exclusivo.',
     badges: ['Feito à mão', 'Personalizável'],
   },
   {
@@ -2746,7 +2746,7 @@ export const products: Product[] = [
     colors: BEAD_COLORS,
     themes: THEMES,
     description:
-      'Chaveiro artesanal personalizado com o nome do bebê em contas de silicone atóxico, perfeito para presentear com carinho e sofisticação.',
+      'O Chaveiro Personalizado da Divina Baby é produzido artesanalmente e personalizado com o nome de sua escolha, tornando cada peça única e especial.\n\nPerfeito para presentear ou para identificar chaves, mochilas, bolsas e estojos com muito charme e delicadeza.\n\nComposição\nTodos os materiais utilizados são cuidadosamente selecionados para oferecer qualidade e durabilidade.\n- Bolinhas e letras em silicone atóxico, livres de BPA, PVC, chumbo e ftalatos.\n- Argola metálica para chaveiro.\n- Cordão de nylon resistente.\n\nPor que escolher a Divina Baby?\n🤍 Produção artesanal, feita com carinho.\n🤍 Personalização exclusiva com o nome de sua escolha.\n🤍 Materiais de alta qualidade.\n🤍 Design delicado e atemporal.\n🤍 Embalagem pronta para presentear.\n\nComo personalizar\nApós finalizar a compra, informe o nome desejado no campo de personalização. Caso queira escolher as cores, entre em contato conosco pelo WhatsApp para criarmos seu chaveiro do jeitinho que você imaginou.\n\nCuidados\n- Limpe com um pano macio e úmido ou água e sabão neutro.\n- Evite contato com produtos químicos e objetos pontiagudos.\n- Guarde em local seco para maior durabilidade.\n\nPor se tratar de um produto artesanal, pequenas variações nas cores e na disposição das peças podem ocorrer, tornando cada chaveiro exclusivo.',
     badges: ['Feito à mão', 'Personalizável'],
   },
   {

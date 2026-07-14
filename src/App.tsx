@@ -12,10 +12,10 @@ import { useScrollToHash } from './useScrollToHash';
 const heroImages = [
   '/WhatsApp Image 2026-07-12 at 16.40.54.jpeg',
   '/WhatsApp Image 2026-07-12 at 16.40.55 (2).jpeg',
-  '/WhatsApp Image 2026-07-14 at 06.36.20.jpeg',
-  '/WhatsApp Image 2026-07-14 at 06.36.21 (1).jpeg',
-  '/WhatsApp Image 2026-07-14 at 06.36.21.jpeg',
-  '/WhatsApp Image 2026-07-14 at 06.36.21 (2).jpeg',
+  '/WhatsApp Image 2026-07-14 at 15.44.18.jpeg',
+  '/WhatsApp Image 2026-07-14 at 15.44.18 (1).jpeg',
+  '/WhatsApp Image 2026-07-14 at 15.44.18 (2).jpeg',
+  '/WhatsApp Image 2026-07-14 at 15.44.18 (3).jpeg',
 ];
 
 function InstagramIcon({
