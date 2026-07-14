@@ -239,17 +239,6 @@ function ProductPage() {
 
             <ProductDescription description={product.description} />
 
-            {product.name.includes('Personalizado') && !product.description.includes('Como personalizar?') && (
-              <div className="mb-8 border-2 border-oat-400 bg-oat-100 rounded-sm px-5 py-4">
-                <p className="font-sans-elegant text-xs tracking-[0.2em] uppercase text-oat-700 mb-2" style={{ fontWeight: 700 }}>
-                  ✨ Como personalizar
-                </p>
-                <p className="font-sans-elegant text-sm text-nude-700 leading-relaxed" style={{ fontWeight: 400 }}>
-                  Após realizar a compra, informe o nome do bebê no campo de personalização ou entre em contato pelo WhatsApp para escolher as cores e montar seu prendedor do jeitinho que você imaginou.
-                </p>
-              </div>
-            )}
-
             {product.name.includes('Personalizado') && product.themes && product.themes.length > 0 && (
               <div className="mb-6">
                 <p className="font-sans-elegant text-xs tracking-widest uppercase text-nude-700 mb-3" style={{ fontWeight: 400 }}>
