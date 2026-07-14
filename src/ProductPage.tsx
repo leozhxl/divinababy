@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
-import { ArrowLeft } from 'lucide-react';
+import { ArrowLeft, Sparkles, Check } from 'lucide-react';
 import { getProductBySlug } from './data/products';
 import { useCart } from './CartContext';
 import FloatingWhatsApp from './FloatingWhatsApp';
@@ -9,6 +9,86 @@ import Reveal from './Reveal';
 
 function formatBRL(value: number): string {
   return value.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+}
+
+interface DescriptionSection {
+  heading: string | null;
+  lines: string[];
+}
+
+function parseDescription(description: string): { intro: string; sections: DescriptionSection[] } {
+  const blocks = description.split('\n\n').map((b) => b.trim()).filter(Boolean);
+  if (blocks.length <= 1) {
+    return { intro: description, sections: [] };
+  }
+
+  const intro = blocks[0];
+  const sections: DescriptionSection[] = blocks.slice(1).map((block) => {
+    const lines = block.split('\n').map((l) => l.trim()).filter(Boolean);
+    const isListLine = (l: string) => l.startsWith('-') || l.startsWith('•') || l.startsWith('🤍');
+    if (lines.length > 1 && !isListLine(lines[0])) {
+      return { heading: lines[0], lines: lines.slice(1) };
+    }
+    return { heading: null, lines };
+  });
+
+  return { intro, sections };
+}
+
+function ProductDescription({ description }: { description: string }) {
+  const { intro, sections } = parseDescription(description);
+
+  if (sections.length === 0) {
+    return (
+      <p className="font-sans-elegant text-sm text-nude-600 leading-relaxed mb-8 whitespace-pre-line" style={{ fontWeight: 300 }}>
+        {intro}
+      </p>
+    );
+  }
+
+  return (
+    <div className="mb-8">
+      <p className="font-sans-elegant text-base text-nude-700 leading-relaxed mb-6" style={{ fontWeight: 500 }}>
+        {intro}
+      </p>
+      <div className="columns-1 sm:columns-2 gap-5">
+        {sections.map((section, i) => (
+          <div
+            key={i}
+            className="break-inside-avoid mb-5 bg-oat-50 border border-oat-200 rounded-sm px-4 py-4"
+          >
+            {section.heading && (
+              <p
+                className="font-sans-elegant text-xs tracking-[0.15em] uppercase text-oat-700 mb-2.5 flex items-center gap-1.5"
+                style={{ fontWeight: 700 }}
+              >
+                <Sparkles size={13} strokeWidth={2} className="text-oat-500 shrink-0" />
+                {section.heading}
+              </p>
+            )}
+            <ul className="space-y-1.5">
+              {section.lines.map((line, j) => {
+                const clean = line.replace(/^[-•🤍]\s*/, '');
+                const isBullet = line.startsWith('-') || line.startsWith('•');
+                const isHeart = line.startsWith('🤍');
+                return (
+                  <li
+                    key={j}
+                    className="font-sans-elegant text-sm text-nude-600 leading-relaxed flex items-start gap-2"
+                    style={{ fontWeight: 300 }}
+                  >
+                    {isBullet && <Check size={14} strokeWidth={2} className="text-oat-500 shrink-0 mt-0.5" />}
+                    {isHeart && <span className="shrink-0">🤍</span>}
+                    <span>{clean}</span>
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
 }
 
 function ProductPage() {
@@ -75,6 +155,55 @@ function ProductPage() {
                 </span>
               )}
             </div>
+
+            {product.name.includes('Personalizado') && product.colors && product.colors.length > 0 && (
+              <div className="mt-6">
+                <p className="font-sans-elegant text-xs tracking-widest uppercase text-nude-700 mb-3" style={{ fontWeight: 400 }}>
+                  Cor: {selectedColor}
+                </p>
+                <div className="grid grid-cols-5 sm:grid-cols-7 gap-2.5">
+                  {product.colors.map((color) => (
+                    <button
+                      key={color.name}
+                      onClick={() => setSelectedColor(color.name)}
+                      aria-label={color.name}
+                      title={color.name}
+                      className={`aspect-square rounded-md bg-white shadow-md p-1.5 border-2 transition-all duration-200 ${
+                        selectedColor === color.name ? 'border-nude-900' : 'border-transparent hover:border-oat-300'
+                      }`}
+                    >
+                      <span
+                        className="block w-full h-full rounded-sm"
+                        style={{ backgroundColor: color.hex }}
+                      />
+                    </button>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {product.name.includes('Personalizado') && product.themes && product.themes.length > 0 && (
+              <div className="mt-6">
+                <p className="font-sans-elegant text-xs tracking-widest uppercase text-nude-700 mb-3" style={{ fontWeight: 400 }}>
+                  Tema: {selectedTheme}
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  {product.themes.map((theme) => (
+                    <button
+                      key={theme}
+                      onClick={() => setSelectedTheme(theme)}
+                      className={`px-3 py-1.5 border font-sans-elegant text-xs transition-colors duration-300 ${
+                        selectedTheme === theme
+                          ? 'border-oat-500 bg-oat-400 text-white'
+                          : 'border-oat-300 text-nude-700 hover:border-oat-500'
+                      }`}
+                    >
+                      {theme}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            )}
           </Reveal>
 
           <Reveal>
@@ -121,11 +250,9 @@ function ProductPage() {
               </div>
             )}
 
-            <p className="font-sans-elegant text-sm text-nude-600 leading-relaxed mb-8 whitespace-pre-line" style={{ fontWeight: 300 }}>
-              {product.description}
-            </p>
+            <ProductDescription description={product.description} />
 
-            {product.name.includes('Personalizado') && (
+            {product.name.includes('Personalizado') && !product.description.includes('Como personalizar?') && (
               <div className="mb-8 border-2 border-oat-400 bg-oat-100 rounded-sm px-5 py-4">
                 <p className="font-sans-elegant text-xs tracking-[0.2em] uppercase text-oat-700 mb-2" style={{ fontWeight: 700 }}>
                   ✨ Como personalizar
@@ -133,55 +260,6 @@ function ProductPage() {
                 <p className="font-sans-elegant text-sm text-nude-700 leading-relaxed" style={{ fontWeight: 400 }}>
                   Após realizar a compra, informe o nome do bebê no campo de personalização ou entre em contato pelo WhatsApp para escolher as cores e montar seu prendedor do jeitinho que você imaginou.
                 </p>
-              </div>
-            )}
-
-            {product.name.includes('Personalizado') && product.colors && product.colors.length > 0 && (
-              <div className="mb-6">
-                <p className="font-sans-elegant text-xs tracking-widest uppercase text-nude-700 mb-3" style={{ fontWeight: 400 }}>
-                  Cor: {selectedColor}
-                </p>
-                <div className="grid grid-cols-5 sm:grid-cols-7 gap-2.5">
-                  {product.colors.map((color) => (
-                    <button
-                      key={color.name}
-                      onClick={() => setSelectedColor(color.name)}
-                      aria-label={color.name}
-                      title={color.name}
-                      className={`aspect-square rounded-md bg-white shadow-md p-1.5 border-2 transition-all duration-200 ${
-                        selectedColor === color.name ? 'border-nude-900' : 'border-transparent hover:border-oat-300'
-                      }`}
-                    >
-                      <span
-                        className="block w-full h-full rounded-sm"
-                        style={{ backgroundColor: color.hex }}
-                      />
-                    </button>
-                  ))}
-                </div>
-              </div>
-            )}
-
-            {product.name.includes('Personalizado') && product.themes && product.themes.length > 0 && (
-              <div className="mb-6">
-                <p className="font-sans-elegant text-xs tracking-widest uppercase text-nude-700 mb-3" style={{ fontWeight: 400 }}>
-                  Tema: {selectedTheme}
-                </p>
-                <div className="flex flex-wrap gap-2">
-                  {product.themes.map((theme) => (
-                    <button
-                      key={theme}
-                      onClick={() => setSelectedTheme(theme)}
-                      className={`px-3 py-1.5 border font-sans-elegant text-xs transition-colors duration-300 ${
-                        selectedTheme === theme
-                          ? 'border-oat-500 bg-oat-400 text-white'
-                          : 'border-oat-300 text-nude-700 hover:border-oat-500'
-                      }`}
-                    >
-                      {theme}
-                    </button>
-                  ))}
-                </div>
               </div>
             )}
 
