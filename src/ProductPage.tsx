@@ -121,7 +121,7 @@ function ProductPage() {
               </div>
             )}
 
-            <p className="font-sans-elegant text-sm text-nude-600 leading-relaxed mb-8" style={{ fontWeight: 300 }}>
+            <p className="font-sans-elegant text-sm text-nude-600 leading-relaxed mb-8 whitespace-pre-line" style={{ fontWeight: 300 }}>
               {product.description}
             </p>
 
