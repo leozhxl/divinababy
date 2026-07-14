@@ -68,8 +68,9 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-cream-50 overflow-x-hidden">
+    <div className="min-h-screen bg-cream-50">
       <Header />
+      <div className="overflow-x-hidden">
 
       {/* Hero Section - Storefront Window */}
       <section id="home" className="relative pt-16 pb-16 lg:pt-20 lg:pb-20 flex items-center justify-center bg-gradient-oat-soft overflow-hidden">
@@ -616,6 +617,7 @@ function App() {
       </footer>
 
       <FloatingWhatsApp />
+      </div>
     </div>
   );
 }

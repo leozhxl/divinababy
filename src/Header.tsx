@@ -53,10 +53,25 @@ export default function Header() {
           scrolled ? 'bg-white/80 backdrop-blur-md shadow-luxury' : 'bg-white shadow-soft'
         }`}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-3 sm:py-4 flex flex-wrap sm:flex-nowrap items-center gap-3 sm:gap-6">
+        <div
+          className={`max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 flex flex-wrap sm:flex-nowrap items-center gap-3 sm:gap-6 transition-all duration-300 ${
+            scrolled ? 'py-2 sm:py-2.5' : 'py-3 sm:py-4'
+          }`}
+        >
           <Link to="/" className="flex items-center gap-2 sm:gap-3 shrink-0">
-            <img src="/logo.jpeg" alt="Divina Baby" className="w-9 h-9 sm:w-12 sm:h-12 rounded-full object-cover" />
-            <span className="font-serif-elegant text-lg sm:text-xl text-nude-800 hidden sm:inline" style={{ fontWeight: 500 }}>
+            <img
+              src="/logo.jpeg"
+              alt="Divina Baby"
+              className={`rounded-full object-cover transition-all duration-300 ${
+                scrolled ? 'w-8 h-8 sm:w-9 sm:h-9' : 'w-9 h-9 sm:w-12 sm:h-12'
+              }`}
+            />
+            <span
+              className={`font-serif-elegant text-nude-800 hidden sm:inline transition-all duration-300 ${
+                scrolled ? 'text-base' : 'text-lg sm:text-xl'
+              }`}
+              style={{ fontWeight: 500 }}
+            >
               Divina Baby
             </span>
           </Link>

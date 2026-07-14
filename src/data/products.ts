@@ -732,7 +732,7 @@ export const products: Product[] = [
     images: ['/WhatsApp Image 2026-07-10 at 16.27.34 (1).jpeg'],
     colors: BEAD_COLORS,
     description:
-      'Kit de cuidado delicado para os fios do bebê, com pente e escova em madeira natural e cerdas macias.\n\nComposição do Kit\n• 1 pente de madeira\n• 1 escova de madeira com cerdas naturais\n\nEspecificações\n- Medidas aproximadas: 4 x 15 cm\n- Material: madeira natural\n- Escova com cerdas naturais, delicadas e ideais para os primeiros cuidados com o bebê.\n\nObservação\nPor ser produzido com madeira natural, cada peça é única. Pequenas variações na tonalidade e nos veios da madeira são características do material e não representam defeito no produto.',
+      'Kit de cuidados delicados para os cabelos do bebê, com pente e escova em madeira natural e cerdas naturais.\n\nComposição do Kit\n• 1 pente de madeira\n• 1 escova de madeira com cerdas naturais\n\nEspecificações\n- Medidas aproximadas: 4 x 15 cm\n- Material: madeira natural\n- Escova com cerdas naturais, delicadas e ideais para os primeiros cuidados com o bebê.\n\nObservação\nPor ser produzido com madeira natural, cada peça é única. Pequenas variações na tonalidade e nos veios da madeira são características do material e não representam defeito no produto.',
     badges: ['Feito à mão'],
   },
   {
@@ -746,7 +746,7 @@ export const products: Product[] = [
     images: ['/WhatsApp Image 2026-07-10 at 16.27.34 (2).jpeg'],
     colors: BEAD_COLORS,
     description:
-      'Kit de cuidado delicado para os fios do bebê, com pente e escova em madeira natural e cerdas macias.\n\nComposição do Kit\n• 1 pente de madeira\n• 1 escova de madeira com cerdas naturais\n\nEspecificações\n- Medidas aproximadas: 4 x 15 cm\n- Material: madeira natural\n- Escova com cerdas naturais, delicadas e ideais para os primeiros cuidados com o bebê.\n\nObservação\nPor ser produzido com madeira natural, cada peça é única. Pequenas variações na tonalidade e nos veios da madeira são características do material e não representam defeito no produto.',
+      'Kit de cuidados delicados para os cabelos do bebê, com pente e escova em madeira natural e cerdas naturais.\n\nComposição do Kit\n• 1 pente de madeira\n• 1 escova de madeira com cerdas naturais\n\nEspecificações\n- Medidas aproximadas: 4 x 15 cm\n- Material: madeira natural\n- Escova com cerdas naturais, delicadas e ideais para os primeiros cuidados com o bebê.\n\nObservação\nPor ser produzido com madeira natural, cada peça é única. Pequenas variações na tonalidade e nos veios da madeira são características do material e não representam defeito no produto.',
     badges: ['Feito à mão'],
   },
   {
@@ -760,7 +760,7 @@ export const products: Product[] = [
     images: ['/WhatsApp Image 2026-07-10 at 16.27.35.jpeg'],
     colors: BEAD_COLORS,
     description:
-      'Kit de cuidado delicado para os fios do bebê, com pente e escova em madeira natural e cerdas macias.\n\nComposição do Kit\n• 1 pente de madeira\n• 1 escova de madeira com cerdas naturais\n\nEspecificações\n- Medidas aproximadas: 4 x 15 cm\n- Material: madeira natural\n- Escova com cerdas naturais, delicadas e ideais para os primeiros cuidados com o bebê.\n\nObservação\nPor ser produzido com madeira natural, cada peça é única. Pequenas variações na tonalidade e nos veios da madeira são características do material e não representam defeito no produto.',
+      'Kit de cuidados delicados para os cabelos do bebê, com pente e escova em madeira natural e cerdas naturais.\n\nComposição do Kit\n• 1 pente de madeira\n• 1 escova de madeira com cerdas naturais\n\nEspecificações\n- Medidas aproximadas: 4 x 15 cm\n- Material: madeira natural\n- Escova com cerdas naturais, delicadas e ideais para os primeiros cuidados com o bebê.\n\nObservação\nPor ser produzido com madeira natural, cada peça é única. Pequenas variações na tonalidade e nos veios da madeira são características do material e não representam defeito no produto.',
     badges: ['Feito à mão'],
   },
   {
