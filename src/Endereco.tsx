@@ -10,6 +10,39 @@ function formatBRL(value: number): string {
   return value.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
 }
 
+function maskPhone(value: string): string {
+  const digits = value.replace(/\D/g, '').slice(0, 11);
+  if (digits.length <= 2) return digits.replace(/^(\d*)/, '($1');
+  if (digits.length <= 6) return digits.replace(/^(\d{2})(\d*)/, '($1) $2');
+  if (digits.length <= 10) return digits.replace(/^(\d{2})(\d{4})(\d*)/, '($1) $2-$3');
+  return digits.replace(/^(\d{2})(\d{5})(\d*)/, '($1) $2-$3');
+}
+
+function maskCep(value: string): string {
+  const digits = value.replace(/\D/g, '').slice(0, 8);
+  if (digits.length <= 5) return digits;
+  return digits.replace(/^(\d{5})(\d*)/, '$1-$2');
+}
+
+function maskUf(value: string): string {
+  return value.replace(/[^a-zA-Z]/g, '').toUpperCase().slice(0, 2);
+}
+
+const PHONE_REGEX = /^\(\d{2}\) \d{4,5}-\d{4}$/;
+const CEP_REGEX = /^\d{5}-\d{3}$/;
+const UF_REGEX = /^[A-Z]{2}$/;
+
+interface FormErrors {
+  fullName?: string;
+  phone?: string;
+  cep?: string;
+  street?: string;
+  number?: string;
+  neighborhood?: string;
+  city?: string;
+  uf?: string;
+}
+
 interface EnderecoState {
   items: CartItem[];
   subtotal: number;
@@ -53,7 +86,10 @@ function Steps({ current }: { current: number }) {
 
 const inputClass =
   'w-full bg-white border border-oat-300 rounded-sm px-4 py-2.5 font-sans-elegant text-sm text-nude-800 focus:outline-none focus:border-oat-500 transition-colors duration-300';
+const inputErrorClass =
+  'w-full bg-white border border-red-400 rounded-sm px-4 py-2.5 font-sans-elegant text-sm text-nude-800 focus:outline-none focus:border-red-500 transition-colors duration-300';
 const labelClass = 'block font-sans-elegant text-xs uppercase tracking-widest text-nude-600 mb-1.5';
+const errorTextClass = 'font-sans-elegant text-xs text-red-600 mt-1' as const;
 
 function Endereco() {
   const location = useLocation();
@@ -74,6 +110,8 @@ function Endereco() {
   const [selectedShippingId, setSelectedShippingId] = useState<number | null>(null);
   const [shippingLoading, setShippingLoading] = useState(false);
   const [shippingError, setShippingError] = useState('');
+
+  const [errors, setErrors] = useState<FormErrors>({});
 
   if (!state || state.items.length === 0) {
     return (
@@ -138,8 +176,25 @@ function Endereco() {
     }
   };
 
+  const validate = (): FormErrors => {
+    const next: FormErrors = {};
+    if (!fullName.trim()) next.fullName = 'Informe seu nome completo.';
+    if (!PHONE_REGEX.test(phone.trim())) next.phone = 'Telefone inválido. Use o formato (48) 99999-9999.';
+    if (!CEP_REGEX.test(cep.trim())) next.cep = 'CEP inválido. Use o formato 00000-000.';
+    if (!street.trim()) next.street = 'Informe a rua.';
+    if (!number.trim()) next.number = 'Informe o número.';
+    if (!neighborhood.trim()) next.neighborhood = 'Informe o bairro.';
+    if (!city.trim()) next.city = 'Informe a cidade.';
+    if (!UF_REGEX.test(uf.trim())) next.uf = 'Use a sigla do estado (ex: SC).';
+    return next;
+  };
+
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
+    const nextErrors = validate();
+    setErrors(nextErrors);
+    if (Object.keys(nextErrors).length > 0) return;
+
     const address: ShippingAddress = {
       fullName: fullName.trim(),
       phone: phone.trim(),
@@ -190,21 +245,48 @@ function Endereco() {
             <div className="grid sm:grid-cols-2 gap-4">
               <div className="sm:col-span-2">
                 <label className={labelClass}>Nome completo</label>
-                <input required value={fullName} onChange={(e) => setFullName(e.target.value)} className={inputClass} placeholder="Seu nome completo" />
+                <input
+                  required
+                  value={fullName}
+                  onChange={(e) => {
+                    setFullName(e.target.value);
+                    if (errors.fullName) setErrors((prev) => ({ ...prev, fullName: undefined }));
+                  }}
+                  className={errors.fullName ? inputErrorClass : inputClass}
+                  placeholder="Seu nome completo"
+                />
+                {errors.fullName && <p className={errorTextClass}>{errors.fullName}</p>}
               </div>
               <div>
                 <label className={labelClass}>Telefone / WhatsApp</label>
-                <input required value={phone} onChange={(e) => setPhone(e.target.value)} className={inputClass} placeholder="(48) 99999-9999" />
+                <input
+                  required
+                  inputMode="numeric"
+                  value={phone}
+                  onChange={(e) => {
+                    setPhone(maskPhone(e.target.value));
+                    if (errors.phone) setErrors((prev) => ({ ...prev, phone: undefined }));
+                  }}
+                  className={errors.phone ? inputErrorClass : inputClass}
+                  placeholder="(48) 99999-9999"
+                  maxLength={15}
+                />
+                {errors.phone && <p className={errorTextClass}>{errors.phone}</p>}
               </div>
               <div>
                 <label className={labelClass}>CEP</label>
                 <div className="flex gap-2">
                   <input
                     required
+                    inputMode="numeric"
                     value={cep}
-                    onChange={(e) => setCep(e.target.value)}
-                    className={inputClass}
+                    onChange={(e) => {
+                      setCep(maskCep(e.target.value));
+                      if (errors.cep) setErrors((prev) => ({ ...prev, cep: undefined }));
+                    }}
+                    className={errors.cep ? inputErrorClass : inputClass}
                     placeholder="00000-000"
+                    maxLength={9}
                   />
                   <button
                     type="button"
@@ -217,14 +299,35 @@ function Endereco() {
                     Calcular
                   </button>
                 </div>
+                {errors.cep && <p className={errorTextClass}>{errors.cep}</p>}
               </div>
               <div className="sm:col-span-2">
                 <label className={labelClass}>Rua</label>
-                <input required value={street} onChange={(e) => setStreet(e.target.value)} className={inputClass} placeholder="Nome da rua" />
+                <input
+                  required
+                  value={street}
+                  onChange={(e) => {
+                    setStreet(e.target.value);
+                    if (errors.street) setErrors((prev) => ({ ...prev, street: undefined }));
+                  }}
+                  className={errors.street ? inputErrorClass : inputClass}
+                  placeholder="Nome da rua"
+                />
+                {errors.street && <p className={errorTextClass}>{errors.street}</p>}
               </div>
               <div>
                 <label className={labelClass}>Número</label>
-                <input required value={number} onChange={(e) => setNumber(e.target.value)} className={inputClass} placeholder="123" />
+                <input
+                  required
+                  value={number}
+                  onChange={(e) => {
+                    setNumber(e.target.value);
+                    if (errors.number) setErrors((prev) => ({ ...prev, number: undefined }));
+                  }}
+                  className={errors.number ? inputErrorClass : inputClass}
+                  placeholder="123"
+                />
+                {errors.number && <p className={errorTextClass}>{errors.number}</p>}
               </div>
               <div>
                 <label className={labelClass}>Complemento (opcional)</label>
@@ -232,15 +335,46 @@ function Endereco() {
               </div>
               <div>
                 <label className={labelClass}>Bairro</label>
-                <input required value={neighborhood} onChange={(e) => setNeighborhood(e.target.value)} className={inputClass} placeholder="Seu bairro" />
+                <input
+                  required
+                  value={neighborhood}
+                  onChange={(e) => {
+                    setNeighborhood(e.target.value);
+                    if (errors.neighborhood) setErrors((prev) => ({ ...prev, neighborhood: undefined }));
+                  }}
+                  className={errors.neighborhood ? inputErrorClass : inputClass}
+                  placeholder="Seu bairro"
+                />
+                {errors.neighborhood && <p className={errorTextClass}>{errors.neighborhood}</p>}
               </div>
               <div>
                 <label className={labelClass}>Cidade</label>
-                <input required value={city} onChange={(e) => setCity(e.target.value)} className={inputClass} placeholder="Sua cidade" />
+                <input
+                  required
+                  value={city}
+                  onChange={(e) => {
+                    setCity(e.target.value);
+                    if (errors.city) setErrors((prev) => ({ ...prev, city: undefined }));
+                  }}
+                  className={errors.city ? inputErrorClass : inputClass}
+                  placeholder="Sua cidade"
+                />
+                {errors.city && <p className={errorTextClass}>{errors.city}</p>}
               </div>
               <div>
                 <label className={labelClass}>Estado</label>
-                <input required value={uf} onChange={(e) => setUf(e.target.value)} className={inputClass} placeholder="SC" maxLength={2} />
+                <input
+                  required
+                  value={uf}
+                  onChange={(e) => {
+                    setUf(maskUf(e.target.value));
+                    if (errors.uf) setErrors((prev) => ({ ...prev, uf: undefined }));
+                  }}
+                  className={errors.uf ? inputErrorClass : inputClass}
+                  placeholder="SC"
+                  maxLength={2}
+                />
+                {errors.uf && <p className={errorTextClass}>{errors.uf}</p>}
               </div>
             </div>
 
