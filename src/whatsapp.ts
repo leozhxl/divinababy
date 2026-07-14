@@ -25,6 +25,14 @@ export interface ShippingAddress {
   state: string;
 }
 
+export interface ShippingOption {
+  id: number;
+  name: string;
+  company: string;
+  price: number;
+  deliveryTime: number | null;
+}
+
 function formatBRL(value: number): string {
   return value.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
 }
@@ -39,7 +47,7 @@ export function buildAddressLines(address: ShippingAddress): string[] {
   ];
 }
 
-export function buildOrderMessage(lines: CartLine[], address?: ShippingAddress): string {
+export function buildOrderMessage(lines: CartLine[], address?: ShippingAddress, shipping?: ShippingOption): string {
   const itemLines = lines.map((line) => {
     const variant = [line.color, line.theme, line.size].filter(Boolean).join(' / ');
     const variantText = variant ? ` (${variant})` : '';
@@ -47,13 +55,16 @@ export function buildOrderMessage(lines: CartLine[], address?: ShippingAddress):
   });
 
   const subtotal = lines.reduce((sum, line) => sum + line.price * line.quantity, 0);
+  const total = subtotal + (shipping?.price ?? 0);
 
   return [
     'Olá! Gostaria de finalizar o seguinte pedido na Divina Baby:',
     '',
     ...itemLines,
     '',
-    `Total: ${formatBRL(subtotal)}`,
+    `Subtotal: ${formatBRL(subtotal)}`,
+    ...(shipping ? [`Frete (${shipping.company} — ${shipping.name}): ${formatBRL(shipping.price)}`] : []),
+    `Total: ${formatBRL(total)}`,
     ...(address ? ['', ...buildAddressLines(address)] : []),
   ].join('\n');
 }

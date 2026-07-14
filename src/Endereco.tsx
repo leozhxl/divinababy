@@ -1,10 +1,10 @@
 import { useState, FormEvent } from 'react';
 import { useLocation, useNavigate, Link } from 'react-router-dom';
-import { MapPin, ArrowRight, Check } from 'lucide-react';
+import { MapPin, ArrowRight, Check, Loader2, Truck } from 'lucide-react';
 import Header from './Header';
 import FloatingWhatsApp from './FloatingWhatsApp';
 import { CartItem } from './CartContext';
-import { ShippingAddress } from './whatsapp';
+import { ShippingAddress, ShippingOption } from './whatsapp';
 
 function formatBRL(value: number): string {
   return value.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
@@ -70,6 +70,11 @@ function Endereco() {
   const [city, setCity] = useState('');
   const [uf, setUf] = useState('');
 
+  const [shippingOptions, setShippingOptions] = useState<ShippingOption[]>([]);
+  const [selectedShippingId, setSelectedShippingId] = useState<number | null>(null);
+  const [shippingLoading, setShippingLoading] = useState(false);
+  const [shippingError, setShippingError] = useState('');
+
   if (!state || state.items.length === 0) {
     return (
       <div className="min-h-screen bg-cream-50">
@@ -88,6 +93,50 @@ function Endereco() {
   }
 
   const { items, subtotal } = state;
+  const totalQuantity = items.reduce((sum, item) => sum + item.quantity, 0);
+  const selectedShipping = shippingOptions.find((option) => option.id === selectedShippingId);
+
+  const handleCalculateShipping = async () => {
+    const digits = cep.replace(/\D/g, '');
+    if (digits.length !== 8) {
+      setShippingError('Informe um CEP válido.');
+      return;
+    }
+
+    setShippingLoading(true);
+    setShippingError('');
+    setShippingOptions([]);
+    setSelectedShippingId(null);
+
+    try {
+      const viaCepPromise = fetch(`https://viacep.com.br/ws/${digits}/json/`).then((r) => r.json());
+      const quotePromise = fetch('/api/shipping-quote', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ cep: digits, quantity: totalQuantity }),
+      }).then((r) => r.json());
+
+      const [viaCep, quote] = await Promise.all([viaCepPromise, quotePromise]);
+
+      if (!viaCep.erro) {
+        setStreet(viaCep.logradouro ?? '');
+        setNeighborhood(viaCep.bairro ?? '');
+        setCity(viaCep.localidade ?? '');
+        setUf(viaCep.uf ?? '');
+      }
+
+      if (quote.error || !quote.options?.length) {
+        setShippingError(quote.error ?? 'Nenhuma opção de frete encontrada para esse CEP.');
+      } else {
+        setShippingOptions(quote.options);
+        setSelectedShippingId(quote.options[0].id);
+      }
+    } catch {
+      setShippingError('Não foi possível calcular o frete agora. Tente novamente.');
+    } finally {
+      setShippingLoading(false);
+    }
+  };
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
@@ -102,7 +151,7 @@ function Endereco() {
       city: city.trim(),
       state: uf.trim(),
     };
-    navigate('/pagamento', { state: { items, subtotal, address } });
+    navigate('/pagamento', { state: { items, subtotal, address, shipping: selectedShipping } });
   };
 
   return (
@@ -149,7 +198,25 @@ function Endereco() {
               </div>
               <div>
                 <label className={labelClass}>CEP</label>
-                <input required value={cep} onChange={(e) => setCep(e.target.value)} className={inputClass} placeholder="00000-000" />
+                <div className="flex gap-2">
+                  <input
+                    required
+                    value={cep}
+                    onChange={(e) => setCep(e.target.value)}
+                    className={inputClass}
+                    placeholder="00000-000"
+                  />
+                  <button
+                    type="button"
+                    onClick={handleCalculateShipping}
+                    disabled={shippingLoading}
+                    className="shrink-0 inline-flex items-center gap-1.5 bg-oat-200 hover:bg-oat-300 disabled:opacity-60 text-nude-800 font-sans-elegant text-xs uppercase tracking-widest px-4 rounded-sm transition-colors duration-300"
+                    style={{ fontWeight: 600 }}
+                  >
+                    {shippingLoading ? <Loader2 size={14} className="animate-spin" /> : <Truck size={14} strokeWidth={2} />}
+                    Calcular
+                  </button>
+                </div>
               </div>
               <div className="sm:col-span-2">
                 <label className={labelClass}>Rua</label>
@@ -177,9 +244,60 @@ function Endereco() {
               </div>
             </div>
 
+            {shippingError && (
+              <p className="font-sans-elegant text-xs text-red-600" style={{ fontWeight: 400 }}>
+                {shippingError}
+              </p>
+            )}
+
+            {shippingOptions.length > 0 && (
+              <div>
+                <div className="flex items-center gap-2 mb-2">
+                  <Truck size={16} strokeWidth={1.5} className="text-oat-500" />
+                  <p className="font-sans-elegant text-xs uppercase tracking-widest text-nude-700" style={{ fontWeight: 600 }}>
+                    Opções de frete
+                  </p>
+                </div>
+                <div className="space-y-2">
+                  {shippingOptions.map((option) => (
+                    <label
+                      key={option.id}
+                      className={`flex items-center justify-between gap-3 p-3 rounded-sm border cursor-pointer transition-colors duration-300 ${
+                        selectedShippingId === option.id ? 'border-oat-500 bg-oat-50' : 'border-oat-300 bg-white hover:border-oat-400'
+                      }`}
+                    >
+                      <div className="flex items-center gap-3">
+                        <input
+                          type="radio"
+                          name="shipping"
+                          checked={selectedShippingId === option.id}
+                          onChange={() => setSelectedShippingId(option.id)}
+                          className="accent-oat-500"
+                        />
+                        <div>
+                          <p className="font-sans-elegant text-sm text-nude-800" style={{ fontWeight: 500 }}>
+                            {option.company} — {option.name}
+                          </p>
+                          {option.deliveryTime && (
+                            <p className="font-sans-elegant text-xs text-nude-500" style={{ fontWeight: 300 }}>
+                              Prazo: até {option.deliveryTime} {option.deliveryTime === 1 ? 'dia útil' : 'dias úteis'}
+                            </p>
+                          )}
+                        </div>
+                      </div>
+                      <span className="font-sans-elegant text-sm text-nude-800 shrink-0" style={{ fontWeight: 600 }}>
+                        {formatBRL(option.price)}
+                      </span>
+                    </label>
+                  ))}
+                </div>
+              </div>
+            )}
+
             <button
               type="submit"
-              className="w-full inline-flex items-center justify-center gap-2 bg-oat-500 hover:bg-oat-600 text-white font-sans-elegant text-sm uppercase tracking-widest px-8 py-3.5 rounded-sm shadow-soft transition-colors duration-300 mt-2"
+              disabled={shippingOptions.length > 0 && !selectedShipping}
+              className="w-full inline-flex items-center justify-center gap-2 bg-oat-500 hover:bg-oat-600 disabled:opacity-60 text-white font-sans-elegant text-sm uppercase tracking-widest px-8 py-3.5 rounded-sm shadow-soft transition-colors duration-300 mt-2"
               style={{ fontWeight: 600 }}
             >
               Continuar para pagamento

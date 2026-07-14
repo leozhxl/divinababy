@@ -4,7 +4,7 @@ import { QRCodeSVG } from 'qrcode.react';
 import { Copy, Check, MessageCircle, ShoppingBag, QrCode, ShieldCheck, MapPin } from 'lucide-react';
 import Header from './Header';
 import FloatingWhatsApp from './FloatingWhatsApp';
-import { waLink, buildOrderMessage, ShippingAddress } from './whatsapp';
+import { waLink, buildOrderMessage, ShippingAddress, ShippingOption } from './whatsapp';
 import { buildPixPayload } from './pix';
 import { CartItem } from './CartContext';
 
@@ -16,6 +16,7 @@ interface PagamentoState {
   items: CartItem[];
   subtotal: number;
   address?: ShippingAddress;
+  shipping?: ShippingOption;
 }
 
 const steps = ['Carrinho', 'Endereço', 'Pagamento', 'Confirmação'];
@@ -81,9 +82,10 @@ function Pagamento() {
     return <Navigate to="/endereco" state={{ items: state.items, subtotal: state.subtotal }} replace />;
   }
 
-  const { items, subtotal } = state;
+  const { items, subtotal, shipping } = state;
   const address = state.address;
-  const pixPayload = buildPixPayload(subtotal);
+  const total = subtotal + (shipping?.price ?? 0);
+  const pixPayload = buildPixPayload(total);
 
   const handleCopy = async () => {
     await navigator.clipboard.writeText(pixPayload);
@@ -141,11 +143,29 @@ function Pagamento() {
               ))}
             </div>
             <div className="flex items-center justify-between mt-4 pt-4 border-t border-oat-300/40">
+              <span className="font-sans-elegant text-sm text-nude-600" style={{ fontWeight: 400 }}>
+                Subtotal
+              </span>
+              <span className="font-sans-elegant text-sm text-nude-800" style={{ fontWeight: 500 }}>
+                {formatBRL(subtotal)}
+              </span>
+            </div>
+            {shipping && (
+              <div className="flex items-center justify-between mt-1.5">
+                <span className="font-sans-elegant text-sm text-nude-600" style={{ fontWeight: 400 }}>
+                  Frete ({shipping.company} — {shipping.name})
+                </span>
+                <span className="font-sans-elegant text-sm text-nude-800" style={{ fontWeight: 500 }}>
+                  {formatBRL(shipping.price)}
+                </span>
+              </div>
+            )}
+            <div className="flex items-center justify-between mt-3 pt-3 border-t border-oat-300/40">
               <span className="font-sans-elegant text-sm text-nude-700 uppercase tracking-widest" style={{ fontWeight: 500 }}>
                 Total
               </span>
               <span className="font-serif-elegant text-xl text-nude-800" style={{ fontWeight: 500 }}>
-                {formatBRL(subtotal)}
+                {formatBRL(total)}
               </span>
             </div>
           </div>
@@ -180,7 +200,7 @@ function Pagamento() {
             </div>
 
             <p className="font-serif-elegant text-2xl text-nude-800 mb-8" style={{ fontWeight: 500 }}>
-              {formatBRL(subtotal)}
+              {formatBRL(total)}
             </p>
 
             <div className="bg-oat-100 border border-oat-300/50 rounded-sm p-4 mb-8 text-left">
@@ -243,7 +263,7 @@ function Pagamento() {
 
               {confirmed ? (
                 <a
-                  href={waLink(`${buildOrderMessage(items, address)}\n\nJá fiz o pagamento via Pix, segue o comprovante:`)}
+                  href={waLink(`${buildOrderMessage(items, address, shipping)}\n\nJá fiz o pagamento via Pix, segue o comprovante:`)}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 bg-teal-600 hover:bg-teal-700 text-white font-sans-elegant text-sm uppercase tracking-widest px-8 py-3.5 rounded-sm shadow-soft transition-colors duration-300"
