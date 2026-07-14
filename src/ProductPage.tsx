@@ -141,18 +141,10 @@ function ProductPage() {
                         selectedColor === color.name ? 'border-nude-900' : 'border-transparent hover:border-oat-300'
                       }`}
                     >
-                      {color.image ? (
-                        <img
-                          src={color.image}
-                          alt={color.name}
-                          className="block w-full h-full rounded-sm object-cover"
-                        />
-                      ) : (
-                        <span
-                          className="block w-full h-full rounded-sm"
-                          style={{ backgroundColor: color.hex }}
-                        />
-                      )}
+                      <span
+                        className="block w-full h-full rounded-sm"
+                        style={{ backgroundColor: color.hex }}
+                      />
                     </button>
                   ))}
                 </div>

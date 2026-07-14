@@ -428,7 +428,7 @@ function App() {
                   <p className="font-sans-elegant text-xs tracking-widest uppercase text-cream-200 mt-1" style={{ fontWeight: 300 }}>Qualidade Premium</p>
                 </div>
                 <div>
-                  <p className="font-serif-elegant text-3xl text-oat-300" style={{ fontWeight: 500 }}>5 Anos</p>
+                  <p className="font-serif-elegant text-3xl text-oat-300" style={{ fontWeight: 500 }}>3 Anos</p>
                   <p className="font-sans-elegant text-xs tracking-widest uppercase text-cream-200 mt-1" style={{ fontWeight: 300 }}>De Cuidado</p>
                 </div>
               </div>
@@ -470,7 +470,7 @@ function App() {
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <div className="text-center mb-16">
             <p className="section-subtitle mb-4">Venha Nos Visitar</p>
-            <h2 className="section-title mb-6">Nossa Boutique</h2>
+            <h2 className="section-title mb-6">Conheça a Divina Baby</h2>
             <div className="w-16 h-px bg-oat-400 mx-auto" />
           </div>
 
@@ -558,8 +558,7 @@ function App() {
                   <circle cx="18" cy="17" r="1" fill="currentColor" />
                 </svg>
                 <div>
-                  <h3 className="font-serif-elegant text-xl text-cream-50" style={{ fontWeight: 400 }}>Divina Baby</h3>
-                  <p className="font-sans-elegant text-[9px] tracking-[0.3em] uppercase text-oat-400" style={{ fontWeight: 300 }}>Boutique para Bebês</p>
+                  <h3 className="font-serif-elegant text-xl text-cream-50" style={{ fontWeight: 400 }}>Divina Baby | Personalizados para Bebês</h3>
                 </div>
               </div>
               <p className="font-sans-elegant text-sm text-cream-300 max-w-sm" style={{ fontWeight: 300 }}>

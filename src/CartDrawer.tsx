@@ -1,7 +1,6 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { X, Minus, Plus, Trash2 } from 'lucide-react';
 import { useCart } from './CartContext';
-import { waLink, buildOrderMessage } from './whatsapp';
 
 function formatBRL(value: number): string {
   return value.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
@@ -9,6 +8,12 @@ function formatBRL(value: number): string {
 
 export default function CartDrawer() {
   const { items, isCartOpen, closeCart, updateQuantity, removeItem, subtotal } = useCart();
+  const navigate = useNavigate();
+
+  const handleCheckout = () => {
+    closeCart();
+    navigate('/endereco', { state: { items: items.map((line) => ({ ...line })), subtotal } });
+  };
 
   return (
     <>
@@ -99,14 +104,9 @@ export default function CartDrawer() {
                   {formatBRL(subtotal)}
                 </span>
               </div>
-              <a
-                href={waLink(buildOrderMessage(items.map((line) => ({ ...line }))))}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-primary block text-center"
-              >
-                Finalizar pedido no WhatsApp
-              </a>
+              <button type="button" onClick={handleCheckout} className="btn-primary block w-full text-center">
+                Finalizar Compra
+              </button>
             </div>
           </>
         )}

@@ -13,11 +13,33 @@ export interface CartLine {
   price: number;
 }
 
+export interface ShippingAddress {
+  fullName: string;
+  phone: string;
+  cep: string;
+  street: string;
+  number: string;
+  complement?: string;
+  neighborhood: string;
+  city: string;
+  state: string;
+}
+
 function formatBRL(value: number): string {
   return value.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
 }
 
-export function buildOrderMessage(lines: CartLine[]): string {
+export function buildAddressLines(address: ShippingAddress): string[] {
+  return [
+    'Endereço de entrega:',
+    `${address.fullName} — ${address.phone}`,
+    `${address.street}, ${address.number}${address.complement ? ` — ${address.complement}` : ''}`,
+    `${address.neighborhood} — ${address.city}/${address.state}`,
+    `CEP: ${address.cep}`,
+  ];
+}
+
+export function buildOrderMessage(lines: CartLine[], address?: ShippingAddress): string {
   const itemLines = lines.map((line) => {
     const variant = [line.color, line.theme, line.size].filter(Boolean).join(' / ');
     const variantText = variant ? ` (${variant})` : '';
@@ -32,5 +54,6 @@ export function buildOrderMessage(lines: CartLine[]): string {
     ...itemLines,
     '',
     `Total: ${formatBRL(subtotal)}`,
+    ...(address ? ['', ...buildAddressLines(address)] : []),
   ].join('\n');
 }

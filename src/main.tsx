@@ -10,9 +10,12 @@ import Contato from './Contato.tsx';
 import Depoimentos from './Depoimentos.tsx';
 import Login from './Login.tsx';
 import Cadastro from './Cadastro.tsx';
+import Pagamento from './Pagamento.tsx';
+import Endereco from './Endereco.tsx';
 import { CartProvider } from './CartContext.tsx';
 import { AuthProvider } from './AuthContext.tsx';
 import CartDrawer from './CartDrawer.tsx';
+import ScrollToTop from './ScrollToTop.tsx';
 import './index.css';
 
 createRoot(document.getElementById('root')!).render(
@@ -20,6 +23,7 @@ createRoot(document.getElementById('root')!).render(
     <AuthProvider>
       <CartProvider>
         <BrowserRouter>
+          <ScrollToTop />
           <Routes>
             <Route path="/" element={<App />} />
             <Route path="/produtos" element={<Produtos />} />
@@ -30,6 +34,8 @@ createRoot(document.getElementById('root')!).render(
             <Route path="/depoimentos" element={<Depoimentos />} />
             <Route path="/login" element={<Login />} />
             <Route path="/cadastro" element={<Cadastro />} />
+            <Route path="/endereco" element={<Endereco />} />
+            <Route path="/pagamento" element={<Pagamento />} />
           </Routes>
           <CartDrawer />
         </BrowserRouter>
