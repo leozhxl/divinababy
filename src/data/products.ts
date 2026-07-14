@@ -826,7 +826,7 @@ export const products: Product[] = [
     colors: BEAD_COLORS,
     sizes: ['0-6 meses'],
     description:
-      'Chupeta feita com borracha natural, macia e segura, indicada para bebês de 0 a 6 meses, respeitando o desenvolvimento bucal do bebê.',
+      'A Chupeta de Borracha Natural da Divina Baby foi desenvolvida para proporcionar conforto, segurança e tranquilidade ao seu bebê desde o nascimento até os 6 meses. Seu bico em látex (borracha natural) é macio, flexível e se adapta suavemente às necessidades dos pequenos.\n\nEspecificações:\n- Bico em borracha natural (látex), macio e flexível.\n- Indicada para bebês de 0 a 6 meses.\n- Design clássico e delicado.\n- Livre de BPA.\n- Possui aberturas de ventilação no escudo, auxiliando na circulação de ar e proporcionando mais conforto para a pele do bebê.\n\nPor que escolher a chupeta de borracha natural?\nA borracha natural oferece uma sensação mais macia e aconchegante, sendo uma excelente opção para acalmar o bebê. Seu formato clássico une tradição, qualidade e conforto, tornando essa chupeta uma escolha especial para o enxoval.\n\n✨ Consulte a disponibilidade de cores e modelos antes de finalizar seu pedido',
     badges: ['Frete grátis'],
   },
   {
@@ -841,7 +841,7 @@ export const products: Product[] = [
     colors: BEAD_COLORS,
     sizes: ['0-6 meses'],
     description:
-      'Chupeta feita com borracha natural, macia e segura, indicada para bebês de 0 a 6 meses, respeitando o desenvolvimento bucal do bebê.',
+      'A Chupeta de Borracha Natural da Divina Baby foi desenvolvida para proporcionar conforto, segurança e tranquilidade ao seu bebê desde o nascimento até os 6 meses. Seu bico em látex (borracha natural) é macio, flexível e se adapta suavemente às necessidades dos pequenos.\n\nEspecificações:\n- Bico em borracha natural (látex), macio e flexível.\n- Indicada para bebês de 0 a 6 meses.\n- Design clássico e delicado.\n- Livre de BPA.\n- Possui aberturas de ventilação no escudo, auxiliando na circulação de ar e proporcionando mais conforto para a pele do bebê.\n\nPor que escolher a chupeta de borracha natural?\nA borracha natural oferece uma sensação mais macia e aconchegante, sendo uma excelente opção para acalmar o bebê. Seu formato clássico une tradição, qualidade e conforto, tornando essa chupeta uma escolha especial para o enxoval.\n\n✨ Consulte a disponibilidade de cores e modelos antes de finalizar seu pedido',
     badges: ['Frete grátis'],
   },
   {
