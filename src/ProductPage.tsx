@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
-import { ArrowLeft, Sparkles, Check } from 'lucide-react';
+import { ArrowLeft, Sparkles, Check, Heart } from 'lucide-react';
 import { getProductBySlug } from './data/products';
 import { useCart } from './CartContext';
 import FloatingWhatsApp from './FloatingWhatsApp';
@@ -68,9 +68,11 @@ function ProductDescription({ description }: { description: string }) {
             )}
             <ul className="space-y-1.5">
               {section.lines.map((line, j) => {
-                const clean = line.replace(/^[-•🤍]\s*/, '');
                 const isBullet = line.startsWith('-') || line.startsWith('•');
                 const isHeart = line.startsWith('🤍');
+                const clean = isHeart
+                  ? line.slice('🤍'.length).trim()
+                  : line.replace(/^[-•]\s*/, '');
                 return (
                   <li
                     key={j}
@@ -78,7 +80,7 @@ function ProductDescription({ description }: { description: string }) {
                     style={{ fontWeight: 300 }}
                   >
                     {isBullet && <Check size={14} strokeWidth={2} className="text-oat-500 shrink-0 mt-0.5" />}
-                    {isHeart && <span className="shrink-0">🤍</span>}
+                    {isHeart && <Heart size={13} strokeWidth={2} fill="currentColor" className="text-oat-400 shrink-0 mt-0.5" />}
                     <span>{clean}</span>
                   </li>
                 );
@@ -168,37 +170,22 @@ function ProductPage() {
                       onClick={() => setSelectedColor(color.name)}
                       aria-label={color.name}
                       title={color.name}
-                      className={`aspect-square rounded-md bg-white shadow-md p-1.5 border-2 transition-all duration-200 ${
+                      className={`aspect-square rounded-md bg-white shadow-md p-1.5 border-2 transition-all duration-200 overflow-hidden ${
                         selectedColor === color.name ? 'border-nude-900' : 'border-transparent hover:border-oat-300'
                       }`}
                     >
-                      <span
-                        className="block w-full h-full rounded-sm"
-                        style={{ backgroundColor: color.hex }}
-                      />
-                    </button>
-                  ))}
-                </div>
-              </div>
-            )}
-
-            {product.name.includes('Personalizado') && product.themes && product.themes.length > 0 && (
-              <div className="mt-6">
-                <p className="font-sans-elegant text-xs tracking-widest uppercase text-nude-700 mb-3" style={{ fontWeight: 400 }}>
-                  Tema: {selectedTheme}
-                </p>
-                <div className="flex flex-wrap gap-2">
-                  {product.themes.map((theme) => (
-                    <button
-                      key={theme}
-                      onClick={() => setSelectedTheme(theme)}
-                      className={`px-3 py-1.5 border font-sans-elegant text-xs transition-colors duration-300 ${
-                        selectedTheme === theme
-                          ? 'border-oat-500 bg-oat-400 text-white'
-                          : 'border-oat-300 text-nude-700 hover:border-oat-500'
-                      }`}
-                    >
-                      {theme}
+                      {color.image ? (
+                        <img
+                          src={color.image}
+                          alt={color.name}
+                          className="block w-full h-full rounded-sm object-cover"
+                        />
+                      ) : (
+                        <span
+                          className="block w-full h-full rounded-sm"
+                          style={{ backgroundColor: color.hex }}
+                        />
+                      )}
                     </button>
                   ))}
                 </div>
@@ -260,6 +247,29 @@ function ProductPage() {
                 <p className="font-sans-elegant text-sm text-nude-700 leading-relaxed" style={{ fontWeight: 400 }}>
                   Após realizar a compra, informe o nome do bebê no campo de personalização ou entre em contato pelo WhatsApp para escolher as cores e montar seu prendedor do jeitinho que você imaginou.
                 </p>
+              </div>
+            )}
+
+            {product.name.includes('Personalizado') && product.themes && product.themes.length > 0 && (
+              <div className="mb-6">
+                <p className="font-sans-elegant text-xs tracking-widest uppercase text-nude-700 mb-3" style={{ fontWeight: 400 }}>
+                  Tema: {selectedTheme}
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  {product.themes.map((theme) => (
+                    <button
+                      key={theme}
+                      onClick={() => setSelectedTheme(theme)}
+                      className={`px-3 py-1.5 border font-sans-elegant text-xs transition-colors duration-300 ${
+                        selectedTheme === theme
+                          ? 'border-oat-500 bg-oat-400 text-white'
+                          : 'border-oat-300 text-nude-700 hover:border-oat-500'
+                      }`}
+                    >
+                      {theme}
+                    </button>
+                  ))}
+                </div>
               </div>
             )}
 
