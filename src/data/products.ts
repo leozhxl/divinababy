@@ -777,7 +777,7 @@ export const products: Product[] = [
     colors: BEAD_COLORS,
     sizes: ['6-18 meses'],
     description:
-      'Chupeta em borracha natural com argolinha que brilha no escuro, indicada para bebês acima de 6 meses, facilitando encontrá-la à noite.',
+      'A Chupeta de Borracha Natural com Argolinha que Brilha no Escuro da Divina Baby foi desenvolvida para proporcionar conforto, segurança e praticidade para bebês acima de 6 meses.\n\nSeu bico em borracha natural (látex) é macio, flexível e confortável, enquanto a argolinha fluorescente facilita encontrar a chupeta durante a noite.\n\nEspecificações:\n- Bico em borracha natural (látex), macio e flexível.\n- Indicada para bebês acima de 6 meses.\n- Argolinha que brilha no escuro.\n- Livre de BPA.\n- Possui aberturas de ventilação no escudo, auxiliando na circulação de ar e proporcionando mais conforto para a pele delicada do bebê.\n\nPor que escolher a chupeta de borracha natural?\nA borracha natural proporciona uma sensação macia e aconchegante, ajudando a acalmar o bebê. Além disso, a argolinha que brilha no escuro oferece mais praticidade para os pais durante a noite, permitindo localizar a chupeta com mais facilidade sem precisar acender as luzes.\n\n✨ Consulte a disponibilidade de cores e modelos antes de finalizar seu pedido',
     badges: ['Frete grátis'],
   },
   {
@@ -794,7 +794,7 @@ export const products: Product[] = [
     colors: BEAD_COLORS,
     sizes: ['6-18 meses'],
     description:
-      'Chupeta em borracha natural com argolinha que brilha no escuro, indicada para bebês acima de 6 meses, facilitando encontrá-la à noite.',
+      'A Chupeta de Borracha Natural com Argolinha que Brilha no Escuro da Divina Baby foi desenvolvida para proporcionar conforto, segurança e praticidade para bebês acima de 6 meses.\n\nSeu bico em borracha natural (látex) é macio, flexível e confortável, enquanto a argolinha fluorescente facilita encontrar a chupeta durante a noite.\n\nEspecificações:\n- Bico em borracha natural (látex), macio e flexível.\n- Indicada para bebês acima de 6 meses.\n- Argolinha que brilha no escuro.\n- Livre de BPA.\n- Possui aberturas de ventilação no escudo, auxiliando na circulação de ar e proporcionando mais conforto para a pele delicada do bebê.\n\nPor que escolher a chupeta de borracha natural?\nA borracha natural proporciona uma sensação macia e aconchegante, ajudando a acalmar o bebê. Além disso, a argolinha que brilha no escuro oferece mais praticidade para os pais durante a noite, permitindo localizar a chupeta com mais facilidade sem precisar acender as luzes.\n\n✨ Consulte a disponibilidade de cores e modelos antes de finalizar seu pedido',
     badges: ['Frete grátis'],
   },
   {
@@ -811,7 +811,7 @@ export const products: Product[] = [
     colors: BEAD_COLORS,
     sizes: ['0-6 meses', '6-18 meses'],
     description:
-      'Chupeta em borracha natural no formato de flor, macia e segura, respeitando o desenvolvimento bucal do bebê.',
+      'A Chupeta de Borracha Natural Modelo Flor da Divina Baby foi desenvolvida para proporcionar conforto, segurança e tranquilidade ao seu bebê desde o nascimento até os 12 meses. Seu bico em borracha natural (látex) é macio, flexível e se adapta suavemente às necessidades dos pequenos.\n\nEspecificações:\n- Bico em borracha natural (látex), macio e flexível.\n- Indicada para bebês de 0 a 12 meses.\n- Modelo Flor.\n- Livre de BPA.\n- Possui aberturas de ventilação no escudo, auxiliando na circulação de ar e proporcionando mais conforto para a pele delicada do bebê.\n\nPor que escolher a chupeta de borracha natural?\nA borracha natural oferece uma sensação mais macia e aconchegante, sendo uma excelente opção para acalmar o bebê. Seu formato clássico une tradição, qualidade e conforto, tornando essa chupeta uma escolha especial para o enxoval.\n\n✨ Consulte a disponibilidade de cores e modelos antes de finalizar seu pedido',
     badges: ['Frete grátis'],
   },
   {
