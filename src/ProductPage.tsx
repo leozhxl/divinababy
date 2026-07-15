@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
-import { ArrowLeft, Sparkles, Check, Heart, X } from 'lucide-react';
+import { ArrowLeft, Sparkles, Check, Heart } from 'lucide-react';
 import { getProductBySlug } from './data/products';
 import { useCart } from './CartContext';
 import FloatingWhatsApp from './FloatingWhatsApp';
@@ -107,70 +107,61 @@ function ThemePicker({
   themes,
   selectedTheme,
   onSelect,
-  onPreview,
 }: {
   themes: { name: string; image?: string }[];
   selectedTheme: string | undefined;
   onSelect: (name: string) => void;
-  onPreview: (item: { name: string; image?: string }) => void;
 }) {
+  const [hovered, setHovered] = useState<{ name: string; image?: string } | null>(null);
+
   return (
     <div className="grid grid-cols-5 sm:grid-cols-7 gap-2.5">
       {themes.map((theme) => (
-        <button
-          key={theme.name}
-          type="button"
-          onClick={() => {
-            onSelect(theme.name);
-            onPreview(theme);
-          }}
-          aria-label={theme.name}
-          title={theme.name}
-          className={`aspect-square rounded-md bg-white shadow-md p-1.5 border-2 transition-all duration-200 overflow-hidden ${
-            selectedTheme === theme.name ? 'border-nude-900' : 'border-transparent hover:border-oat-300'
-          }`}
-        >
-          {theme.image ? (
-            <img src={theme.image} alt={theme.name} className="block w-full h-full rounded-sm object-cover" />
-          ) : (
-            <span className="flex items-center justify-center w-full h-full rounded-sm bg-cream-100 font-sans-elegant text-[10px] text-nude-700 text-center leading-tight">
-              {theme.name}
+        <div key={theme.name} className="relative">
+          <button
+            type="button"
+            onClick={() => onSelect(theme.name)}
+            onMouseEnter={() => setHovered(theme)}
+            onMouseLeave={() => setHovered(null)}
+            onFocus={() => setHovered(theme)}
+            onBlur={() => setHovered(null)}
+            aria-label={theme.name}
+            title={theme.name}
+            className={`aspect-square w-full rounded-md bg-white shadow-md p-1.5 border-2 transition-all duration-200 overflow-hidden ${
+              selectedTheme === theme.name ? 'border-green-600' : 'border-transparent hover:border-oat-300'
+            }`}
+          >
+            {theme.image ? (
+              <img src={theme.image} alt={theme.name} className="block w-full h-full rounded-sm object-cover" />
+            ) : (
+              <span className="flex items-center justify-center w-full h-full rounded-sm bg-cream-100 font-sans-elegant text-[10px] text-nude-700 text-center leading-tight">
+                {theme.name}
+              </span>
+            )}
+          </button>
+          {selectedTheme === theme.name && (
+            <span className="absolute -top-1.5 -right-1.5 w-5 h-5 rounded-full bg-green-600 flex items-center justify-center shadow-md">
+              <Check size={12} strokeWidth={3} className="text-white" />
             </span>
           )}
-        </button>
+          {hovered?.name === theme.name && <SwatchPreview item={theme} />}
+        </div>
       ))}
     </div>
   );
 }
 
-function PreviewLightbox({
-  item,
-  onClose,
-}: {
-  item: { name: string; image?: string } | null;
-  onClose: () => void;
-}) {
-  if (!item || !item.image) return null;
+function SwatchPreview({ item }: { item: { name: string; image?: string } }) {
+  if (!item.image) return null;
 
   return (
-    <div
-      className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 px-6"
-      onClick={onClose}
-    >
-      <div
-        className="relative bg-white rounded-sm p-4 max-w-sm w-full"
-        onClick={(e) => e.stopPropagation()}
-      >
-        <button
-          type="button"
-          onClick={onClose}
-          aria-label="Fechar"
-          className="absolute -top-3 -right-3 w-8 h-8 rounded-full bg-white shadow-md flex items-center justify-center text-nude-700 hover:text-nude-900"
-        >
-          <X size={18} strokeWidth={2} />
-        </button>
+    <div className="absolute z-50 bottom-full left-1/2 -translate-x-1/2 mb-2 pointer-events-none">
+      <div className="bg-white rounded-sm shadow-xl p-3 w-48">
         <img src={item.image} alt={item.name} className="w-full aspect-square object-cover rounded-sm" />
-        <p className="font-sans-elegant text-sm text-nude-800 text-center mt-3" style={{ fontWeight: 500 }}>
+        <p
+          className="font-sans-elegant text-xs text-nude-800 text-center mt-2 leading-tight"
+          style={{ fontWeight: 500 }}
+        >
           {item.name.replace(' — ', ' ')}
         </p>
       </div>
@@ -189,7 +180,7 @@ function ProductPage() {
   const [quantity, setQuantity] = useState(1);
   const [showThemes, setShowThemes] = useState(false);
   const [showColors, setShowColors] = useState(false);
-  const [previewItem, setPreviewItem] = useState<{ name: string; image?: string } | null>(null);
+  const [hoveredColor, setHoveredColor] = useState<{ name: string; image?: string; hex?: string } | null>(null);
 
   if (!product) {
     return (
@@ -311,7 +302,6 @@ function ProductPage() {
                     themes={product.themes}
                     selectedTheme={selectedTheme}
                     onSelect={setSelectedTheme}
-                    onPreview={setPreviewItem}
                   />
                 )}
               </div>
@@ -332,31 +322,40 @@ function ProductPage() {
                 {showColors && (
                   <div className="grid grid-cols-5 sm:grid-cols-7 gap-2.5">
                     {product.colors.map((color) => (
-                      <button
-                        key={color.name}
-                        onClick={() => {
-                          setSelectedColor(color.name);
-                          setPreviewItem(color);
-                        }}
-                        aria-label={color.name}
-                        title={color.name}
-                        className={`aspect-square rounded-md bg-white shadow-md p-1.5 border-2 transition-all duration-200 overflow-hidden ${
-                          selectedColor === color.name ? 'border-nude-900' : 'border-transparent hover:border-oat-300'
-                        }`}
-                      >
-                        {color.image ? (
-                          <img
-                            src={color.image}
-                            alt={color.name}
-                            className="block w-full h-full rounded-sm object-cover"
-                          />
-                        ) : (
-                          <span
-                            className="block w-full h-full rounded-sm"
-                            style={{ backgroundColor: color.hex }}
-                          />
+                      <div key={color.name} className="relative">
+                        <button
+                          type="button"
+                          onClick={() => setSelectedColor(color.name)}
+                          onMouseEnter={() => setHoveredColor(color)}
+                          onMouseLeave={() => setHoveredColor(null)}
+                          onFocus={() => setHoveredColor(color)}
+                          onBlur={() => setHoveredColor(null)}
+                          aria-label={color.name}
+                          title={color.name}
+                          className={`aspect-square w-full rounded-md bg-white shadow-md p-1.5 border-2 transition-all duration-200 overflow-hidden ${
+                            selectedColor === color.name ? 'border-green-600' : 'border-transparent hover:border-oat-300'
+                          }`}
+                        >
+                          {color.image ? (
+                            <img
+                              src={color.image}
+                              alt={color.name}
+                              className="block w-full h-full rounded-sm object-cover"
+                            />
+                          ) : (
+                            <span
+                              className="block w-full h-full rounded-sm"
+                              style={{ backgroundColor: color.hex }}
+                            />
+                          )}
+                        </button>
+                        {selectedColor === color.name && (
+                          <span className="absolute -top-1.5 -right-1.5 w-5 h-5 rounded-full bg-green-600 flex items-center justify-center shadow-md">
+                            <Check size={12} strokeWidth={3} className="text-white" />
+                          </span>
                         )}
-                      </button>
+                        {hoveredColor?.name === color.name && <SwatchPreview item={color} />}
+                      </div>
                     ))}
                   </div>
                 )}
@@ -419,8 +418,6 @@ function ProductPage() {
       <FloatingWhatsApp
         message={`Olá! Tenho interesse no produto "${product.name}" da Divina Baby 💕`}
       />
-
-      <PreviewLightbox item={previewItem} onClose={() => setPreviewItem(null)} />
     </div>
   );
 }
