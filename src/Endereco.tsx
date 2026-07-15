@@ -290,16 +290,17 @@ function Endereco() {
                     placeholder="00000-000"
                     maxLength={9}
                   />
-                  <button
-                    type="button"
+                  <a
+                    href="https://www2.correios.com.br/sistemas/precosPrazos/"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     onClick={handleCalculateShipping}
-                    disabled={shippingLoading}
-                    className="shrink-0 inline-flex items-center gap-1.5 bg-oat-200 hover:bg-oat-300 disabled:opacity-60 text-nude-800 font-sans-elegant text-xs uppercase tracking-widest px-4 rounded-sm transition-colors duration-300"
+                    className="shrink-0 inline-flex items-center gap-1.5 bg-oat-200 hover:bg-oat-300 text-nude-800 font-sans-elegant text-xs uppercase tracking-widest px-4 rounded-sm transition-colors duration-300"
                     style={{ fontWeight: 600 }}
                   >
                     {shippingLoading ? <Loader2 size={14} className="animate-spin" /> : <Truck size={14} strokeWidth={2} />}
                     Calcular
-                  </button>
+                  </a>
                 </div>
                 {errors.cep && <p className={errorTextClass}>{errors.cep}</p>}
               </div>
