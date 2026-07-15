@@ -126,7 +126,7 @@ export const products: Product[] = [
     colors: BEAD_COLORS,
     themes: THEMES,
     description:
-      'Kit completo para presentear: prendedor de chupeta personalizado com o nome do bebê em contas de silicone atóxico + chupeta de borracha natural, tudo embalado com carinho.',
+      'O kit perfeito para quem busca praticidade, segurança e um toque especial no dia a dia do bebê.\n\nO Prendedor de Chupeta Personalizado mantém a chupeta sempre por perto, evitando quedas e perdas. Produzido em silicone atóxico, livre de BPA, é personalizado com o nome do bebê, tornando cada peça única e cheia de significado.\n\nA Chupeta de Borracha Natural é macia, flexível e desenvolvida para proporcionar conforto ao bebê, com formato que respeita o desenvolvimento oral e material 100% de borracha natural, livre de BPA.\n\nO kit contém\n- 1 Prendedor de Chupeta Personalizado em Silicone\n- 1 Chupeta de Borracha Natural\n\nAs peças acompanham um saquinho de algodão para armazenamento e são enviadas prontas para presentear, em uma embalagem delicada e cuidadosamente preparada.\n\nBasta escolher a cor de sua preferência e informar o nome do bebê. Produziremos cada detalhe com muito carinho para criar um kit exclusivo, feito especialmente para a sua família.\n\nAlém de funcional, este kit é uma linda opção para compor o enxoval ou presentear uma gestante e um recém-nascido com um presente personalizado que será usado diariamente e guardado como uma lembrança cheia de afeto.',
     badges: ['Feito à mão', 'Personalizável', 'Frete grátis'],
   },
   {
@@ -143,7 +143,7 @@ export const products: Product[] = [
     colors: BEAD_COLORS,
     themes: THEMES,
     description:
-      'Kit completo para presentear: prendedor de chupeta personalizado com o nome do bebê em contas de silicone atóxico + chupeta de borracha natural, tudo embalado com carinho.',
+      'O kit perfeito para quem busca praticidade, segurança e um toque especial no dia a dia do bebê.\n\nO Prendedor de Chupeta Personalizado mantém a chupeta sempre por perto, evitando quedas e perdas. Produzido em silicone atóxico, livre de BPA, é personalizado com o nome do bebê, tornando cada peça única e cheia de significado.\n\nA Chupeta de Borracha Natural é macia, flexível e desenvolvida para proporcionar conforto ao bebê, com formato que respeita o desenvolvimento oral e material 100% de borracha natural, livre de BPA.\n\nO kit contém\n- 1 Prendedor de Chupeta Personalizado em Silicone\n- 1 Chupeta de Borracha Natural\n\nAs peças acompanham um saquinho de algodão para armazenamento e são enviadas prontas para presentear, em uma embalagem delicada e cuidadosamente preparada.\n\nBasta escolher a cor de sua preferência e informar o nome do bebê. Produziremos cada detalhe com muito carinho para criar um kit exclusivo, feito especialmente para a sua família.\n\nAlém de funcional, este kit é uma linda opção para compor o enxoval ou presentear uma gestante e um recém-nascido com um presente personalizado que será usado diariamente e guardado como uma lembrança cheia de afeto.',
     badges: ['Feito à mão', 'Personalizável', 'Frete grátis'],
   },
   {
@@ -160,7 +160,7 @@ export const products: Product[] = [
     colors: BEAD_COLORS,
     themes: THEMES,
     description:
-      'Kit completo para presentear: prendedor de chupeta personalizado com o nome do bebê em contas de silicone atóxico + chupeta de borracha natural, tudo embalado com carinho.',
+      'O kit perfeito para quem busca praticidade, segurança e um toque especial no dia a dia do bebê.\n\nO Prendedor de Chupeta Personalizado mantém a chupeta sempre por perto, evitando quedas e perdas. Produzido em silicone atóxico, livre de BPA, é personalizado com o nome do bebê, tornando cada peça única e cheia de significado.\n\nA Chupeta de Borracha Natural é macia, flexível e desenvolvida para proporcionar conforto ao bebê, com formato que respeita o desenvolvimento oral e material 100% de borracha natural, livre de BPA.\n\nO kit contém\n- 1 Prendedor de Chupeta Personalizado em Silicone\n- 1 Chupeta de Borracha Natural\n\nAs peças acompanham um saquinho de algodão para armazenamento e são enviadas prontas para presentear, em uma embalagem delicada e cuidadosamente preparada.\n\nBasta escolher a cor de sua preferência e informar o nome do bebê. Produziremos cada detalhe com muito carinho para criar um kit exclusivo, feito especialmente para a sua família.\n\nAlém de funcional, este kit é uma linda opção para compor o enxoval ou presentear uma gestante e um recém-nascido com um presente personalizado que será usado diariamente e guardado como uma lembrança cheia de afeto.',
     badges: ['Feito à mão', 'Personalizável', 'Frete grátis'],
   },
   {
@@ -177,7 +177,7 @@ export const products: Product[] = [
     colors: BEAD_COLORS,
     themes: THEMES,
     description:
-      'Kit completo para presentear: prendedor de chupeta personalizado com o nome do bebê em contas de silicone atóxico + chupeta de borracha natural, tudo embalado com carinho.',
+      'O kit perfeito para quem busca praticidade, segurança e um toque especial no dia a dia do bebê.\n\nO Prendedor de Chupeta Personalizado mantém a chupeta sempre por perto, evitando quedas e perdas. Produzido em silicone atóxico, livre de BPA, é personalizado com o nome do bebê, tornando cada peça única e cheia de significado.\n\nA Chupeta de Borracha Natural é macia, flexível e desenvolvida para proporcionar conforto ao bebê, com formato que respeita o desenvolvimento oral e material 100% de borracha natural, livre de BPA.\n\nO kit contém\n- 1 Prendedor de Chupeta Personalizado em Silicone\n- 1 Chupeta de Borracha Natural\n\nAs peças acompanham um saquinho de algodão para armazenamento e são enviadas prontas para presentear, em uma embalagem delicada e cuidadosamente preparada.\n\nBasta escolher a cor de sua preferência e informar o nome do bebê. Produziremos cada detalhe com muito carinho para criar um kit exclusivo, feito especialmente para a sua família.\n\nAlém de funcional, este kit é uma linda opção para compor o enxoval ou presentear uma gestante e um recém-nascido com um presente personalizado que será usado diariamente e guardado como uma lembrança cheia de afeto.',
     badges: ['Feito à mão', 'Personalizável', 'Frete grátis'],
   },
   {
@@ -194,7 +194,7 @@ export const products: Product[] = [
     colors: BEAD_COLORS,
     themes: THEMES,
     description:
-      'Kit completo para presentear: prendedor de chupeta personalizado com o nome do bebê em contas de silicone atóxico + chupeta de borracha natural, tudo embalado com carinho.',
+      'O kit perfeito para quem busca praticidade, segurança e um toque especial no dia a dia do bebê.\n\nO Prendedor de Chupeta Personalizado mantém a chupeta sempre por perto, evitando quedas e perdas. Produzido em silicone atóxico, livre de BPA, é personalizado com o nome do bebê, tornando cada peça única e cheia de significado.\n\nA Chupeta de Borracha Natural é macia, flexível e desenvolvida para proporcionar conforto ao bebê, com formato que respeita o desenvolvimento oral e material 100% de borracha natural, livre de BPA.\n\nO kit contém\n- 1 Prendedor de Chupeta Personalizado em Silicone\n- 1 Chupeta de Borracha Natural\n\nAs peças acompanham um saquinho de algodão para armazenamento e são enviadas prontas para presentear, em uma embalagem delicada e cuidadosamente preparada.\n\nBasta escolher a cor de sua preferência e informar o nome do bebê. Produziremos cada detalhe com muito carinho para criar um kit exclusivo, feito especialmente para a sua família.\n\nAlém de funcional, este kit é uma linda opção para compor o enxoval ou presentear uma gestante e um recém-nascido com um presente personalizado que será usado diariamente e guardado como uma lembrança cheia de afeto.',
     badges: ['Feito à mão', 'Personalizável', 'Frete grátis'],
   },
   {
@@ -211,7 +211,7 @@ export const products: Product[] = [
     colors: BEAD_COLORS,
     themes: THEMES,
     description:
-      'Kit completo para presentear: prendedor de chupeta personalizado com o nome do bebê em contas de silicone atóxico + chupeta de borracha natural, tudo embalado com carinho.',
+      'O kit perfeito para quem busca praticidade, segurança e um toque especial no dia a dia do bebê.\n\nO Prendedor de Chupeta Personalizado mantém a chupeta sempre por perto, evitando quedas e perdas. Produzido em silicone atóxico, livre de BPA, é personalizado com o nome do bebê, tornando cada peça única e cheia de significado.\n\nA Chupeta de Borracha Natural é macia, flexível e desenvolvida para proporcionar conforto ao bebê, com formato que respeita o desenvolvimento oral e material 100% de borracha natural, livre de BPA.\n\nO kit contém\n- 1 Prendedor de Chupeta Personalizado em Silicone\n- 1 Chupeta de Borracha Natural\n\nAs peças acompanham um saquinho de algodão para armazenamento e são enviadas prontas para presentear, em uma embalagem delicada e cuidadosamente preparada.\n\nBasta escolher a cor de sua preferência e informar o nome do bebê. Produziremos cada detalhe com muito carinho para criar um kit exclusivo, feito especialmente para a sua família.\n\nAlém de funcional, este kit é uma linda opção para compor o enxoval ou presentear uma gestante e um recém-nascido com um presente personalizado que será usado diariamente e guardado como uma lembrança cheia de afeto.',
     badges: ['Feito à mão', 'Personalizável', 'Frete grátis'],
   },
   {
@@ -228,7 +228,7 @@ export const products: Product[] = [
     colors: BEAD_COLORS,
     themes: THEMES,
     description:
-      'Kit completo para presentear: prendedor de chupeta personalizado com o nome do bebê em contas de silicone atóxico + chupeta de borracha natural, tudo embalado com carinho.',
+      'O kit perfeito para quem busca praticidade, segurança e um toque especial no dia a dia do bebê.\n\nO Prendedor de Chupeta Personalizado mantém a chupeta sempre por perto, evitando quedas e perdas. Produzido em silicone atóxico, livre de BPA, é personalizado com o nome do bebê, tornando cada peça única e cheia de significado.\n\nA Chupeta de Borracha Natural é macia, flexível e desenvolvida para proporcionar conforto ao bebê, com formato que respeita o desenvolvimento oral e material 100% de borracha natural, livre de BPA.\n\nO kit contém\n- 1 Prendedor de Chupeta Personalizado em Silicone\n- 1 Chupeta de Borracha Natural\n\nAs peças acompanham um saquinho de algodão para armazenamento e são enviadas prontas para presentear, em uma embalagem delicada e cuidadosamente preparada.\n\nBasta escolher a cor de sua preferência e informar o nome do bebê. Produziremos cada detalhe com muito carinho para criar um kit exclusivo, feito especialmente para a sua família.\n\nAlém de funcional, este kit é uma linda opção para compor o enxoval ou presentear uma gestante e um recém-nascido com um presente personalizado que será usado diariamente e guardado como uma lembrança cheia de afeto.',
     badges: ['Feito à mão', 'Personalizável', 'Frete grátis'],
   },
   {
@@ -245,7 +245,7 @@ export const products: Product[] = [
     colors: BEAD_COLORS,
     themes: THEMES,
     description:
-      'Kit completo para presentear: prendedor de chupeta personalizado com o nome do bebê em contas de silicone atóxico + chupeta de borracha natural, tudo embalado com carinho.',
+      'O kit perfeito para quem busca praticidade, segurança e um toque especial no dia a dia do bebê.\n\nO Prendedor de Chupeta Personalizado mantém a chupeta sempre por perto, evitando quedas e perdas. Produzido em silicone atóxico, livre de BPA, é personalizado com o nome do bebê, tornando cada peça única e cheia de significado.\n\nA Chupeta de Borracha Natural é macia, flexível e desenvolvida para proporcionar conforto ao bebê, com formato que respeita o desenvolvimento oral e material 100% de borracha natural, livre de BPA.\n\nO kit contém\n- 1 Prendedor de Chupeta Personalizado em Silicone\n- 1 Chupeta de Borracha Natural\n\nAs peças acompanham um saquinho de algodão para armazenamento e são enviadas prontas para presentear, em uma embalagem delicada e cuidadosamente preparada.\n\nBasta escolher a cor de sua preferência e informar o nome do bebê. Produziremos cada detalhe com muito carinho para criar um kit exclusivo, feito especialmente para a sua família.\n\nAlém de funcional, este kit é uma linda opção para compor o enxoval ou presentear uma gestante e um recém-nascido com um presente personalizado que será usado diariamente e guardado como uma lembrança cheia de afeto.',
     badges: ['Feito à mão', 'Personalizável', 'Frete grátis'],
   },
   {
@@ -262,7 +262,7 @@ export const products: Product[] = [
     colors: BEAD_COLORS,
     themes: THEMES,
     description:
-      'Kit completo para presentear: prendedor de chupeta personalizado com o nome do bebê em contas de silicone atóxico + chupeta de borracha natural, tudo embalado com carinho.',
+      'O kit perfeito para quem busca praticidade, segurança e um toque especial no dia a dia do bebê.\n\nO Prendedor de Chupeta Personalizado mantém a chupeta sempre por perto, evitando quedas e perdas. Produzido em silicone atóxico, livre de BPA, é personalizado com o nome do bebê, tornando cada peça única e cheia de significado.\n\nA Chupeta de Borracha Natural é macia, flexível e desenvolvida para proporcionar conforto ao bebê, com formato que respeita o desenvolvimento oral e material 100% de borracha natural, livre de BPA.\n\nO kit contém\n- 1 Prendedor de Chupeta Personalizado em Silicone\n- 1 Chupeta de Borracha Natural\n\nAs peças acompanham um saquinho de algodão para armazenamento e são enviadas prontas para presentear, em uma embalagem delicada e cuidadosamente preparada.\n\nBasta escolher a cor de sua preferência e informar o nome do bebê. Produziremos cada detalhe com muito carinho para criar um kit exclusivo, feito especialmente para a sua família.\n\nAlém de funcional, este kit é uma linda opção para compor o enxoval ou presentear uma gestante e um recém-nascido com um presente personalizado que será usado diariamente e guardado como uma lembrança cheia de afeto.',
     badges: ['Feito à mão', 'Personalizável', 'Frete grátis'],
   },
   {
@@ -279,7 +279,7 @@ export const products: Product[] = [
     colors: BEAD_COLORS,
     themes: THEMES,
     description:
-      'Kit completo para presentear: prendedor de chupeta personalizado com o nome do bebê em contas de silicone atóxico + chupeta de borracha natural, tudo embalado com carinho.',
+      'O kit perfeito para quem busca praticidade, segurança e um toque especial no dia a dia do bebê.\n\nO Prendedor de Chupeta Personalizado mantém a chupeta sempre por perto, evitando quedas e perdas. Produzido em silicone atóxico, livre de BPA, é personalizado com o nome do bebê, tornando cada peça única e cheia de significado.\n\nA Chupeta de Borracha Natural é macia, flexível e desenvolvida para proporcionar conforto ao bebê, com formato que respeita o desenvolvimento oral e material 100% de borracha natural, livre de BPA.\n\nO kit contém\n- 1 Prendedor de Chupeta Personalizado em Silicone\n- 1 Chupeta de Borracha Natural\n\nAs peças acompanham um saquinho de algodão para armazenamento e são enviadas prontas para presentear, em uma embalagem delicada e cuidadosamente preparada.\n\nBasta escolher a cor de sua preferência e informar o nome do bebê. Produziremos cada detalhe com muito carinho para criar um kit exclusivo, feito especialmente para a sua família.\n\nAlém de funcional, este kit é uma linda opção para compor o enxoval ou presentear uma gestante e um recém-nascido com um presente personalizado que será usado diariamente e guardado como uma lembrança cheia de afeto.',
     badges: ['Feito à mão', 'Personalizável', 'Frete grátis'],
   },
   {
@@ -296,7 +296,7 @@ export const products: Product[] = [
     colors: BEAD_COLORS,
     themes: THEMES,
     description:
-      'Kit completo para presentear: prendedor de chupeta personalizado com o nome do bebê em contas de silicone atóxico + chupeta de borracha natural, tudo embalado com carinho.',
+      'O kit perfeito para quem busca praticidade, segurança e um toque especial no dia a dia do bebê.\n\nO Prendedor de Chupeta Personalizado mantém a chupeta sempre por perto, evitando quedas e perdas. Produzido em silicone atóxico, livre de BPA, é personalizado com o nome do bebê, tornando cada peça única e cheia de significado.\n\nA Chupeta de Borracha Natural é macia, flexível e desenvolvida para proporcionar conforto ao bebê, com formato que respeita o desenvolvimento oral e material 100% de borracha natural, livre de BPA.\n\nO kit contém\n- 1 Prendedor de Chupeta Personalizado em Silicone\n- 1 Chupeta de Borracha Natural\n\nAs peças acompanham um saquinho de algodão para armazenamento e são enviadas prontas para presentear, em uma embalagem delicada e cuidadosamente preparada.\n\nBasta escolher a cor de sua preferência e informar o nome do bebê. Produziremos cada detalhe com muito carinho para criar um kit exclusivo, feito especialmente para a sua família.\n\nAlém de funcional, este kit é uma linda opção para compor o enxoval ou presentear uma gestante e um recém-nascido com um presente personalizado que será usado diariamente e guardado como uma lembrança cheia de afeto.',
     badges: ['Feito à mão', 'Personalizável', 'Frete grátis'],
   },
   {
@@ -313,7 +313,7 @@ export const products: Product[] = [
     colors: BEAD_COLORS,
     themes: THEMES,
     description:
-      'Kit completo para presentear: prendedor de chupeta personalizado com o nome do bebê em contas de silicone atóxico + chupeta de borracha natural, tudo embalado com carinho.',
+      'O kit perfeito para quem busca praticidade, segurança e um toque especial no dia a dia do bebê.\n\nO Prendedor de Chupeta Personalizado mantém a chupeta sempre por perto, evitando quedas e perdas. Produzido em silicone atóxico, livre de BPA, é personalizado com o nome do bebê, tornando cada peça única e cheia de significado.\n\nA Chupeta de Borracha Natural é macia, flexível e desenvolvida para proporcionar conforto ao bebê, com formato que respeita o desenvolvimento oral e material 100% de borracha natural, livre de BPA.\n\nO kit contém\n- 1 Prendedor de Chupeta Personalizado em Silicone\n- 1 Chupeta de Borracha Natural\n\nAs peças acompanham um saquinho de algodão para armazenamento e são enviadas prontas para presentear, em uma embalagem delicada e cuidadosamente preparada.\n\nBasta escolher a cor de sua preferência e informar o nome do bebê. Produziremos cada detalhe com muito carinho para criar um kit exclusivo, feito especialmente para a sua família.\n\nAlém de funcional, este kit é uma linda opção para compor o enxoval ou presentear uma gestante e um recém-nascido com um presente personalizado que será usado diariamente e guardado como uma lembrança cheia de afeto.',
     badges: ['Feito à mão', 'Personalizável', 'Frete grátis'],
   },
   {
@@ -330,7 +330,7 @@ export const products: Product[] = [
     colors: BEAD_COLORS,
     themes: THEMES,
     description:
-      'Kit completo para presentear: prendedor de chupeta personalizado com o nome do bebê em contas de silicone atóxico + chupeta de borracha natural, tudo embalado com carinho.',
+      'O kit perfeito para quem busca praticidade, segurança e um toque especial no dia a dia do bebê.\n\nO Prendedor de Chupeta Personalizado mantém a chupeta sempre por perto, evitando quedas e perdas. Produzido em silicone atóxico, livre de BPA, é personalizado com o nome do bebê, tornando cada peça única e cheia de significado.\n\nA Chupeta de Borracha Natural é macia, flexível e desenvolvida para proporcionar conforto ao bebê, com formato que respeita o desenvolvimento oral e material 100% de borracha natural, livre de BPA.\n\nO kit contém\n- 1 Prendedor de Chupeta Personalizado em Silicone\n- 1 Chupeta de Borracha Natural\n\nAs peças acompanham um saquinho de algodão para armazenamento e são enviadas prontas para presentear, em uma embalagem delicada e cuidadosamente preparada.\n\nBasta escolher a cor de sua preferência e informar o nome do bebê. Produziremos cada detalhe com muito carinho para criar um kit exclusivo, feito especialmente para a sua família.\n\nAlém de funcional, este kit é uma linda opção para compor o enxoval ou presentear uma gestante e um recém-nascido com um presente personalizado que será usado diariamente e guardado como uma lembrança cheia de afeto.',
     badges: ['Feito à mão', 'Personalizável', 'Frete grátis'],
   },
   {
@@ -347,7 +347,7 @@ export const products: Product[] = [
     colors: BEAD_COLORS,
     themes: THEMES,
     description:
-      'Kit completo para presentear: prendedor de chupeta personalizado com o nome do bebê em contas de silicone atóxico + chupeta de borracha natural, tudo embalado com carinho.',
+      'Delicado, funcional e cheio de significado, este kit foi pensado para acompanhar o bebê nos primeiros meses de vida com conforto, segurança e muito charme.\n\nO Prendedor de Chupeta Personalizado mantém a chupeta sempre por perto, evitando quedas e perdas no dia a dia. Produzido em silicone atóxico, livre de BPA, é personalizado com o nome do bebê, tornando cada peça exclusiva e especial.\n\nA Chupeta de Borracha Natural Modelo Flor possui um design delicado e atemporal. Fabricada em borracha natural, é macia, flexível e confortável para o bebê, além de contar com um escudo leve e anatômico, desenvolvido para proporcionar bem-estar durante o uso.\n\nO kit contém\n- 1 Prendedor de Chupeta Personalizado em Silicone\n- 1 Chupeta de Borracha Natural Modelo Flor\n\nAs peças acompanham um saquinho de algodão para armazenamento e são enviadas em uma embalagem cuidadosamente preparada, pronta para presentear.\n\nBasta escolher a cor de sua preferência e informar o nome do bebê. Cada kit é produzido artesanalmente com muito carinho, criando uma combinação única para o seu pequeno.\n\nUma opção encantadora para compor o enxoval ou presentear uma gestante e um recém-nascido com um presente personalizado, útil e cheio de afeto.',
     badges: ['Feito à mão', 'Personalizável', 'Frete grátis'],
   },
   {
@@ -364,7 +364,7 @@ export const products: Product[] = [
     colors: BEAD_COLORS,
     themes: THEMES,
     description:
-      'Kit completo para presentear: prendedor de chupeta personalizado com o nome do bebê em contas de silicone atóxico + chupeta de borracha natural, tudo embalado com carinho.',
+      'Delicado, funcional e cheio de significado, este kit foi pensado para acompanhar o bebê nos primeiros meses de vida com conforto, segurança e muito charme.\n\nO Prendedor de Chupeta Personalizado mantém a chupeta sempre por perto, evitando quedas e perdas no dia a dia. Produzido em silicone atóxico, livre de BPA, é personalizado com o nome do bebê, tornando cada peça exclusiva e especial.\n\nA Chupeta de Borracha Natural Modelo Flor possui um design delicado e atemporal. Fabricada em borracha natural, é macia, flexível e confortável para o bebê, além de contar com um escudo leve e anatômico, desenvolvido para proporcionar bem-estar durante o uso.\n\nO kit contém\n- 1 Prendedor de Chupeta Personalizado em Silicone\n- 1 Chupeta de Borracha Natural Modelo Flor\n\nAs peças acompanham um saquinho de algodão para armazenamento e são enviadas em uma embalagem cuidadosamente preparada, pronta para presentear.\n\nBasta escolher a cor de sua preferência e informar o nome do bebê. Cada kit é produzido artesanalmente com muito carinho, criando uma combinação única para o seu pequeno.\n\nUma opção encantadora para compor o enxoval ou presentear uma gestante e um recém-nascido com um presente personalizado, útil e cheio de afeto.',
     badges: ['Feito à mão', 'Personalizável', 'Frete grátis'],
   },
   {
@@ -381,7 +381,7 @@ export const products: Product[] = [
     colors: BEAD_COLORS,
     themes: THEMES,
     description:
-      'Kit completo para presentear: prendedor de chupeta personalizado com o nome do bebê em contas de silicone atóxico + chupeta de borracha natural, tudo embalado com carinho.',
+      'O kit perfeito para quem busca praticidade, segurança e um toque especial no dia a dia do bebê.\n\nO Prendedor de Chupeta Personalizado mantém a chupeta sempre por perto, evitando quedas e perdas. Produzido em silicone atóxico, livre de BPA, é personalizado com o nome do bebê, tornando cada peça única e cheia de significado.\n\nA Chupeta de Borracha Natural é macia, flexível e desenvolvida para proporcionar conforto ao bebê, com formato que respeita o desenvolvimento oral e material 100% de borracha natural, livre de BPA.\n\nO kit contém\n- 1 Prendedor de Chupeta Personalizado em Silicone\n- 1 Chupeta de Borracha Natural\n\nAs peças acompanham um saquinho de algodão para armazenamento e são enviadas prontas para presentear, em uma embalagem delicada e cuidadosamente preparada.\n\nBasta escolher a cor de sua preferência e informar o nome do bebê. Produziremos cada detalhe com muito carinho para criar um kit exclusivo, feito especialmente para a sua família.\n\nAlém de funcional, este kit é uma linda opção para compor o enxoval ou presentear uma gestante e um recém-nascido com um presente personalizado que será usado diariamente e guardado como uma lembrança cheia de afeto.',
     badges: ['Feito à mão', 'Personalizável', 'Frete grátis'],
   },
   {
@@ -398,7 +398,7 @@ export const products: Product[] = [
     colors: BEAD_COLORS,
     themes: THEMES,
     description:
-      'Kit completo para presentear: prendedor de chupeta personalizado com o nome do bebê em contas de silicone atóxico + chupeta de borracha natural, tudo embalado com carinho.',
+      'O kit perfeito para quem busca praticidade, segurança e um toque especial no dia a dia do bebê.\n\nO Prendedor de Chupeta Personalizado mantém a chupeta sempre por perto, evitando quedas e perdas. Produzido em silicone atóxico, livre de BPA, é personalizado com o nome do bebê, tornando cada peça única e cheia de significado.\n\nA Chupeta de Borracha Natural é macia, flexível e desenvolvida para proporcionar conforto ao bebê, com formato que respeita o desenvolvimento oral e material 100% de borracha natural, livre de BPA.\n\nO kit contém\n- 1 Prendedor de Chupeta Personalizado em Silicone\n- 1 Chupeta de Borracha Natural\n\nAs peças acompanham um saquinho de algodão para armazenamento e são enviadas prontas para presentear, em uma embalagem delicada e cuidadosamente preparada.\n\nBasta escolher a cor de sua preferência e informar o nome do bebê. Produziremos cada detalhe com muito carinho para criar um kit exclusivo, feito especialmente para a sua família.\n\nAlém de funcional, este kit é uma linda opção para compor o enxoval ou presentear uma gestante e um recém-nascido com um presente personalizado que será usado diariamente e guardado como uma lembrança cheia de afeto.',
     badges: ['Feito à mão', 'Personalizável', 'Frete grátis'],
   },
   {
@@ -415,7 +415,7 @@ export const products: Product[] = [
     colors: BEAD_COLORS,
     themes: THEMES,
     description:
-      'Kit completo para presentear: prendedor de chupeta personalizado com o nome do bebê em contas de silicone atóxico + chupeta de borracha natural, tudo embalado com carinho.',
+      'O kit perfeito para quem busca praticidade, segurança e um toque especial no dia a dia do bebê.\n\nO Prendedor de Chupeta Personalizado mantém a chupeta sempre por perto, evitando quedas e perdas. Produzido em silicone atóxico, livre de BPA, é personalizado com o nome do bebê, tornando cada peça única e cheia de significado.\n\nA Chupeta de Borracha Natural é macia, flexível e desenvolvida para proporcionar conforto ao bebê, com formato que respeita o desenvolvimento oral e material 100% de borracha natural, livre de BPA.\n\nO kit contém\n- 1 Prendedor de Chupeta Personalizado em Silicone\n- 1 Chupeta de Borracha Natural\n\nAs peças acompanham um saquinho de algodão para armazenamento e são enviadas prontas para presentear, em uma embalagem delicada e cuidadosamente preparada.\n\nBasta escolher a cor de sua preferência e informar o nome do bebê. Produziremos cada detalhe com muito carinho para criar um kit exclusivo, feito especialmente para a sua família.\n\nAlém de funcional, este kit é uma linda opção para compor o enxoval ou presentear uma gestante e um recém-nascido com um presente personalizado que será usado diariamente e guardado como uma lembrança cheia de afeto.',
     badges: ['Feito à mão', 'Personalizável', 'Frete grátis'],
   },
   {
@@ -432,7 +432,7 @@ export const products: Product[] = [
     colors: BEAD_COLORS,
     themes: THEMES,
     description:
-      'Kit completo para presentear: prendedor de chupeta personalizado com o nome do bebê em contas de silicone atóxico + chupeta de borracha natural, tudo embalado com carinho.',
+      'O kit perfeito para quem busca praticidade, segurança e um toque especial no dia a dia do bebê.\n\nO Prendedor de Chupeta Personalizado mantém a chupeta sempre por perto, evitando quedas e perdas. Produzido em silicone atóxico, livre de BPA, é personalizado com o nome do bebê, tornando cada peça única e cheia de significado.\n\nA Chupeta de Borracha Natural é macia, flexível e desenvolvida para proporcionar conforto ao bebê, com formato que respeita o desenvolvimento oral e material 100% de borracha natural, livre de BPA.\n\nO kit contém\n- 1 Prendedor de Chupeta Personalizado em Silicone\n- 1 Chupeta de Borracha Natural\n\nAs peças acompanham um saquinho de algodão para armazenamento e são enviadas prontas para presentear, em uma embalagem delicada e cuidadosamente preparada.\n\nBasta escolher a cor de sua preferência e informar o nome do bebê. Produziremos cada detalhe com muito carinho para criar um kit exclusivo, feito especialmente para a sua família.\n\nAlém de funcional, este kit é uma linda opção para compor o enxoval ou presentear uma gestante e um recém-nascido com um presente personalizado que será usado diariamente e guardado como uma lembrança cheia de afeto.',
     badges: ['Feito à mão', 'Personalizável', 'Frete grátis'],
   },
   {
@@ -449,7 +449,7 @@ export const products: Product[] = [
     colors: BEAD_COLORS,
     themes: THEMES,
     description:
-      'Kit completo para presentear: prendedor de chupeta personalizado com o nome do bebê em contas de silicone atóxico + chupeta de borracha natural, tudo embalado com carinho.',
+      'O kit perfeito para quem busca praticidade, segurança e um toque especial no dia a dia do bebê.\n\nO Prendedor de Chupeta Personalizado mantém a chupeta sempre por perto, evitando quedas e perdas. Produzido em silicone atóxico, livre de BPA, é personalizado com o nome do bebê, tornando cada peça única e cheia de significado.\n\nA Chupeta de Borracha Natural é macia, flexível e desenvolvida para proporcionar conforto ao bebê, com formato que respeita o desenvolvimento oral e material 100% de borracha natural, livre de BPA.\n\nO kit contém\n- 1 Prendedor de Chupeta Personalizado em Silicone\n- 1 Chupeta de Borracha Natural\n\nAs peças acompanham um saquinho de algodão para armazenamento e são enviadas prontas para presentear, em uma embalagem delicada e cuidadosamente preparada.\n\nBasta escolher a cor de sua preferência e informar o nome do bebê. Produziremos cada detalhe com muito carinho para criar um kit exclusivo, feito especialmente para a sua família.\n\nAlém de funcional, este kit é uma linda opção para compor o enxoval ou presentear uma gestante e um recém-nascido com um presente personalizado que será usado diariamente e guardado como uma lembrança cheia de afeto.',
     badges: ['Feito à mão', 'Personalizável', 'Frete grátis'],
   },
   {
@@ -466,7 +466,7 @@ export const products: Product[] = [
     colors: BEAD_COLORS,
     themes: THEMES,
     description:
-      'Kit completo para presentear: prendedor de chupeta personalizado com o nome do bebê em contas de silicone atóxico + chupeta de borracha natural, tudo embalado com carinho.',
+      'O kit perfeito para quem busca praticidade, segurança e um toque especial no dia a dia do bebê.\n\nO Prendedor de Chupeta Personalizado mantém a chupeta sempre por perto, evitando quedas e perdas. Produzido em silicone atóxico, livre de BPA, é personalizado com o nome do bebê, tornando cada peça única e cheia de significado.\n\nA Chupeta de Borracha Natural é macia, flexível e desenvolvida para proporcionar conforto ao bebê, com formato que respeita o desenvolvimento oral e material 100% de borracha natural, livre de BPA.\n\nO kit contém\n- 1 Prendedor de Chupeta Personalizado em Silicone\n- 1 Chupeta de Borracha Natural\n\nAs peças acompanham um saquinho de algodão para armazenamento e são enviadas prontas para presentear, em uma embalagem delicada e cuidadosamente preparada.\n\nBasta escolher a cor de sua preferência e informar o nome do bebê. Produziremos cada detalhe com muito carinho para criar um kit exclusivo, feito especialmente para a sua família.\n\nAlém de funcional, este kit é uma linda opção para compor o enxoval ou presentear uma gestante e um recém-nascido com um presente personalizado que será usado diariamente e guardado como uma lembrança cheia de afeto.',
     badges: ['Feito à mão', 'Personalizável', 'Frete grátis'],
   },
   {
@@ -483,7 +483,7 @@ export const products: Product[] = [
     colors: BEAD_COLORS,
     themes: THEMES,
     description:
-      'Kit completo para presentear: prendedor de chupeta personalizado com o nome do bebê em contas de silicone atóxico + chupeta de borracha natural, tudo embalado com carinho.',
+      'O kit perfeito para quem busca praticidade, segurança e um toque especial no dia a dia do bebê.\n\nO Prendedor de Chupeta Personalizado mantém a chupeta sempre por perto, evitando quedas e perdas. Produzido em silicone atóxico, livre de BPA, é personalizado com o nome do bebê, tornando cada peça única e cheia de significado.\n\nA Chupeta de Borracha Natural é macia, flexível e desenvolvida para proporcionar conforto ao bebê, com formato que respeita o desenvolvimento oral e material 100% de borracha natural, livre de BPA.\n\nO kit contém\n- 1 Prendedor de Chupeta Personalizado em Silicone\n- 1 Chupeta de Borracha Natural\n\nAs peças acompanham um saquinho de algodão para armazenamento e são enviadas prontas para presentear, em uma embalagem delicada e cuidadosamente preparada.\n\nBasta escolher a cor de sua preferência e informar o nome do bebê. Produziremos cada detalhe com muito carinho para criar um kit exclusivo, feito especialmente para a sua família.\n\nAlém de funcional, este kit é uma linda opção para compor o enxoval ou presentear uma gestante e um recém-nascido com um presente personalizado que será usado diariamente e guardado como uma lembrança cheia de afeto.',
     badges: ['Feito à mão', 'Personalizável', 'Frete grátis'],
   },
   {
@@ -500,7 +500,7 @@ export const products: Product[] = [
     colors: BEAD_COLORS,
     themes: THEMES,
     description:
-      'Kit completo para presentear: prendedor de chupeta personalizado com o nome do bebê em contas de silicone atóxico + chupeta de borracha natural, tudo embalado com carinho.',
+      'Delicado, funcional e cheio de significado, este kit foi pensado para acompanhar o bebê nos primeiros meses de vida com conforto, segurança e muito charme.\n\nO Prendedor de Chupeta Personalizado mantém a chupeta sempre por perto, evitando quedas e perdas no dia a dia. Produzido em silicone atóxico, livre de BPA, é personalizado com o nome do bebê, tornando cada peça exclusiva e especial.\n\nA Chupeta de Borracha Natural Modelo Flor possui um design delicado e atemporal. Fabricada em borracha natural, é macia, flexível e confortável para o bebê, além de contar com um escudo leve e anatômico, desenvolvido para proporcionar bem-estar durante o uso.\n\nO kit contém\n- 1 Prendedor de Chupeta Personalizado em Silicone\n- 1 Chupeta de Borracha Natural Modelo Flor\n\nAs peças acompanham um saquinho de algodão para armazenamento e são enviadas em uma embalagem cuidadosamente preparada, pronta para presentear.\n\nBasta escolher a cor de sua preferência e informar o nome do bebê. Cada kit é produzido artesanalmente com muito carinho, criando uma combinação única para o seu pequeno.\n\nUma opção encantadora para compor o enxoval ou presentear uma gestante e um recém-nascido com um presente personalizado, útil e cheio de afeto.',
     badges: ['Feito à mão', 'Personalizável', 'Frete grátis'],
   },
   {
@@ -517,7 +517,7 @@ export const products: Product[] = [
     colors: BEAD_COLORS,
     themes: THEMES,
     description:
-      'Kit completo para presentear: prendedor de chupeta personalizado com o nome do bebê em contas de silicone atóxico + chupeta de borracha natural, tudo embalado com carinho.',
+      'Delicado, funcional e cheio de significado, este kit foi pensado para acompanhar o bebê nos primeiros meses de vida com conforto, segurança e muito charme.\n\nO Prendedor de Chupeta Personalizado mantém a chupeta sempre por perto, evitando quedas e perdas no dia a dia. Produzido em silicone atóxico, livre de BPA, é personalizado com o nome do bebê, tornando cada peça exclusiva e especial.\n\nA Chupeta de Borracha Natural Modelo Flor possui um design delicado e atemporal. Fabricada em borracha natural, é macia, flexível e confortável para o bebê, além de contar com um escudo leve e anatômico, desenvolvido para proporcionar bem-estar durante o uso.\n\nO kit contém\n- 1 Prendedor de Chupeta Personalizado em Silicone\n- 1 Chupeta de Borracha Natural Modelo Flor\n\nAs peças acompanham um saquinho de algodão para armazenamento e são enviadas em uma embalagem cuidadosamente preparada, pronta para presentear.\n\nBasta escolher a cor de sua preferência e informar o nome do bebê. Cada kit é produzido artesanalmente com muito carinho, criando uma combinação única para o seu pequeno.\n\nUma opção encantadora para compor o enxoval ou presentear uma gestante e um recém-nascido com um presente personalizado, útil e cheio de afeto.',
     badges: ['Feito à mão', 'Personalizável', 'Frete grátis'],
   },
   {
@@ -534,7 +534,7 @@ export const products: Product[] = [
     colors: BEAD_COLORS,
     themes: THEMES,
     description:
-      'Kit completo para presentear: prendedor de chupeta personalizado com o nome do bebê em contas de silicone atóxico + chupeta de borracha natural, tudo embalado com carinho.',
+      'O kit perfeito para quem busca praticidade, segurança e um toque especial no dia a dia do bebê.\n\nO Prendedor de Chupeta Personalizado mantém a chupeta sempre por perto, evitando quedas e perdas. Produzido em silicone atóxico, livre de BPA, é personalizado com o nome do bebê, tornando cada peça única e cheia de significado.\n\nA Chupeta de Borracha Natural é macia, flexível e desenvolvida para proporcionar conforto ao bebê, com formato que respeita o desenvolvimento oral e material 100% de borracha natural, livre de BPA.\n\nO kit contém\n- 1 Prendedor de Chupeta Personalizado em Silicone\n- 1 Chupeta de Borracha Natural\n\nAs peças acompanham um saquinho de algodão para armazenamento e são enviadas prontas para presentear, em uma embalagem delicada e cuidadosamente preparada.\n\nBasta escolher a cor de sua preferência e informar o nome do bebê. Produziremos cada detalhe com muito carinho para criar um kit exclusivo, feito especialmente para a sua família.\n\nAlém de funcional, este kit é uma linda opção para compor o enxoval ou presentear uma gestante e um recém-nascido com um presente personalizado que será usado diariamente e guardado como uma lembrança cheia de afeto.',
     badges: ['Feito à mão', 'Personalizável', 'Frete grátis'],
   },
   {
@@ -551,7 +551,7 @@ export const products: Product[] = [
     colors: BEAD_COLORS,
     themes: THEMES,
     description:
-      'Kit completo para presentear: prendedor de chupeta personalizado com o nome do bebê em contas de silicone atóxico + chupeta de borracha natural, tudo embalado com carinho.',
+      'O kit perfeito para quem busca praticidade, segurança e um toque especial no dia a dia do bebê.\n\nO Prendedor de Chupeta Personalizado mantém a chupeta sempre por perto, evitando quedas e perdas. Produzido em silicone atóxico, livre de BPA, é personalizado com o nome do bebê, tornando cada peça única e cheia de significado.\n\nA Chupeta de Borracha Natural é macia, flexível e desenvolvida para proporcionar conforto ao bebê, com formato que respeita o desenvolvimento oral e material 100% de borracha natural, livre de BPA.\n\nO kit contém\n- 1 Prendedor de Chupeta Personalizado em Silicone\n- 1 Chupeta de Borracha Natural\n\nAs peças acompanham um saquinho de algodão para armazenamento e são enviadas prontas para presentear, em uma embalagem delicada e cuidadosamente preparada.\n\nBasta escolher a cor de sua preferência e informar o nome do bebê. Produziremos cada detalhe com muito carinho para criar um kit exclusivo, feito especialmente para a sua família.\n\nAlém de funcional, este kit é uma linda opção para compor o enxoval ou presentear uma gestante e um recém-nascido com um presente personalizado que será usado diariamente e guardado como uma lembrança cheia de afeto.',
     badges: ['Feito à mão', 'Personalizável', 'Frete grátis'],
   },
   {
