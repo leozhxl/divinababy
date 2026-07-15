@@ -146,22 +146,24 @@ function Endereco() {
     setShippingOptions([]);
     setSelectedShippingId(null);
 
+    fetch(`https://viacep.com.br/ws/${digits}/json/`)
+      .then((r) => r.json())
+      .then((viaCep) => {
+        if (!viaCep.erro) {
+          setStreet(viaCep.logradouro ?? '');
+          setNeighborhood(viaCep.bairro ?? '');
+          setCity(viaCep.localidade ?? '');
+          setUf(viaCep.uf ?? '');
+        }
+      })
+      .catch(() => {});
+
     try {
-      const viaCepPromise = fetch(`https://viacep.com.br/ws/${digits}/json/`).then((r) => r.json());
-      const quotePromise = fetch('/api/shipping-quote', {
+      const quote = await fetch('/api/shipping-quote', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ cep: digits, quantity: totalQuantity }),
       }).then((r) => r.json());
-
-      const [viaCep, quote] = await Promise.all([viaCepPromise, quotePromise]);
-
-      if (!viaCep.erro) {
-        setStreet(viaCep.logradouro ?? '');
-        setNeighborhood(viaCep.bairro ?? '');
-        setCity(viaCep.localidade ?? '');
-        setUf(viaCep.uf ?? '');
-      }
 
       if (quote.error || !quote.options?.length) {
         setShippingError(quote.error ?? 'Nenhuma opção de frete encontrada para esse CEP.');
