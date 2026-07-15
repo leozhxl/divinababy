@@ -20,7 +20,7 @@ export interface Product {
   imageFit?: 'cover' | 'contain';
   colors?: ProductVariantOption[];
   sizes?: string[];
-  themes?: string[];
+  themes?: ProductVariantOption[];
   description: string;
   badges?: string[];
 }

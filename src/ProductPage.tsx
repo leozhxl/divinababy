@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
-import { ArrowLeft, Sparkles, Check, Heart } from 'lucide-react';
+import { ArrowLeft, Sparkles, Check, Heart, X } from 'lucide-react';
 import { getProductBySlug } from './data/products';
 import { useCart } from './CartContext';
 import FloatingWhatsApp from './FloatingWhatsApp';
@@ -37,6 +37,7 @@ function parseDescription(description: string): { intro: string; sections: Descr
 
 function ProductDescription({ description }: { description: string }) {
   const { intro, sections } = parseDescription(description);
+  const [showDetails, setShowDetails] = useState(false);
 
   if (sections.length === 0) {
     return (
@@ -51,6 +52,14 @@ function ProductDescription({ description }: { description: string }) {
       <p className="font-sans-elegant text-base text-nude-700 leading-relaxed mb-6" style={{ fontWeight: 500 }}>
         {intro}
       </p>
+      <button
+        type="button"
+        onClick={() => setShowDetails((v) => !v)}
+        className="btn-outline mb-5"
+      >
+        {showDetails ? 'Ocultar características' : 'Ver características'}
+      </button>
+      {showDetails && (
       <div className="columns-1 sm:columns-2 gap-5">
         {sections.map((section, i) => (
           <div
@@ -89,6 +98,82 @@ function ProductDescription({ description }: { description: string }) {
           </div>
         ))}
       </div>
+      )}
+    </div>
+  );
+}
+
+function ThemePicker({
+  themes,
+  selectedTheme,
+  onSelect,
+  onPreview,
+}: {
+  themes: { name: string; image?: string }[];
+  selectedTheme: string | undefined;
+  onSelect: (name: string) => void;
+  onPreview: (item: { name: string; image?: string }) => void;
+}) {
+  return (
+    <div className="grid grid-cols-5 sm:grid-cols-7 gap-2.5">
+      {themes.map((theme) => (
+        <button
+          key={theme.name}
+          type="button"
+          onClick={() => {
+            onSelect(theme.name);
+            onPreview(theme);
+          }}
+          aria-label={theme.name}
+          title={theme.name}
+          className={`aspect-square rounded-md bg-white shadow-md p-1.5 border-2 transition-all duration-200 overflow-hidden ${
+            selectedTheme === theme.name ? 'border-nude-900' : 'border-transparent hover:border-oat-300'
+          }`}
+        >
+          {theme.image ? (
+            <img src={theme.image} alt={theme.name} className="block w-full h-full rounded-sm object-cover" />
+          ) : (
+            <span className="flex items-center justify-center w-full h-full rounded-sm bg-cream-100 font-sans-elegant text-[10px] text-nude-700 text-center leading-tight">
+              {theme.name}
+            </span>
+          )}
+        </button>
+      ))}
+    </div>
+  );
+}
+
+function PreviewLightbox({
+  item,
+  onClose,
+}: {
+  item: { name: string; image?: string } | null;
+  onClose: () => void;
+}) {
+  if (!item || !item.image) return null;
+
+  return (
+    <div
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 px-6"
+      onClick={onClose}
+    >
+      <div
+        className="relative bg-white rounded-sm p-4 max-w-sm w-full"
+        onClick={(e) => e.stopPropagation()}
+      >
+        <button
+          type="button"
+          onClick={onClose}
+          aria-label="Fechar"
+          className="absolute -top-3 -right-3 w-8 h-8 rounded-full bg-white shadow-md flex items-center justify-center text-nude-700 hover:text-nude-900"
+        >
+          <X size={18} strokeWidth={2} />
+        </button>
+        <img src={item.image} alt={item.name} className="w-full aspect-square object-cover rounded-sm" />
+        <p className="font-sans-elegant text-sm text-nude-800 text-center mt-3" style={{ fontWeight: 500 }}>
+          {item.name.replace(' — ', ' ')}
+        </p>
+      </div>
     </div>
   );
 }
@@ -100,8 +185,11 @@ function ProductPage() {
 
   const [selectedColor, setSelectedColor] = useState<string | undefined>(product?.colors?.[0]?.name);
   const [selectedSize, setSelectedSize] = useState<string | undefined>(product?.sizes?.[0]);
-  const [selectedTheme, setSelectedTheme] = useState<string | undefined>(product?.themes?.[0]);
+  const [selectedTheme, setSelectedTheme] = useState<string | undefined>(product?.themes?.[0]?.name);
   const [quantity, setQuantity] = useState(1);
+  const [showThemes, setShowThemes] = useState(false);
+  const [showColors, setShowColors] = useState(false);
+  const [previewItem, setPreviewItem] = useState<{ name: string; image?: string } | null>(null);
 
   if (!product) {
     return (
@@ -158,39 +246,6 @@ function ProductPage() {
               )}
             </div>
 
-            {product.name.includes('Personalizado') && product.colors && product.colors.length > 0 && (
-              <div className="mt-6">
-                <p className="font-sans-elegant text-xs tracking-widest uppercase text-nude-700 mb-3" style={{ fontWeight: 400 }}>
-                  Cor: {selectedColor}
-                </p>
-                <div className="grid grid-cols-5 sm:grid-cols-7 gap-2.5">
-                  {product.colors.map((color) => (
-                    <button
-                      key={color.name}
-                      onClick={() => setSelectedColor(color.name)}
-                      aria-label={color.name}
-                      title={color.name}
-                      className={`aspect-square rounded-md bg-white shadow-md p-1.5 border-2 transition-all duration-200 overflow-hidden ${
-                        selectedColor === color.name ? 'border-nude-900' : 'border-transparent hover:border-oat-300'
-                      }`}
-                    >
-                      {color.image ? (
-                        <img
-                          src={color.image}
-                          alt={color.name}
-                          className="block w-full h-full rounded-sm object-cover"
-                        />
-                      ) : (
-                        <span
-                          className="block w-full h-full rounded-sm"
-                          style={{ backgroundColor: color.hex }}
-                        />
-                      )}
-                    </button>
-                  ))}
-                </div>
-              </div>
-            )}
           </Reveal>
 
           <Reveal>
@@ -242,23 +297,69 @@ function ProductPage() {
             {product.name.includes('Personalizado') && product.themes && product.themes.length > 0 && (
               <div className="mb-6">
                 <p className="font-sans-elegant text-xs tracking-widest uppercase text-nude-700 mb-3" style={{ fontWeight: 400 }}>
-                  Tema: {selectedTheme}
+                  Tema: {selectedTheme?.replace(' — ', ' ')}
                 </p>
-                <div className="flex flex-wrap gap-2">
-                  {product.themes.map((theme) => (
-                    <button
-                      key={theme}
-                      onClick={() => setSelectedTheme(theme)}
-                      className={`px-3 py-1.5 border font-sans-elegant text-xs transition-colors duration-300 ${
-                        selectedTheme === theme
-                          ? 'border-oat-500 bg-oat-400 text-white'
-                          : 'border-oat-300 text-nude-700 hover:border-oat-500'
-                      }`}
-                    >
-                      {theme}
-                    </button>
-                  ))}
-                </div>
+                <button
+                  type="button"
+                  onClick={() => setShowThemes((v) => !v)}
+                  className="btn-outline mb-3"
+                >
+                  {showThemes ? 'Ocultar temas' : 'Escolher tema'}
+                </button>
+                {showThemes && (
+                  <ThemePicker
+                    themes={product.themes}
+                    selectedTheme={selectedTheme}
+                    onSelect={setSelectedTheme}
+                    onPreview={setPreviewItem}
+                  />
+                )}
+              </div>
+            )}
+
+            {product.name.includes('Personalizado') && product.colors && product.colors.length > 0 && (
+              <div className="mb-6">
+                <p className="font-sans-elegant text-xs tracking-widest uppercase text-nude-700 mb-3" style={{ fontWeight: 400 }}>
+                  Cor: {selectedColor}
+                </p>
+                <button
+                  type="button"
+                  onClick={() => setShowColors((v) => !v)}
+                  className="btn-outline mb-3"
+                >
+                  {showColors ? 'Ocultar cores' : 'Escolher cor'}
+                </button>
+                {showColors && (
+                  <div className="grid grid-cols-5 sm:grid-cols-7 gap-2.5">
+                    {product.colors.map((color) => (
+                      <button
+                        key={color.name}
+                        onClick={() => {
+                          setSelectedColor(color.name);
+                          setPreviewItem(color);
+                        }}
+                        aria-label={color.name}
+                        title={color.name}
+                        className={`aspect-square rounded-md bg-white shadow-md p-1.5 border-2 transition-all duration-200 overflow-hidden ${
+                          selectedColor === color.name ? 'border-nude-900' : 'border-transparent hover:border-oat-300'
+                        }`}
+                      >
+                        {color.image ? (
+                          <img
+                            src={color.image}
+                            alt={color.name}
+                            className="block w-full h-full rounded-sm object-cover"
+                          />
+                        ) : (
+                          <span
+                            className="block w-full h-full rounded-sm"
+                            style={{ backgroundColor: color.hex }}
+                          />
+                        )}
+                      </button>
+                    ))}
+                  </div>
+                )}
               </div>
             )}
 
@@ -318,6 +419,8 @@ function ProductPage() {
       <FloatingWhatsApp
         message={`Olá! Tenho interesse no produto "${product.name}" da Divina Baby 💕`}
       />
+
+      <PreviewLightbox item={previewItem} onClose={() => setPreviewItem(null)} />
     </div>
   );
 }
