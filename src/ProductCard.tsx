@@ -13,7 +13,6 @@ export default function ProductCard({ product }: { product: Product }) {
   const discountPct = product.compareAtPrice
     ? Math.round(100 - (product.price / product.compareAtPrice) * 100)
     : null;
-  const hasFreeShipping = product.badges?.includes('Frete grátis');
 
   return (
     <Reveal className="group card-lift">
@@ -28,11 +27,6 @@ export default function ProductCard({ product }: { product: Product }) {
           {discountPct !== null && (
             <span className="absolute top-3 left-3 bg-oat-600 text-white font-sans-elegant text-xs px-2 py-1" style={{ fontWeight: 500 }}>
               -{discountPct}%
-            </span>
-          )}
-          {hasFreeShipping && (
-            <span className="absolute top-3 right-3 bg-white/90 text-nude-700 font-sans-elegant text-[10px] tracking-widest uppercase px-2 py-1" style={{ fontWeight: 500 }}>
-              Grátis
             </span>
           )}
         </div>

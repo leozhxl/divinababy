@@ -2359,7 +2359,7 @@ export const products: Product[] = [
   {
     id: '39',
     slug: 'kit-presente-florzinha-rosa',
-    name: 'Kit completo 4 itens',
+    name: 'Kit Presente Personalizado Divina Baby',
     category: 'Kits',
     price: 339.6,
     pixPrice: 299.6,
@@ -2370,7 +2370,7 @@ export const products: Product[] = [
     colors: BEAD_COLORS,
     themes: THEMES,
     description:
-      'Kit presente com mordedor em formato de flor, prendedor de chupeta personalizado, pente e escova de madeira, tudo em caixa especial.',
+      'O Kit Presente Personalizado Divina Baby reúne os itens essenciais para o dia a dia do bebê em um presente único, delicado e cheio de significado.\n\nCada peça é produzida artesanalmente e personalizada com o nome do bebê, tornando o kit uma lembrança especial para toda a família.\n\nO kit contém:\n1 Prendedor de Chupeta Personalizado;\n1 Chupeta de Borracha Natural;\n1 Mordedor Sensorial;\n1 Kit Escova e Pente de Madeira (2 peças):\n1 Escova de Madeira com Cerdas Naturais;\n1 Pente de Madeira.\n\nOs acessórios acompanham saquinhos de algodão para armazenamento e proteção.\n\nBasta escolher a cor desejada e informar o nome do bebê. Nós cuidaremos de cada detalhe para criar um kit exclusivo, com muito carinho, segurança e qualidade.\n\nUm presente perfeito para gestantes, recém-nascidos e chás de bebê, feito para eternizar momentos especiais.',
     badges: ['Feito à mão', 'Personalizável', 'Frete grátis'],
   },
   {
@@ -2853,7 +2853,7 @@ export const products: Product[] = [
   {
     id: '270',
     slug: 'kit-completo-4-itens-pedro',
-    name: 'Kit completo 4 itens',
+    name: 'Kit Presente Personalizado Divina Baby',
     category: 'Kits',
     price: 339.6,
     pixPrice: 299.6,
@@ -2864,13 +2864,13 @@ export const products: Product[] = [
     colors: BEAD_COLORS,
     themes: THEMES,
     description:
-      'Kit completo para presentear: prendedor de chupeta personalizado com o nome do bebê, mordedor sensorial personalizado, pente e escova de madeira, tudo embalado com carinho.',
+      'O Kit Presente Personalizado Divina Baby reúne os itens essenciais para o dia a dia do bebê em um presente único, delicado e cheio de significado.\n\nCada peça é produzida artesanalmente e personalizada com o nome do bebê, tornando o kit uma lembrança especial para toda a família.\n\nO kit contém:\n1 Prendedor de Chupeta Personalizado;\n1 Chupeta de Borracha Natural;\n1 Mordedor Sensorial;\n1 Kit Escova e Pente de Madeira (2 peças):\n1 Escova de Madeira com Cerdas Naturais;\n1 Pente de Madeira.\n\nOs acessórios acompanham saquinhos de algodão para armazenamento e proteção.\n\nBasta escolher a cor desejada e informar o nome do bebê. Nós cuidaremos de cada detalhe para criar um kit exclusivo, com muito carinho, segurança e qualidade.\n\nUm presente perfeito para gestantes, recém-nascidos e chás de bebê, feito para eternizar momentos especiais.',
     badges: ['Feito à mão', 'Personalizável', 'Frete grátis'],
   },
   {
     id: '271',
     slug: 'kit-completo-4-itens-bella',
-    name: 'Kit completo 4 itens',
+    name: 'Kit Presente Personalizado Divina Baby',
     category: 'Kits',
     price: 339.6,
     pixPrice: 299.6,
@@ -2881,7 +2881,7 @@ export const products: Product[] = [
     colors: BEAD_COLORS,
     themes: THEMES,
     description:
-      'Kit completo para presentear: prendedor de chupeta personalizado com o nome do bebê, mordedor sensorial personalizado, pente e escova de madeira, tudo embalado com carinho.',
+      'O Kit Presente Personalizado Divina Baby reúne os itens essenciais para o dia a dia do bebê em um presente único, delicado e cheio de significado.\n\nCada peça é produzida artesanalmente e personalizada com o nome do bebê, tornando o kit uma lembrança especial para toda a família.\n\nO kit contém:\n1 Prendedor de Chupeta Personalizado;\n1 Chupeta de Borracha Natural;\n1 Mordedor Sensorial;\n1 Kit Escova e Pente de Madeira (2 peças):\n1 Escova de Madeira com Cerdas Naturais;\n1 Pente de Madeira.\n\nOs acessórios acompanham saquinhos de algodão para armazenamento e proteção.\n\nBasta escolher a cor desejada e informar o nome do bebê. Nós cuidaremos de cada detalhe para criar um kit exclusivo, com muito carinho, segurança e qualidade.\n\nUm presente perfeito para gestantes, recém-nascidos e chás de bebê, feito para eternizar momentos especiais.',
     badges: ['Feito à mão', 'Personalizável', 'Frete grátis'],
   },
   {
