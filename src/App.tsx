@@ -48,6 +48,7 @@ function InstagramIcon({
 
 const categoryImages: Record<string, string> = {
   'Prendedor de Chupeta Personalizado com Nome em Silicone': '/WhatsApp Image 2026-07-13 at 18.22.44.jpeg',
+  'Prendedor de Chupeta Sem Personalização em Silicone': '/WhatsApp Image 2026-07-16 at 16.41.52.jpeg',
   Chaveiros: '/chaveiros.jpeg',
   'Chupetas de Borracha Natural para Bebês de 0 a 6 Meses': '/chupetas-0-6-meses-nova.jpeg',
   'Chupeta de Borracha Natural com Argolinha que Brilha no Escuro': '/WhatsApp Image 2026-07-10 at 16.18.18.jpeg',

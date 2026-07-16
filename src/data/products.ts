@@ -266,23 +266,6 @@ export const products: Product[] = [
     badges: ['Feito à mão', 'Personalizável', 'Frete grátis'],
   },
   {
-    id: '250',
-    slug: 'kit-prendedor-nome-chupeta-borracha-natural-250',
-    name: 'Kit Prendedor de Chupeta Personalizado com Nome + Chupeta de Borracha Natural Argolinha Brilha no Escuro',
-    category: 'Kits',
-    price: 179.8,
-    pixPrice: 159.8,
-    installments: 2,
-    altInstallments: 4,
-    altInstallmentAmount: 49.95,
-    images: ['/WhatsApp Image 2026-07-10 at 16.41.34 (1).jpeg'],
-    colors: BEAD_COLORS,
-    themes: THEMES,
-    description:
-      'O kit perfeito para quem busca praticidade, segurança e um toque especial no dia a dia do bebê.\n\nO Prendedor de Chupeta Personalizado mantém a chupeta sempre por perto, evitando quedas e perdas. Produzido em silicone atóxico, livre de BPA, é personalizado com o nome do bebê, tornando cada peça única e cheia de significado.\n\nA Chupeta de Borracha Natural é macia, flexível e desenvolvida para proporcionar conforto ao bebê, com formato que respeita o desenvolvimento oral e material 100% de borracha natural, livre de BPA.\n\nO kit contém\n- 1 Prendedor de Chupeta Personalizado em Silicone\n- 1 Chupeta de Borracha Natural\n\nAs peças acompanham um saquinho de algodão para armazenamento e são enviadas prontas para presentear, em uma embalagem delicada e cuidadosamente preparada.\n\nBasta escolher a cor de sua preferência e informar o nome do bebê. Produziremos cada detalhe com muito carinho para criar um kit exclusivo, feito especialmente para a sua família.\n\nAlém de funcional, este kit é uma linda opção para compor o enxoval ou presentear uma gestante e um recém-nascido com um presente personalizado que será usado diariamente e guardado como uma lembrança cheia de afeto.',
-    badges: ['Feito à mão', 'Personalizável', 'Frete grátis'],
-  },
-  {
     id: '251',
     slug: 'kit-prendedor-nome-chupeta-borracha-natural-251',
     name: 'Kit Prendedor de Chupeta Personalizado com Nome + Chupeta de Borracha Natural Argolinha Brilha no Escuro',
@@ -1503,7 +1486,7 @@ export const products: Product[] = [
     colors: BEAD_COLORS,
     themes: THEMES,
     description:
-      'Prendedor de chupeta personalizado com o nome do bebê em contas de silicone atóxico, feito à mão para compor o enxoval com exclusividade.',
+      'Além de manter a chupeta sempre limpa e ao alcance do bebê, ele ajuda a evitar quedas e perdas durante os passeios e na rotina do dia a dia.\n\nCada prendedor é produzido artesanalmente e personalizado com o nome do bebê, tornando cada peça única e cheia de significado.\n\nComposição\nTodos os materiais utilizados são cuidadosamente selecionados para oferecer qualidade, segurança e durabilidade.\n- Bolinhas e letras em silicone atóxico, livres de BPA, PVC, chumbo e ftalatos.\n- 1 bolinha de madeira natural.\n- Clipe em madeira com presilha metálica.\n- Cordão de nylon resistente.\nA chupeta não acompanha o produto.\n\nMedidas\nComprimento aproximado entre 29 e 35 cm, variando conforme a quantidade de letras do nome do bebê. Por se tratar de um produto artesanal, as medidas e o peso podem apresentar pequenas variações.\n\nPor que escolher a Divina Baby?\n🤍 Produção artesanal, feita com carinho.\n🤍 Materiais seguros e de alta qualidade.\n🤍 Personalização exclusiva com o nome do bebê.\n🤍 Design delicado e atemporal.\n🤍 Embalagem pronta para presentear.\n🤍 Atendimento humanizado do início ao fim.',
     badges: ['Feito à mão', 'Personalizável'],
   },
   {
@@ -1945,7 +1928,7 @@ export const products: Product[] = [
     colors: BEAD_COLORS,
     themes: THEMES,
     description:
-      'Prendedor de chupeta personalizado com clipe em formato de ursinho e contas de silicone nos tons azul e areia. Vem com o nome do bebê em contas de silicone atóxico.',
+      'Além de manter a chupeta sempre limpa e ao alcance do bebê, ele ajuda a evitar quedas e perdas durante os passeios e na rotina do dia a dia.\n\nCada prendedor é produzido artesanalmente e personalizado com o nome do bebê, tornando cada peça única e cheia de significado.\n\nComposição\nTodos os materiais utilizados são cuidadosamente selecionados para oferecer qualidade, segurança e durabilidade.\n- Bolinhas e letras em silicone atóxico, livres de BPA, PVC, chumbo e ftalatos.\n- 1 bolinha de madeira natural.\n- Clipe em madeira com presilha metálica.\n- Cordão de nylon resistente.\nA chupeta não acompanha o produto.\n\nMedidas\nComprimento aproximado entre 29 e 35 cm, variando conforme a quantidade de letras do nome do bebê. Por se tratar de um produto artesanal, as medidas e o peso podem apresentar pequenas variações.\n\nPor que escolher a Divina Baby?\n🤍 Produção artesanal, feita com carinho.\n🤍 Materiais seguros e de alta qualidade.\n🤍 Personalização exclusiva com o nome do bebê.\n🤍 Design delicado e atemporal.\n🤍 Embalagem pronta para presentear.\n🤍 Atendimento humanizado do início ao fim.',
     badges: ['Feito à mão', 'Personalizável'],
   },
   {
@@ -1962,7 +1945,7 @@ export const products: Product[] = [
     colors: BEAD_COLORS,
     themes: THEMES,
     description:
-      'Prendedor de chupeta personalizado com conta de silicone de coroa e tons de azul, entregue já com a chupeta acoplada e o nome do bebê em contas de silicone.',
+      'Além de manter a chupeta sempre limpa e ao alcance do bebê, ele ajuda a evitar quedas e perdas durante os passeios e na rotina do dia a dia.\n\nCada prendedor é produzido artesanalmente e personalizado com o nome do bebê, tornando cada peça única e cheia de significado.\n\nComposição\nTodos os materiais utilizados são cuidadosamente selecionados para oferecer qualidade, segurança e durabilidade.\n- Bolinhas e letras em silicone atóxico, livres de BPA, PVC, chumbo e ftalatos.\n- 1 bolinha de madeira natural.\n- Clipe em madeira com presilha metálica.\n- Cordão de nylon resistente.\nA chupeta não acompanha o produto.\n\nMedidas\nComprimento aproximado entre 29 e 35 cm, variando conforme a quantidade de letras do nome do bebê. Por se tratar de um produto artesanal, as medidas e o peso podem apresentar pequenas variações.\n\nPor que escolher a Divina Baby?\n🤍 Produção artesanal, feita com carinho.\n🤍 Materiais seguros e de alta qualidade.\n🤍 Personalização exclusiva com o nome do bebê.\n🤍 Design delicado e atemporal.\n🤍 Embalagem pronta para presentear.\n🤍 Atendimento humanizado do início ao fim.',
     badges: ['Feito à mão', 'Personalizável'],
   },
   {
@@ -2064,7 +2047,7 @@ export const products: Product[] = [
     colors: BEAD_COLORS,
     themes: THEMES,
     description:
-      'Prendedor de chupeta personalizado com contas de silicone de balão e cereja, disponível em diferentes combinações de cor para compor o enxoval.',
+      'Além de manter a chupeta sempre limpa e ao alcance do bebê, ele ajuda a evitar quedas e perdas durante os passeios e na rotina do dia a dia.\n\nCada prendedor é produzido artesanalmente e personalizado com o nome do bebê, tornando cada peça única e cheia de significado.\n\nComposição\nTodos os materiais utilizados são cuidadosamente selecionados para oferecer qualidade, segurança e durabilidade.\n- Bolinhas e letras em silicone atóxico, livres de BPA, PVC, chumbo e ftalatos.\n- 1 bolinha de madeira natural.\n- Clipe em madeira com presilha metálica.\n- Cordão de nylon resistente.\nA chupeta não acompanha o produto.\n\nMedidas\nComprimento aproximado entre 29 e 35 cm, variando conforme a quantidade de letras do nome do bebê. Por se tratar de um produto artesanal, as medidas e o peso podem apresentar pequenas variações.\n\nPor que escolher a Divina Baby?\n🤍 Produção artesanal, feita com carinho.\n🤍 Materiais seguros e de alta qualidade.\n🤍 Personalização exclusiva com o nome do bebê.\n🤍 Design delicado e atemporal.\n🤍 Embalagem pronta para presentear.\n🤍 Atendimento humanizado do início ao fim.',
     badges: ['Feito à mão', 'Personalizável'],
   },
   {
@@ -2115,7 +2098,7 @@ export const products: Product[] = [
     colors: BEAD_COLORS,
     themes: THEMES,
     description:
-      'Prendedor de chupeta personalizado com clipe em formato de passarinho e contas de silicone em tom verde sálvia e branco.',
+      'Além de manter a chupeta sempre limpa e ao alcance do bebê, ele ajuda a evitar quedas e perdas durante os passeios e na rotina do dia a dia.\n\nCada prendedor é produzido artesanalmente e personalizado com o nome do bebê, tornando cada peça única e cheia de significado.\n\nComposição\nTodos os materiais utilizados são cuidadosamente selecionados para oferecer qualidade, segurança e durabilidade.\n- Bolinhas e letras em silicone atóxico, livres de BPA, PVC, chumbo e ftalatos.\n- 1 bolinha de madeira natural.\n- Clipe em madeira com presilha metálica.\n- Cordão de nylon resistente.\nA chupeta não acompanha o produto.\n\nMedidas\nComprimento aproximado entre 29 e 35 cm, variando conforme a quantidade de letras do nome do bebê. Por se tratar de um produto artesanal, as medidas e o peso podem apresentar pequenas variações.\n\nPor que escolher a Divina Baby?\n🤍 Produção artesanal, feita com carinho.\n🤍 Materiais seguros e de alta qualidade.\n🤍 Personalização exclusiva com o nome do bebê.\n🤍 Design delicado e atemporal.\n🤍 Embalagem pronta para presentear.\n🤍 Atendimento humanizado do início ao fim.',
     badges: ['Feito à mão', 'Personalizável'],
   },
   {
@@ -2132,7 +2115,7 @@ export const products: Product[] = [
     colors: BEAD_COLORS,
     themes: THEMES,
     description:
-      'Prendedor de chupeta personalizado com contas de silicone de laço em tom rosé e detalhes em terracota, feito à mão com o nome do bebê.',
+      'Além de manter a chupeta sempre limpa e ao alcance do bebê, ele ajuda a evitar quedas e perdas durante os passeios e na rotina do dia a dia.\n\nCada prendedor é produzido artesanalmente e personalizado com o nome do bebê, tornando cada peça única e cheia de significado.\n\nComposição\nTodos os materiais utilizados são cuidadosamente selecionados para oferecer qualidade, segurança e durabilidade.\n- Bolinhas e letras em silicone atóxico, livres de BPA, PVC, chumbo e ftalatos.\n- 1 bolinha de madeira natural.\n- Clipe em madeira com presilha metálica.\n- Cordão de nylon resistente.\nA chupeta não acompanha o produto.\n\nMedidas\nComprimento aproximado entre 29 e 35 cm, variando conforme a quantidade de letras do nome do bebê. Por se tratar de um produto artesanal, as medidas e o peso podem apresentar pequenas variações.\n\nPor que escolher a Divina Baby?\n🤍 Produção artesanal, feita com carinho.\n🤍 Materiais seguros e de alta qualidade.\n🤍 Personalização exclusiva com o nome do bebê.\n🤍 Design delicado e atemporal.\n🤍 Embalagem pronta para presentear.\n🤍 Atendimento humanizado do início ao fim.',
     badges: ['Feito à mão', 'Personalizável'],
   },
   {
@@ -2166,7 +2149,7 @@ export const products: Product[] = [
     colors: BEAD_COLORS,
     themes: THEMES,
     description:
-      'Prendedor de chupeta personalizado com conta de silicone de arco-íris colorida, feito à mão com o nome do bebê.',
+      'Além de manter a chupeta sempre limpa e ao alcance do bebê, ele ajuda a evitar quedas e perdas durante os passeios e na rotina do dia a dia.\n\nCada prendedor é produzido artesanalmente e personalizado com o nome do bebê, tornando cada peça única e cheia de significado.\n\nComposição\nTodos os materiais utilizados são cuidadosamente selecionados para oferecer qualidade, segurança e durabilidade.\n- Bolinhas e letras em silicone atóxico, livres de BPA, PVC, chumbo e ftalatos.\n- 1 bolinha de madeira natural.\n- Clipe em madeira com presilha metálica.\n- Cordão de nylon resistente.\nA chupeta não acompanha o produto.\n\nMedidas\nComprimento aproximado entre 29 e 35 cm, variando conforme a quantidade de letras do nome do bebê. Por se tratar de um produto artesanal, as medidas e o peso podem apresentar pequenas variações.\n\nPor que escolher a Divina Baby?\n🤍 Produção artesanal, feita com carinho.\n🤍 Materiais seguros e de alta qualidade.\n🤍 Personalização exclusiva com o nome do bebê.\n🤍 Design delicado e atemporal.\n🤍 Embalagem pronta para presentear.\n🤍 Atendimento humanizado do início ao fim.',
     badges: ['Feito à mão', 'Personalizável'],
   },
   {
