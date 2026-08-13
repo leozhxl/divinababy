@@ -2948,6 +2948,7 @@ export const products: Product[] = [
     altInstallmentAmount: 39.95,
     images: ['/WhatsApp Image 2026-07-16 at 16.41.52.jpeg'],
     colors: BEAD_COLORS,
+    themes: THEMES,
     description:
       'O Prendedor de Chupeta Sem Personalização em Silicone da Divina Baby foi desenvolvido para unir segurança, praticidade e delicadeza em um único acessório.\n\nAlém de manter a chupeta sempre limpa e ao alcance do bebê, ele ajuda a evitar quedas e perdas durante os passeios e na rotina do dia a dia.\n\nCada prendedor é produzido artesanalmente, com materiais de alta qualidade e acabamento cuidadoso, tornando cada peça especial.\n\nComposição\nTodos os materiais utilizados são cuidadosamente selecionados para oferecer qualidade, segurança e durabilidade.\n\nBolinhas em silicone atóxico, livres de BPA, PVC, chumbo e ftalatos.\n1 bolinha de madeira natural.\nClipe em madeira com presilha metálica.\nCordão de nylon resistente.\n\nA chupeta não acompanha o produto.\n\nMedidas\nComprimento aproximado de 25 cm.\nPor se tratar de um produto artesanal, as medidas e o peso podem apresentar pequenas variações.\n\nPor que escolher a Divina Baby?\n\n🤍 Produção artesanal, feita com carinho.\n🤍 Materiais seguros e de alta qualidade.\n🤍 Design delicado e atemporal.\n🤍 Embalagem pronta para presentear.\n🤍 Atendimento humanizado do início ao fim.\n\nComo usar?\n\nPrenda uma extremidade do prendedor na chupeta e a outra na roupinha do bebê. Dessa forma, a chupeta permanece sempre ao alcance, ajudando a evitar quedas e perdas durante os passeios e na rotina.\n\nCuidados\nHigienize antes do primeiro uso e sempre que necessário com água morna e sabão neutro.\n\nSeque completamente antes de guardar.\nNão deixe o clipe de madeira de molho em água.\nAntes de cada uso, verifique se o produto está em perfeitas condições.\n\nUtilize sempre sob a supervisão de um adulto.\nSuspenda o uso caso o produto apresente qualquer sinal de desgaste ou dano.\n\nPor se tratar de um produto artesanal, pequenas variações nas cores, nos veios da madeira e na disposição das peças podem ocorrer, tornando cada prendedor exclusivo.',
     badges: ['Feito à mão'],
@@ -2963,6 +2964,8 @@ export const products: Product[] = [
     altInstallments: 4,
     altInstallmentAmount: 25.0,
     images: ['/WhatsApp Image 2026-07-16 at 17.33.34.jpeg'],
+    colors: BEAD_COLORS,
+    themes: THEMES,
     description:
       'Um kit pensado para acompanhar os primeiros cuidados do seu bebê com delicadeza, segurança e muito carinho.\n\nO Prendedor de Chupeta sem Personalização mantém a chupeta sempre por perto, evitando quedas e perdas durante os passeios e no dia a dia.\n\nProduzido em silicone atóxico, livre de BPA, une praticidade, segurança e um design delicado.\n\nO Kit Pente e Escova de Madeira completa esse momento de cuidado.\nA escova possui cerdas naturais, ideais para o couro cabeludo delicado do bebê, enquanto o pente de madeira ajuda a desembaraçar os fios com suavidade.\n\nO kit contém:\n1 Prendedor de Chupeta sem Personalização em Silicone;\n1 Kit Pente e Escova de Madeira (2 peças):\n1 Escova de Madeira com Cerdas Naturais;\n1 Pente de Madeira.\n\nTodas as peças são cuidadosamente selecionadas para proporcionar conforto, qualidade e um acabamento encantador, tornando este kit uma linda opção para compor o enxoval ou presentear uma futura mamãe.\n\nBasta escolher a cor de sua preferência e informar sua escolha pelo WhatsApp.\n\nNós produziremos tudo com muito carinho para entregar um kit especial para a sua família.',
     badges: ['Feito à mão'],
@@ -2978,6 +2981,8 @@ export const products: Product[] = [
     altInstallments: 4,
     altInstallmentAmount: 25.0,
     images: ['/WhatsApp Image 2026-07-16 at 17.33.33 (3).jpeg'],
+    colors: BEAD_COLORS,
+    themes: THEMES,
     description:
       'Um kit pensado para acompanhar os primeiros cuidados do seu bebê com delicadeza, segurança e muito carinho.\n\nO Prendedor de Chupeta sem Personalização mantém a chupeta sempre por perto, evitando quedas e perdas durante os passeios e no dia a dia.\n\nProduzido em silicone atóxico, livre de BPA, une praticidade, segurança e um design delicado.\n\nO Kit Pente e Escova de Madeira completa esse momento de cuidado.\nA escova possui cerdas naturais, ideais para o couro cabeludo delicado do bebê, enquanto o pente de madeira ajuda a desembaraçar os fios com suavidade.\n\nO kit contém:\n1 Prendedor de Chupeta sem Personalização em Silicone;\n1 Kit Pente e Escova de Madeira (2 peças):\n1 Escova de Madeira com Cerdas Naturais;\n1 Pente de Madeira.\n\nTodas as peças são cuidadosamente selecionadas para proporcionar conforto, qualidade e um acabamento encantador, tornando este kit uma linda opção para compor o enxoval ou presentear uma futura mamãe.\n\nBasta escolher a cor de sua preferência e informar sua escolha pelo WhatsApp.\n\nNós produziremos tudo com muito carinho para entregar um kit especial para a sua família.',
     badges: ['Feito à mão'],
@@ -2993,6 +2998,8 @@ export const products: Product[] = [
     altInstallments: 4,
     altInstallmentAmount: 25.0,
     images: ['/WhatsApp Image 2026-07-16 at 17.33.33 (2).jpeg'],
+    colors: BEAD_COLORS,
+    themes: THEMES,
     description:
       'Um kit pensado para acompanhar os primeiros cuidados do seu bebê com delicadeza, segurança e muito carinho.\n\nO Prendedor de Chupeta sem Personalização mantém a chupeta sempre por perto, evitando quedas e perdas durante os passeios e no dia a dia.\n\nProduzido em silicone atóxico, livre de BPA, une praticidade, segurança e um design delicado.\n\nO Kit Pente e Escova de Madeira completa esse momento de cuidado.\nA escova possui cerdas naturais, ideais para o couro cabeludo delicado do bebê, enquanto o pente de madeira ajuda a desembaraçar os fios com suavidade.\n\nO kit contém:\n1 Prendedor de Chupeta sem Personalização em Silicone;\n1 Kit Pente e Escova de Madeira (2 peças):\n1 Escova de Madeira com Cerdas Naturais;\n1 Pente de Madeira.\n\nTodas as peças são cuidadosamente selecionadas para proporcionar conforto, qualidade e um acabamento encantador, tornando este kit uma linda opção para compor o enxoval ou presentear uma futura mamãe.\n\nBasta escolher a cor de sua preferência e informar sua escolha pelo WhatsApp.\n\nNós produziremos tudo com muito carinho para entregar um kit especial para a sua família.',
     badges: ['Feito à mão'],
@@ -3008,6 +3015,8 @@ export const products: Product[] = [
     altInstallments: 4,
     altInstallmentAmount: 25.0,
     images: ['/WhatsApp Image 2026-07-16 at 17.33.33 (1).jpeg'],
+    colors: BEAD_COLORS,
+    themes: THEMES,
     description:
       'Um kit pensado para acompanhar os primeiros cuidados do seu bebê com delicadeza, segurança e muito carinho.\n\nO Prendedor de Chupeta sem Personalização mantém a chupeta sempre por perto, evitando quedas e perdas durante os passeios e no dia a dia.\n\nProduzido em silicone atóxico, livre de BPA, une praticidade, segurança e um design delicado.\n\nO Kit Pente e Escova de Madeira completa esse momento de cuidado.\nA escova possui cerdas naturais, ideais para o couro cabeludo delicado do bebê, enquanto o pente de madeira ajuda a desembaraçar os fios com suavidade.\n\nO kit contém:\n1 Prendedor de Chupeta sem Personalização em Silicone;\n1 Kit Pente e Escova de Madeira (2 peças):\n1 Escova de Madeira com Cerdas Naturais;\n1 Pente de Madeira.\n\nTodas as peças são cuidadosamente selecionadas para proporcionar conforto, qualidade e um acabamento encantador, tornando este kit uma linda opção para compor o enxoval ou presentear uma futura mamãe.\n\nBasta escolher a cor de sua preferência e informar sua escolha pelo WhatsApp.\n\nNós produziremos tudo com muito carinho para entregar um kit especial para a sua família.',
     badges: ['Feito à mão'],
@@ -3023,6 +3032,8 @@ export const products: Product[] = [
     altInstallments: 4,
     altInstallmentAmount: 25.0,
     images: ['/WhatsApp Image 2026-07-16 at 17.33.33.jpeg'],
+    colors: BEAD_COLORS,
+    themes: THEMES,
     description:
       'Um kit pensado para acompanhar os primeiros cuidados do seu bebê com delicadeza, segurança e muito carinho.\n\nO Prendedor de Chupeta sem Personalização mantém a chupeta sempre por perto, evitando quedas e perdas durante os passeios e no dia a dia.\n\nProduzido em silicone atóxico, livre de BPA, une praticidade, segurança e um design delicado.\n\nO Kit Pente e Escova de Madeira completa esse momento de cuidado.\nA escova possui cerdas naturais, ideais para o couro cabeludo delicado do bebê, enquanto o pente de madeira ajuda a desembaraçar os fios com suavidade.\n\nO kit contém:\n1 Prendedor de Chupeta sem Personalização em Silicone;\n1 Kit Pente e Escova de Madeira (2 peças):\n1 Escova de Madeira com Cerdas Naturais;\n1 Pente de Madeira.\n\nTodas as peças são cuidadosamente selecionadas para proporcionar conforto, qualidade e um acabamento encantador, tornando este kit uma linda opção para compor o enxoval ou presentear uma futura mamãe.\n\nBasta escolher a cor de sua preferência e informar sua escolha pelo WhatsApp.\n\nNós produziremos tudo com muito carinho para entregar um kit especial para a sua família.',
     badges: ['Feito à mão'],

@@ -285,7 +285,7 @@ function ProductPage() {
 
             <ProductDescription description={product.description} />
 
-            {product.name.includes('Personalizado') && product.themes && product.themes.length > 0 && (
+            {product.themes && product.themes.length > 0 && (
               <div className="mb-6">
                 <p className="font-sans-elegant text-xs tracking-widest uppercase text-nude-700 mb-3" style={{ fontWeight: 400 }}>
                   Tema: {selectedTheme?.replace(' — ', ' ')}
@@ -307,7 +307,7 @@ function ProductPage() {
               </div>
             )}
 
-            {product.name.includes('Personalizado') && product.colors && product.colors.length > 0 && (
+            {product.colors && product.colors.length > 0 && (
               <div className="mb-6">
                 <p className="font-sans-elegant text-xs tracking-widest uppercase text-nude-700 mb-3" style={{ fontWeight: 400 }}>
                   Cor: {selectedColor}
