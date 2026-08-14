@@ -1,8 +1,7 @@
 import { useState, useEffect, FormEvent } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { Search, User, ShoppingBag, LogOut } from 'lucide-react';
+import { Search, ShoppingBag } from 'lucide-react';
 import { useCart } from './CartContext';
-import { useAuth } from './AuthContext';
 
 function formatBRL(value: number): string {
   return value.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
@@ -19,9 +18,7 @@ const navLinks = [
 
 export default function Header() {
   const { itemCount, subtotal, openCart } = useCart();
-  const { user, profile, signOut } = useAuth();
   const [query, setQuery] = useState('');
-  const [showAccountMenu, setShowAccountMenu] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const navigate = useNavigate();
 
@@ -31,14 +28,6 @@ export default function Header() {
     window.addEventListener('scroll', onScroll, { passive: true });
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
-
-  const firstName = profile?.name?.split(' ')[0] || user?.email?.split('@')[0];
-
-  const handleSignOut = async () => {
-    setShowAccountMenu(false);
-    await signOut();
-    navigate('/');
-  };
 
   const handleSearch = (e: FormEvent) => {
     e.preventDefault();
@@ -77,51 +66,8 @@ export default function Header() {
           </Link>
 
           <div className="flex items-center gap-3 sm:gap-6 ml-auto sm:ml-0 order-2 sm:order-3 shrink-0">
-            {user ? (
-              <div
-                className="relative"
-                onMouseEnter={() => setShowAccountMenu(true)}
-                onMouseLeave={() => setShowAccountMenu(false)}
-              >
-                <button
-                  onClick={() => setShowAccountMenu((v) => !v)}
-                  aria-expanded={showAccountMenu}
-                  aria-label="Minha conta"
-                  className="flex items-center gap-2 text-nude-700 hover:text-oat-500 transition-colors duration-300"
-                >
-                  <span className="w-9 h-9 rounded-full border border-oat-300 flex items-center justify-center shrink-0">
-                    <User size={16} strokeWidth={1.5} />
-                  </span>
-                  <span className="font-sans-elegant text-xs leading-tight text-left hidden md:inline" style={{ fontWeight: 400 }}>
-                    Olá,<br />{firstName}
-                  </span>
-                </button>
-                {showAccountMenu && (
-                  <div className="absolute top-full right-0 bg-white shadow-luxury rounded-sm py-2 min-w-[180px] z-50">
-                    <button
-                      onClick={handleSignOut}
-                      className="w-full flex items-center gap-2 px-4 py-2 font-sans-elegant text-xs text-nude-700 hover:bg-oat-100 hover:text-oat-600 transition-colors duration-300"
-                    >
-                      <LogOut size={14} strokeWidth={1.5} />
-                      Sair
-                    </button>
-                  </div>
-                )}
-              </div>
-            ) : (
-              <Link
-                to="/login"
-                aria-label="Login ou cadastro"
-                className="flex items-center gap-2 text-nude-700 hover:text-oat-500 transition-colors duration-300"
-              >
-                <span className="w-9 h-9 rounded-full border border-oat-300 flex items-center justify-center shrink-0">
-                  <User size={16} strokeWidth={1.5} />
-                </span>
-                <span className="font-sans-elegant text-xs leading-tight text-left hidden md:inline" style={{ fontWeight: 400 }}>
-                  Login /<br />Cadastre-se
-                </span>
-              </Link>
-            )}
+            {/* Login/cadastro oculto até o Supabase ser configurado.
+                <Link to="/login" ...>Login / Cadastre-se</Link> */}
 
             <button
               onClick={openCart}
