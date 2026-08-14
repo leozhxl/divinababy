@@ -69,12 +69,12 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-cream-50">
+    <div className="min-h-screen bg-white">
       <Header />
       <div className="overflow-x-hidden">
 
       {/* Hero Section - Storefront Window */}
-      <section id="home" className="relative pt-16 pb-16 lg:pt-20 lg:pb-20 flex items-center justify-center bg-gradient-oat-soft overflow-hidden">
+      <section id="home" className="relative pt-16 pb-16 lg:pt-20 lg:pb-20 flex items-center justify-center bg-white overflow-hidden">
         {/* Decorative Background Elements */}
         <div className="absolute inset-0 overflow-hidden">
           {/* Marble texture overlay */}
@@ -187,7 +187,7 @@ function App() {
       </section>
 
       {/* Shop by Category */}
-      <section className="py-16 lg:py-20 bg-cream-50">
+      <section className="py-16 lg:py-20 bg-white">
         <Reveal className="max-w-6xl mx-auto px-6 lg:px-12">
           <div className="text-center mb-12">
             <p className="section-subtitle mb-4">Encontre o que procura</p>
@@ -256,7 +256,7 @@ function App() {
       </section>
 
       {/* Featured Collections */}
-      <section id="colecoes" className="py-20 lg:py-28 bg-cream-50">
+      <section id="colecoes" className="py-20 lg:py-28 bg-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           {/* Section Header */}
           <div className="text-center mb-14 lg:mb-16">
@@ -336,7 +336,7 @@ function App() {
       </section>
 
       {/* Gallery Section */}
-      <section id="galeria" className="py-24 lg:py-32 bg-cream-50">
+      <section id="galeria" className="py-24 lg:py-32 bg-white">
         <Reveal className="max-w-7xl mx-auto px-6 lg:px-12">
           <div className="text-center mb-16 lg:mb-20">
             <p className="section-subtitle mb-4">Momentos Divina Baby</p>
@@ -468,7 +468,7 @@ function App() {
       </section>
 
       {/* Contact / Visit Section */}
-      <section id="contato" className="py-24 lg:py-32 bg-cream-50">
+      <section id="contato" className="py-24 lg:py-32 bg-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <div className="text-center mb-16">
             <p className="section-subtitle mb-4">Venha Nos Visitar</p>
