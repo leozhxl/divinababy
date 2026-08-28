@@ -2830,6 +2830,7 @@ export const products: Product[] = [
     altInstallmentAmount: 67.5,
     images: ['/WhatsApp Image 2026-07-13 at 15.43.03.jpeg'],
     colors: BEAD_COLORS,
+    themes: THEMES,
     description:
       'Kit completo com prendedor de chupeta em silicone sem personalização, chupeta de borracha natural e kit pente e escova de madeira com cerdas naturais, tudo embalado com carinho.',
     badges: ['Feito à mão', 'Frete grátis'],
