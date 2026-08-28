@@ -479,9 +479,9 @@ function App() {
           <Reveal className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6">
             {/* Address */}
             <div className="text-center p-8 bg-gradient-to-br from-oat-50 to-cream-50 rounded-sm">
-              <MapPin className="w-6 h-6 text-oat-400 mx-auto mb-4" style={{ strokeWidth: 1.5 }} />
-              <h3 className="font-serif-elegant text-lg text-nude-800 mb-2" style={{ fontWeight: 500 }}>Localização</h3>
-              <p className="font-sans-elegant text-sm text-nude-600" style={{ fontWeight: 300 }}>
+              <MapPin className="w-6 h-6 text-oat-500 mx-auto mb-4" style={{ strokeWidth: 1.5 }} />
+              <h3 className="font-serif-elegant text-lg text-nude-900 mb-2" style={{ fontWeight: 600 }}>Localização</h3>
+              <p className="font-sans-elegant text-sm text-nude-800 leading-relaxed" style={{ fontWeight: 500 }}>
                 Balneário Gaivota, SC<br />
                 Atendimento sob encomenda<br />
                 Envios para todo o Brasil
@@ -490,9 +490,9 @@ function App() {
 
             {/* Hours */}
             <div className="text-center p-8 bg-gradient-to-br from-cream-50 to-nude-50 rounded-sm">
-              <Clock className="w-6 h-6 text-oat-400 mx-auto mb-4" style={{ strokeWidth: 1.5 }} />
-              <h3 className="font-serif-elegant text-lg text-nude-800 mb-2" style={{ fontWeight: 500 }}>Horário</h3>
-              <p className="font-sans-elegant text-sm text-nude-600" style={{ fontWeight: 300 }}>
+              <Clock className="w-6 h-6 text-oat-500 mx-auto mb-4" style={{ strokeWidth: 1.5 }} />
+              <h3 className="font-serif-elegant text-lg text-nude-900 mb-2" style={{ fontWeight: 600 }}>Horário</h3>
+              <p className="font-sans-elegant text-sm text-nude-800 leading-relaxed" style={{ fontWeight: 500 }}>
                 Seg - Sáb: 08h às 19h<br />
                 Domingo: Fechado
               </p>
@@ -500,16 +500,17 @@ function App() {
 
             {/* Phone */}
             <div className="text-center p-8 bg-gradient-to-br from-nude-50 to-oat-50 rounded-sm">
-              <Phone className="w-6 h-6 text-oat-400 mx-auto mb-4" style={{ strokeWidth: 1.5 }} />
-              <h3 className="font-serif-elegant text-lg text-nude-800 mb-2" style={{ fontWeight: 500 }}>Contato</h3>
-              <p className="font-sans-elegant text-sm text-nude-600 mb-3" style={{ fontWeight: 300 }}>
+              <Phone className="w-6 h-6 text-oat-500 mx-auto mb-4" style={{ strokeWidth: 1.5 }} />
+              <h3 className="font-serif-elegant text-lg text-nude-900 mb-2" style={{ fontWeight: 600 }}>Contato</h3>
+              <p className="font-sans-elegant text-sm text-nude-800 mb-3" style={{ fontWeight: 500 }}>
                 tafibecker@gmail.com
               </p>
               <a
                 href={waLink('Olá! Vim pelo site da Divina Baby e gostaria de mais informações 💕')}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-sans-elegant text-xs tracking-widest uppercase text-oat-500 hover:text-oat-600 transition-colors duration-300"
+                className="font-sans-elegant text-xs tracking-widest uppercase text-oat-600 hover:text-oat-700 transition-colors duration-300"
+                style={{ fontWeight: 600 }}
               >
                 (48) 99836-4557 · Chamar no WhatsApp
               </a>
@@ -517,32 +518,19 @@ function App() {
 
             {/* Social */}
             <div className="text-center p-8 bg-gradient-to-br from-oat-50 to-cream-50 rounded-sm">
-              <InstagramIcon className="w-6 h-6 text-oat-400 mx-auto mb-4" strokeWidth={1.5} />
-              <h3 className="font-serif-elegant text-lg text-nude-800 mb-2" style={{ fontWeight: 500 }}>Redes Sociais</h3>
+              <InstagramIcon className="w-6 h-6 text-oat-500 mx-auto mb-4" strokeWidth={1.5} />
+              <h3 className="font-serif-elegant text-lg text-nude-900 mb-2" style={{ fontWeight: 600 }}>Redes Sociais</h3>
               <a
                 href="https://www.instagram.com/_divinababy_/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-sans-elegant text-sm text-nude-600 hover:text-oat-500 transition-colors duration-300"
-                style={{ fontWeight: 300 }}
+                className="font-sans-elegant text-sm text-nude-800 hover:text-oat-600 transition-colors duration-300"
+                style={{ fontWeight: 500 }}
               >
                 @_divinababy_
               </a>
             </div>
           </Reveal>
-
-          {/* Map placeholder */}
-          <div className="mt-12 h-64 lg:h-80 bg-gradient-to-br from-nude-100 to-cream-100 rounded-sm relative overflow-hidden">
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="text-center">
-                <MapPin className="w-12 h-12 text-oat-300 mx-auto mb-4" style={{ strokeWidth: 1 }} />
-                <p className="font-serif-elegant text-nude-600" style={{ fontWeight: 400 }}>
-                  Localização no mapa
-                </p>
-              </div>
-            </div>
-            <div className="absolute inset-6 border border-oat-200/30 rounded-sm" />
-          </div>
         </div>
       </section>
 
