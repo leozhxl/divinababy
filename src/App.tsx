@@ -547,7 +547,7 @@ function App() {
       </section>
 
       {/* Footer */}
-      <footer className="py-16 lg:py-20 bg-nude-900 text-cream-100">
+      <footer className="py-16 lg:py-20 bg-nude-600 text-cream-100">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8 mb-12">
             {/* Brand */}
