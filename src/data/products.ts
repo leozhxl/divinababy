@@ -2343,7 +2343,7 @@ export const products: Product[] = [
   {
     id: '39',
     slug: 'kit-presente-florzinha-rosa',
-    name: 'Kit Presente Personalizado Divina Baby',
+    name: 'Kit Personalizado Divina Baby 5 itens',
     category: 'Kits',
     price: 339.6,
     pixPrice: 299.6,
