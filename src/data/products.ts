@@ -2838,7 +2838,7 @@ export const products: Product[] = [
   {
     id: '270',
     slug: 'kit-completo-4-itens-pedro',
-    name: 'Kit Presente Personalizado Divina Baby',
+    name: 'Kit Personalizado Divina Baby 5 itens',
     category: 'Kits',
     price: 339.6,
     pixPrice: 299.6,
