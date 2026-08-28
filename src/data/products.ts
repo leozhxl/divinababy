@@ -2821,7 +2821,7 @@ export const products: Product[] = [
   {
     id: '269',
     slug: 'kit-sem-personalizacao-3-itens',
-    name: 'Kit sem Personalização 3 itens',
+    name: 'Kit completo 4 itens',
     category: 'Kits',
     price: 249.7,
     pixPrice: 219.7,
