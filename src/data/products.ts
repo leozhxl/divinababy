@@ -2786,7 +2786,7 @@ export const products: Product[] = [
   {
     id: '34',
     slug: 'mordedor-elefante',
-    name: 'Kit completo 3 itens',
+    name: 'Kit completo 4 itens',
     category: 'Mordedores',
     price: 259.7,
     pixPrice: 229.7,
