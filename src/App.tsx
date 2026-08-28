@@ -439,7 +439,7 @@ function App() {
       </section>
 
       {/* Newsletter Section */}
-      <section className="py-20 lg:py-28 bg-nude-800 relative overflow-hidden">
+      <section className="py-20 lg:py-28 bg-nude-600 relative overflow-hidden">
         {/* Decorative background */}
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-0 left-1/4 w-px h-full bg-oat-400" />
