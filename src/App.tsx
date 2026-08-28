@@ -106,13 +106,13 @@ function App() {
               </div>
 
               <div className="fade-in-element" style={{ animationDelay: '0.6s' }}>
-                <p className="font-script text-xl md:text-2xl text-nude-600 italic mb-8" style={{ fontWeight: 300 }}>
+                <p className="font-script text-xl md:text-2xl text-nude-900 italic mb-8" style={{ fontWeight: 700 }}>
                   Onde cada detalhe é pensado com amor
                 </p>
               </div>
 
               <div className="fade-in-element" style={{ animationDelay: '0.8s' }}>
-                <p className="font-sans-elegant text-sm md:text-base text-nude-600 leading-relaxed mb-10 max-w-md mx-auto lg:mx-0" style={{ fontWeight: 300 }}>
+                <p className="font-sans-elegant text-sm md:text-base text-nude-800 leading-relaxed mb-10 max-w-md mx-auto lg:mx-0" style={{ fontWeight: 500 }}>
                   Peças exclusivas para bebês, criadas para quem aprecia elegância, qualidade e sofisticação em cada detalhe do enxoval.
                 </p>
               </div>
