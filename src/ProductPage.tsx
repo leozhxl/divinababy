@@ -180,6 +180,8 @@ function ProductPage() {
   const [selectedTheme, setSelectedTheme] = useState<string | undefined>(product?.themes?.[0]?.name);
   const [quantity, setQuantity] = useState(1);
   const [showThemes, setShowThemes] = useState(false);
+  const [showColors, setShowColors] = useState(false);
+  const [hoveredColor, setHoveredColor] = useState<{ name: string; image?: string; hex?: string } | null>(null);
 
   if (!product) {
     return (
@@ -303,6 +305,61 @@ function ProductPage() {
                     selectedTheme={selectedTheme}
                     onSelect={setSelectedTheme}
                   />
+                )}
+              </div>
+            )}
+
+            {product.colors && product.colors.length > 0 && !product.sizes && (
+              <div className="mb-6">
+                <p className="font-sans-elegant text-xs tracking-widest uppercase text-nude-700 mb-3" style={{ fontWeight: 400 }}>
+                  Cor: {selectedColor}
+                </p>
+                <button
+                  type="button"
+                  onClick={() => setShowColors((v) => !v)}
+                  className="btn-outline mb-3"
+                >
+                  {showColors ? 'Ocultar cores' : 'Escolher cor'}
+                </button>
+                {showColors && (
+                  <div className="grid grid-cols-5 sm:grid-cols-7 gap-2.5">
+                    {product.colors.map((color) => (
+                      <div key={color.name} className="relative">
+                        <button
+                          type="button"
+                          onClick={() => setSelectedColor(color.name)}
+                          onMouseEnter={() => setHoveredColor(color)}
+                          onMouseLeave={() => setHoveredColor(null)}
+                          onFocus={() => setHoveredColor(color)}
+                          onBlur={() => setHoveredColor(null)}
+                          aria-label={color.name}
+                          title={color.name}
+                          className={`aspect-square w-full rounded-md bg-white shadow-md p-1.5 border-2 transition-all duration-200 overflow-hidden ${
+                            selectedColor === color.name ? 'border-green-600' : 'border-transparent hover:border-oat-300'
+                          }`}
+                        >
+                          {color.image ? (
+                            <img
+                              src={color.image}
+                              alt={color.name}
+                              className="block w-full h-full rounded-sm object-cover"
+                            />
+                          ) : (
+                            <span
+                              className="block w-full h-full rounded-sm"
+                              style={{ backgroundColor: color.hex }}
+                            />
+                          )}
+                        </button>
+                        {selectedColor === color.name && (
+                          <span className="absolute -top-1.5 -right-1.5 w-5 h-5 rounded-full bg-green-600 flex items-center justify-center shadow-md">
+                            <Check size={12} strokeWidth={3} className="text-white" />
+                          </span>
+                        )}
+                        {hoveredColor?.name === color.name && <SwatchPreview item={color} />}
+                      </div>
+                    ))}
+                  </div>
                 )}
               </div>
             )}
