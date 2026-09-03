@@ -710,7 +710,7 @@ export const products: Product[] = [
   {
     id: '220',
     slug: 'kit-pente-escova-madeira-cerdas-naturais',
-    name: 'Kit Completo Personalizado com Nome em Silicone - 4 Itens',
+    name: 'Kit Personalizado Divina Baby 5 itens',
     category: 'Kits',
     price: 339.6,
     pixPrice: 299.6,
@@ -2855,7 +2855,7 @@ export const products: Product[] = [
   {
     id: '271',
     slug: 'kit-completo-4-itens-bella',
-    name: 'Kit Presente Personalizado Divina Baby',
+    name: 'Kit Personalizado Divina Baby 5 itens',
     category: 'Kits',
     price: 339.6,
     pixPrice: 299.6,
@@ -2923,7 +2923,7 @@ export const products: Product[] = [
   {
     id: '275',
     slug: 'kit-completo-4-itens-eliza',
-    name: 'Kit completo 4 itens',
+    name: 'Kit Personalizado Divina Baby 5 itens',
     category: 'Kits',
     price: 349.6,
     pixPrice: 309.6,

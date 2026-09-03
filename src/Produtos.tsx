@@ -11,10 +11,25 @@ function toggleInSet(set: string[], value: string): string[] {
   return set.includes(value) ? set.filter((v) => v !== value) : [...set, value];
 }
 
+const DIACRITICS = new RegExp('[\\u0300-\\u036f]', 'g');
+
+function normalize(value: string): string {
+  return value.toLowerCase().normalize('NFD').replace(DIACRITICS, '');
+}
+
+function matchesQuery(product: { name: string; category: string; description?: string }, query: string): boolean {
+  if (!query) return true;
+  const haystack = normalize(`${product.name} ${product.category} ${product.description ?? ''}`);
+  return normalize(query)
+    .split(/\s+/)
+    .filter(Boolean)
+    .every((term) => haystack.includes(term));
+}
+
 function Produtos() {
   const [searchParams] = useSearchParams();
   const categoriaParam = searchParams.get('categoria');
-  const queryParam = searchParams.get('q')?.toLowerCase() ?? '';
+  const queryParam = searchParams.get('q')?.trim() ?? '';
 
   const [selectedCategories, setSelectedCategories] = useState<string[]>(
     categoriaParam && categories.includes(categoriaParam) ? [categoriaParam] : []
@@ -53,7 +68,7 @@ function Produtos() {
     .filter((p) => (selectedCategories.length ? selectedCategories.includes(p.category) : true))
     .filter((p) => (selectedColors.length ? p.colors?.some((c) => selectedColors.includes(c.name)) : true))
     .filter((p) => (selectedSizes.length ? p.sizes?.some((s) => selectedSizes.includes(s)) : true))
-    .filter((p) => (queryParam ? p.name.toLowerCase().includes(queryParam) : true));
+    .filter((p) => matchesQuery(p, queryParam));
 
   const hasActiveFilters = selectedCategories.length || selectedColors.length || selectedSizes.length;
 

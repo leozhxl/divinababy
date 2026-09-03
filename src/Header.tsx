@@ -1,5 +1,5 @@
 import { useState, useEffect, FormEvent } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useSearchParams } from 'react-router-dom';
 import { Search, ShoppingBag } from 'lucide-react';
 import { useCart } from './CartContext';
 
@@ -18,7 +18,8 @@ const navLinks = [
 
 export default function Header() {
   const { itemCount, subtotal, openCart } = useCart();
-  const [query, setQuery] = useState('');
+  const [searchParams] = useSearchParams();
+  const [query, setQuery] = useState(searchParams.get('q') ?? '');
   const [scrolled, setScrolled] = useState(false);
   const navigate = useNavigate();
 

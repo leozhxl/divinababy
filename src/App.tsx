@@ -11,7 +11,7 @@ import { useScrollToHash } from './useScrollToHash';
 
 const heroImages = [
   '/WhatsApp Image 2026-07-12 at 16.40.54.jpeg',
-  '/WhatsApp Image 2026-07-12 at 16.40.55 (2).jpeg',
+  '/WhatsApp Image 2026-09-02 at 20.16.25.jpeg',
   '/WhatsApp Image 2026-07-14 at 15.44.18.jpeg',
   '/WhatsApp Image 2026-07-14 at 15.44.18 (1).jpeg',
   '/WhatsApp Image 2026-07-14 at 15.44.18 (2).jpeg',
@@ -74,7 +74,7 @@ function App() {
       <div className="overflow-x-hidden">
 
       {/* Hero Section - Storefront Window */}
-      <section id="home" className="relative pt-16 pb-16 lg:pt-20 lg:pb-20 flex items-center justify-center bg-white overflow-hidden">
+      <section id="home" className="relative pt-16 pb-16 lg:pt-20 lg:pb-20 flex items-center justify-center bg-gradient-to-b from-cream-300 via-cream-200 to-cream-300 overflow-hidden">
         {/* Decorative Background Elements */}
         <div className="absolute inset-0 overflow-hidden">
           {/* Marble texture overlay */}
@@ -187,7 +187,7 @@ function App() {
       </section>
 
       {/* Shop by Category */}
-      <section className="py-16 lg:py-20 bg-white">
+      <section className="py-16 lg:py-20 bg-nude-200">
         <Reveal className="max-w-6xl mx-auto px-6 lg:px-12">
           <div className="text-center mb-12">
             <p className="section-subtitle mb-4">Encontre o que procura</p>
@@ -256,7 +256,7 @@ function App() {
       </section>
 
       {/* Featured Collections */}
-      <section id="colecoes" className="py-20 lg:py-28 bg-white">
+      <section id="colecoes" className="py-20 lg:py-28 bg-cream-300">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           {/* Section Header */}
           <div className="text-center mb-14 lg:mb-16">
@@ -300,7 +300,7 @@ function App() {
       </section>
 
       {/* Perfect for Every Occasion */}
-      <section className="py-16 lg:py-20 bg-white">
+      <section className="py-16 lg:py-20 bg-cream-200">
         <Reveal className="max-w-7xl mx-auto px-6 lg:px-12">
           <div className="text-center mb-12">
             <p className="section-subtitle mb-4">Feito com carinho</p>
