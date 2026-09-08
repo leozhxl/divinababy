@@ -10,7 +10,6 @@ import { Product } from '../types/product';
 const BEAD_COLORS = [
   { name: 'Mostarda', hex: '#d4a13a', image: '/WhatsApp Image 2026-07-10 at 12.31.45 (1).jpeg' },
   { name: 'Yellow', hex: '#f5d33e', image: '/WhatsApp Image 2026-07-10 at 12.31.45.jpeg' },
-  { name: 'Rust Brown', hex: '#c9754a', image: '/WhatsApp Image 2026-07-10 at 12.31.46.jpeg' },
   { name: 'Madeira', hex: '#c9a876', image: '/WhatsApp Image 2026-07-10 at 12.31.46 (1).jpeg' },
   { name: 'Marrom Escuro', hex: '#5a2f42', image: '/WhatsApp Image 2026-07-10 at 12.31.46 (2).jpeg' },
   { name: 'Camel', hex: '#c9986a', image: '/WhatsApp Image 2026-07-10 at 12.31.46 (3).jpeg' },
@@ -24,7 +23,7 @@ const BEAD_COLORS = [
   { name: 'Oatmeal', hex: '#e8ddc6', image: '/WhatsApp Image 2026-07-10 at 12.31.48.jpeg' },
   { name: 'Rosa', hex: '#f0b8c4', image: '/WhatsApp Image 2026-07-10 at 12.31.48 (2).jpeg' },
   { name: 'Quartz Pink', hex: '#e8b4bc', image: '/WhatsApp Image 2026-07-10 at 12.31.48 (3).jpeg' },
-  { name: 'Rose Brown', hex: '#a8687a', image: '/WhatsApp Image 2026-07-10 at 12.31.46 (4).jpeg' },
+  { name: 'Rose Brown', hex: '#b89aa0', image: '/WhatsApp Image 2026-07-10 at 12.31.46 (4).jpeg' },
   { name: 'Dark Pink', hex: '#d13d82', image: '/WhatsApp Image 2026-07-10 at 12.31.48 (4).jpeg' },
   { name: 'Vermelho', hex: '#e02f3e', image: '/WhatsApp Image 2026-07-10 at 12.31.49.jpeg' },
   { name: 'Violet Red', hex: '#c81f6e', image: '/WhatsApp Image 2026-07-10 at 12.31.49 (1).jpeg' },
@@ -47,6 +46,7 @@ const BEAD_COLORS = [
   { name: 'Verde Bandeira', hex: '#1fa84a', image: '/WhatsApp Image 2026-07-10 at 12.31.52 (2).jpeg' },
   { name: 'Matcha Green', hex: '#a8c090', image: '/WhatsApp Image 2026-07-10 at 12.31.52 (3).jpeg' },
   { name: 'Turquoise', hex: '#2ec4c0', image: '/WhatsApp Image 2026-07-10 at 12.31.52 (4).jpeg' },
+  { name: 'Verde Água', hex: '#8fdcc4', image: '/WhatsApp Image 2026-09-04 at 10.26.18.jpeg' },
   { name: 'Black', hex: '#1c2230', image: '/black.jpeg' },
   { name: 'Azul Escuro', hex: '#2f6fd0', image: '/azul escuro.jpeg' },
 ];
