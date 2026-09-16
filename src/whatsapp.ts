@@ -9,6 +9,7 @@ export interface CartLine {
   color?: string;
   size?: string;
   theme?: string;
+  personalizedName?: string;
   quantity: number;
   price: number;
 }
@@ -51,7 +52,8 @@ export function buildOrderMessage(lines: CartLine[], address?: ShippingAddress, 
   const itemLines = lines.map((line) => {
     const variant = [line.color, line.theme, line.size].filter(Boolean).join(' / ');
     const variantText = variant ? ` (${variant})` : '';
-    return `• ${line.name}${variantText} — Qtd: ${line.quantity} — ${formatBRL(line.price * line.quantity)}`;
+    const nameText = line.personalizedName ? ` — Nome: ${line.personalizedName}` : '';
+    return `• ${line.name}${variantText}${nameText} — Qtd: ${line.quantity} — ${formatBRL(line.price * line.quantity)}`;
   });
 
   const subtotal = lines.reduce((sum, line) => sum + line.price * line.quantity, 0);

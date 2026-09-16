@@ -50,7 +50,7 @@ export default function CartDrawer() {
           <>
             <div className="flex-1 overflow-y-auto px-6 py-4 space-y-5">
               {items.map((line) => (
-                <div key={`${line.productId}-${line.color ?? ''}-${line.size ?? ''}-${line.theme ?? ''}`} className="flex gap-4">
+                <div key={`${line.productId}-${line.color ?? ''}-${line.size ?? ''}-${line.theme ?? ''}-${line.personalizedName ?? ''}`} className="flex gap-4">
                   <div className="w-20 h-20 shrink-0 overflow-hidden rounded-sm bg-oat-200">
                     <img src={line.image} alt={line.name} className="w-full h-full object-cover" />
                   </div>
@@ -63,12 +63,17 @@ export default function CartDrawer() {
                         {[line.color, line.theme, line.size].filter(Boolean).join(' / ')}
                       </p>
                     )}
+                    {line.personalizedName && (
+                      <p className="font-sans-elegant text-xs text-nude-500" style={{ fontWeight: 300 }}>
+                        Nome: {line.personalizedName}
+                      </p>
+                    )}
                     <p className="font-sans-elegant text-sm text-oat-600 mt-1" style={{ fontWeight: 500 }}>
                       {formatBRL(line.price * line.quantity)}
                     </p>
                     <div className="flex items-center gap-3 mt-2">
                       <button
-                        onClick={() => updateQuantity(line.productId, line.quantity - 1, line.color, line.size, line.theme)}
+                        onClick={() => updateQuantity(line.productId, line.quantity - 1, line.color, line.size, line.theme, line.personalizedName)}
                         className="w-8 h-8 flex items-center justify-center border border-oat-300 text-nude-700 hover:bg-oat-200"
                         aria-label="Diminuir quantidade"
                       >
@@ -76,14 +81,14 @@ export default function CartDrawer() {
                       </button>
                       <span className="font-sans-elegant text-sm text-nude-800 w-4 text-center">{line.quantity}</span>
                       <button
-                        onClick={() => updateQuantity(line.productId, line.quantity + 1, line.color, line.size, line.theme)}
+                        onClick={() => updateQuantity(line.productId, line.quantity + 1, line.color, line.size, line.theme, line.personalizedName)}
                         className="w-8 h-8 flex items-center justify-center border border-oat-300 text-nude-700 hover:bg-oat-200"
                         aria-label="Aumentar quantidade"
                       >
                         <Plus size={12} />
                       </button>
                       <button
-                        onClick={() => removeItem(line.productId, line.color, line.size, line.theme)}
+                        onClick={() => removeItem(line.productId, line.color, line.size, line.theme, line.personalizedName)}
                         className="ml-auto p-2 -m-2 text-nude-500 hover:text-oat-600"
                         aria-label="Remover item"
                       >

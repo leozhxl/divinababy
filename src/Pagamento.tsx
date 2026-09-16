@@ -120,7 +120,7 @@ function Pagamento() {
             <div className="space-y-3">
               {items.map((line) => (
                 <div
-                  key={`${line.productId}-${line.color ?? ''}-${line.size ?? ''}-${line.theme ?? ''}`}
+                  key={`${line.productId}-${line.color ?? ''}-${line.size ?? ''}-${line.theme ?? ''}-${line.personalizedName ?? ''}`}
                   className="flex items-center gap-3"
                 >
                   <div className="w-14 h-14 shrink-0 overflow-hidden rounded-sm bg-oat-100">
@@ -133,6 +133,11 @@ function Pagamento() {
                     {(line.color || line.size || line.theme) && (
                       <p className="font-sans-elegant text-xs text-nude-500" style={{ fontWeight: 300 }}>
                         {[line.color, line.theme, line.size].filter(Boolean).join(' / ')} · Qtd: {line.quantity}
+                      </p>
+                    )}
+                    {line.personalizedName && (
+                      <p className="font-sans-elegant text-xs text-nude-500" style={{ fontWeight: 300 }}>
+                        Nome: {line.personalizedName}
                       </p>
                     )}
                   </div>

@@ -105,48 +105,52 @@ function ProductDescription({ description }: { description: string }) {
 
 function ThemePicker({
   themes,
-  selectedTheme,
-  onSelect,
+  selectedThemes,
+  onToggle,
 }: {
   themes: { name: string; image?: string }[];
-  selectedTheme: string | undefined;
-  onSelect: (name: string) => void;
+  selectedThemes: string[];
+  onToggle: (name: string) => void;
 }) {
   const [hovered, setHovered] = useState<{ name: string; image?: string } | null>(null);
 
   return (
     <div className="grid grid-cols-5 sm:grid-cols-7 gap-2.5">
-      {themes.map((theme) => (
-        <div key={theme.name} className="relative">
-          <button
-            type="button"
-            onClick={() => onSelect(theme.name)}
-            onMouseEnter={() => setHovered(theme)}
-            onMouseLeave={() => setHovered(null)}
-            onFocus={() => setHovered(theme)}
-            onBlur={() => setHovered(null)}
-            aria-label={theme.name}
-            title={theme.name}
-            className={`aspect-square w-full rounded-md bg-white shadow-md p-1.5 border-2 transition-all duration-200 overflow-hidden ${
-              selectedTheme === theme.name ? 'border-green-600' : 'border-transparent hover:border-oat-300'
-            }`}
-          >
-            {theme.image ? (
-              <img src={theme.image} alt={theme.name} className="block w-full h-full rounded-sm object-cover" />
-            ) : (
-              <span className="flex items-center justify-center w-full h-full rounded-sm bg-cream-100 font-sans-elegant text-[10px] text-nude-700 text-center leading-tight">
-                {theme.name}
+      {themes.map((theme) => {
+        const isSelected = selectedThemes.includes(theme.name);
+        return (
+          <div key={theme.name} className="relative">
+            <button
+              type="button"
+              onClick={() => onToggle(theme.name)}
+              onMouseEnter={() => setHovered(theme)}
+              onMouseLeave={() => setHovered(null)}
+              onFocus={() => setHovered(theme)}
+              onBlur={() => setHovered(null)}
+              aria-label={theme.name}
+              aria-pressed={isSelected}
+              title={theme.name}
+              className={`aspect-square w-full rounded-md bg-white shadow-md p-1.5 border-2 transition-all duration-200 overflow-hidden ${
+                isSelected ? 'border-green-600' : 'border-transparent hover:border-oat-300'
+              }`}
+            >
+              {theme.image ? (
+                <img src={theme.image} alt={theme.name} className="block w-full h-full rounded-sm object-cover" />
+              ) : (
+                <span className="flex items-center justify-center w-full h-full rounded-sm bg-cream-100 font-sans-elegant text-[10px] text-nude-700 text-center leading-tight">
+                  {theme.name}
+                </span>
+              )}
+            </button>
+            {isSelected && (
+              <span className="absolute -top-1.5 -right-1.5 w-5 h-5 rounded-full bg-green-600 flex items-center justify-center shadow-md">
+                <Check size={12} strokeWidth={3} className="text-white" />
               </span>
             )}
-          </button>
-          {selectedTheme === theme.name && (
-            <span className="absolute -top-1.5 -right-1.5 w-5 h-5 rounded-full bg-green-600 flex items-center justify-center shadow-md">
-              <Check size={12} strokeWidth={3} className="text-white" />
-            </span>
-          )}
-          {hovered?.name === theme.name && <SwatchPreview item={theme} />}
-        </div>
-      ))}
+            {hovered?.name === theme.name && <SwatchPreview item={theme} />}
+          </div>
+        );
+      })}
     </div>
   );
 }
@@ -175,13 +179,19 @@ function ProductPage() {
   const { addItem, openCart } = useCart();
   const navigate = useNavigate();
 
-  const [selectedColor, setSelectedColor] = useState<string | undefined>(product?.colors?.[0]?.name);
+  const [selectedColors, setSelectedColors] = useState<string[]>(
+    product?.colors?.[0] ? [product.colors[0].name] : []
+  );
   const [selectedSize, setSelectedSize] = useState<string | undefined>(product?.sizes?.[0]);
-  const [selectedTheme, setSelectedTheme] = useState<string | undefined>(product?.themes?.[0]?.name);
+  const [selectedThemes, setSelectedThemes] = useState<string[]>(
+    product?.themes?.[0] ? [product.themes[0].name] : []
+  );
   const [quantity, setQuantity] = useState(1);
   const [showThemes, setShowThemes] = useState(false);
   const [showColors, setShowColors] = useState(false);
   const [hoveredColor, setHoveredColor] = useState<{ name: string; image?: string; hex?: string } | null>(null);
+  const [personalizedName, setPersonalizedName] = useState('');
+  const [nameError, setNameError] = useState(false);
 
   if (!product) {
     return (
@@ -202,9 +212,32 @@ function ProductPage() {
   const discountPct = product.compareAtPrice
     ? Math.round(100 - (product.price / product.compareAtPrice) * 100)
     : null;
+  const isPersonalized = /personalizad/i.test(product.name);
+
+  const toggleColor = (name: string) => {
+    setSelectedColors((prev) =>
+      prev.includes(name) ? prev.filter((c) => c !== name) : [...prev, name]
+    );
+  };
+
+  const toggleTheme = (name: string) => {
+    setSelectedThemes((prev) =>
+      prev.includes(name) ? prev.filter((t) => t !== name) : [...prev, name]
+    );
+  };
 
   const handleAddToCart = () => {
-    addItem(product, { color: selectedColor, size: selectedSize, theme: selectedTheme, quantity });
+    if (isPersonalized && !personalizedName.trim()) {
+      setNameError(true);
+      return;
+    }
+    addItem(product, {
+      color: selectedColors.length > 0 ? selectedColors.join(' + ') : undefined,
+      size: selectedSize,
+      theme: selectedThemes.length > 0 ? selectedThemes.join(' + ') : undefined,
+      personalizedName: isPersonalized ? personalizedName.trim() : undefined,
+      quantity,
+    });
     openCart();
   };
 
@@ -290,21 +323,26 @@ function ProductPage() {
             {product.themes && product.themes.length > 0 && (
               <div className="mb-6">
                 <p className="font-sans-elegant text-xs tracking-widest uppercase text-nude-700 mb-3" style={{ fontWeight: 400 }}>
-                  Tema: {selectedTheme?.replace(' — ', ' ')}
+                  Tema{selectedThemes.length > 1 ? 's' : ''}: {selectedThemes.map((t) => t.replace(' — ', ' ')).join(' + ') || '—'}
                 </p>
                 <button
                   type="button"
                   onClick={() => setShowThemes((v) => !v)}
                   className="btn-outline mb-3"
                 >
-                  {showThemes ? 'Ocultar temas' : 'Escolher tema'}
+                  {showThemes ? 'Ocultar temas' : 'Escolher temas'}
                 </button>
                 {showThemes && (
-                  <ThemePicker
-                    themes={product.themes}
-                    selectedTheme={selectedTheme}
-                    onSelect={setSelectedTheme}
-                  />
+                  <>
+                    <p className="font-sans-elegant text-xs text-nude-500 mb-2" style={{ fontWeight: 300 }}>
+                      Você pode selecionar mais de um tema.
+                    </p>
+                    <ThemePicker
+                      themes={product.themes}
+                      selectedThemes={selectedThemes}
+                      onToggle={toggleTheme}
+                    />
+                  </>
                 )}
               </div>
             )}
@@ -312,54 +350,63 @@ function ProductPage() {
             {product.colors && product.colors.length > 0 && !product.sizes && (
               <div className="mb-6">
                 <p className="font-sans-elegant text-xs tracking-widest uppercase text-nude-700 mb-3" style={{ fontWeight: 400 }}>
-                  Cor: {selectedColor}
+                  Cor{selectedColors.length > 1 ? 'es' : ''}: {selectedColors.join(' + ') || '—'}
                 </p>
                 <button
                   type="button"
                   onClick={() => setShowColors((v) => !v)}
                   className="btn-outline mb-3"
                 >
-                  {showColors ? 'Ocultar cores' : 'Escolher cor'}
+                  {showColors ? 'Ocultar cores' : 'Escolher cores'}
                 </button>
                 {showColors && (
-                  <div className="grid grid-cols-5 sm:grid-cols-7 gap-2.5">
-                    {product.colors.map((color) => (
-                      <div key={color.name} className="relative">
-                        <button
-                          type="button"
-                          onClick={() => setSelectedColor(color.name)}
-                          onMouseEnter={() => setHoveredColor(color)}
-                          onMouseLeave={() => setHoveredColor(null)}
-                          onFocus={() => setHoveredColor(color)}
-                          onBlur={() => setHoveredColor(null)}
-                          aria-label={color.name}
-                          title={color.name}
-                          className={`aspect-square w-full rounded-md bg-white shadow-md p-1.5 border-2 transition-all duration-200 overflow-hidden ${
-                            selectedColor === color.name ? 'border-green-600' : 'border-transparent hover:border-oat-300'
-                          }`}
-                        >
-                          {color.image ? (
-                            <img
-                              src={color.image}
-                              alt={color.name}
-                              className="block w-full h-full rounded-sm object-cover"
-                            />
-                          ) : (
-                            <span
-                              className="block w-full h-full rounded-sm"
-                              style={{ backgroundColor: color.hex }}
-                            />
-                          )}
-                        </button>
-                        {selectedColor === color.name && (
-                          <span className="absolute -top-1.5 -right-1.5 w-5 h-5 rounded-full bg-green-600 flex items-center justify-center shadow-md">
-                            <Check size={12} strokeWidth={3} className="text-white" />
-                          </span>
-                        )}
-                        {hoveredColor?.name === color.name && <SwatchPreview item={color} />}
-                      </div>
-                    ))}
-                  </div>
+                  <>
+                    <p className="font-sans-elegant text-xs text-nude-500 mb-2" style={{ fontWeight: 300 }}>
+                      Você pode selecionar mais de uma cor.
+                    </p>
+                    <div className="grid grid-cols-5 sm:grid-cols-7 gap-2.5">
+                      {product.colors.map((color) => {
+                        const isSelected = selectedColors.includes(color.name);
+                        return (
+                          <div key={color.name} className="relative">
+                            <button
+                              type="button"
+                              onClick={() => toggleColor(color.name)}
+                              onMouseEnter={() => setHoveredColor(color)}
+                              onMouseLeave={() => setHoveredColor(null)}
+                              onFocus={() => setHoveredColor(color)}
+                              onBlur={() => setHoveredColor(null)}
+                              aria-label={color.name}
+                              aria-pressed={isSelected}
+                              title={color.name}
+                              className={`aspect-square w-full rounded-md bg-white shadow-md p-1.5 border-2 transition-all duration-200 overflow-hidden ${
+                                isSelected ? 'border-green-600' : 'border-transparent hover:border-oat-300'
+                              }`}
+                            >
+                              {color.image ? (
+                                <img
+                                  src={color.image}
+                                  alt={color.name}
+                                  className="block w-full h-full rounded-sm object-cover"
+                                />
+                              ) : (
+                                <span
+                                  className="block w-full h-full rounded-sm"
+                                  style={{ backgroundColor: color.hex }}
+                                />
+                              )}
+                            </button>
+                            {isSelected && (
+                              <span className="absolute -top-1.5 -right-1.5 w-5 h-5 rounded-full bg-green-600 flex items-center justify-center shadow-md">
+                                <Check size={12} strokeWidth={3} className="text-white" />
+                              </span>
+                            )}
+                            {hoveredColor?.name === color.name && <SwatchPreview item={color} />}
+                          </div>
+                        );
+                      })}
+                    </div>
+                  </>
                 )}
               </div>
             )}
@@ -384,6 +431,32 @@ function ProductPage() {
                     </button>
                   ))}
                 </div>
+              </div>
+            )}
+
+            {isPersonalized && (
+              <div className="mb-6">
+                <p className="font-sans-elegant text-xs tracking-widest uppercase text-nude-700 mb-3" style={{ fontWeight: 400 }}>
+                  Nome para personalização
+                </p>
+                <input
+                  type="text"
+                  value={personalizedName}
+                  onChange={(e) => {
+                    setPersonalizedName(e.target.value);
+                    if (nameError) setNameError(false);
+                  }}
+                  placeholder="Digite o nome do bebê"
+                  maxLength={20}
+                  className={`w-full sm:max-w-xs px-4 py-2.5 border font-sans-elegant text-sm text-nude-800 bg-white transition-colors duration-300 focus:outline-none ${
+                    nameError ? 'border-red-400' : 'border-oat-300 focus:border-oat-500'
+                  }`}
+                />
+                {nameError && (
+                  <p className="font-sans-elegant text-xs text-red-500 mt-1.5" style={{ fontWeight: 400 }}>
+                    Digite o nome para personalizar este produto.
+                  </p>
+                )}
               </div>
             )}
 
