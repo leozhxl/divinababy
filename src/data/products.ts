@@ -1338,23 +1338,6 @@ export const products: Product[] = [
     badges: ['Feito à mão', 'Personalizável', 'Frete grátis'],
   },
   {
-    id: '42',
-    slug: 'prendedor-chupeta-personalizado-nome-silicone',
-    name: 'Prendedor de Chupeta Personalizado com Nome em Silicone',
-    category: 'Prendedor de Chupeta Personalizado com Nome em Silicone',
-    price: 89.9,
-    pixPrice: 79.9,
-    installments: 2,
-    altInstallments: 3,
-    altInstallmentAmount: 33.3,
-    images: ['/WhatsApp Image 2026-07-10 at 15.28.36.jpeg'],
-    colors: BEAD_COLORS,
-    themes: THEMES,
-    description:
-      'O Prendedor de Chupeta Personalizado da Divina Baby foi desenvolvido para unir segurança, praticidade e delicadeza em um único acessório.\n\nAlém de manter a chupeta sempre limpa e ao alcance do bebê, ele ajuda a evitar quedas e perdas durante os passeios e na rotina do dia a dia.\n\nCada prendedor é produzido artesanalmente e personalizado com o nome do bebê, tornando cada peça única e cheia de significado.\n\nComposição\nTodos os materiais utilizados são cuidadosamente selecionados para oferecer qualidade, segurança e durabilidade.\n- Bolinhas e letras em silicone atóxico, livres de BPA, PVC, chumbo e ftalatos.\n- 1 bolinha de madeira natural.\n- Clipe em madeira com presilha metálica.\n- Cordão de nylon resistente.\nA chupeta não acompanha o produto.\n\nMedidas\nComprimento aproximado entre 29 e 35 cm, variando conforme a quantidade de letras do nome do bebê. Por se tratar de um produto artesanal, as medidas e o peso podem apresentar pequenas variações.\n\nPor que escolher a Divina Baby?\n🤍 Produção artesanal, feita com carinho.\n🤍 Materiais seguros e de alta qualidade.\n🤍 Personalização exclusiva com o nome do bebê.\n🤍 Design delicado e atemporal.\n🤍 Embalagem pronta para presentear.\n🤍 Atendimento humanizado do início ao fim.\n\nComo usar?\nPrenda uma extremidade do prendedor na chupeta e a outra na roupinha do bebê. Dessa forma, a chupeta permanece sempre ao alcance, ajudando a evitar quedas e perdas durante os passeios e na rotina.\n\nComo personalizar?\nApós finalizar a compra, informe o nome do bebê no campo de personalização. Caso deseje escolher as cores, entre em contato conosco pelo WhatsApp para montarmos o prendedor do jeitinho que você imaginou.\n\nCuidados\n- Higienize antes do primeiro uso e sempre que necessário com água morna e sabão neutro.\n- Seque completamente antes de guardar.\n- Não deixe o clipe de madeira de molho em água.\n- Antes de cada uso, verifique se o produto está em perfeitas condições.\n- Utilize sempre sob a supervisão de um adulto.\n- Suspenda o uso caso o produto apresente qualquer sinal de desgaste ou dano.\n\nPor se tratar de um produto artesanal, pequenas variações nas cores, nos veios da madeira e na disposição das peças podem ocorrer, tornando cada prendedor exclusivo.',
-    badges: ['Feito à mão', 'Personalizável'],
-  },
-  {
     id: '43',
     slug: 'prendedor-chupeta-personalizado-nome-silicone-43',
     name: 'Prendedor de Chupeta Personalizado com Nome em Silicone',

@@ -74,7 +74,7 @@ export default async function handler(req: any, res: any) {
     }>;
 
     const options: QuoteOption[] = data
-      .filter((item) => !item.error && item.price)
+      .filter((item) => !item.error && item.price && item.company?.name === 'Correios')
       .map((item) => ({
         id: item.id,
         name: item.name,
