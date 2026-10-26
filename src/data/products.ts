@@ -7,7 +7,7 @@ import { Product } from '../types/product';
  * Category names below must stay in sync with the `categories` list exported at the bottom of this file.
  */
 
-const BEAD_COLORS = [
+export const BEAD_COLORS = [
   { name: 'Mostarda', hex: '#d4a13a', image: '/WhatsApp Image 2026-07-10 at 12.31.45 (1).jpeg' },
   { name: 'Yellow', hex: '#f5d33e', image: '/WhatsApp Image 2026-07-10 at 12.31.45.jpeg' },
   { name: 'Madeira', hex: '#c9a876', image: '/WhatsApp Image 2026-07-10 at 12.31.46 (1).jpeg' },
@@ -51,7 +51,7 @@ const BEAD_COLORS = [
   { name: 'Azul Escuro', hex: '#2f6fd0', image: '/azul escuro.jpeg' },
 ];
 
-const THEMES = [
+export const THEMES = [
   { name: 'Girafinha — Nude', image: '/WhatsApp Image 2026-07-14 at 22.12.06.jpeg' },
   { name: 'Girafinha — Carinha', image: '/WhatsApp Image 2026-07-14 at 21.58.49.jpeg' },
   { name: 'Raposinha — 3D', image: '/WhatsApp Image 2026-07-14 at 22.05.42.jpeg' },
@@ -3036,10 +3036,14 @@ export const categories = [
   'Kit Pente e Escova de Madeira com Cerdas Naturais',
 ];
 
-export function getProductBySlug(slug: string): Product | undefined {
-  return products.find((p) => p.slug === slug);
-}
-
-export function getProductsByCategory(category: string): Product[] {
-  return products.filter((p) => p.category === category);
-}
+export const categoryImages: Record<string, string> = {
+  'Prendedor de Chupeta Personalizado com Nome em Silicone': '/WhatsApp Image 2026-07-13 at 18.22.44.jpeg',
+  'Prendedor de Chupeta Sem Personalização em Silicone': '/WhatsApp Image 2026-07-16 at 16.41.52.jpeg',
+  Chaveiros: '/chaveiros.jpeg',
+  'Chupetas de Borracha Natural para Bebês de 0 a 6 Meses': '/chupetas-0-6-meses-nova.jpeg',
+  'Chupeta de Borracha Natural com Argolinha que Brilha no Escuro': '/WhatsApp Image 2026-07-10 at 16.18.18.jpeg',
+  'Mordedor Personalizado com Nome em Silicone': '/mordedores-novo.jpeg',
+  'Chupeta de Borracha Natural Modelo Flor': '/galeria-2.jpeg',
+  Kits: '/kits-novo.jpeg',
+  'Kit Pente e Escova de Madeira com Cerdas Naturais': '/kit-pente-escova-novo.jpeg',
+};

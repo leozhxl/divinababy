@@ -1,12 +1,13 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { useLocation, Link, Navigate } from 'react-router-dom';
 import { QRCodeSVG } from 'qrcode.react';
-import { Copy, Check, MessageCircle, ShoppingBag, QrCode, ShieldCheck, MapPin } from 'lucide-react';
+import { Copy, Check, MessageCircle, ShoppingBag, QrCode, ShieldCheck, MapPin, Loader2 } from 'lucide-react';
 import Header from './Header';
 import FloatingWhatsApp from './FloatingWhatsApp';
 import { waLink, buildOrderMessage, ShippingAddress, ShippingOption } from './whatsapp';
 import { buildPixPayload } from './pix';
 import { CartItem } from './CartContext';
+import { createOrder } from './lib/orders';
 
 function formatBRL(value: number): string {
   return value.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
@@ -60,6 +61,9 @@ function Pagamento() {
   const state = location.state as PagamentoState | null;
   const [copied, setCopied] = useState(false);
   const [confirmed, setConfirmed] = useState(false);
+  const [orderNumber, setOrderNumber] = useState<number | null>(null);
+  const [savingOrder, setSavingOrder] = useState(false);
+  const orderRequested = useRef(false);
 
   if (!state || state.items.length === 0) {
     return (
@@ -86,6 +90,20 @@ function Pagamento() {
   const address = state.address;
   const total = subtotal + (shipping?.price ?? 0);
   const pixPayload = buildPixPayload(total);
+
+  const handleConfirm = async (checked: boolean) => {
+    setConfirmed(checked);
+    if (!checked || orderRequested.current) return;
+    orderRequested.current = true;
+    setSavingOrder(true);
+    const number = await createOrder({ items, subtotal, address, shipping });
+    setOrderNumber(number);
+    setSavingOrder(false);
+  };
+
+  const orderMessage = `${buildOrderMessage(items, address, shipping)}${
+    orderNumber ? `\n\nPedido nº ${orderNumber}` : ''
+  }\n\nJá fiz o pagamento via Pix, segue o comprovante:`;
 
   const handleCopy = async () => {
     await navigator.clipboard.writeText(pixPayload);
@@ -258,7 +276,7 @@ function Pagamento() {
                 <input
                   type="checkbox"
                   checked={confirmed}
-                  onChange={(e) => setConfirmed(e.target.checked)}
+                  onChange={(e) => handleConfirm(e.target.checked)}
                   className="mt-1 w-4 h-4 accent-teal-600 shrink-0"
                 />
                 <span className="font-sans-elegant text-sm text-nude-700" style={{ fontWeight: 400 }}>
@@ -266,9 +284,19 @@ function Pagamento() {
                 </span>
               </label>
 
-              {confirmed ? (
+              {confirmed && savingOrder ? (
+                <button
+                  type="button"
+                  disabled
+                  className="inline-flex items-center gap-2 bg-teal-600/80 text-white font-sans-elegant text-sm uppercase tracking-widest px-8 py-3.5 rounded-sm cursor-wait"
+                  style={{ fontWeight: 600 }}
+                >
+                  <Loader2 size={18} strokeWidth={1.5} className="animate-spin" />
+                  Registrando pedido...
+                </button>
+              ) : confirmed ? (
                 <a
-                  href={waLink(`${buildOrderMessage(items, address, shipping)}\n\nJá fiz o pagamento via Pix, segue o comprovante:`)}
+                  href={waLink(orderMessage)}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 bg-teal-600 hover:bg-teal-700 text-white font-sans-elegant text-sm uppercase tracking-widest px-8 py-3.5 rounded-sm shadow-soft transition-colors duration-300"

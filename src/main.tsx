@@ -1,4 +1,4 @@
-import { StrictMode } from 'react';
+import { StrictMode, Suspense, lazy } from 'react';
 import { createRoot } from 'react-dom/client';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import App from './App.tsx';
@@ -14,32 +14,45 @@ import Pagamento from './Pagamento.tsx';
 import Endereco from './Endereco.tsx';
 import { CartProvider } from './CartContext.tsx';
 import { AuthProvider } from './AuthContext.tsx';
+import { CatalogProvider } from './CatalogContext.tsx';
 import CartDrawer from './CartDrawer.tsx';
 import ScrollToTop from './ScrollToTop.tsx';
 import './index.css';
 
+const AdminApp = lazy(() => import('./admin/AdminApp.tsx'));
+
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <AuthProvider>
-      <CartProvider>
-        <BrowserRouter>
-          <ScrollToTop />
-          <Routes>
-            <Route path="/" element={<App />} />
-            <Route path="/produtos" element={<Produtos />} />
-            <Route path="/produto/:slug" element={<ProductPage />} />
-            <Route path="/trocas-devolucoes" element={<TrocasDevolucoes />} />
-            <Route path="/privacidade" element={<Privacidade />} />
-            <Route path="/contato" element={<Contato />} />
-            <Route path="/depoimentos" element={<Depoimentos />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/cadastro" element={<Cadastro />} />
-            <Route path="/endereco" element={<Endereco />} />
-            <Route path="/pagamento" element={<Pagamento />} />
-          </Routes>
-          <CartDrawer />
-        </BrowserRouter>
-      </CartProvider>
+      <CatalogProvider>
+        <CartProvider>
+          <BrowserRouter>
+            <ScrollToTop />
+            <Routes>
+              <Route path="/" element={<App />} />
+              <Route path="/produtos" element={<Produtos />} />
+              <Route path="/produto/:slug" element={<ProductPage />} />
+              <Route path="/trocas-devolucoes" element={<TrocasDevolucoes />} />
+              <Route path="/privacidade" element={<Privacidade />} />
+              <Route path="/contato" element={<Contato />} />
+              <Route path="/depoimentos" element={<Depoimentos />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/cadastro" element={<Cadastro />} />
+              <Route path="/endereco" element={<Endereco />} />
+              <Route path="/pagamento" element={<Pagamento />} />
+              <Route
+                path="/admin/*"
+                element={
+                  <Suspense fallback={null}>
+                    <AdminApp />
+                  </Suspense>
+                }
+              />
+            </Routes>
+            <CartDrawer />
+          </BrowserRouter>
+        </CartProvider>
+      </CatalogProvider>
     </AuthProvider>
   </StrictMode>
 );

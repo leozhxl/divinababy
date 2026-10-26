@@ -1,7 +1,8 @@
 import { useState } from 'react';
+import { Product } from './types/product';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import { ArrowLeft, Sparkles, Check, Heart } from 'lucide-react';
-import { getProductBySlug } from './data/products';
+import { useCatalog } from './CatalogContext';
 import { useCart } from './CartContext';
 import FloatingWhatsApp from './FloatingWhatsApp';
 import Header from './Header';
@@ -175,23 +176,17 @@ function SwatchPreview({ item }: { item: { name: string; image?: string } }) {
 
 function ProductPage() {
   const { slug } = useParams<{ slug: string }>();
+  const { getProductBySlug, loading } = useCatalog();
   const product = slug ? getProductBySlug(slug) : undefined;
-  const { addItem, openCart } = useCart();
-  const navigate = useNavigate();
 
-  const [selectedColors, setSelectedColors] = useState<string[]>(
-    product?.colors?.[0] ? [product.colors[0].name] : []
-  );
-  const [selectedSize, setSelectedSize] = useState<string | undefined>(product?.sizes?.[0]);
-  const [selectedThemes, setSelectedThemes] = useState<string[]>(
-    product?.themes?.[0] ? [product.themes[0].name] : []
-  );
-  const [quantity, setQuantity] = useState(1);
-  const [showThemes, setShowThemes] = useState(false);
-  const [showColors, setShowColors] = useState(false);
-  const [hoveredColor, setHoveredColor] = useState<{ name: string; image?: string; hex?: string } | null>(null);
-  const [personalizedName, setPersonalizedName] = useState('');
-  const [nameError, setNameError] = useState(false);
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-cream-50">
+        <Header />
+        <p className="py-24 text-center font-sans-elegant text-sm text-nude-500">Carregando produto...</p>
+      </div>
+    );
+  }
 
   if (!product) {
     return (
@@ -205,6 +200,27 @@ function ProductPage() {
       </div>
     );
   }
+
+  return <ProductDetail key={product.id} product={product} />;
+}
+
+function ProductDetail({ product }: { product: Product }) {
+  const { addItem, openCart } = useCart();
+  const navigate = useNavigate();
+
+  const [selectedColors, setSelectedColors] = useState<string[]>(
+    product.colors?.[0] ? [product.colors[0].name] : []
+  );
+  const [selectedSize, setSelectedSize] = useState<string | undefined>(product.sizes?.[0]);
+  const [selectedThemes, setSelectedThemes] = useState<string[]>(
+    product.themes?.[0] ? [product.themes[0].name] : []
+  );
+  const [quantity, setQuantity] = useState(1);
+  const [showThemes, setShowThemes] = useState(false);
+  const [showColors, setShowColors] = useState(false);
+  const [hoveredColor, setHoveredColor] = useState<{ name: string; image?: string; hex?: string } | null>(null);
+  const [personalizedName, setPersonalizedName] = useState('');
+  const [nameError, setNameError] = useState(false);
 
   const installmentCount = product.installments ?? 6;
   const installment = product.price / installmentCount;

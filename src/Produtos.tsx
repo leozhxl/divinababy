@@ -1,7 +1,7 @@
 import { ReactNode, useMemo, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { waLink } from './whatsapp';
-import { products, categories } from './data/products';
+import { useCatalog } from './CatalogContext';
 import FloatingWhatsApp from './FloatingWhatsApp';
 import Header from './Header';
 import ProductCard from './ProductCard';
@@ -30,9 +30,10 @@ function Produtos() {
   const [searchParams] = useSearchParams();
   const categoriaParam = searchParams.get('categoria');
   const queryParam = searchParams.get('q')?.trim() ?? '';
+  const { products, categories, loading } = useCatalog();
 
   const [selectedCategories, setSelectedCategories] = useState<string[]>(
-    categoriaParam && categories.includes(categoriaParam) ? [categoriaParam] : []
+    categoriaParam ? [categoriaParam] : []
   );
   const [selectedColors, setSelectedColors] = useState<string[]>([]);
   const [selectedSizes, setSelectedSizes] = useState<string[]>([]);
@@ -47,13 +48,13 @@ function Produtos() {
       })
     );
     return Array.from(map.values());
-  }, []);
+  }, [products]);
 
   const sizeOptions = useMemo(() => {
     const map = new Map<string, number>();
     products.forEach((p) => p.sizes?.forEach((s) => map.set(s, (map.get(s) ?? 0) + 1)));
     return Array.from(map.entries()).map(([name, count]) => ({ name, count }));
-  }, []);
+  }, [products]);
 
   const categoryOptions = useMemo(
     () =>
@@ -61,7 +62,7 @@ function Produtos() {
         name: category,
         count: products.filter((p) => p.category === category).length,
       })),
-    []
+    [categories, products]
   );
 
   const visibleProducts = products
@@ -179,7 +180,11 @@ function Produtos() {
 
             {/* Product grid */}
             <div>
-              {visibleProducts.length === 0 ? (
+              {loading ? (
+                <p className="text-center font-sans-elegant text-sm text-nude-500">
+                  Carregando produtos...
+                </p>
+              ) : visibleProducts.length === 0 ? (
                 <p className="text-center font-sans-elegant text-sm text-nude-500">
                   Nenhum produto encontrado.
                 </p>

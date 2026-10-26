@@ -4,7 +4,7 @@ import { waLink } from './whatsapp';
 import FloatingWhatsApp from './FloatingWhatsApp';
 import Header from './Header';
 import ProductCard from './ProductCard';
-import { products, categories } from './data/products';
+import { useCatalog } from './CatalogContext';
 import Reveal from './Reveal';
 import HeroCarousel from './HeroCarousel';
 import { useScrollToHash } from './useScrollToHash';
@@ -46,22 +46,11 @@ function InstagramIcon({
   );
 }
 
-const categoryImages: Record<string, string> = {
-  'Prendedor de Chupeta Personalizado com Nome em Silicone': '/WhatsApp Image 2026-07-13 at 18.22.44.jpeg',
-  'Prendedor de Chupeta Sem Personalização em Silicone': '/WhatsApp Image 2026-07-16 at 16.41.52.jpeg',
-  Chaveiros: '/chaveiros.jpeg',
-  'Chupetas de Borracha Natural para Bebês de 0 a 6 Meses': '/chupetas-0-6-meses-nova.jpeg',
-  'Chupeta de Borracha Natural com Argolinha que Brilha no Escuro': '/WhatsApp Image 2026-07-10 at 16.18.18.jpeg',
-  'Mordedor Personalizado com Nome em Silicone': '/mordedores-novo.jpeg',
-  'Chupeta de Borracha Natural Modelo Flor': '/galeria-2.jpeg',
-  Kits: '/kits-novo.jpeg',
-  'Kit Pente e Escova de Madeira com Cerdas Naturais': '/kit-pente-escova-novo.jpeg',
-};
-
 const categoryDisplayNames: Record<string, string> = {};
 
 function App() {
   useScrollToHash();
+  const { products, categories, categoryImages } = useCatalog();
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -314,7 +303,9 @@ function App() {
               { product: products[4], occasion: 'Ocasiões Especiais' },
               { product: products[6], occasion: 'Presente de Chá de Bebê' },
               { product: products[0], occasion: 'Essenciais do Enxoval' },
-            ].map(({ product, occasion }) => (
+            ]
+              .filter(({ product }) => product)
+              .map(({ product, occasion }) => (
               <Link key={occasion} to={`/produto/${product.slug}`} className="group text-center">
                 <div className="aspect-square rounded-sm overflow-hidden mb-3 bg-cream-100">
                   <img
