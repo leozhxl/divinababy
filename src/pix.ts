@@ -39,7 +39,8 @@ export function buildPixPayload(amount: number, txid = 'DIVINABABY'): string {
     tlv('00', 'br.gov.bcb.pix') + tlv('01', PIX_KEY)
   );
 
-  const additionalData = tlv('05', txid.slice(0, 25));
+  const safeTxid = removeAccents(txid).replace(/[^A-Za-z0-9]/g, '').slice(0, 25) || '***';
+  const additionalData = tlv('62', tlv('05', safeTxid));
 
   const payload =
     tlv('00', '01') +
