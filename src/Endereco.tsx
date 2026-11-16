@@ -134,8 +134,10 @@ function Endereco() {
   const totalQuantity = items.reduce((sum, item) => sum + item.quantity, 0);
   const selectedShipping = shippingOptions.find((option) => option.id === selectedShippingId);
 
-  const handleCalculateShipping = async () => {
-    const digits = cep.replace(/\D/g, '');
+  const total = subtotal + (selectedShipping?.price ?? 0);
+
+  const handleCalculateShipping = async (cepValue: string = cep) => {
+    const digits = cepValue.replace(/\D/g, '');
     if (digits.length !== 8) {
       setShippingError('Informe um CEP válido.');
       return;
@@ -196,6 +198,10 @@ function Endereco() {
     const nextErrors = validate();
     setErrors(nextErrors);
     if (Object.keys(nextErrors).length > 0) return;
+    if (!selectedShipping) {
+      setShippingError('Calcule e escolha uma opção de frete para continuar.');
+      return;
+    }
 
     const address: ShippingAddress = {
       fullName: fullName.trim(),
@@ -227,13 +233,31 @@ function Endereco() {
             </p>
           </div>
 
-          <div className="bg-white border border-oat-300/50 rounded-sm p-5 mb-8 shadow-soft flex items-center justify-between">
-            <span className="font-sans-elegant text-sm text-nude-700" style={{ fontWeight: 400 }}>
-              {items.length} {items.length === 1 ? 'item' : 'itens'} no pedido
-            </span>
-            <span className="font-serif-elegant text-lg text-nude-800" style={{ fontWeight: 500 }}>
-              {formatBRL(subtotal)}
-            </span>
+          <div className="bg-white border border-oat-300/50 rounded-sm p-5 mb-8 shadow-soft space-y-1.5">
+            <div className="flex items-center justify-between">
+              <span className="font-sans-elegant text-sm text-nude-700" style={{ fontWeight: 400 }}>
+                Subtotal ({items.length} {items.length === 1 ? 'item' : 'itens'})
+              </span>
+              <span className="font-sans-elegant text-sm text-nude-800" style={{ fontWeight: 500 }}>
+                {formatBRL(subtotal)}
+              </span>
+            </div>
+            <div className="flex items-center justify-between">
+              <span className="font-sans-elegant text-sm text-nude-700" style={{ fontWeight: 400 }}>
+                Frete
+              </span>
+              <span className="font-sans-elegant text-sm text-nude-800" style={{ fontWeight: 500 }}>
+                {selectedShipping ? formatBRL(selectedShipping.price) : 'Informe o CEP'}
+              </span>
+            </div>
+            <div className="flex items-center justify-between pt-2 mt-1 border-t border-oat-300/40">
+              <span className="font-sans-elegant text-sm text-nude-700 uppercase tracking-widest" style={{ fontWeight: 500 }}>
+                Total
+              </span>
+              <span className="font-serif-elegant text-lg text-nude-800" style={{ fontWeight: 500 }}>
+                {formatBRL(total)}
+              </span>
+            </div>
           </div>
 
           <form onSubmit={handleSubmit} className="bg-white border border-oat-300/50 rounded-sm p-6 lg:p-8 shadow-soft space-y-5">
@@ -283,24 +307,29 @@ function Endereco() {
                     inputMode="numeric"
                     value={cep}
                     onChange={(e) => {
-                      setCep(maskCep(e.target.value));
+                      const masked = maskCep(e.target.value);
+                      if (masked === cep) return;
+                      setCep(masked);
+                      setShippingOptions([]);
+                      setSelectedShippingId(null);
+                      setShippingError('');
                       if (errors.cep) setErrors((prev) => ({ ...prev, cep: undefined }));
+                      if (masked.replace(/\D/g, '').length === 8) handleCalculateShipping(masked);
                     }}
                     className={errors.cep ? inputErrorClass : inputClass}
                     placeholder="00000-000"
                     maxLength={9}
                   />
-                  <a
-                    href="https://www2.correios.com.br/sistemas/precosPrazos/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    onClick={handleCalculateShipping}
-                    className="shrink-0 inline-flex items-center gap-1.5 bg-oat-200 hover:bg-oat-300 text-nude-800 font-sans-elegant text-xs uppercase tracking-widest px-4 rounded-sm transition-colors duration-300"
+                  <button
+                    type="button"
+                    onClick={() => handleCalculateShipping()}
+                    disabled={shippingLoading}
+                    className="shrink-0 inline-flex items-center gap-1.5 bg-oat-200 hover:bg-oat-300 disabled:opacity-60 text-nude-800 font-sans-elegant text-xs uppercase tracking-widest px-4 rounded-sm transition-colors duration-300"
                     style={{ fontWeight: 600 }}
                   >
                     {shippingLoading ? <Loader2 size={14} className="animate-spin" /> : <Truck size={14} strokeWidth={2} />}
                     Calcular
-                  </a>
+                  </button>
                 </div>
                 {errors.cep && <p className={errorTextClass}>{errors.cep}</p>}
               </div>
@@ -433,7 +462,7 @@ function Endereco() {
 
             <button
               type="submit"
-              disabled={shippingOptions.length > 0 && !selectedShipping}
+              disabled={shippingLoading || !selectedShipping}
               className="w-full inline-flex items-center justify-center gap-2 bg-oat-500 hover:bg-oat-600 disabled:opacity-60 text-white font-sans-elegant text-sm uppercase tracking-widest px-8 py-3.5 rounded-sm shadow-soft transition-colors duration-300 mt-2"
               style={{ fontWeight: 600 }}
             >

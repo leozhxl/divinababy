@@ -356,7 +356,7 @@ export default function ProductEditor() {
           <Card className="p-5 space-y-4">
             <h2 className="text-sm font-semibold text-nude-800">Variações</h2>
             <div className="flex flex-wrap gap-6">
-              <Toggle checked={form.has_colors} onChange={(v) => set('has_colors', v)} label="Cliente escolhe cores das miçangas" />
+              <Toggle checked={form.has_colors} onChange={(v) => set('has_colors', v)} label="Contas de silicone" />
               <Toggle checked={form.has_themes} onChange={(v) => set('has_themes', v)} label="Cliente escolhe tema" />
             </div>
             <p className="text-xs text-nude-400">
