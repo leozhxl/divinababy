@@ -163,6 +163,9 @@ create policy "Users can view own orders"
 -- O checkout cria o pedido por esta função (funciona também sem login)
 -- e recebe de volta o número do pedido. O status sempre começa em
 -- "aguardando_pagamento"; só um admin consegue alterá-lo.
+-- Remove a versão antiga (sem forma de pagamento) para não ficar ambígua.
+drop function if exists public.create_order(text, text, jsonb, jsonb, jsonb, numeric, numeric, numeric);
+
 create or replace function public.create_order(
   p_customer_name text,
   p_customer_phone text,
@@ -171,7 +174,8 @@ create or replace function public.create_order(
   p_items jsonb,
   p_subtotal numeric,
   p_shipping_cost numeric,
-  p_total numeric
+  p_total numeric,
+  p_payment_method text default 'pix'
 )
 returns bigint
 language plpgsql
@@ -187,14 +191,17 @@ begin
   if jsonb_typeof(p_items) <> 'array' or jsonb_array_length(p_items) = 0 then
     raise exception 'Pedido sem itens';
   end if;
+  if coalesce(p_payment_method, 'pix') not in ('pix', 'cartao') then
+    raise exception 'Forma de pagamento inválida';
+  end if;
 
   insert into public.orders (
     user_id, customer_name, customer_phone, address, shipping, items,
-    subtotal, shipping_cost, total
+    subtotal, shipping_cost, total, payment_method
   )
   values (
     auth.uid(), p_customer_name, p_customer_phone, p_address, p_shipping, p_items,
-    p_subtotal, coalesce(p_shipping_cost, 0), p_total
+    p_subtotal, coalesce(p_shipping_cost, 0), p_total, coalesce(p_payment_method, 'pix')
   )
   returning number into v_number;
 
@@ -202,7 +209,7 @@ begin
 end;
 $$;
 
-grant execute on function public.create_order(text, text, jsonb, jsonb, jsonb, numeric, numeric, numeric) to anon, authenticated;
+grant execute on function public.create_order(text, text, jsonb, jsonb, jsonb, numeric, numeric, numeric, text) to anon, authenticated;
 
 -- ============================================================
 -- Fotos (Supabase Storage)

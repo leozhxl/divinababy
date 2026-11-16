@@ -5,6 +5,7 @@ import Header from './Header';
 import FloatingWhatsApp from './FloatingWhatsApp';
 import { CartItem } from './CartContext';
 import { ShippingAddress, ShippingOption } from './whatsapp';
+import { linesSubtotal } from './pricing';
 
 function formatBRL(value: number): string {
   return value.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
@@ -135,6 +136,7 @@ function Endereco() {
   const selectedShipping = shippingOptions.find((option) => option.id === selectedShippingId);
 
   const total = subtotal + (selectedShipping?.price ?? 0);
+  const pixTotal = linesSubtotal(items, 'pix') + (selectedShipping?.price ?? 0);
 
   const handleCalculateShipping = async (cepValue: string = cep) => {
     const digits = cepValue.replace(/\D/g, '');
@@ -258,6 +260,9 @@ function Endereco() {
                 {formatBRL(total)}
               </span>
             </div>
+            <p className="font-sans-elegant text-sm text-teal-700 text-right" style={{ fontWeight: 500 }}>
+              ou {formatBRL(pixTotal)} no Pix
+            </p>
           </div>
 
           <form onSubmit={handleSubmit} className="bg-white border border-oat-300/50 rounded-sm p-6 lg:p-8 shadow-soft space-y-5">

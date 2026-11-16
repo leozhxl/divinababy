@@ -1,13 +1,14 @@
 import { useRef, useState } from 'react';
 import { useLocation, Link, Navigate } from 'react-router-dom';
 import { QRCodeSVG } from 'qrcode.react';
-import { Copy, Check, MessageCircle, ShoppingBag, QrCode, ShieldCheck, MapPin, Loader2 } from 'lucide-react';
+import { Copy, Check, MessageCircle, ShoppingBag, QrCode, ShieldCheck, MapPin, Loader2, CreditCard } from 'lucide-react';
 import Header from './Header';
 import FloatingWhatsApp from './FloatingWhatsApp';
-import { waLink, buildOrderMessage, ShippingAddress, ShippingOption } from './whatsapp';
+import { waLink, buildCheckoutMessage, PaymentMethod, ShippingAddress, ShippingOption } from './whatsapp';
 import { buildPixPayload } from './pix';
 import { CartItem } from './CartContext';
 import { createOrder } from './lib/orders';
+import { priceLines, linesSubtotal } from './pricing';
 
 function formatBRL(value: number): string {
   return value.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
@@ -61,8 +62,10 @@ function Pagamento() {
   const state = location.state as PagamentoState | null;
   const [copied, setCopied] = useState(false);
   const [confirmed, setConfirmed] = useState(false);
+  const [method, setMethod] = useState<PaymentMethod>('pix');
   const [orderNumber, setOrderNumber] = useState<number | null>(null);
   const [savingOrder, setSavingOrder] = useState(false);
+  const [orderSaved, setOrderSaved] = useState(false);
   const orderRequested = useRef(false);
 
   if (!state || state.items.length === 0) {
@@ -86,24 +89,41 @@ function Pagamento() {
     return <Navigate to="/endereco" state={{ items: state.items, subtotal: state.subtotal }} replace />;
   }
 
-  const { items, subtotal, shipping } = state;
+  const { shipping } = state;
   const address = state.address;
-  const total = subtotal + (shipping?.price ?? 0);
+  // Preços conforme a forma de pagamento: Pix usa o preço com desconto, cartão o preço cheio.
+  const items = priceLines(state.items, method);
+  const subtotal = linesSubtotal(state.items, method);
+  const shippingCost = shipping?.price ?? 0;
+  const cardTotal = linesSubtotal(state.items, 'cartao') + shippingCost;
+  const pixTotal = linesSubtotal(state.items, 'pix') + shippingCost;
+  const pixSavings = cardTotal - pixTotal;
+  const total = subtotal + shippingCost;
   const pixPayload = buildPixPayload(total);
+
+  const saveOrder = async (paymentMethod: PaymentMethod) => {
+    if (orderRequested.current) return;
+    orderRequested.current = true;
+    setSavingOrder(true);
+    const number = await createOrder({ items, subtotal, address, shipping, paymentMethod });
+    setOrderNumber(number);
+    setSavingOrder(false);
+    setOrderSaved(true);
+  };
 
   const handleConfirm = async (checked: boolean) => {
     setConfirmed(checked);
-    if (!checked || orderRequested.current) return;
-    orderRequested.current = true;
-    setSavingOrder(true);
-    const number = await createOrder({ items, subtotal, address, shipping });
-    setOrderNumber(number);
-    setSavingOrder(false);
+    if (checked) await saveOrder('pix');
   };
 
-  const orderMessage = `${buildOrderMessage(items, address, shipping)}${
-    orderNumber ? `\n\nPedido nº ${orderNumber}` : ''
-  }\n\nJá fiz o pagamento via Pix, segue o comprovante:`;
+  const handleCardContinue = async () => {
+    setConfirmed(true);
+    await saveOrder('cartao');
+  };
+
+  // Depois que o pedido é registrado, a forma de pagamento fica travada.
+  const methodLocked = savingOrder || orderSaved;
+  const orderMessage = buildCheckoutMessage(items, address, shipping, orderNumber, method);
 
   const handleCopy = async () => {
     await navigator.clipboard.writeText(pixPayload);
@@ -121,10 +141,51 @@ function Pagamento() {
 
           <div className="text-center">
             <p className="section-subtitle mb-4">Finalizar Compra</p>
-            <h1 className="section-title mb-2">Pague com Pix</h1>
-            <p className="font-sans-elegant text-sm text-nude-600 mb-10" style={{ fontWeight: 300 }}>
-              Escaneie o QR Code ou copie o código abaixo no app do seu banco.
+            <h1 className="section-title mb-2">{method === 'pix' ? 'Pague com Pix' : 'Pague com cartão'}</h1>
+            <p className="font-sans-elegant text-sm text-nude-600 mb-8" style={{ fontWeight: 300 }}>
+              {method === 'pix'
+                ? 'Escaneie o QR Code ou copie o código abaixo no app do seu banco.'
+                : 'Enviamos o link de pagamento do cartão de crédito pelo WhatsApp.'}
             </p>
+          </div>
+
+          {/* Payment method */}
+          <div className="grid grid-cols-2 gap-3 mb-10" role="radiogroup" aria-label="Forma de pagamento">
+            {([
+              { value: 'pix', label: 'Pix', icon: QrCode, amount: pixTotal },
+              { value: 'cartao', label: 'Cartão de crédito', icon: CreditCard, amount: cardTotal },
+            ] as const).map(({ value, label, icon: Icon, amount }) => {
+              const selected = method === value;
+              return (
+                <button
+                  key={value}
+                  type="button"
+                  role="radio"
+                  aria-checked={selected}
+                  disabled={methodLocked && !selected}
+                  onClick={() => setMethod(value)}
+                  className={`flex flex-col items-center justify-center gap-1 p-4 rounded-sm border-2 font-sans-elegant text-sm transition-colors duration-300 ${
+                    selected
+                      ? 'border-teal-600 bg-teal-50/60 text-nude-800'
+                      : 'border-oat-300 bg-white text-nude-600 hover:border-oat-400 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:border-oat-300'
+                  }`}
+                  style={{ fontWeight: selected ? 600 : 400 }}
+                >
+                  <span className="flex items-center gap-2">
+                    <Icon size={18} strokeWidth={1.5} className={selected ? 'text-teal-600' : 'text-oat-500'} />
+                    {label}
+                  </span>
+                  <span className="text-base text-nude-800" style={{ fontWeight: 600 }}>
+                    {formatBRL(amount)}
+                  </span>
+                  {value === 'pix' && pixSavings > 0 && (
+                    <span className="text-xs text-teal-700" style={{ fontWeight: 500 }}>
+                      Economize {formatBRL(pixSavings)}
+                    </span>
+                  )}
+                </button>
+              );
+            })}
           </div>
 
           {/* Order summary */}
@@ -213,6 +274,59 @@ function Pagamento() {
             </p>
           </div>
 
+          {method === 'cartao' ? (
+            <div className="text-center">
+              <div className="bg-white border border-oat-300/50 rounded-sm p-6 mb-8 shadow-soft">
+                <CreditCard size={28} strokeWidth={1.5} className="text-oat-500 mx-auto mb-3" />
+                <p className="font-serif-elegant text-2xl text-nude-800 mb-3" style={{ fontWeight: 500 }}>
+                  {formatBRL(total)}
+                </p>
+                <p className="font-sans-elegant text-sm text-nude-600" style={{ fontWeight: 300 }}>
+                  Ao continuar, seu pedido é registrado e você nos chama no WhatsApp. Lá enviamos o link seguro para
+                  pagar no cartão de crédito.
+                </p>
+              </div>
+
+              {savingOrder ? (
+                <button
+                  type="button"
+                  disabled
+                  className="inline-flex items-center gap-2 bg-teal-600/80 text-white font-sans-elegant text-sm uppercase tracking-widest px-8 py-3.5 rounded-sm cursor-wait"
+                  style={{ fontWeight: 600 }}
+                >
+                  <Loader2 size={18} strokeWidth={1.5} className="animate-spin" />
+                  Registrando pedido...
+                </button>
+              ) : orderSaved ? (
+                <>
+                  <p className="font-sans-elegant text-sm text-nude-700 mb-4" style={{ fontWeight: 400 }}>
+                    {orderNumber ? `Pedido nº ${orderNumber} registrado! ` : 'Pedido registrado! '}
+                    Agora é só enviar a mensagem para receber o link.
+                  </p>
+                  <a
+                    href={waLink(orderMessage)}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 bg-teal-600 hover:bg-teal-700 text-white font-sans-elegant text-sm uppercase tracking-widest px-8 py-3.5 rounded-sm shadow-soft transition-colors duration-300"
+                    style={{ fontWeight: 600 }}
+                  >
+                    <MessageCircle size={18} strokeWidth={1.5} />
+                    Pedir link no WhatsApp
+                  </a>
+                </>
+              ) : (
+                <button
+                  type="button"
+                  onClick={handleCardContinue}
+                  className="inline-flex items-center gap-2 bg-teal-600 hover:bg-teal-700 text-white font-sans-elegant text-sm uppercase tracking-widest px-8 py-3.5 rounded-sm shadow-soft transition-colors duration-300"
+                  style={{ fontWeight: 600 }}
+                >
+                  <CreditCard size={18} strokeWidth={1.5} />
+                  Pagar com cartão
+                </button>
+              )}
+            </div>
+          ) : (
           <div className="text-center">
             <div className="relative bg-white border border-oat-300/50 rounded-sm p-8 shadow-soft inline-block mb-6">
               <div className="absolute -top-3 left-1/2 -translate-x-1/2 flex items-center gap-1.5 bg-teal-600 text-white text-[10px] font-sans-elegant uppercase tracking-widest px-3 py-1 rounded-full shadow-soft" style={{ fontWeight: 600 }}>
@@ -318,6 +432,7 @@ function Pagamento() {
               )}
             </div>
           </div>
+          )}
         </div>
       </section>
     </div>

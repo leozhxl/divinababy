@@ -7,7 +7,7 @@ function formatBRL(value: number): string {
 }
 
 export default function CartDrawer() {
-  const { items, isCartOpen, closeCart, updateQuantity, removeItem, subtotal } = useCart();
+  const { items, isCartOpen, closeCart, updateQuantity, removeItem, subtotal, pixSubtotal } = useCart();
   const navigate = useNavigate();
 
   const handleCheckout = () => {
@@ -109,6 +109,9 @@ export default function CartDrawer() {
                   {formatBRL(subtotal)}
                 </span>
               </div>
+              <p className="font-sans-elegant text-sm text-teal-700 text-right -mt-3 mb-4" style={{ fontWeight: 500 }}>
+                ou {formatBRL(pixSubtotal)} no Pix
+              </p>
               <button type="button" onClick={handleCheckout} className="btn-primary block w-full text-center">
                 Finalizar Compra
               </button>

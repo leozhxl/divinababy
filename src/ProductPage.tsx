@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Product } from './types/product';
+import { productPixPrice } from './pricing';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import { ArrowLeft, Sparkles, Check, Heart } from 'lucide-react';
 import { useCatalog } from './CatalogContext';
@@ -224,7 +225,7 @@ function ProductDetail({ product }: { product: Product }) {
 
   const installmentCount = product.installments ?? 6;
   const installment = product.price / installmentCount;
-  const pixPrice = product.pixPrice ?? product.price * 0.95;
+  const pixPrice = productPixPrice(product);
   const discountPct = product.compareAtPrice
     ? Math.round(100 - (product.price / product.compareAtPrice) * 100)
     : null;

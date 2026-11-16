@@ -1,11 +1,15 @@
 import { createContext, useContext, useEffect, useMemo, useReducer, useState, ReactNode } from 'react';
 import { Product } from './types/product';
+import { linesSubtotal, productPixPrice } from './pricing';
 
 export interface CartItem {
   productId: string;
   slug: string;
   name: string;
+  /** Preço cheio (cartão). */
   price: number;
+  /** Preço no Pix. Carrinhos antigos não têm: cai no desconto padrão. */
+  pixPrice?: number;
   image: string;
   color?: string;
   size?: string;
@@ -67,6 +71,7 @@ interface CartContextValue {
   updateQuantity: (productId: string, quantity: number, color?: string, size?: string, theme?: string, personalizedName?: string) => void;
   clearCart: () => void;
   subtotal: number;
+  pixSubtotal: number;
   itemCount: number;
   isCartOpen: boolean;
   openCart: () => void;
@@ -104,6 +109,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
         slug: product.slug,
         name: product.name,
         price: product.price,
+        pixPrice: productPixPrice(product),
         image: product.images[0],
         color,
         size,
@@ -125,6 +131,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
   const clearCart = () => dispatch({ type: 'CLEAR_CART' });
 
   const subtotal = useMemo(() => items.reduce((sum, line) => sum + line.price * line.quantity, 0), [items]);
+  const pixSubtotal = useMemo(() => linesSubtotal(items, 'pix'), [items]);
   const itemCount = useMemo(() => items.reduce((sum, line) => sum + line.quantity, 0), [items]);
 
   return (
@@ -136,6 +143,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
         updateQuantity,
         clearCart,
         subtotal,
+        pixSubtotal,
         itemCount,
         isCartOpen,
         openCart: () => setIsCartOpen(true),

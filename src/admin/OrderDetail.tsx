@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { ArrowLeft, Copy, MessageCircle, Check } from 'lucide-react';
 import { supabase } from '../lib/supabase';
-import { OrderRow, OrderStatus, ORDER_STATUSES } from '../lib/orders';
+import { OrderRow, OrderStatus, ORDER_STATUSES, PAYMENT_METHOD_LABELS } from '../lib/orders';
 import { buildAddressLines } from '../whatsapp';
 import { Button, Card, ErrorMessage, Field, Input, PageHeader, Select, Spinner, StatusBadge, Textarea, Thumb, customerWaLink, formatBRL, formatDate } from './ui';
 
@@ -15,7 +15,11 @@ function statusMessage(order: OrderRow, status: OrderStatus, tracking: string): 
   const hello = `Olá, ${firstName(order.customer_name)}! Aqui é da Divina Baby 💕`;
   switch (status) {
     case 'aguardando_pagamento':
-      return `${hello}\n\nRecebemos seu pedido nº ${order.number} no valor de ${formatBRL(order.total)}. Assim que o pagamento via Pix for confirmado, começamos a produção!`;
+      return `${hello}\n\nRecebemos seu pedido nº ${order.number} no valor de ${formatBRL(order.total)}. ${
+        order.payment_method === 'cartao'
+          ? 'Segue o link para pagamento no cartão de crédito: '
+          : 'Assim que o pagamento via Pix for confirmado, começamos a produção!'
+      }`;
     case 'pago':
       return `${hello}\n\nConfirmamos o pagamento do seu pedido nº ${order.number}. Muito obrigada! Em breve ele entra em produção.`;
     case 'em_producao':
@@ -128,7 +132,7 @@ export default function OrderDetail() {
                 <dd>{formatBRL(order.shipping_cost)}</dd>
               </div>
               <div className="flex justify-between font-semibold text-nude-800 pt-1">
-                <dt>Total ({order.payment_method === 'pix' ? 'Pix' : order.payment_method})</dt>
+                <dt>Total ({PAYMENT_METHOD_LABELS[order.payment_method] ?? order.payment_method})</dt>
                 <dd>{formatBRL(order.total)}</dd>
               </div>
             </dl>

@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Product } from './types/product';
+import { productPixPrice } from './pricing';
 import Reveal from './Reveal';
 
 function formatBRL(value: number): string {
@@ -9,7 +10,7 @@ function formatBRL(value: number): string {
 export default function ProductCard({ product }: { product: Product }) {
   const installmentCount = product.installments ?? 6;
   const installment = product.price / installmentCount;
-  const pixPrice = product.pixPrice ?? product.price * 0.95;
+  const pixPrice = productPixPrice(product);
   const discountPct = product.compareAtPrice
     ? Math.round(100 - (product.price / product.compareAtPrice) * 100)
     : null;

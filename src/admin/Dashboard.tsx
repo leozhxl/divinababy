@@ -129,7 +129,7 @@ export default function Dashboard() {
           className="flex items-center gap-2 rounded-md border border-amber-200 bg-amber-50 px-4 py-3 text-sm text-amber-800 mb-5 hover:bg-amber-100"
         >
           <AlertCircle size={16} />
-          {stats.awaitingPayment.length} pedido(s) aguardando confirmação do Pix. Confira os comprovantes no WhatsApp.
+          {stats.awaitingPayment.length} pedido(s) aguardando pagamento. Confira os comprovantes do Pix e envie os links de cartão pelo WhatsApp.
         </Link>
       )}
 

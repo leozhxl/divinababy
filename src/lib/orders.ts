@@ -1,6 +1,11 @@
 import { supabase, isSupabaseConfigured } from './supabase';
 import { CartItem } from '../CartContext';
-import { ShippingAddress, ShippingOption } from '../whatsapp';
+import { PaymentMethod, ShippingAddress, ShippingOption } from '../whatsapp';
+
+export const PAYMENT_METHOD_LABELS: Record<string, string> = {
+  pix: 'Pix',
+  cartao: 'Cartão de crédito',
+};
 
 export type OrderStatus = 'aguardando_pagamento' | 'pago' | 'em_producao' | 'enviado' | 'entregue' | 'cancelado';
 
@@ -42,10 +47,11 @@ export async function createOrder(params: {
   subtotal: number;
   address: ShippingAddress;
   shipping?: ShippingOption;
+  paymentMethod: PaymentMethod;
 }): Promise<number | null> {
   if (!isSupabaseConfigured) return null;
   const shippingCost = params.shipping?.price ?? 0;
-  const { data, error } = await supabase.rpc('create_order', {
+  const args = {
     p_customer_name: params.address.fullName,
     p_customer_phone: params.address.phone,
     p_address: params.address,
@@ -54,7 +60,12 @@ export async function createOrder(params: {
     p_subtotal: params.subtotal,
     p_shipping_cost: shippingCost,
     p_total: params.subtotal + shippingCost,
-  });
+  };
+  let { data, error } = await supabase.rpc('create_order', { ...args, p_payment_method: params.paymentMethod });
+  // Banco ainda sem o parâmetro p_payment_method (admin.sql antigo): salva sem ele para não perder o pedido.
+  if (error?.code === 'PGRST202') {
+    ({ data, error } = await supabase.rpc('create_order', args));
+  }
   if (error) {
     console.error('Não foi possível salvar o pedido.', error);
     return null;

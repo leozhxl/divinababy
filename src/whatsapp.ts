@@ -70,3 +70,26 @@ export function buildOrderMessage(lines: CartLine[], address?: ShippingAddress, 
     ...(address ? ['', ...buildAddressLines(address)] : []),
   ].join('\n');
 }
+
+export type PaymentMethod = 'pix' | 'cartao';
+
+const PAYMENT_CLOSING: Record<PaymentMethod, string> = {
+  pix: 'Já fiz o pagamento via Pix, segue o comprovante:',
+  cartao: 'Quero pagar no cartão de crédito, pode me enviar o link de pagamento?',
+};
+
+/** Mensagem completa enviada no WhatsApp ao finalizar a compra (Pix ou cartão). */
+export function buildCheckoutMessage(
+  lines: CartLine[],
+  address: ShippingAddress,
+  shipping: ShippingOption | undefined,
+  orderNumber: number | null,
+  method: PaymentMethod
+): string {
+  return [
+    buildOrderMessage(lines, address, shipping),
+    ...(orderNumber ? ['', `Pedido nº ${orderNumber}`] : []),
+    '',
+    PAYMENT_CLOSING[method],
+  ].join('\n');
+}
